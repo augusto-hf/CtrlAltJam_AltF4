@@ -11,7 +11,7 @@ public class PlayerColorAction : MonoBehaviour
     {
         if (input.ColorButton)
         {
-            currentColor?.Action();
+            currentColor?.Action(this.gameObject);
         }
     }
 
