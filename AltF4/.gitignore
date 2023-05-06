@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 #Layouts
 .dwlt
+
+#User Settings
+/[Uu]ser[Ss]ettings/
