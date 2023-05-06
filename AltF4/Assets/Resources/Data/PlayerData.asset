@@ -17,6 +17,6 @@ MonoBehaviour:
   _maxHorizontalSpeed: 5
   _maxRunSpeed: 99
   _jumpForce: 10
-  _fallMultiplier: 3.4028235e+38
-  _maxFallSpeed: 1e+21
-  _gravityScale: 3.4028235e+38
+  _fallMultiplier: 3
+  _maxFallSpeed: 15
+  _gravityScale: 2

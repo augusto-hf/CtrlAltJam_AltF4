@@ -10,7 +10,6 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GetAxis());
         ColorButton = Input.GetButton("ColorActionButton");
     }
 
