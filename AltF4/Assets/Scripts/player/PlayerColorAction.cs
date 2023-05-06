@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerColorAction : MonoBehaviour
 {
     [SerializeField] private PlayerControl input;
-    [SerializeField] private IColor currentColor;
+    [SerializeField] private GameObject GameManager;
+    private IColor currentColor;
 
+    private void Awake()
+    {
+        currentColor = GameManager.gameObject.GetComponent<IColor>();
+    }
     void Update()
     {
         if (input.ColorButton)

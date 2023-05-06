@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerChecks : MonoBehaviour
 {
     [SerializeField] private LayerMask ground;
+    [SerializeField] private Transform groundDetector;
+    [SerializeField] private float detectionRange;
     public bool IsGrounded { get; private set; }
 
     // Update is called once per frame
@@ -14,7 +16,7 @@ public class PlayerChecks : MonoBehaviour
     }
     private bool OnGround()
     {
-        var groundCheck = Physics2D.Raycast(transform.position, Vector2.down, 0.7f);
-        return groundCheck.collider != null && groundCheck.collider.CompareTag("Ground");
+        var groundCheck = Physics2D.Raycast(groundDetector.position, Vector2.down, detectionRange, ground);
+        return groundCheck;
     }
 }
