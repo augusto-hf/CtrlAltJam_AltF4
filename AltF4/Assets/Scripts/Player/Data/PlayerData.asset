@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eebe554f05fd5f48a3a87aa4847d8fd, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  _horizontalAcceleration: 0
-  _maxHorizontalSpeed: 0
+  _horizontalAcceleration: 3
+  _horizontalDeceleration: 2
+  _maxHorizontalSpeed: 5
   _jumpForce: 0
   _fallMultiplier: 0
   _maxFallSpeed: 0
