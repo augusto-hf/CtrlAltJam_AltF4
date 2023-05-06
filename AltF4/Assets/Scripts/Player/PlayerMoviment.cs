@@ -23,6 +23,7 @@ public class PlayerMoviment : MonoBehaviour
     private void FixedUpdate()
     {
         HorizontalMovement();
+        VerticalMovement();
     }
 
     private void HorizontalMovement()
@@ -40,7 +41,10 @@ public class PlayerMoviment : MonoBehaviour
         rb.AddForce(moviment * Vector2.right);
 
     }
+    private void VerticalMovement()
+    {
 
+    }
     public void SetMaxSpeed(float maxSpeed)
     {
         curretnMaxSpeed = maxSpeed;
