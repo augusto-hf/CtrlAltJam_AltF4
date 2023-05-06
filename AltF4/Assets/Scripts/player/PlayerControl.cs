@@ -12,7 +12,6 @@ public class PlayerControl : MonoBehaviour
     {
         Debug.Log(GetAxis());
         ColorButton = Input.GetButton("ColorActionButton");
-
     }
 
     private Vector2 GetAxis()
