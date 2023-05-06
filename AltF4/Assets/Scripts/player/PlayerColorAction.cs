@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerColorAction : MonoBehaviour
 {
-    private PlayerControl input;
+    [SerializeField] private PlayerControl input;
     [SerializeField] private IColor currentColor;
 
     void Update()
