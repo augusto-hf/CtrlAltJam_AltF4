@@ -11,6 +11,6 @@ public class BlueAction : MonoBehaviour, IColor
     public void Action(GameObject player)
     {
         if (checkScript.IsGrounded)
-            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, dataScript.JumpForce));
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10));
     }
 }
