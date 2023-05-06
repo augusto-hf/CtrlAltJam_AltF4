@@ -9,10 +9,12 @@ public class PlayerMoviment : MonoBehaviour
     
     public Rigidbody2D rb;
     private bool canMove;
+    private float curretnMaxSpeed;
 
     private void Awake()
     {
         canMove = true;
+        curretnMaxSpeed = data.MaxHorizontalSpeed;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -25,7 +27,7 @@ public class PlayerMoviment : MonoBehaviour
     {
         if (!canMove) return;
 
-        float targetVeloticy = input.Axis.x * data.MaxHorizontalSpeed;
+        float targetVeloticy = input.Axis.x * curretnMaxSpeed;
         float speedDif = targetVeloticy - rb.velocity.x;
 
         float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? data.HorizontalAcceleration : data.HorizontalDeceleration;
@@ -35,5 +37,10 @@ public class PlayerMoviment : MonoBehaviour
 
         rb.AddForce(moviment * Vector2.right);
 
+    }
+
+    public void SetMaxSpeed(float maxSpeed)
+    {
+        curretnMaxSpeed = maxSpeed;
     }
 }
