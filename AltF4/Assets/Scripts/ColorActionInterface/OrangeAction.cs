@@ -8,6 +8,6 @@ public class OrangeAction : MonoBehaviour, IColor
     {
         PlayerMoviment moviment = player.GetComponent<PlayerMoviment>();
 
-        moviment.currentMaxSpeed *= 2;
+        moviment.SetMaxSpeed(moviment.Data.MaxRunSpeed);
     }
 }
