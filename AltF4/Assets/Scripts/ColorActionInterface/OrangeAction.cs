@@ -8,9 +8,10 @@ public class OrangeAction : MonoBehaviour, IColor
     {
         PlayerMoviment moviment = player.GetComponent<PlayerMoviment>();
 
-        if (isPressed)
+        if (isPressed) {
             moviment.SetMaxSpeed(moviment.Data.MaxRunSpeed);
-        else
-            moviment.SetMaxSpeed(moviment.Data.MaxHorizontalSpeed);
+            return;
+        }
+        moviment.SetMaxSpeed(moviment.Data.MaxHorizontalSpeed);
     }   
 }

@@ -9,8 +9,13 @@ public class BlueAction : MonoBehaviour, IColor
     {
         PlayerMoviment moveScript = player.GetComponent<PlayerMoviment>();
         PlayerChecks checkScript = player.GetComponent<PlayerChecks>();
+        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
 
         if (checkScript.IsGrounded && isPressed)
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, moveScript.Data.JumpForce);
+        {
+            rb.velocity = new Vector2(rb.velocity.x, moveScript.Data.JumpForce);
+            return;
+        }
+
     }
 }
