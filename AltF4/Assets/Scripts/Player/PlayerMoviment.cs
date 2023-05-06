@@ -6,6 +6,7 @@ public class PlayerMoviment : MonoBehaviour
 {
     [SerializeField] private PlayerData data;
     [SerializeField] private PlayerControl input;
+    [SerializeField] private PlayerChecks check;
     
     private Rigidbody2D rb;
     private bool canMove;
@@ -18,6 +19,7 @@ public class PlayerMoviment : MonoBehaviour
         canMove = true;
         curretnMaxSpeed = data.MaxHorizontalSpeed;
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = data.GravityScale;
     }
 
     private void FixedUpdate()
@@ -43,7 +45,21 @@ public class PlayerMoviment : MonoBehaviour
     }
     private void VerticalMovement()
     {
+        Fall();
+    }
 
+    private void Fall()
+    {
+        if (rb.velocity.y < 0 && !check.IsGrounded)
+        {
+            Debug.Log("fall");
+            rb.gravityScale = data.GravityScale * data.FallMultiplier;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -data.MaxFallSpeed));
+        }
+        else
+        {
+            rb.gravityScale = data.GravityScale;
+        }
     }
     public void SetMaxSpeed(float maxSpeed)
     {
