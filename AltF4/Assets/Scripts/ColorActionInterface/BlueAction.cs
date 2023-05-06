@@ -10,10 +10,7 @@ public class BlueAction : MonoBehaviour, IColor
     [SerializeField] private PlayerChecks checkScript;
     public void Action(GameObject player)
     {
-
         if (checkScript.IsGrounded)
-            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10);
-        else
-            Debug.Log("Azul");
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, dataScript.JumpForce);
     }
 }
