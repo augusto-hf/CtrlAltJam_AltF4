@@ -7,6 +7,7 @@ public class PlayerData : ScriptableObject
 {
     [Header("Horizontal Moviment")]
     [SerializeField] private float _horizontalAcceleration;
+    [SerializeField] private float _horizontalDeceleration;
     [SerializeField] private float _maxHorizontalSpeed;
 
     [Space(2)]
@@ -21,6 +22,7 @@ public class PlayerData : ScriptableObject
 
 
     public float HorizontalAcceleration { get => _horizontalAcceleration; }
+    public float HorizontalDeceleration { get => _horizontalDeceleration;}
     public float MaxHorizontalSpeed { get => _maxHorizontalSpeed; }
     public float JumpForce { get => _jumpForce; }
     public float FallMultiplier { get => _fallMultiplier; }

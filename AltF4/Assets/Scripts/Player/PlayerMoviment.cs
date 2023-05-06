@@ -28,8 +28,12 @@ public class PlayerMoviment : MonoBehaviour
         float targetVeloticy = input.Axis.x * data.MaxHorizontalSpeed;
         float speedDif = targetVeloticy - rb.velocity.x;
 
+        float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? data.HorizontalAcceleration : data.HorizontalDeceleration;
 
-        rb.AddForce(speedDif * data.HorizontalAcceleration * Vector2.right);
+        float moviment = speedDif * accelRate;
+
+
+        rb.AddForce(moviment * Vector2.right);
 
     }
 }
