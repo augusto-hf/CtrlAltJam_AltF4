@@ -7,7 +7,7 @@ public class PlayerMoviment : MonoBehaviour
     [SerializeField] private PlayerData data;
     [SerializeField] private PlayerControl input;
     
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private bool canMove;
 
     private void Awake()
