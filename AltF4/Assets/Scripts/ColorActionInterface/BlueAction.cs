@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BlueAction : MonoBehaviour, IColor
 {
-    public void Action(float CharacterVelocityX, float CharacterVelocityY, float Speed)
+    [SerializeField] private PlayerControl inputScript;
+    [SerializeField] private PlayerMoviment moveScript;
+    public void Action()
     {
 
     }
