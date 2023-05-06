@@ -7,7 +7,7 @@ public class PlayerMoviment : MonoBehaviour
     [SerializeField] private PlayerData data;
     [SerializeField] private PlayerControl input;
     
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private bool canMove;
     private float curretnMaxSpeed;
 

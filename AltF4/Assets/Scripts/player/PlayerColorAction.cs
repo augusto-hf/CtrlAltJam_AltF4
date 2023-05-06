@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerColorAction : MonoBehaviour
 {
     private PlayerControl input;
-    private IColor currentColor;
+    [SerializeField] private IColor currentColor;
 
     void Update()
     {
         if (input.ColorButton)
         {
-            currentColor?.Action();
+            currentColor?.Action(this.gameObject);
         }
     }
 

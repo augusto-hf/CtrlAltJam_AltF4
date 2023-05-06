@@ -1,5 +1,6 @@
+using UnityEngine;
 public interface IColor
 {
-    public void Action();
+    public void Action(GameObject player);
 
 }
