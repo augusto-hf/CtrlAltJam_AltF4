@@ -52,7 +52,6 @@ public class PlayerMoviment : MonoBehaviour
     {
         if (rb.velocity.y < 0 && !check.IsGrounded)
         {
-            Debug.Log("fall");
             rb.gravityScale = data.GravityScale * data.FallMultiplier;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -data.MaxFallSpeed));
         }

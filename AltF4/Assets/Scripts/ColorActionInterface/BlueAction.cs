@@ -5,17 +5,28 @@ using UnityEngine;
 public class BlueAction : MonoBehaviour, IColor
 {
     [SerializeField] private PlayerControl inputScript;
+    private bool iJumped = false;
     public void Action(GameObject player, bool isPressed)
     {
         PlayerMoviment moveScript = player.GetComponent<PlayerMoviment>();
         PlayerChecks checkScript = player.GetComponent<PlayerChecks>();
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+        
 
-        if (checkScript.IsGrounded && isPressed)
+        if (isPressed)
         {
-            rb.velocity = new Vector2(rb.velocity.x, moveScript.Data.JumpForce);
+            if (checkScript.IsGrounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, moveScript.Data.JumpForce);
+                iJumped = true;
+                return;
+            }
+        }
+        else if (!isPressed && iJumped && rb.velocity.y > 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            iJumped = false;
             return;
         }
-
     }
 }
