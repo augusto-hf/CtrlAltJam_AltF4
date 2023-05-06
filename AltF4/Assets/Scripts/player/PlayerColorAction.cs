@@ -14,10 +14,7 @@ public class PlayerColorAction : MonoBehaviour
     }
     void Update()
     {
-        if (input.ColorButton)
-        {
-            currentColor?.Action(this.gameObject);
-        }
+        currentColor?.Action(this.gameObject, input.ColorButton);
     }
 
 
