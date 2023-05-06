@@ -26,10 +26,11 @@ public class PlayerData : ScriptableObject
     public float HorizontalAcceleration { get => _horizontalAcceleration; }
     public float HorizontalDeceleration { get => _horizontalDeceleration;}
     public float MaxHorizontalSpeed { get => _maxHorizontalSpeed; }
+    public float MaxSpeedRun { get => _maxSpeedRun; }
     public float JumpForce { get => _jumpForce; }
     public float FallMultiplier { get => _fallMultiplier; }
     public float MaxFallSpeed { get => _maxFallSpeed; }
     public float GravityScale { get => _gravityScale; }
-    public float MaxSpeedRun { get => _maxSpeedRun; }
+    
 
 }
