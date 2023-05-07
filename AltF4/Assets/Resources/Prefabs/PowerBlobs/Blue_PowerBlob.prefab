@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057928800272166170, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 10.191559
       objectReference: {fileID: 0}
     - target: {fileID: 2057928800272166170, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.0772521
       objectReference: {fileID: 0}
     - target: {fileID: 2057928800272166170, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55,7 +55,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue_PowerBlob
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2842549365950125701, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
 --- !u!1 &5871313350738654666 stripped
 GameObject:
