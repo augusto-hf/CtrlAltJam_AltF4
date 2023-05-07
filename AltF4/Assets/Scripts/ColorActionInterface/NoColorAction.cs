@@ -8,4 +8,8 @@ public class NoColorAction : MonoBehaviour, IColor
     {
         
     }
+    public void ResetAction(GameObject player)
+    {
+        
+    }
 }

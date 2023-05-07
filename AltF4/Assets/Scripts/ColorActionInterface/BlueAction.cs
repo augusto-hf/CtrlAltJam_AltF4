@@ -29,4 +29,10 @@ public class BlueAction : MonoBehaviour, IColor
             return;
         }
     }
+
+    public void ResetAction(GameObject player)
+    {
+        
+    }
+
 }

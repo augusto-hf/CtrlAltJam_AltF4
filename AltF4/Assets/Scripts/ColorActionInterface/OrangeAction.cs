@@ -14,4 +14,11 @@ public class OrangeAction : MonoBehaviour, IColor
         }
         moviment.SetMaxSpeed(moviment.Data.MaxHorizontalSpeed);
     }   
+
+    public void ResetAction(GameObject player)
+    {
+        PlayerMoviment moviment = player.GetComponent<PlayerMoviment>();
+        moviment.SetMaxSpeed(moviment.Data.MaxHorizontalSpeed);
+    }
+
 }
