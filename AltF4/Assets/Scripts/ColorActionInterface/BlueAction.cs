@@ -18,8 +18,8 @@ public class BlueAction : MonoBehaviour, IColor
             iJumped = false;
             coyoteCurrentTimer = moveScript.Data.CoyoteTime;
         }
-        else
-        {//aba
+        else if (!checkScript.IsGrounded && !iJumped)
+        {
             coyoteCurrentTimer -= Time.deltaTime;
         }
 
@@ -35,7 +35,7 @@ public class BlueAction : MonoBehaviour, IColor
         else if (!isPressed && iJumped && rb.velocity.y > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            iJumped = false;
+            
         }
     }
 

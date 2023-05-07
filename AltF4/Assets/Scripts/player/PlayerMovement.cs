@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerData data;
-    [SerializeField] private PlayerControl input;
     [SerializeField] private PlayerChecks check;
-    
+
+    private PlayerControl input;
+
     private Rigidbody2D rb;
     private bool canMove;
     private float curretnMaxSpeed;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerControl Input { get => input;}
     private void Awake()
     {
+        input = GameObject.FindGameObjectWithTag("InputManager").GetComponent<PlayerControl>();
         canMove = true;
         curretnMaxSpeed = data.MaxHorizontalSpeed;
         rb = GetComponent<Rigidbody2D>();
