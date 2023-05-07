@@ -24,6 +24,7 @@ public class PurpleAction : MonoBehaviour, IColor
         {
             if (!isPlacedTeleportBeacon)
             {
+                isPlacedTeleportBeacon = true;
                 teleportPoint.position = player.transform.position;
                 return;
             }
