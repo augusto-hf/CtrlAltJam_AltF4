@@ -8,6 +8,7 @@ public class PlayerHook : MonoBehaviour
     [SerializeField] private float hookSpeed, hookMaxDistance, maxDistance;
     [SerializeField] private LayerMask grapplableMask;
 
+
     private Rigidbody2D rb;
     void Start()
     {
@@ -24,6 +25,9 @@ public class PlayerHook : MonoBehaviour
     {
         Vector2 direction = transform.forward;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, maxDistance, grapplableMask);
+
+        if (hit.collider == null)
+            return;
 
     }
 }
