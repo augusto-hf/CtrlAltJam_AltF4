@@ -7,6 +7,7 @@ public class PlayerColorAction : MonoBehaviour
     [SerializeField] private PlayerControl input;
     [SerializeField] private GameObject GameManager;
     private IColor currentColor;
+    private BlobManager lastBlob;
 
     private void Awake()
     {
@@ -20,9 +21,14 @@ public class PlayerColorAction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.tag == "ColorPower")
+        if (other.CompareTag("ColorPower"))
         {
+            if(lastBlob != null)
+                lastBlob.RespawnPower();
 
+            lastBlob = other.gameObject.GetComponentInParent<BlobManager>();
+            lastBlob.PickPower();
+            currentColor = lastBlob.blobColor;
         }
     }
     

@@ -12,8 +12,8 @@ public class PlayerMoviment : MonoBehaviour
     private bool canMove;
     private float curretnMaxSpeed;
 
-    public PlayerData Data { get => data; }
-
+    public PlayerData Data { get => data;}
+    public PlayerControl Input { get => input;}
     private void Awake()
     {
         canMove = true;

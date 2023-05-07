@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2620965897924027974}
   - component: {fileID: 5187401207562044023}
+  - component: {fileID: 6960809470752768436}
   m_Layer: 0
-  m_Name: Visual
-  m_TagString: Untagged
+  m_Name: VisualAndHitbox
+  m_TagString: ColorPower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6960809470752768436
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2507655081481780796}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &6044962299976279467
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,9 +110,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2057928800272166170}
-  - component: {fileID: 6555579011542299945}
+  - component: {fileID: 860348821051565063}
   m_Layer: 0
-  m_Name: BlueBlob
+  m_Name: PowerBlob
   m_TagString: ColorPower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,19 +134,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &6555579011542299945
-CircleCollider2D:
+--- !u!114 &860348821051565063
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6044962299976279467}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28700d6d9b91014490f1242cf04c937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beingUsed: 0
+  VisualAndHitbox: {fileID: 2507655081481780796}
