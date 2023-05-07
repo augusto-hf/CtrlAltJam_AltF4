@@ -288,5 +288,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfa55c11fbf38c4191ce087d8f90d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 0}
   StartingColorReference: {fileID: 4530602177030595066}
