@@ -36,9 +36,10 @@ public class PlayerHook : MonoBehaviour
             }
 
             
-            if (targetObject.CompareTag("Grappable") && !finishedGrappling)
+            if (targetObject.CompareTag("GrappableObject") && !finishedGrappling)
             {
-                targetObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Vector2.Distance(transform.position, targetObject.transform.position),0));
+                line.SetPosition(1, targetObject.transform.position);
+                targetObject.GetComponent<Rigidbody2D>().AddForce((transform.position - targetObject.transform.position).normalized, 0);
             }
         }
     }
