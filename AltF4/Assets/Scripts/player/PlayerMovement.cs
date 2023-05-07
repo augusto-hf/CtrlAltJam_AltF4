@@ -65,4 +65,19 @@ public class PlayerMovement : MonoBehaviour
     {
         curretnMaxSpeed = maxSpeed;
     }
+    public void Jump()
+    {
+        float force = data.JumpForce;
+        
+        if (rb.velocity.y < 0)
+            force -= rb.velocity.y;
+
+        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+    }
+
+    public void Teleport(Vector2 local)
+    {
+        rb.velocity = Vector2.zero;
+        rb.position = local;
+    }
 }

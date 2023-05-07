@@ -16,8 +16,12 @@ public class OrangePassive : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        var movement = other.gameObject.GetComponent<PlayerMovement>();
-        RunPassive(movement);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var movement = other.gameObject.GetComponent<PlayerMovement>();
+            DisablePassive(movement);
+        }
+        
     }
 
 

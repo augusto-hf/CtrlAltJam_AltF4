@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PurplePassive : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform outputPoint;
+
+    private void OnTriggerEnter2D(Collider2D other) 
     {
+
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Purple Passive");
+
+            other.GetComponent<PlayerMovement>().Teleport(outputPoint.position);
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

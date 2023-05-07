@@ -25,6 +25,8 @@ public class PurpleAction : MonoBehaviour, IColor
     {
         if (teleportPoint == null) return;
 
+        var movement = player.GetComponent<PlayerMovement>();
+
         if (Input.GetButtonDown("ColorActionButton")) 
         {
             if (!isPlacedTeleportBeacon)
@@ -36,7 +38,8 @@ public class PurpleAction : MonoBehaviour, IColor
             }
             else 
             {
-                Teleport(player);
+                movement.Teleport(teleportPoint.position);
+                ResetTeleportPosition();
             }  
         }
     }
@@ -47,14 +50,6 @@ public class PurpleAction : MonoBehaviour, IColor
         {
             ResetTeleportPosition();
         }
-    }
-
-    private void Teleport(GameObject player)
-    {
-        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.zero;
-        rb.position = teleportPoint.position;
-        ResetTeleportPosition();
     }
 
     private void ResetTeleportPosition()
