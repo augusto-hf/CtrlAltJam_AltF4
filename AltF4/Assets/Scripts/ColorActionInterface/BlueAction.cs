@@ -19,7 +19,7 @@ public class BlueAction : MonoBehaviour, IColor
             coyoteCurrentTimer = moveScript.Data.CoyoteTime;
         }
         else
-        {
+        {//aba
             coyoteCurrentTimer -= Time.deltaTime;
         }
 
