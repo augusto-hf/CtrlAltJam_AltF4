@@ -28,6 +28,7 @@ public class PlayerColorAction : MonoBehaviour
 
             lastBlob = other.gameObject.GetComponentInParent<BlobManager>();
             lastBlob.PickPower();
+            currentColor.ResetAction(this.gameObject);
             currentColor = lastBlob.blobColor;
         }
     }
