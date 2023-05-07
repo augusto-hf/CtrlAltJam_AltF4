@@ -15,13 +15,14 @@ public class CameraMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menuActive = !menuActive;
-            GetTarget();
+            ChangeTarget();
         }
     }
 
-    void GetTarget()
+    public void ChangeTarget()
     {
+        menuActive = !menuActive;
+
         if(!menuActive)
         {
             target = GameObject.FindWithTag("Player").GetComponent<Transform>();

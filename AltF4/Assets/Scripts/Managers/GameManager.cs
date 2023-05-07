@@ -25,17 +25,11 @@ public class GameManager : MonoBehaviour
     public void LoadGame()
     {
         onLoad?.Invoke();
-        //StartGame();
-    }
-
-    private void StartGame()
-    {
-        
     }
 
     public void QuitGame()
     {
-        SaveGame();
         Application.Quit();
     }
+
 }

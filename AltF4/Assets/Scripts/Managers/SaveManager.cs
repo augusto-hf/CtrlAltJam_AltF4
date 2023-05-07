@@ -18,6 +18,11 @@ public class SaveManager : MonoBehaviour
         filePath = Application.persistentDataPath + saveFileName; 
     }
 
+    public void ApplyPositionInPlayer(Transform positionPlayer)
+    {
+        positionPlayer.position = gameData.positionPlayer;
+    }
+
     public void SaveNewEmotion(string nameEmotion)
     {
         string findEmotion = gameData.emotions.Find(x => x == nameEmotion);
