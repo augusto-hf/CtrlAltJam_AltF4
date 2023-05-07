@@ -51,6 +51,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5187401207562044023, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.514151
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187401207562044023, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7721341
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187401207562044023, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6044962299976279467, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_Name
       value: Orange_PowerBlob
