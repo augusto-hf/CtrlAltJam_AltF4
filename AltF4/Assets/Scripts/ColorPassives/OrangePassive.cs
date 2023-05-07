@@ -36,7 +36,8 @@ public class OrangePassive : MonoBehaviour
         {
             var player = other.gameObject.GetComponent<PlayerCore>();
             DisablePlayerPassive(player);
-        }else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
+        }
+        else if(other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
             interactor.Rb.velocity = Vector2.zero;
         }
