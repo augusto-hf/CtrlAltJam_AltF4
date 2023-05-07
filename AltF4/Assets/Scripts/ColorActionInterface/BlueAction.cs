@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BlueAction : MonoBehaviour, IColor
 {
-    [SerializeField] private PlayerControl inputScript;
     private bool iJumped = false;
     public void Action(GameObject player, bool isPressed)
     {
         PlayerMoviment moveScript = player.GetComponent<PlayerMoviment>();
         PlayerChecks checkScript = player.GetComponent<PlayerChecks>();
+        PlayerControl inputScript = moveScript.Input;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         
 
