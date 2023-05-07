@@ -37,6 +37,9 @@ public class PlayerHook : MonoBehaviour
 
             
             if (targetObject.CompareTag("Grappable") && !finishedGrappling)
+            {
+                targetObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Vector2.Distance(transform.position, targetObject.transform.position),0));
+            }
         }
     }
     public void StartHook()
