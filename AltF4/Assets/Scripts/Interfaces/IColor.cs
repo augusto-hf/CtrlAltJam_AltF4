@@ -1,8 +1,8 @@
 using UnityEngine;
 public interface IColor
 {
-    public void Action(GameObject player, bool isPressed);
+    public void Action(PlayerCore player);
 
-    public void ResetAction(GameObject player);
+    public void ResetAction(PlayerCore player);
 
 }

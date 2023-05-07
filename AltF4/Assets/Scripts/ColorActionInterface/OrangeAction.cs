@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class OrangeAction : MonoBehaviour, IColor
 {
-    public void Action(GameObject player, bool isPressed)
+    public void Action(PlayerCore player)
     {
-        PlayerCore core = player.GetComponent<PlayerCore>();
 
-        if (isPressed) {
-            core.Movement.SetMaxSpeed(core.Data.MaxRunSpeed);
+        if (player.Input.ColorButton)
+        {
+            player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
             return;
         }
-        core.Movement.SetMaxSpeed(core.Data.MaxHorizontalSpeed);
+        player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
     }   
 
-    public void ResetAction(GameObject player)
+    public void ResetAction(PlayerCore player)
     {
-        PlayerCore core = player.GetComponent<PlayerCore>();
-        core.Movement.SetMaxSpeed(core.Data.MaxHorizontalSpeed);
+        player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
     }
 
 }

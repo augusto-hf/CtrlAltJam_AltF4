@@ -21,7 +21,7 @@ public class PurpleAction : MonoBehaviour, IColor
 
 
 
-    public void Action(GameObject player, bool isPressed)
+    public void Action(PlayerCore player)
     {
         if (teleportPoint == null) return;
 
@@ -44,7 +44,7 @@ public class PurpleAction : MonoBehaviour, IColor
         }
     }
 
-    public void ResetAction(GameObject player)
+    public void ResetAction(PlayerCore player)
     {
         if (isPlacedTeleportBeacon)
         {

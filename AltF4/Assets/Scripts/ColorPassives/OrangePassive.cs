@@ -32,7 +32,7 @@ public class OrangePassive : MonoBehaviour
 
     public void DisablePassive(PlayerCore player)
     {
-        player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
+        player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
     }
 
     

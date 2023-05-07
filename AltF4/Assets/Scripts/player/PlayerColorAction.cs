@@ -17,9 +17,9 @@ public class PlayerColorAction : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
     }
-    void Update()
+    void FixedUpdate()
     {
-        currentColor?.Action(this.gameObject, player.Input.ColorButton);
+        currentColor?.Action(player);
     }
 
 
@@ -32,7 +32,7 @@ public class PlayerColorAction : MonoBehaviour
 
             lastBlob = other.gameObject.GetComponentInParent<BlobManager>();
             lastBlob.PickPower();
-            currentColor.ResetAction(this.gameObject);
+            currentColor.ResetAction(player);
             currentColor = lastBlob.blobColor;
         }
     }

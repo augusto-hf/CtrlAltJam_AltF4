@@ -6,13 +6,12 @@ public class BlueAction : MonoBehaviour, IColor
 {
     private bool iJumped = false;
     private float coyoteCurrentTimer;
-    public void Action(GameObject player, bool isPressed)
+    public void Action(PlayerCore player)
     {
-        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         
     }
 
-    public void ResetAction(GameObject player)
+    public void ResetAction(PlayerCore player)
     {
         
     }

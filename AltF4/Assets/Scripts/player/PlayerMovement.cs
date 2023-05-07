@@ -89,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
         else if (!player.Input.isJumping && isJumping && rb.velocity.y > 0)
         {
             JumpCutForceApply();
-            
 
         }
 
@@ -109,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, 0);
     }
-    public void JumpPad()
+    public void JumpImpulse()
     {
         float force = player.Data.JumpForce;
         
