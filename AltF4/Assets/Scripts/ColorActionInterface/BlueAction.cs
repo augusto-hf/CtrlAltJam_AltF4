@@ -8,9 +8,6 @@ public class BlueAction : MonoBehaviour, IColor
     private float coyoteCurrentTimer;
     public void Action(GameObject player, bool isPressed)
     {
-        PlayerMovement moveScript = player.GetComponent<PlayerMovement>();
-        PlayerChecks checkScript = player.GetComponent<PlayerChecks>();
-        PlayerControl inputScript = moveScript.Input;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         
     }

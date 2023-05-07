@@ -9,8 +9,8 @@ public class OrangePassive : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            var movement = other.gameObject.GetComponent<PlayerMovement>();
-            RunPassive(movement);
+            var player = other.gameObject.GetComponent<PlayerCore>();
+            RunPassive(player);
         }   
     }
 
@@ -18,21 +18,21 @@ public class OrangePassive : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            var movement = other.gameObject.GetComponent<PlayerMovement>();
-            DisablePassive(movement);
+            var player = other.gameObject.GetComponent<PlayerCore>();
+            DisablePassive(player);
         }
         
     }
 
 
-    public void RunPassive(PlayerMovement movement)
+    public void RunPassive(PlayerCore player)
     {
-        movement.SetMaxSpeed(movement.Data.MaxRunSpeed);
+        player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
     }
 
-    public void DisablePassive(PlayerMovement movement)
+    public void DisablePassive(PlayerCore player)
     {
-        movement.SetMaxSpeed(movement.Data.MaxHorizontalSpeed);
+        player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
     }
 
     

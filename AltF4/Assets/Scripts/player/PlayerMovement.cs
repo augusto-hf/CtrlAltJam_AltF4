@@ -4,48 +4,56 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private PlayerData data;
-    [SerializeField] private PlayerChecks check;
-    private PlayerControl input;
-
+    private PlayerCore player;
     private Rigidbody2D rb;
     private bool canMove;
-    private float curretnMaxSpeed;
-    private bool iJumped = false;
-    private float coyoteCurrentTimer;
-
-    public PlayerData Data { get => data;}
-    public PlayerControl Input { get => input;}
+    private float currentMaxSpeed;
+    private int jumpCount;
+    private bool isJumping = false;
+    
     private void Awake()
     {
-        input = GameObject.FindGameObjectWithTag("InputManager").GetComponent<PlayerControl>();
-        canMove = true;
-        curretnMaxSpeed = data.MaxHorizontalSpeed;
+        player = GetComponent<PlayerCore>();
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = data.GravityScale;
+
+        jumpCount = 1;
+        canMove = true;
+        
+        rb.gravityScale = player.Data.GravityScale;
+        currentMaxSpeed = player.Data.MaxHorizontalSpeed;
     }
 
     private void FixedUpdate()
     {
-        HorizontalMovement();
+        Walk();
         VerticalMovement();
     }
 
-    private void HorizontalMovement()
+    #region Horizontal Movement
+    private void Walk()
     {
         if (!canMove) return;
 
-        float targetVeloticy = input.Axis.x * curretnMaxSpeed;
+        float targetVeloticy = player.Input.Axis.x * currentMaxSpeed;
         float speedDif = targetVeloticy - rb.velocity.x;
 
-        float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? data.HorizontalAcceleration : data.HorizontalDeceleration;
+        float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
 
-        float moviment = speedDif * accelRate;
+        float movement = speedDif * accelRate;
 
 
-        rb.AddForce(moviment * Vector2.right);
+        rb.AddForce(movement * Vector2.right);
 
     }
+    public void SetMaxSpeed(float maxSpeed)
+    {
+        currentMaxSpeed = maxSpeed;
+    }
+
+    #endregion 
+    
+    #region Vertical Movement
+    
     private void VerticalMovement()
     {
         Jump();
@@ -54,62 +62,73 @@ public class PlayerMovement : MonoBehaviour
 
     private void Fall()
     {
-        if (rb.velocity.y < 0 && !check.IsGrounded)
+        if (rb.velocity.y < 0 && !player.Check.IsGrounded)
         {
-            rb.gravityScale = data.GravityScale * data.FallMultiplier;
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -data.MaxFallSpeed));
+            rb.gravityScale = player.Data.GravityScale * player.Data.FallMultiplier;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -player.Data.MaxFallSpeed));
         }
         else
         {
-            rb.gravityScale = data.GravityScale;
+            rb.gravityScale = player.Data.GravityScale;
         }
     }
-    public void SetMaxSpeed(float maxSpeed)
+
+    #endregion
+
+    #region Jump logic
+
+    private void Jump()
     {
-        curretnMaxSpeed = maxSpeed;
+        
+        if (player.Input.isJumping && CanJump())
+        {
+            JumpForceApply();
+            isJumping = true;
+            return;
+        }
+        else if (!player.Input.isJumping && isJumping && rb.velocity.y > 0)
+        {
+            JumpCutForceApply();
+            
+
+        }
+
+        if (player.Check.IsGrounded)
+        {
+            isJumping = false;
+        }
+
+
     }
-    public void Jump()
+    public void JumpForceApply()
     {
-
-        if (check.IsGrounded)
-        {
-            iJumped = false;
-            coyoteCurrentTimer = data.CoyoteTime;
-        }
-        else if (!check.IsGrounded && !iJumped)
-        {
-            coyoteCurrentTimer -= Time.deltaTime;
-        }
-
-        if (input.isJumping && !iJumped)
-        {
-            if (coyoteCurrentTimer > 0f)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, data.JumpForce);
-                iJumped = true;
-                return;
-            }
-        }
-        else if (!input.isJumping && iJumped && rb.velocity.y > 0)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-
-        }
+        rb.velocity = new Vector2(rb.velocity.x, player.Data.JumpForce);
+        isJumping = false;
+    }
+    private void JumpCutForceApply()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, 0);
     }
     public void JumpPad()
     {
-
-        float force = data.JumpForce;
+        float force = player.Data.JumpForce;
         
         if (rb.velocity.y < 0)
             force -= rb.velocity.y;
 
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
-
+    private bool CanJump()
+    {
+        return player.Check.LastTimeGrounded > 0 && !isJumping;
+    }
+    
+    #endregion
+    
     public void Teleport(Vector2 local)
     {
         rb.velocity = Vector2.zero;
         rb.position = local;
     }
+
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerColorAction : MonoBehaviour
 {
+    private PlayerCore player;
     [SerializeField] private GameObject StartingColorReference;
     private IColor currentColor;
     private BlobManager lastBlob;
-    private PlayerControl inputScript;
 
     private void Awake()
     {
@@ -15,12 +15,11 @@ public class PlayerColorAction : MonoBehaviour
     }
     private void Start()
     {
-        PlayerMovement moveScript = this.GetComponent<PlayerMovement>();
-        inputScript = moveScript.Input;
+        player = GetComponent<PlayerCore>();
     }
     void Update()
     {
-        currentColor?.Action(this.gameObject, inputScript.ColorButton);
+        currentColor?.Action(this.gameObject, player.Input.ColorButton);
     }
 
 

@@ -6,19 +6,19 @@ public class OrangeAction : MonoBehaviour, IColor
 {
     public void Action(GameObject player, bool isPressed)
     {
-        PlayerMovement moviment = player.GetComponent<PlayerMovement>();
+        PlayerCore core = player.GetComponent<PlayerCore>();
 
         if (isPressed) {
-            moviment.SetMaxSpeed(moviment.Data.MaxRunSpeed);
+            core.Movement.SetMaxSpeed(core.Data.MaxRunSpeed);
             return;
         }
-        moviment.SetMaxSpeed(moviment.Data.MaxHorizontalSpeed);
+        core.Movement.SetMaxSpeed(core.Data.MaxHorizontalSpeed);
     }   
 
     public void ResetAction(GameObject player)
     {
-        PlayerMovement moviment = player.GetComponent<PlayerMovement>();
-        moviment.SetMaxSpeed(moviment.Data.MaxHorizontalSpeed);
+        PlayerCore core = player.GetComponent<PlayerCore>();
+        core.Movement.SetMaxSpeed(core.Data.MaxHorizontalSpeed);
     }
 
 }
