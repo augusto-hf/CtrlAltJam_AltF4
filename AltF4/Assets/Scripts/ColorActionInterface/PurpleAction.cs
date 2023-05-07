@@ -7,7 +7,12 @@ public class PurpleAction : MonoBehaviour, IColor
     [SerializeField] private Transform teleportPoint;
 
     private bool isPlacedTeleportBeacon;
+    private Vector2 originPosition;
 
+    private void Awake()
+    {
+        originPosition = this.transform.position;
+    }
 
     private void Start() 
     {
@@ -20,10 +25,11 @@ public class PurpleAction : MonoBehaviour, IColor
     {
         if (teleportPoint == null) return;
 
-        if (isPressed) 
+        if (Input.GetButtonDown("ColorActionButton")) 
         {
             if (!isPlacedTeleportBeacon)
             {
+                teleportPoint.gameObject.SetActive(true);
                 isPlacedTeleportBeacon = true;
                 teleportPoint.position = player.transform.position;
                 return;
@@ -37,20 +43,25 @@ public class PurpleAction : MonoBehaviour, IColor
 
     public void ResetAction(GameObject player)
     {
-        ResetTeleportPosition();
+        if (isPlacedTeleportBeacon)
+        {
+            ResetTeleportPosition();
+        }
     }
 
     private void Teleport(GameObject player)
     {
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-        rb.MovePosition(teleportPoint.position);
+        rb.velocity = Vector2.zero;
+        rb.position = teleportPoint.position;
         ResetTeleportPosition();
     }
 
     private void ResetTeleportPosition()
     {
-        teleportPoint.position = this.transform.position;
+        teleportPoint.position = originPosition;
         isPlacedTeleportBeacon = false;
+        teleportPoint.gameObject.SetActive(false);
     }
 
 
