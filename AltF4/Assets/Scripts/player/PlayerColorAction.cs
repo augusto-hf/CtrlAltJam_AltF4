@@ -17,7 +17,7 @@ public class PlayerColorAction : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
     }
-    void FixedUpdate()
+    void Update()
     {
         currentColor?.Action(player);
     }

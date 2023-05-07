@@ -8,15 +8,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool canMove;
     private float currentMaxSpeed;
-    private int jumpCount;
-    private bool isJumping = false;
+
+    public Vector2 Velocity { get => rb.velocity; }
     
     private void Awake()
     {
         player = GetComponent<PlayerCore>();
         rb = GetComponent<Rigidbody2D>();
 
-        jumpCount = 1;
         canMove = true;
         
         rb.gravityScale = player.Data.GravityScale;
@@ -56,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
     
     private void VerticalMovement()
     {
-        Jump();
         Fall();
     }
 
@@ -75,39 +73,18 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-    #region Jump logic
+    #region Jump
 
-    private void Jump()
-    {
-        
-        if (player.Input.isJumping && CanJump())
-        {
-            JumpForceApply();
-            isJumping = true;
-            return;
-        }
-        else if (!player.Input.isJumping && isJumping && rb.velocity.y > 0)
-        {
-            JumpCutForceApply();
-
-        }
-
-        if (player.Check.IsGrounded)
-        {
-            isJumping = false;
-        }
-
-
-    }
     public void JumpForceApply()
     {
         rb.velocity = new Vector2(rb.velocity.x, player.Data.JumpForce);
-        isJumping = false;
     }
-    private void JumpCutForceApply()
+
+    public void JumpCutForceApply()
     {
         rb.velocity = new Vector2(rb.velocity.x, 0);
     }
+
     public void JumpImpulse()
     {
         float force = player.Data.JumpForce;
@@ -117,10 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
     }
-    private bool CanJump()
-    {
-        return player.Check.LastTimeGrounded > 0 && !isJumping;
-    }
+
     
     #endregion
     
