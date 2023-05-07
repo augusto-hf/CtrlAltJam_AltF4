@@ -6,8 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerData data;
     [SerializeField] private PlayerChecks check;
-
-    private PlayerControl input;
+    [SerializeField] private PlayerControl input;
 
     private Rigidbody2D rb;
     private bool canMove;
@@ -17,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public PlayerControl Input { get => input;}
     private void Awake()
     {
-        input = GameObject.FindGameObjectWithTag("InputManager").GetComponent<PlayerControl>();
         canMove = true;
         curretnMaxSpeed = data.MaxHorizontalSpeed;
         rb = GetComponent<Rigidbody2D>();

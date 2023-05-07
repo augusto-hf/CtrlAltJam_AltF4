@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class PlayerColorAction : MonoBehaviour
 {
-    [SerializeField] private PlayerControl input;
     [SerializeField] private GameObject StartingColorReference;
     private IColor currentColor;
     private BlobManager lastBlob;
+    private PlayerControl inputScript;
 
     private void Awake()
     {
+        PlayerMovement moveScript = this.GetComponent<PlayerMovement>();
+        inputScript = moveScript.Input;
         currentColor = StartingColorReference.gameObject.GetComponent<IColor>();
     }
     void Update()
     {
-        currentColor?.Action(this.gameObject, input.ColorButton);
+        currentColor?.Action(this.gameObject, inputScript.ColorButton);
     }
 
 
