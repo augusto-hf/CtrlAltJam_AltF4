@@ -15,6 +15,7 @@ public class PlayerData : ScriptableObject
     [Space(2)]
     [Header("Jump")]
     [SerializeField] private float _jumpForce;
+    [SerializeField] private float _coyoteTime;
 
     [Space(2)]
     [Header("Fall")]
@@ -27,6 +28,7 @@ public class PlayerData : ScriptableObject
     public float HorizontalDeceleration { get => _horizontalDeceleration;}
     public float MaxHorizontalSpeed { get => _maxHorizontalSpeed; }
     public float JumpForce { get => _jumpForce; }
+    public float CoyoteTime { get => _coyoteTime; }
     public float FallMultiplier { get => _fallMultiplier; }
     public float MaxFallSpeed { get => _maxFallSpeed; }
     public float GravityScale { get => _gravityScale; }
