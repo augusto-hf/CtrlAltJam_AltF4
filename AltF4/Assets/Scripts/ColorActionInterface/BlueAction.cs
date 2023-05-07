@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlueAction : MonoBehaviour, IColor
 {
     private bool iJumped = false;
+    private float coyoteCurrentTimer;
     public void Action(GameObject player, bool isPressed)
     {
         PlayerMovement moveScript = player.GetComponent<PlayerMovement>();
@@ -12,10 +13,19 @@ public class BlueAction : MonoBehaviour, IColor
         PlayerControl inputScript = moveScript.Input;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         
-
-        if (isPressed)
+        if (checkScript.IsGrounded)
         {
-            if (checkScript.IsGrounded)
+            iJumped = false;
+            coyoteCurrentTimer = moveScript.Data.CoyoteTime;
+        }
+        else
+        {
+            coyoteCurrentTimer -= Time.deltaTime;
+        }
+
+        if (isPressed && !iJumped)
+        {
+            if (coyoteCurrentTimer > 0f)
             {
                 rb.velocity = new Vector2(rb.velocity.x, moveScript.Data.JumpForce);
                 iJumped = true;
@@ -26,7 +36,6 @@ public class BlueAction : MonoBehaviour, IColor
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             iJumped = false;
-            return;
         }
     }
 

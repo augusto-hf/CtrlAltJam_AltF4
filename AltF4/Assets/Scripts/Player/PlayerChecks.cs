@@ -17,6 +17,7 @@ public class PlayerChecks : MonoBehaviour
     private bool OnGround()
     {
         var groundCheck = Physics2D.Raycast(groundDetector.position, Vector2.down, detectionRange, ground);
+        
         return groundCheck;
     }
 }
