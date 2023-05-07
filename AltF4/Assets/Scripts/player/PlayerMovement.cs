@@ -85,16 +85,6 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0);
     }
 
-    public void JumpImpulse()
-    {
-        float force = player.Data.JumpForce;
-        
-        if (rb.velocity.y < 0)
-            force -= rb.velocity.y;
-
-        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-    }
-
     
     #endregion
     

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PurplePassive : MonoBehaviour
+public interface IObjectInteractColor
 {
-   
-
+    Rigidbody2D Rb { get; }
+    
 }
