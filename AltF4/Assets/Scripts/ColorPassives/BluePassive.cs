@@ -16,7 +16,7 @@ public class BluePassive : MonoBehaviour
         {
             var movement = other.gameObject.GetComponent<PlayerMovement>();
             var rb = other.gameObject.GetComponent<Rigidbody2D>();
-            movement.Jump();
+            movement.JumpPad();
         }   
     }
 

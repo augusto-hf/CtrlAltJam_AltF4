@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool canMove;
     private float curretnMaxSpeed;
+    private bool iJumped = false;
+    private float coyoteCurrentTimer;
 
     public PlayerData Data { get => data;}
     public PlayerControl Input { get => input;}
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void VerticalMovement()
     {
+        Jump();
         Fall();
     }
 
@@ -67,6 +70,35 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Jump()
     {
+
+        if (check.IsGrounded)
+        {
+            iJumped = false;
+            coyoteCurrentTimer = data.CoyoteTime;
+        }
+        else if (!check.IsGrounded && !iJumped)
+        {
+            coyoteCurrentTimer -= Time.deltaTime;
+        }
+
+        if (input.isJumping && !iJumped)
+        {
+            if (coyoteCurrentTimer > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, data.JumpForce);
+                iJumped = true;
+                return;
+            }
+        }
+        else if (!input.isJumping && iJumped && rb.velocity.y > 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+
+        }
+    }
+    public void JumpPad()
+    {
+
         float force = data.JumpForce;
         
         if (rb.velocity.y < 0)

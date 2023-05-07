@@ -13,30 +13,6 @@ public class BlueAction : MonoBehaviour, IColor
         PlayerControl inputScript = moveScript.Input;
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         
-        if (checkScript.IsGrounded)
-        {
-            iJumped = false;
-            coyoteCurrentTimer = moveScript.Data.CoyoteTime;
-        }
-        else if (!checkScript.IsGrounded && !iJumped)
-        {
-            coyoteCurrentTimer -= Time.deltaTime;
-        }
-
-        if (isPressed && !iJumped)
-        {
-            if (coyoteCurrentTimer > 0f)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, moveScript.Data.JumpForce);
-                iJumped = true;
-                return;
-            }
-        }
-        else if (!isPressed && iJumped && rb.velocity.y > 0)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0);
-            
-        }
     }
 
     public void ResetAction(GameObject player)
