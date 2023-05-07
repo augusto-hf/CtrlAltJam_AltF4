@@ -5,7 +5,6 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-
     public event Action onSaved;
 
     public event Action onLoad;
@@ -26,11 +25,17 @@ public class GameManager : MonoBehaviour
     public void LoadGame()
     {
         onLoad?.Invoke();
-        StartGame();
+        //StartGame();
     }
 
     private void StartGame()
     {
         
+    }
+
+    public void QuitGame()
+    {
+        SaveGame();
+        Application.Quit();
     }
 }
