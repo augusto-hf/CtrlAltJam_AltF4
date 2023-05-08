@@ -288,8 +288,8 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
-  groundDetector: {fileID: 4609767914332199521}
-  detectionRange: 0.018
+  groundDetectorPoint: {fileID: 4609767914332199521}
+  size: {x: 0.9, y: 0.05}
 --- !u!114 &-215635321352401057
 MonoBehaviour:
   m_ObjectHideFlags: 0
