@@ -6,9 +6,19 @@ using System;
 public class CameraMove : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private  float smoothTime = 0.3f; 
+    [SerializeField] private  float smoothTimeMenu = 0.6f; 
+
+    [SerializeField] private  float smoothTimeGame = 0.1f; 
+   
+    [SerializeField] private  float offSetXPlayer; 
+    [SerializeField] private  float offSetYPlayer; 
 
     [SerializeField] private bool menuActive = false;
+    
+
+    private float smoothTimeFinal = 0.6f;
+    private float offSetXFinal; 
+    private float offSetYFinal;
 
     private Vector3 velocity = Vector3.zero;
 
@@ -22,6 +32,16 @@ public class CameraMove : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        if(target != null )
+        {
+            Vector3 targetPosition = new Vector3(target.position.x  + offSetXFinal, target.position.y + offSetYFinal, transform.position.z); 
+
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTimeFinal);
+        }
+    }
+
     public void ChangeTarget()
     {
         menuActive = !menuActive;
@@ -29,21 +49,21 @@ public class CameraMove : MonoBehaviour
         if(!menuActive)
         {
             target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            StartCoroutine(SetOffSetFinal(offSetXPlayer, offSetYPlayer, smoothTimeGame));
             return;
         }
 
         target = GameObject.FindWithTag("Menu").GetComponent<Transform>();
-
+        StartCoroutine(SetOffSetFinal(0, 0, smoothTimeMenu));
         openMenu?.Invoke();
     }
 
-    void FixedUpdate()
-    {
-        if(target != null )
-        {
-            Vector3 targetPosition = new Vector3(target.position.x, target.position.y, transform.position.z); 
 
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-        }
+    IEnumerator SetOffSetFinal(float x, float y, float smooth)
+    {
+        offSetXFinal = x;
+        offSetYFinal = y;
+        yield return new WaitForSeconds(0.2f);
+        smoothTimeFinal = smooth;
     }
 }

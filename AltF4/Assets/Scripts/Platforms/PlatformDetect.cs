@@ -17,7 +17,6 @@ public class PlatformDetect : MonoBehaviour
         if (ground == (ground | (1 << other.gameObject.layer)))
         {
             this.gameObject.SetActive(false);
-            Debug.Log("fundo do poço");
         }
     }
 }

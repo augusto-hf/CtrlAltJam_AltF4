@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
 
     public event Action onNewGame;
 
+    public event Action<bool> onGameStarted;
 
     public event Action<Transform> onSetPlayerPosition;
     
     private Transform playerCore;
+
+    public bool gameISRunning = false;
 
     private void Awake() 
     {
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         onNewGame?.Invoke();
+        StartedGame();
     }
     
     public void SaveGame()
@@ -35,6 +39,19 @@ public class GameManager : MonoBehaviour
     {
         onLoad?.Invoke();
         onSetPlayerPosition?.Invoke(playerCore);
+        StartedGame();
+    }
+
+    void StartedGame()
+    {
+        gameISRunning = true;
+        onGameStarted?.Invoke(gameISRunning);
+    }
+
+    public void StopedGame()
+    {
+        gameISRunning = false;
+        onGameStarted?.Invoke(gameISRunning);
     }
 
     public void QuitGame()
