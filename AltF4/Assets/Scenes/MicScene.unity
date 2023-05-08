@@ -1463,37 +1463,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6336683652554037021, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6336683652554037022, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: dbdcb774b1ab38d4d8a836a6268dae43, type: 2}
     - target: {fileID: 6336683652554037022, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
-      propertyPath: size.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6336683652554037022, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
-      propertyPath: size.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6336683652554037022, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: detectionRange
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 6336683652554037022, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
-      propertyPath: groundDetectorPoint
-      value: 
-      objectReference: {fileID: 2003266712}
     - target: {fileID: 6336683652554037023, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
---- !u!4 &2003266712 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4609767914332199521, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
-  m_PrefabInstance: {fileID: 1974371643}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2015522319
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class OrangePassive : MonoBehaviour
         }
         if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
+            if (!interactor.CanInteract) return;
+
             interactor.Rb.velocity = Vector2.zero;
             MovePassiveObject(interactor.Rb);
         }
@@ -24,6 +26,8 @@ public class OrangePassive : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
+            if (!interactor.CanInteract) return;
+
             MovePassiveObject(interactor.Rb);
         }
         
@@ -38,6 +42,8 @@ public class OrangePassive : MonoBehaviour
         }
         else if(other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
+            if (!interactor.CanInteract) return;
+            
             interactor.Rb.velocity = Vector2.zero;
         }
         
