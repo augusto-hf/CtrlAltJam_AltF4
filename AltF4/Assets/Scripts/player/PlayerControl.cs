@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     float LastHorizontalAxis, LastVerticalAxis;
     public Vector2 Axis { get => GetAxis(); }
-    public Vector2 LastAxis { get => GetLastAxis(); }
+    public Vector2 LastAxis { get => GetLastAxis(); } ;
     public bool ColorButton { get; private set; }
     public bool TongueButton { get; private set; }
 
@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     {
         ColorButton = Input.GetButton("ColorActionButton");
         TongueButton = Input.GetButton("Tongue");
+
     }
 
     private Vector2 GetAxis()
@@ -26,6 +27,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") != 0)
             LastHorizontalAxis = Input.GetAxis("Horizontal");
+
         if (Input.GetAxis("Vertical") != 0)
             LastVerticalAxis = Input.GetAxis("Vertical");
 

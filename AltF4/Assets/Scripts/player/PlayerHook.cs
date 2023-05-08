@@ -51,7 +51,7 @@ public class PlayerHook : MonoBehaviour
     }
     public void StartHook()
     {
-        Vector2 direction = new Vector2(1,0);
+        Vector2 direction = new Vector2(player.Input.LastAxis.x, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, hookMaxDistance, grapplableMask);
         if (hit.collider == null)
             return;
