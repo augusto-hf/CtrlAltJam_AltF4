@@ -16,6 +16,12 @@ public class PlayerControl : MonoBehaviour
         ColorButton = Input.GetButton("ColorActionButton");
         TongueButton = Input.GetButton("Tongue");
 
+        if (Input.GetAxis("Horizontal") != 0)
+            LastHorizontalAxis = Input.GetAxis("Horizontal");
+
+        if (Input.GetAxis("Vertical") != 0)
+            LastVerticalAxis = Input.GetAxis("Vertical");
+
     }
 
     private Vector2 GetAxis()
@@ -25,12 +31,6 @@ public class PlayerControl : MonoBehaviour
 
     private Vector2 GetLastAxis()
     {
-        if (Input.GetAxis("Horizontal") != 0)
-            LastHorizontalAxis = Input.GetAxis("Horizontal");
-
-        if (Input.GetAxis("Vertical") != 0)
-            LastVerticalAxis = Input.GetAxis("Vertical");
-
         return new Vector2(LastHorizontalAxis, LastVerticalAxis).normalized;
     }
 }
