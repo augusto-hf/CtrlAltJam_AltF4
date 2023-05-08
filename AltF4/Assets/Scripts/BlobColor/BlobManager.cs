@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BlobManager : MonoBehaviour
 {
+    public string nameColor;
+    
     public bool beingUsed = false;
     [SerializeField] private GameObject VisualAndHitbox;
     public IColor blobColor;

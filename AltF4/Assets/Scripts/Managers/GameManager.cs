@@ -12,6 +12,15 @@ public class GameManager : MonoBehaviour
     public event Action onNewGame;
 
 
+    public event Action<Transform> onSetPlayerPosition;
+    
+    private Transform playerCore;
+
+    private void Awake() 
+    {
+        playerCore = GameObject.FindWithTag("Player").GetComponent<Transform>();    
+    }
+
     public void NewGame()
     {
         onNewGame?.Invoke();
@@ -25,6 +34,7 @@ public class GameManager : MonoBehaviour
     public void LoadGame()
     {
         onLoad?.Invoke();
+        onSetPlayerPosition?.Invoke(playerCore);
     }
 
     public void QuitGame()

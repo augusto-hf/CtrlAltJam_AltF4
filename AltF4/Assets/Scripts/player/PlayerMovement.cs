@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerCore player;
     private Rigidbody2D rb;
-    private bool canMove;
+    public bool canMove = false;
     private float currentMaxSpeed;
 
     public Vector2 Velocity { get => rb.velocity; }
@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
         rb = GetComponent<Rigidbody2D>();
-
-        canMove = true;
         
         rb.gravityScale = player.Data.GravityScale;
         currentMaxSpeed = player.Data.MaxHorizontalSpeed;

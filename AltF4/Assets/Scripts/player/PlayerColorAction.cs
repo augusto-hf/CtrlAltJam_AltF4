@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerColorAction : MonoBehaviour
 {
@@ -17,11 +18,11 @@ public class PlayerColorAction : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
     }
+
     void Update()
     {
         currentColor?.Action(player);
     }
-
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -34,6 +35,7 @@ public class PlayerColorAction : MonoBehaviour
             lastBlob.PickPower();
             currentColor.ResetAction(player);
             currentColor = lastBlob.blobColor;
+            player.PickColor(lastBlob.nameColor);//PRECISO DE UM NOME/ID PARA AS CORES
         }
     }
     

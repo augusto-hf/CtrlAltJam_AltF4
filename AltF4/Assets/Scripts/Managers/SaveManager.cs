@@ -16,10 +16,13 @@ public class SaveManager : MonoBehaviour
     private void Awake() 
     {
         filePath = Application.persistentDataPath + saveFileName; 
+
+        Debug.Log("Local de salvamento: " + filePath); 
     }
 
     public void ApplyPositionInPlayer(Transform positionPlayer)
     {
+        Debug.Log("Apply Position");
         positionPlayer.position = gameData.positionPlayer;
     }
 
@@ -27,16 +30,21 @@ public class SaveManager : MonoBehaviour
     {
         string findEmotion = gameData.emotions.Find(x => x == nameEmotion);
 
-        if (findEmotion == "")
+        if (findEmotion == null)
         {
             gameData.emotions.Add(nameEmotion);
-            return;
+            Debug.Log("Narração");
         }
+
+        Save();
     }
 
-    public void SavePositionPlayer(Vector3 positionPlayer)
+    public void SavePositionPlayer(Transform positionPlayer)
     {
-        gameData.positionPlayer = positionPlayer;
+        Debug.Log("Save Position");
+        gameData.positionPlayer = positionPlayer.position;
+
+        Save();
     }
 
     public void Save() 
@@ -48,7 +56,6 @@ public class SaveManager : MonoBehaviour
 
     public void Load() 
     {
-        Debug.Log("Local de salvamento: " + filePath); 
 
         if (File.Exists(filePath)) 
         {

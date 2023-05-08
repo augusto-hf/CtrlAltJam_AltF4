@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CameraMove : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class CameraMove : MonoBehaviour
     [SerializeField] private bool menuActive = false;
 
     private Vector3 velocity = Vector3.zero;
+
+    public event Action openMenu;
 
     private void Update() 
     {
@@ -30,6 +33,8 @@ public class CameraMove : MonoBehaviour
         }
 
         target = GameObject.FindWithTag("Menu").GetComponent<Transform>();
+
+        openMenu?.Invoke();
     }
 
     void FixedUpdate()
