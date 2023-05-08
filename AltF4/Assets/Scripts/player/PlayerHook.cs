@@ -26,7 +26,7 @@ public class PlayerHook : MonoBehaviour
     }
     void Update()
     {
-        if (player.Input.TongueButton && !retractingGrapple)
+        if (player.Controller.TongueButton && !retractingGrapple)
         {
             StartHook();
         }
@@ -37,7 +37,7 @@ public class PlayerHook : MonoBehaviour
 
             float distanceToObject = Vector2.Distance(transform.position, line.GetPosition(1));
 
-            if (!player.Input.TongueButton && !finishedGrappling || distanceToObject > hookMaxDistance && !finishedGrappling)
+            if (!player.Controller.TongueButton && !finishedGrappling || distanceToObject > hookMaxDistance && !finishedGrappling)
             {
                 finishedGrappling = true;
                 StartCoroutine(returnGrapple());               
@@ -51,7 +51,7 @@ public class PlayerHook : MonoBehaviour
     }
     public void StartHook()
     {
-        Vector2 direction = new Vector2(player.Input.LastAxis.x, 0);
+        Vector2 direction = new Vector2(player.Controller.LastAxis.x, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, hookMaxDistance, grapplableMask);
         if (hit.collider == null)
             return;

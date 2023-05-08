@@ -27,12 +27,12 @@ public class BlueAction : MonoBehaviour, IColor
         if (player == null) return;
 
 
-        if (player.Input.ColorButton && CanJump(player) && !player.Movement.HasJumpBuff)
+        if (player.Controller.ColorButton && CanJump(player) && !player.Movement.HasJumpBuff)
         {
             player.Movement.JumpForceApply();
             isJumping = true;
         }
-        else if (!player.Input.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasJumpBuff)
+        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasJumpBuff)
         {
             player.Movement.JumpCutForceApply();
         }

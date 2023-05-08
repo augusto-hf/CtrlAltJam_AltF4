@@ -10,7 +10,7 @@ public class PlayerCore : MonoBehaviour
     public PlayerData Data { get => data; } 
     public PlayerChecks Check { get; private set; }
     public PlayerMovement Movement { get; private set;}
-    public PlayerControl Input { get; private set; }
+    public PlayerControl Controller { get; private set; }
 
     public event Action<string> onPickColor;
 
@@ -22,7 +22,11 @@ public class PlayerCore : MonoBehaviour
 
     private void Start()
     {
-        Input = GameObject.FindGameObjectWithTag("InputManager").GetComponent<PlayerControl>();
+        Controller = GameObject.FindGameObjectWithTag("InputManager").GetComponent<PlayerControl>();
+    }
+
+    private void Update()
+    {
     }
 
     public void StopAndRunPlayer()

@@ -14,11 +14,10 @@ public class OrangePassive : MonoBehaviour
             var player = other.gameObject.GetComponent<PlayerCore>();
             ActivatePlayerPassive(player);
         }
-        if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
+        else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
             if (!interactor.CanInteract) return;
 
-            interactor.Rb.velocity = Vector2.zero;
             MovePassiveObject(interactor.Rb);
         }
     }
@@ -40,12 +39,7 @@ public class OrangePassive : MonoBehaviour
             var player = other.gameObject.GetComponent<PlayerCore>();
             DisablePlayerPassive(player);
         }
-        else if(other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
-        {
-            if (!interactor.CanInteract) return;
-            
-            interactor.Rb.velocity = Vector2.zero;
-        }
+    
         
     }
 
@@ -62,11 +56,8 @@ public class OrangePassive : MonoBehaviour
 
     private void MovePassiveObject(Rigidbody2D rb)
     {
-        //Debug.Log(rb.velocity.x);
-        float targetVeloticy = xDirection * objectPassiveSpeed;
-        float speedDiff = targetVeloticy - rb.velocity.x;
 
-        rb.AddForce(speedDiff * Vector2.right);
+        rb.AddForce(Vector2.right * objectPassiveSpeed);
 
     }
 

@@ -7,7 +7,7 @@ public class OrangeAction : MonoBehaviour, IColor
     public void Action(PlayerCore player)
     {
 
-        if (player.Input.ColorButton)
+        if (player.Controller.ColorButton)
         {
             player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
             return;

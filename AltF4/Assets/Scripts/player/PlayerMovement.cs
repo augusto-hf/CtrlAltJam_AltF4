@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove) return;
 
-        float targetVeloticy = player.Input.Axis.x * currentMaxSpeed;
+        float targetVeloticy = player.Controller.Axis.x * currentMaxSpeed;
         float speedDif = targetVeloticy - rb.velocity.x;
 
         float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
@@ -92,10 +92,5 @@ public class PlayerMovement : MonoBehaviour
     
     #endregion
     
-    public void Teleport(Vector2 local)
-    {
-        rb.velocity = Vector2.zero;
-        rb.position = local;
-    }
 
 }
