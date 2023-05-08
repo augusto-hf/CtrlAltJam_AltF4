@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     float LastHorizontalAxis, LastVerticalAxis;
     public Vector2 Axis { get => GetAxis(); }
-    public Vector2 LastAxis { get => GetLastAxis(); } ;
+    public Vector2 LastAxis { get => GetLastAxis(); } 
     public bool ColorButton { get; private set; }
     public bool TongueButton { get; private set; }
 
