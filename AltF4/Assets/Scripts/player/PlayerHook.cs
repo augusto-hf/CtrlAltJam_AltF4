@@ -8,9 +8,14 @@ public class PlayerHook : MonoBehaviour
     private Rigidbody2D rb;
     private LineRenderer line;
 
+    [Header("Hook Variables")]
     [SerializeField] private float hookSpeed, hookMaxDistance;
     [SerializeField] private LayerMask grapplableMask;
 
+    [Header("Drag Object Values")]
+    [SerializeField] private float minimumDistanceToDrag, dragForce;
+
+    private Vector2 hitLocation, grapplingEnd;
     private GameObject targetObject;
     private bool isGrappling = false, retractingGrapple = false, startedGrappling = false, finishedGrappling = false;
 
@@ -38,8 +43,7 @@ public class PlayerHook : MonoBehaviour
             
             if (targetObject.CompareTag("GrappableObject") && !finishedGrappling)
             {
-                line.SetPosition(1, targetObject.transform.position);
-                targetObject.GetComponent<Rigidbody2D>().AddForce((transform.position - targetObject.transform.position).normalized, 0);
+                dragGrappableObject();
             }
         }
     }
@@ -47,11 +51,12 @@ public class PlayerHook : MonoBehaviour
     {
         Vector2 direction = new Vector2(1,0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, hookMaxDistance, grapplableMask);
-
+        
 
         if (hit.collider == null)
             return;
- 
+
+        hitLocation = hit.point;
         isGrappling = true;
         targetObject = hit.transform.gameObject;
         line.enabled = true;
@@ -60,6 +65,18 @@ public class PlayerHook : MonoBehaviour
         if(!startedGrappling)
             StartCoroutine(Grapple());
     }
+    public void dragGrappableObject()
+    {
+        line.SetPosition(1, targetObject.transform.position);
+
+        float distanceToTargetObject = Vector2.Distance(transform.position, targetObject.transform.position);
+        if (distanceToTargetObject > minimumDistanceToDrag)
+        {
+            Vector2 direction = (transform.position - targetObject.transform.position);
+            targetObject.GetComponent<Rigidbody2D>().AddForce(direction * dragForce);
+        }
+
+    }
     IEnumerator Grapple()
     {
         Debug.Log("Joguei");
@@ -67,11 +84,11 @@ public class PlayerHook : MonoBehaviour
         startedGrappling = true;
 
         line.SetPosition(0, transform.position);
-        Vector2 grapplingEnd = transform.position;
+        grapplingEnd = transform.position;
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
-            grapplingEnd = Vector2.Lerp(transform.position, targetObject.transform.position, t / time);
+            grapplingEnd = Vector2.Lerp(transform.position, hitLocation, t / time);
             line.SetPosition(0, transform.position);
             line.SetPosition(1, grapplingEnd);
             yield return null;
@@ -84,11 +101,11 @@ public class PlayerHook : MonoBehaviour
         Debug.Log("Voltou");
         float time = 10;
 
-        Vector2 grapplingEnd = targetObject.transform.position;
+        grapplingEnd = hitLocation;
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
-            grapplingEnd = Vector2.Lerp(targetObject.transform.position, transform.position, t / time);
+            grapplingEnd = Vector2.Lerp(hitLocation, transform.position, t / time);
             line.SetPosition(0, transform.position);
             line.SetPosition(1, grapplingEnd);
             

@@ -428,3 +428,5 @@ MonoBehaviour:
   grapplableMask:
     serializedVersion: 2
     m_Bits: 64
+  minimumDistanceToDrag: 1
+  dragForce: 1
