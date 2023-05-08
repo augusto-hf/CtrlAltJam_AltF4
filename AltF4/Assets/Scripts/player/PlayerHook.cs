@@ -88,7 +88,7 @@ public class PlayerHook : MonoBehaviour
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
-            grapplingEnd = Vector2.Lerp(transform.position, hitLocation, t / time);
+            grapplingEnd = Vector2.Lerp(transform.position, targetObject.transform.position, t / time);
             line.SetPosition(0, transform.position);
             line.SetPosition(1, grapplingEnd);
             yield return null;
@@ -101,11 +101,11 @@ public class PlayerHook : MonoBehaviour
         Debug.Log("Voltou");
         float time = 10;
 
-        grapplingEnd = hitLocation;
+        grapplingEnd = targetObject.transform.position;
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
-            grapplingEnd = Vector2.Lerp(hitLocation, transform.position, t / time);
+            grapplingEnd = Vector2.Lerp(targetObject.transform.position, transform.position, t / time);
             line.SetPosition(0, transform.position);
             line.SetPosition(1, grapplingEnd);
             
