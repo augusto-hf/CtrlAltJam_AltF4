@@ -17,13 +17,15 @@ public class BluePassive : MonoBehaviour
         {
             var player = other.gameObject.GetComponent<PlayerCore>();
             var rb = other.gameObject.GetComponent<Rigidbody2D>();
-            
+
             player.Movement.JumpBuff();
             JumpImpulse(rb, player.Data.JumpForce);
 
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
+            if (!interactor.CanInteract) return;
+
             JumpImpulse(interactor.Rb, defaultJumpFoce);
         }
     }
@@ -38,6 +40,7 @@ public class BluePassive : MonoBehaviour
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
+            if (!interactor.CanInteract) return;
             JumpImpulse(interactor.Rb, defaultJumpFoce);
         }
     }

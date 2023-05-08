@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   _horizontalAcceleration: 3.5
-  _horizontalDeceleration: 3
+  _horizontalDeceleration: 5.6
   _maxHorizontalSpeed: 7
   _maxRunSpeed: 16
   _jumpForce: 10
