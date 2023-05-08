@@ -17,8 +17,8 @@ public class PlayerHook : MonoBehaviour
 
     private Vector2 hitLocation, grapplingEnd;
     private GameObject targetObject;
-    private bool isGrappling = false, retractingGrapple = false, startedGrappling = false, finishedGrappling = false;
-
+    private bool retractingGrapple = false, startedGrappling = false, finishedGrappling = false;
+    private bool isHittingDragableObject = false, isTooFarFromObject = false;
     void Awake()
     {
         player = GetComponent<PlayerCore>();
@@ -34,14 +34,16 @@ public class PlayerHook : MonoBehaviour
         if (retractingGrapple)
         {
             line.SetPosition(0, transform.position);
-            if (!player.Input.TongueButton && !finishedGrappling)
+
+            float distanceToObject = Vector2.Distance(transform.position, line.GetPosition(1));
+
+            if (!player.Input.TongueButton && !finishedGrappling || distanceToObject > hookMaxDistance && !finishedGrappling)
             {
                 finishedGrappling = true;
                 StartCoroutine(returnGrapple());               
             }
-
             
-            if (targetObject.CompareTag("GrappableObject") && !finishedGrappling)
+            if (isHittingDragableObject && !finishedGrappling)
             {
                 dragGrappableObject();
             }
@@ -51,13 +53,20 @@ public class PlayerHook : MonoBehaviour
     {
         Vector2 direction = new Vector2(1,0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, hookMaxDistance, grapplableMask);
-        
-
         if (hit.collider == null)
             return;
+       
+        if (hit.transform.CompareTag("GrappableObject"))
+        {
+            isHittingDragableObject = true;
+        }
+        else
+        {
+            isHittingDragableObject = false;
+        }
+
 
         hitLocation = hit.point;
-        isGrappling = true;
         targetObject = hit.transform.gameObject;
         line.enabled = true;
         line.positionCount = 2;
@@ -84,11 +93,14 @@ public class PlayerHook : MonoBehaviour
         startedGrappling = true;
 
         line.SetPosition(0, transform.position);
-        grapplingEnd = transform.position;
+
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
-            grapplingEnd = Vector2.Lerp(transform.position, targetObject.transform.position, t / time);
+            if(isHittingDragableObject)
+                grapplingEnd = Vector2.Lerp(transform.position, targetObject.transform.position, t / time);
+            else
+                grapplingEnd = Vector2.Lerp(transform.position, hitLocation, t / time);
             line.SetPosition(0, transform.position);
             line.SetPosition(1, grapplingEnd);
             yield return null;
@@ -99,13 +111,14 @@ public class PlayerHook : MonoBehaviour
     IEnumerator returnGrapple()
     {
         Debug.Log("Voltou");
-        float time = 10;
-
-        grapplingEnd = targetObject.transform.position;
+        float time = 10;    
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
-            grapplingEnd = Vector2.Lerp(targetObject.transform.position, transform.position, t / time);
+            if (isHittingDragableObject)
+                grapplingEnd = Vector2.Lerp(targetObject.transform.position, transform.position, t / time);
+            else
+                grapplingEnd = Vector2.Lerp(hitLocation, transform.position, t / time);
             line.SetPosition(0, transform.position);
             line.SetPosition(1, grapplingEnd);
             
@@ -114,9 +127,9 @@ public class PlayerHook : MonoBehaviour
         if (Vector2.Distance(transform.position, grapplingEnd) < 0.5f)
         {
             retractingGrapple = false;
-            isGrappling = false;
             line.enabled = false;
             finishedGrappling = false;
+            isHittingDragableObject = false;
         }
 
     }

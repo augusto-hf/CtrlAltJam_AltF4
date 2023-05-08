@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0aecf0d855bd4dbdf73e6bad33460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
 --- !u!114 &6336683652554037022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,5 +429,5 @@ MonoBehaviour:
   grapplableMask:
     serializedVersion: 2
     m_Bits: 64
-  minimumDistanceToDrag: 1
-  dragForce: 1
+  minimumDistanceToDrag: 3
+  dragForce: 0.9
