@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerChecks : MonoBehaviour
 {
     [SerializeField] private LayerMask ground;
-    [SerializeField] private Transform groundDetector;
-    [SerializeField] private float detectionRange;
+    [SerializeField] private Transform groundDetectorPoint;
+    [SerializeField] private Vector2 size;
     private PlayerCore player;
     public bool IsGrounded { get; private set; }
     public float LastTimeGrounded { get; private set;}
@@ -37,8 +37,16 @@ public class PlayerChecks : MonoBehaviour
     }
     private bool OnGround()
     {
-        var groundCheck = Physics2D.Raycast(groundDetector.position, Vector2.down, detectionRange, ground);
-        
+        var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, size, 0, ground);
         return groundCheck;
+    }
+
+    private void OnDrawGizmos() 
+    {
+        if (groundDetectorPoint == null) return;
+
+        Gizmos.color = OnGround() ? Color.green : Color.red;
+        Gizmos.DrawWireCube(groundDetectorPoint.position, new Vector3(size.x, size.y, 0));
+
     }
 }

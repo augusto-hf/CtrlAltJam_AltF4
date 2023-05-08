@@ -6,6 +6,7 @@ using UnityEngine;
 public class InteractObject : MonoBehaviour, IObjectInteractColor
 {
     public Rigidbody2D Rb { get; private set; }
+    public bool CanInteract { get; private set; }
 
     private void Awake()
     {

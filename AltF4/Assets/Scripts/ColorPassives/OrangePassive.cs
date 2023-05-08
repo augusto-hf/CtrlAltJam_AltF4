@@ -24,7 +24,6 @@ public class OrangePassive : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
-            Debug.Log("Dynamic Object");
             MovePassiveObject(interactor.Rb);
         }
         

@@ -7,6 +7,7 @@ public class BlueAction : MonoBehaviour, IColor
     private bool isJumping = false;
     private float coyoteCurrentTimer;
     private PlayerCore player;
+
     public void Action(PlayerCore player)
     {    
         this.player = player;
@@ -25,16 +26,15 @@ public class BlueAction : MonoBehaviour, IColor
     {
         if (player == null) return;
 
-        if (player.Input.ColorButton && CanJump(player))
+
+        if (player.Input.ColorButton && CanJump(player) && !player.Movement.HasJumpBuff)
         {
             player.Movement.JumpForceApply();
             isJumping = true;
-            return;
         }
-        else if (!player.Input.ColorButton && isJumping && player.Movement.Velocity.y > 0)
+        else if (!player.Input.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasJumpBuff)
         {
             player.Movement.JumpCutForceApply();
-
         }
 
         if (player.Check.IsGrounded)

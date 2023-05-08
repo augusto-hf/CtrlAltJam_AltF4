@@ -15,32 +15,41 @@ public class BluePassive : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            var movement = other.gameObject.GetComponent<PlayerMovement>();
+            var player = other.gameObject.GetComponent<PlayerCore>();
             var rb = other.gameObject.GetComponent<Rigidbody2D>();
-            movement.JumpForceApply();
+            
+            player.Movement.JumpBuff();
+            JumpImpulse(rb, player.Data.JumpForce);
+
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
-            JumpImpulse(interactor.Rb);
+            JumpImpulse(interactor.Rb, defaultJumpFoce);
         }
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
+        if (other.gameObject.CompareTag("Player"))
         {
-            JumpImpulse(interactor.Rb);
+            var player = other.gameObject.GetComponent<PlayerCore>(); 
+            player.Movement.JumpBuff();
+
+        }
+        else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
+        {
+            JumpImpulse(interactor.Rb, defaultJumpFoce);
         }
     }
 
-    public void JumpImpulse(Rigidbody2D rb)
+    public void JumpImpulse(Rigidbody2D rb, float force)
     {
-        float force = defaultJumpFoce;
+        float currentForce = force;
         
         if (rb.velocity.y < 0)
-            force -= rb.velocity.y;
+            currentForce -= rb.velocity.y;
 
-        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * currentForce, ForceMode2D.Impulse);
     }
 
     

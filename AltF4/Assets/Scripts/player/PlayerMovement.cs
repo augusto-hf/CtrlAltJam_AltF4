@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float currentMaxSpeed;
 
     public Vector2 Velocity { get => rb.velocity; }
+    public bool HasJumpBuff { get; private set;}
     
     private void Awake()
     {
@@ -55,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
     
     private void VerticalMovement()
     {
+        if (player.Check.IsGrounded)
+        {
+            HasJumpBuff = false;
+        }
         Fall();
     }
 
@@ -82,9 +87,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void JumpCutForceApply()
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0);
+        rb.AddForce(Vector2.down * rb.velocity.y * player.Data.JumpCutMultiplier, ForceMode2D.Impulse);
     }
 
+    public void JumpBuff() => HasJumpBuff = true;
     
     #endregion
     
