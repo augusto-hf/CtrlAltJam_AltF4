@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BlueAction : MonoBehaviour, IColor
 {
+    public ColorType Type { get => ColorType.Blue; }
     private bool isJumping = false;
     private float coyoteCurrentTimer;
     private PlayerCore player;
@@ -27,12 +28,12 @@ public class BlueAction : MonoBehaviour, IColor
         if (player == null) return;
 
 
-        if (player.Controller.ColorButton && CanJump(player) && !player.Movement.HasJumpBuff)
+        if (player.Controller.ColorButton && CanJump(player) && !player.Movement.HasBluePassive)
         {
             player.Movement.JumpForceApply();
             isJumping = true;
         }
-        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasJumpBuff)
+        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasBluePassive)
         {
             player.Movement.JumpCutForceApply();
         }

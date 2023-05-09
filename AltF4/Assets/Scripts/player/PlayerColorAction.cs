@@ -10,6 +10,8 @@ public class PlayerColorAction : MonoBehaviour
     private IColor currentColor;
     private BlobManager lastBlob;
 
+    public IColor CurrentColor { get => currentColor; }
+
     private void Awake()
     {
         currentColor = StartingColorReference.gameObject.GetComponent<IColor>();
@@ -35,7 +37,8 @@ public class PlayerColorAction : MonoBehaviour
             lastBlob.PickPower();
             currentColor.ResetAction(player);
             currentColor = lastBlob.blobColor;
-            player.PickColor(lastBlob.nameColor);//PRECISO DE UM NOME/ID PARA AS CORES
+            player.PickColor(lastBlob.nameColor);
+            //PRECISO DE UM NOME/ID PARA AS CORES - feito já XD
         }
     }
     

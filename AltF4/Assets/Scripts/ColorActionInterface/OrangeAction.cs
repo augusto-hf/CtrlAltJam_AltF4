@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class OrangeAction : MonoBehaviour, IColor
 {
+    public ColorType Type { get => ColorType.Orange; }
+    
     public void Action(PlayerCore player)
     {
 
