@@ -18,7 +18,7 @@ public class OrangePassive : MonoBehaviour
         {
             if (!interactor.CanInteract) return;
 
-            MovePassiveObject(interactor.Rb);
+            MovePassiveObjectForce(interactor.Rb);
         }
     }
     private void OnCollisionStay2D(Collision2D other) 
@@ -27,7 +27,7 @@ public class OrangePassive : MonoBehaviour
         {
             if (!interactor.CanInteract) return;
 
-            MovePassiveObject(interactor.Rb);
+            MovePassiveObjectForce(interactor.Rb);
         }
         
     }
@@ -37,7 +37,14 @@ public class OrangePassive : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             var player = other.gameObject.GetComponent<PlayerCore>();
+
             DisablePlayerPassive(player);
+        }
+
+        if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
+        {
+            if (!interactor.CanInteract) return;
+            
         }
     
         
@@ -54,10 +61,12 @@ public class OrangePassive : MonoBehaviour
         player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
     }
 
-    private void MovePassiveObject(Rigidbody2D rb)
+    private void MovePassiveObjectForce(Rigidbody2D rb)
     {
+        float targetVelocity = xDirection * objectPassiveSpeed;
+        float speedDiff = targetVelocity - rb.velocity.x;
 
-        rb.AddForce(Vector2.right * objectPassiveSpeed);
+        rb.AddForce((Vector2.right * xDirection) * objectPassiveSpeed);
 
     }
 

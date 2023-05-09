@@ -9,7 +9,7 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 
     public Rigidbody2D Rb { get; private set; }
     public bool CanInteract { get => canInteract; }
-    public bool CanMove { get; set;}
+    public bool a { get; private set;}
     public Vector2 Direction { get; set;}
 
     private BoxCollider2D box;
@@ -21,14 +21,6 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 
     }
 
-    private void FixedUpdate()
-    {
-        if (CanMove)
-        {
-            Rb.AddForce(Direction.normalized * 2);
-        }
-    }
-
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
@@ -38,6 +30,7 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
         {
             if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
             {
+                a = true;
                 body.transform.SetParent(this.transform);
             }
         }
@@ -50,6 +43,7 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
     {
         if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
         {
+            a = false;
             body.transform.SetParent(null);
         }
     }
