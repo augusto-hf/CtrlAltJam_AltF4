@@ -9,7 +9,7 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 
     public Rigidbody2D Rb { get; private set; }
     public bool CanInteract { get => canInteract; }
-    public bool CanMove { get; set;}
+    public bool canTurnKinematic { get; set;}
     public Vector2 Direction { get; set;}
 
     private BoxCollider2D box;
@@ -19,14 +19,6 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
         Rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
 
-    }
-
-    private void FixedUpdate()
-    {
-        if (CanMove)
-        {
-            Rb.AddForce(Direction.normalized * 2);
-        }
     }
 
 
