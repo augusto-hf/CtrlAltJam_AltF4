@@ -9,12 +9,6 @@ public class OrangePassive : MonoBehaviour
 
     private List<IObjectInteractColor> interactorList = new List<IObjectInteractColor>();
 
-    private void FixedUpdate()
-    {
-        
-
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -24,7 +18,9 @@ public class OrangePassive : MonoBehaviour
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
-            interactor.a = true;
+            if (!interactor.CanInteract) return;
+
+            MovePassiveObjectForce(interactor.Rb);
 
         }
     }
@@ -34,7 +30,12 @@ public class OrangePassive : MonoBehaviour
         {
             if (!interactor.CanInteract) return;
 
-            //MovePassiveObjectForce(interactor.Rb);
+            if (interactor.playerOnTop) 
+            {
+                interactor.Rb.velocity = new Vector2 (interactor.Rb.velocity.x, 0);
+            }
+
+            MovePassiveObjectForce(interactor.Rb);
         }
         
     }
@@ -46,13 +47,6 @@ public class OrangePassive : MonoBehaviour
             var player = other.gameObject.GetComponent<PlayerCore>();
 
             DisablePlayerPassive(player);
-        }
-
-        if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
-        {
-            interactor.a = false;
-            
-            
         }
     
         
