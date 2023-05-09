@@ -1,0 +1,11 @@
+{
+    "localizedTexts": 
+    {
+        "newGame": "Nuevo Juego",
+        "continue": "Continuar",
+        "exit": "Salir",
+        "config": "Configuraciones",
+        "resume": "Reanudar",
+        "mainMenu": "Menú Principal"
+    }
+}
