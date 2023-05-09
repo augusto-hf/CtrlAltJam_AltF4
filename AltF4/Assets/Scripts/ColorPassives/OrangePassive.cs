@@ -7,6 +7,14 @@ public class OrangePassive : MonoBehaviour
     [SerializeField] private float objectPassiveSpeed;
     [SerializeField] private int xDirection;
 
+    private List<IObjectInteractColor> interactorList = new List<IObjectInteractColor>();
+
+    private void FixedUpdate()
+    {
+        
+
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -16,9 +24,8 @@ public class OrangePassive : MonoBehaviour
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
-            if (!interactor.CanInteract) return;
+            interactor.a = true;
 
-            MovePassiveObjectForce(interactor.Rb);
         }
     }
     private void OnCollisionStay2D(Collision2D other) 
@@ -27,7 +34,7 @@ public class OrangePassive : MonoBehaviour
         {
             if (!interactor.CanInteract) return;
 
-            MovePassiveObjectForce(interactor.Rb);
+            //MovePassiveObjectForce(interactor.Rb);
         }
         
     }
@@ -43,7 +50,8 @@ public class OrangePassive : MonoBehaviour
 
         if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
-            if (!interactor.CanInteract) return;
+            interactor.a = false;
+            
             
         }
     
@@ -66,7 +74,10 @@ public class OrangePassive : MonoBehaviour
         float targetVelocity = xDirection * objectPassiveSpeed;
         float speedDiff = targetVelocity - rb.velocity.x;
 
-        rb.AddForce((Vector2.right * xDirection) * objectPassiveSpeed);
+        if (Mathf.Abs(rb.velocity.x) < targetVelocity )
+        {
+            rb.AddForce((Vector2.right * xDirection) * objectPassiveSpeed);
+        }
 
     }
 

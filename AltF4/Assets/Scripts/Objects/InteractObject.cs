@@ -9,11 +9,11 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 
     public Rigidbody2D Rb { get; private set; }
     public bool CanInteract { get => canInteract; }
-    public bool a { get; private set;}
+    public bool a { get; set;}
     public Vector2 Direction { get; set;}
 
     private BoxCollider2D box;
-
+    private Vector2 lastCenterOfMass;
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
@@ -24,17 +24,27 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        float plataformHeight = this.transform.position.y + box.bounds.extents.y;
 
-        if (other.transform.position.y > plataformHeight)
+        if (PlayerAboveObject(other.transform))
         {
             if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
             {
-                a = true;
                 body.transform.SetParent(this.transform);
             }
         }
         
+    }
+
+    private void OnCollisionStay2D(Collision2D other) 
+    {
+        if(PlayerAboveObject(other.transform))
+        {
+            if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
+            {
+                if (a)
+                    this.Rb.velocity = new Vector2(Rb.velocity.x, 0);
+            }
+        }
     }
 
     
@@ -46,6 +56,27 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
             a = false;
             body.transform.SetParent(null);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (Rb == null) return;
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(Rb.position,Rb.position + (Rb.velocity.normalized * Rb.velocity.magnitude));
+        
+    }
+
+    private bool PlayerAboveObject(Transform player)
+    {
+        float plataformHeight = this.transform.position.y + box.bounds.extents.y;
+
+        if (player.position.y > plataformHeight)
+        {
+            return true;
+        }
+
+        return false;
     }
 
 }
