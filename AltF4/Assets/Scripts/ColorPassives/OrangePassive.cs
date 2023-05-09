@@ -44,8 +44,6 @@ public class OrangePassive : MonoBehaviour
         if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
             if (!interactor.CanInteract) return;
-
-            MovePassiveObjectForce(interactor.Rb);
             
         }
     
@@ -65,6 +63,8 @@ public class OrangePassive : MonoBehaviour
 
     private void MovePassiveObjectForce(Rigidbody2D rb)
     {
+        float targetVelocity = xDirection * objectPassiveSpeed;
+        float speedDiff = targetVelocity - rb.velocity.x;
 
         rb.AddForce((Vector2.right * xDirection) * objectPassiveSpeed);
 

@@ -7,5 +7,7 @@ public interface IObjectInteractColor
     Rigidbody2D Rb { get; }
     bool CanInteract { get; }
 
+    bool a { get;}
+
     
 }
