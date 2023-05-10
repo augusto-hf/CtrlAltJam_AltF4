@@ -32,15 +32,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove) return;
 
+        Vector2 direction = Vector2.right;
+        
         float targetVeloticy = player.Controller.Axis.x * currentMaxSpeed;
         float speedDif = targetVeloticy - rb.velocity.x;
-
         float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
-
         float movement = speedDif * accelRate;
 
+        if (player.Check.IsOnSlop(out Vector2 slopDir))
+        {
+            movement *= -1;
+            direction = slopDir;
+        }
+        else 
+        {
 
-        rb.AddForce(movement * Vector2.right);
+        }
+
+        rb.AddForce(movement * direction);
+
+        Debug.Log($" foce added : { movement} direction { direction}");
 
     }
     public void SetMaxSpeed(float maxSpeed)
