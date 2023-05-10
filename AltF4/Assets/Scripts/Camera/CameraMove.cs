@@ -33,13 +33,13 @@ public class CameraMove : MonoBehaviour
 
         if(!menuActive)
         {
-            playerCamera.SetActive(false);
-            canvasCamera.SetActive(true);
+            playerCamera.SetActive(true);
+            canvasCamera.SetActive(false);
             return;
         }
 
-        playerCamera.SetActive(true);
-        canvasCamera.SetActive(false);
+        playerCamera.SetActive(false);
+        canvasCamera.SetActive(true);
 
         openMenu?.Invoke();
     }
