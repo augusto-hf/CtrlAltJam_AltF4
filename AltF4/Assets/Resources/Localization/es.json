@@ -1,11 +1,30 @@
 {
-    "localizedTexts": 
-    {
+    "localizedTexts": {
         "newGame": "Nuevo Juego",
         "continue": "Continuar",
         "exit": "Salir",
         "config": "Configuraciones",
         "resume": "Reanudar",
-        "mainMenu": "Menú Principal"
+        "mainMenu": "Menú Principal",
+        "error": "Información inválida"
+    },
+    "narrationsTexts": {
+        "blue": {
+            "0": "Antes el mundo era colorido, ¿por qué se volvió tan gris?",
+            "1": "¿Cuándo dejé de percibir los colores?",
+            "2": "¿Mis colores todavía están vivos?"
+        },
+        "orange": {
+            "0": "Los colores alrededor traen paz.",
+            "1": "¡Los colores hacen todo más feliz!",
+            "2": "¡Uno más, otro más! ¡Quiero volver a colorear todo!",
+            "3": "¡Puedo sentir la vibración de los colores!"
+        },
+        "green": {
+            "0": "El mundo colorido es mucho más interesante!",
+            "1": "¡Ver tantos colores me emociona mucho más!",
+            "2": "El mundo puede volver a ser colorido.",
+            "3": "Para colorear, solo necesitas sentirlo."
+        }
     }
 }
