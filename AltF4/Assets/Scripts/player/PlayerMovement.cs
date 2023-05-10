@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private PhysicsMaterial2D playerDefault;
+    [SerializeField] private PhysicsMaterial2D noFriction;
     private PlayerCore player;
     private Rigidbody2D rb;
-    public bool canMove = false;
     private float currentMaxSpeed;
+    private bool isJumping;
+    public bool canMove = false;
 
     public Vector2 Velocity { get => rb.velocity; }
     public bool HasBluePassive { get; private set;}
@@ -27,31 +30,55 @@ public class PlayerMovement : MonoBehaviour
         VerticalMovement();
     }
 
+    private void Checkers()
+    {
+        if (player.Check.IsGrounded)
+        {
+            HasBluePassive = false;
+            isJumping = false;
+
+        }
+        
+        if (player.Check.IsOnSlop() && player.Controller.Axis.x == 0)
+        {
+            rb.sharedMaterial = playerDefault;
+        }else
+        {
+            rb.sharedMaterial = noFriction;
+        }
+    }
+
     #region Horizontal Movement
     private void Walk()
     {
         if (!canMove) return;
 
-        Vector2 direction = Vector2.right;
+        if (player.Check.IsOnSlop(out float slopeAngle))
+        {
+            float targetVeloticyY = Mathf.Sin(slopeAngle * Mathf.Rad2Deg) * currentMaxSpeed;
+            float targetVeloticyX = Mathf.Cos(slopeAngle * Mathf.Rad2Deg) * currentMaxSpeed * player.Controller.Axis.x;
+
+            Vector2 speedToReach = new Vector2(targetVeloticyX, targetVeloticyY) - rb.velocity;
+
+            float accelRate = Mathf.Abs(targetVeloticyX) > 0.01f ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
+
+            rb.AddForce(speedToReach.normalized * speedToReach * accelRate, ForceMode2D.Force);
+            
+
+        }
+        else
+        {
+            float targetVeloticy = player.Controller.Axis.x * currentMaxSpeed;
+
+            float speedToReach = targetVeloticy - rb.velocity.x;
+            
+            float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
+            
+            float xMovement  = speedToReach * accelRate;
+            
+            rb.AddForce(Vector2.right * xMovement , ForceMode2D.Force);
+        }
         
-        float targetVeloticy = player.Controller.Axis.x * currentMaxSpeed;
-        float speedDif = targetVeloticy - rb.velocity.x;
-        float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
-        float movement = speedDif * accelRate;
-
-        if (player.Check.IsOnSlop(out Vector2 slopDir))
-        {
-            movement *= -1;
-            direction = slopDir;
-        }
-        else 
-        {
-
-        }
-
-        rb.AddForce(movement * direction);
-
-        Debug.Log($" foce added : { movement} direction { direction}");
 
     }
     public void SetMaxSpeed(float maxSpeed)
@@ -65,10 +92,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void VerticalMovement()
     {
-        if (player.Check.IsGrounded)
-        {
-            HasBluePassive = false;
-        }
+        
         Fall();
     }
 
@@ -91,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void JumpForceApply()
     {
+        isJumping = true;
         rb.velocity = new Vector2(rb.velocity.x, player.Data.JumpForce);
     }
 

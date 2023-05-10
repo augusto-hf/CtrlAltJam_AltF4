@@ -7,6 +7,7 @@ public class PlayerChecks : MonoBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private Transform groundDetectorPoint;
     [SerializeField] private Vector2 size;
+    [SerializeField] private float maxAngleSlope;
     private PlayerCore player;
     private CapsuleCollider2D capsule;
     public bool IsGrounded { get; private set; }
@@ -38,26 +39,45 @@ public class PlayerChecks : MonoBehaviour
     
     }
 
-    public bool IsOnSlop(out Vector2 slopeDirection)
+    public bool IsOnSlop(out float slopeAngle)
     {
-        Vector2 direction = this.transform.right;
-        bool onSlop = false;
-        Vector2 point = new Vector2(this.transform.position.x + (capsule.bounds.extents.x - 0.2f), this.transform.position.y);
+        float angle = 0;
+        Vector2 point = new Vector2(this.transform.position.x + (capsule.bounds.extents.x - 0.2f), this.transform.position.y - capsule.bounds.extents.y);
 
-        RaycastHit2D ray = Physics2D.Raycast(point, Vector2.down, 2f, ground);
-        Debug.DrawRay(point, Vector3.down, Color.green);
+        RaycastHit2D ray = Physics2D.Raycast(point, this.transform.right, 0.2f, ground);
+        Debug.DrawRay(point, this.transform.right * 0.2f, Color.green);
 
         if (ray)
         {
             Debug.DrawRay(ray.point, ray.normal, Color.magenta);
             Debug.DrawRay(ray.point, Vector2.Perpendicular(ray.normal), Color.blue);
             
-            onSlop = true;
-            direction = Vector2.Perpendicular(ray.normal).normalized;
+            angle = Vector2.Angle(ray.normal, this.transform.up);
 
         }
 
-        slopeDirection = direction;
+        slopeAngle = angle;
+
+        bool onSlop = angle > maxAngleSlope;
+
+        return onSlop;
+
+    }
+    public bool IsOnSlop()
+    {
+        float angle = 0;
+        Vector2 point = new Vector2(this.transform.position.x + (capsule.bounds.extents.x - 0.2f), this.transform.position.y - capsule.bounds.extents.y);
+
+        RaycastHit2D ray = Physics2D.Raycast(point, this.transform.right, 0.2f, ground);
+
+        if (ray)
+        {
+            angle = Vector2.Angle(ray.normal, this.transform.up);
+
+        }
+
+        bool onSlop = angle > maxAngleSlope;
+
         return onSlop;
 
     }
