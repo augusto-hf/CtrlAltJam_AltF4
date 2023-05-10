@@ -24,7 +24,7 @@ public class PlayerCore : MonoBehaviour
 
     private void Start()
     {
-        Controller = GameObject.FindGameObjectWithTag("InputManager").GetComponent<PlayerControl>();
+        Controller = GameObject.FindWithTag("InputManager").GetComponent<PlayerControl>();
     }
 
     private void Update()

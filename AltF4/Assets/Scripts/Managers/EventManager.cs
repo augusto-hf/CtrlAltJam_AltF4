@@ -54,8 +54,7 @@ public class EventManager : MonoBehaviour
         menuControll.openMenu += playerCore.StopAndRunPlayer;
         gameManager.onSetPlayerPosition += saveManager.ApplyPositionInPlayer;
 
-        gameManager.onGameStarted += menuManager.ChangeMenu;
-        
+        gameManager.onGameStarted += menuManager.ChangeMenu;   
     }
 
 }

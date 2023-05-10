@@ -8,17 +8,63 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    public GameData gameData;
+    const string FILE_DEFAULT_SAVE_GAME = "Data/SaveGame/DefaultSave";
+    const string FILE_DEFAULT_SAVE_CONFIG = "Data/SaveGame/DefaultConfig";
+    const string FILE_SAVE = "/save.json"; 
+    const string FILE_CONFIG = "/config.json"; 
 
-    private const string saveFileName = "/save.json"; 
-    private string filePath;
+    public GameData gameData;
+    public ConfigData configData;
+
+    private string filePathSave;
+    private string filePathConfig;
 
     private void Awake() 
     {
-        filePath = Application.persistentDataPath + saveFileName; 
+        filePathSave = Application.persistentDataPath + FILE_SAVE; 
+        filePathConfig = Application.persistentDataPath + FILE_CONFIG; 
 
-        Debug.Log("Local de salvamento: " + filePath); 
+        Debug.Log("Local de salvamento: " + filePathSave); 
+
+        LoadConfig();
     }
+
+    public void ResetConfig()
+    {
+        if (File.Exists(filePathConfig)) 
+        {
+            File.Delete(filePathConfig); 
+        }
+
+        configData = LoadDefaultSave(FILE_DEFAULT_SAVE_CONFIG, configData);
+    }
+
+    public void LoadConfig()
+    {
+        if (File.Exists(filePathConfig)) 
+        {
+            string json = File.ReadAllText(filePathConfig);
+            configData = JsonConvert.DeserializeObject<ConfigData>(json); 
+        }
+        else
+        { 
+            configData = LoadDefaultSave(FILE_DEFAULT_SAVE_CONFIG, configData);
+        }
+
+        configData.currentLanguage = LocalizationManager.localizationInstance.SetNewLanguage(configData.currentLanguage);
+        SaveConfig();
+
+    }
+
+    public void SaveConfig() 
+    {
+        Debug.Log("Save Config");
+        string json = JsonUtility.ToJson(configData, true); 
+        File.WriteAllText(filePathConfig, json); 
+    }
+
+
+
 
     public void ApplyPositionInPlayer(Transform positionPlayer)
     {
@@ -51,37 +97,38 @@ public class SaveManager : MonoBehaviour
     {
         Debug.Log("Save Game");
         string json = JsonUtility.ToJson(gameData, true); 
-        File.WriteAllText(filePath, json); 
+        File.WriteAllText(filePathSave, json); 
     }
 
     public void Load() 
     {
-
-        if (File.Exists(filePath)) 
+        if (File.Exists(filePathSave)) 
         {
-            string json = File.ReadAllText(filePath);
+            string json = File.ReadAllText(filePathSave);
             gameData = JsonConvert.DeserializeObject<GameData>(json); 
         }
         else
         { 
-            LoadDefaultSave();
+            gameData = LoadDefaultSave(FILE_DEFAULT_SAVE_GAME, gameData);
         }
     }
 
     public void NewGame() 
     {
-        if (File.Exists(filePath)) 
+        if (File.Exists(filePathSave)) 
         {
-            File.Delete(filePath); 
+            File.Delete(filePathSave); 
         }
 
-        LoadDefaultSave();
+        gameData = LoadDefaultSave(FILE_DEFAULT_SAVE_GAME, gameData);
     }
     
-    private void LoadDefaultSave()
+    private T LoadDefaultSave<T>(string path, T data)
     {
-        TextAsset jsonTextAsset = Resources.Load<TextAsset>("Data/SaveGame/DefaultSave"); 
+        TextAsset jsonTextAsset = Resources.Load<TextAsset>(path); 
         string json = jsonTextAsset.text; 
-        gameData = JsonConvert.DeserializeObject<GameData>(json); 
+        data = JsonConvert.DeserializeObject<T>(json); 
+
+        return data;
     }
 }

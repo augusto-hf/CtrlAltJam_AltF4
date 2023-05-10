@@ -116,3 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa13d705c03ebd4fa6d1d8f78165e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBoxObj: {fileID: 0}
+  typingSpeed: 0.06
+  legendText: {fileID: 0}

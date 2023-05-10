@@ -20,13 +20,24 @@ public class LocalizationManager : MonoBehaviour
             localizationInstance = this;
         }
 
-        currentLanguage = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        Debug.Log(currentLanguage);
-
-        LoadLocalizedText(currentLanguage);
+        //currentLanguage = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+        //LoadLocalizedText(currentLanguage);
     }
 
-    
+    public string SetNewLanguage(string language)
+    {
+        currentLanguage = language;
+
+        if(currentLanguage == "")
+        {
+            currentLanguage = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+        }
+
+        LoadLocalizedText(currentLanguage);
+
+        return currentLanguage;
+    }
+
     public void LoadLocalizedText(string language)
     {
         string filePath = "Localization/" + language;
