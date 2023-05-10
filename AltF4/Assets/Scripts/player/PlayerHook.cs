@@ -34,10 +34,10 @@ public class PlayerHook : MonoBehaviour
         if (retractingGrapple)
         {
             line.SetPosition(0, transform.position);
-
+            Debug.Log("To tentando puxar");
             float distanceToObject = Vector2.Distance(transform.position, line.GetPosition(1));
 
-            if (!player.Controller.TongueButton && !finishedGrappling || distanceToObject > hookMaxDistance && !finishedGrappling)
+            if (!player.Controller.TongueButton && !finishedGrappling || distanceToObject > hookMaxDistance)
             {
                 finishedGrappling = true;
                 StartCoroutine(returnGrapple());               
@@ -55,7 +55,7 @@ public class PlayerHook : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, hookMaxDistance, grapplableMask);
         if (hit.collider == null)
             return;
-       
+        Debug.Log("Agarrei");
         if (hit.transform.CompareTag("GrappableObject"))
         {
             isHittingDragableObject = true;
@@ -77,7 +77,7 @@ public class PlayerHook : MonoBehaviour
     public void dragGrappableObject()
     {
         line.SetPosition(1, targetObject.transform.position);
-
+        Debug.Log("puxando o puxavel");
         float distanceToTargetObject = Vector2.Distance(transform.position, targetObject.transform.position);
         if (distanceToTargetObject > minimumDistanceToDrag)
         {
