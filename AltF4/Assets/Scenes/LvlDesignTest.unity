@@ -1652,6 +1652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultJumpFoce: 10
+  playerJumpBuff: 0
 --- !u!1 &1925486732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,11 +2099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2166273316161813883, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.49
+      value: -10.49
       objectReference: {fileID: 0}
     - target: {fileID: 2166273316161813883, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 2166273316161813883, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2135,14 +2136,6 @@ PrefabInstance:
     - target: {fileID: 2166273316161813883, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2792398708498724391, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 2792398708498724391, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 5871313350738654666, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
       propertyPath: m_Name
