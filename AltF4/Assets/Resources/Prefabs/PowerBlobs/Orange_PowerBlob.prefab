@@ -17,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2057928800272166170, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.28
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2057928800272166170, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0104284
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2057928800272166170, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2507655081481780796, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5187401207562044023, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_Color.b
       value: 0.514151
@@ -70,6 +74,10 @@ PrefabInstance:
     - target: {fileID: 6044962299976279467, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_Name
       value: Orange_PowerBlob
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044962299976279467, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2842549365950125701, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}

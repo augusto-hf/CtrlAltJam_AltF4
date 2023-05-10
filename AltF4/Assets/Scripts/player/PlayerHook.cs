@@ -15,10 +15,16 @@ public class PlayerHook : MonoBehaviour
     [Header("Drag Object Values")]
     [SerializeField] private float minimumDistanceToDrag, dragForce;
 
+    [Header("Valid Targets")]
+    [SerializeField] private string dragableObject;
+    [SerializeField] private string interactableObject;
+    [SerializeField] private string terrain;
+
     private Vector2 hitLocation, grapplingEnd;
     private GameObject targetObject;
     private bool retractingGrapple = false, startedGrappling = false, finishedGrappling = false;
     private bool isHittingDragableObject = false, isTooFarFromObject = false;
+    private string hittedObjectTag;
     void Awake()
     {
         player = GetComponent<PlayerCore>();
@@ -43,9 +49,15 @@ public class PlayerHook : MonoBehaviour
                 StartCoroutine(returnGrapple());               
             }
             
-            if (isHittingDragableObject && !finishedGrappling)
+            if (hittedObjectTag == dragableObject && !finishedGrappling)
             {
                 dragGrappableObject();
+            }
+
+            if (hittedObjectTag == interactableObject && !finishedGrappling)
+            {
+                player.Color.takeColor(targetObject);
+                StartCoroutine(returnGrapple());
             }
         }
     }
@@ -56,16 +68,8 @@ public class PlayerHook : MonoBehaviour
         if (hit.collider == null)
             return;
         Debug.Log("Agarrei");
-        if (hit.transform.CompareTag("GrappableObject"))
-        {
-            isHittingDragableObject = true;
-        }
-        else
-        {
-            isHittingDragableObject = false;
-        }
 
-
+        hittedObjectTag = hit.transform.tag;
         hitLocation = hit.point;
         targetObject = hit.transform.gameObject;
         line.enabled = true;
@@ -97,7 +101,7 @@ public class PlayerHook : MonoBehaviour
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
-            if(isHittingDragableObject)
+            if(hittedObjectTag == dragableObject || hittedObjectTag == interactableObject)
                 grapplingEnd = Vector2.Lerp(transform.position, targetObject.transform.position, t / time);
             else
                 grapplingEnd = Vector2.Lerp(transform.position, hitLocation, t / time);
@@ -115,7 +119,7 @@ public class PlayerHook : MonoBehaviour
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
-            if (isHittingDragableObject)
+            if (hittedObjectTag == dragableObject || hittedObjectTag == interactableObject)
                 grapplingEnd = Vector2.Lerp(targetObject.transform.position, transform.position, t / time);
             else
                 grapplingEnd = Vector2.Lerp(hitLocation, transform.position, t / time);
@@ -130,6 +134,7 @@ public class PlayerHook : MonoBehaviour
             line.enabled = false;
             finishedGrappling = false;
             isHittingDragableObject = false;
+            hittedObjectTag = null;
         }
 
     }

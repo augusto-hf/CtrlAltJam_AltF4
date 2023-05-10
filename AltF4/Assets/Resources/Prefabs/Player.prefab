@@ -431,3 +431,6 @@ MonoBehaviour:
     m_Bits: 64
   minimumDistanceToDrag: 3
   dragForce: 0.9
+  dragableObject: GrappableObject
+  interactableObject: ColorPower
+  terrain: Ground

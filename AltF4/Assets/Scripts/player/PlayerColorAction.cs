@@ -28,12 +28,17 @@ public class PlayerColorAction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.CompareTag("ColorPower"))
+        takeColor(other.gameObject);
+    }
+    
+    public void takeColor(GameObject colorObject)
+    {
+        if (colorObject.CompareTag("ColorPower"))
         {
-            if(lastBlob != null)
+            if (lastBlob != null)
                 lastBlob.RespawnPower();
 
-            lastBlob = other.gameObject.GetComponentInParent<BlobManager>();
+            lastBlob = colorObject.gameObject.GetComponentInParent<BlobManager>();
             lastBlob.PickPower();
             currentColor.ResetAction(player);
             currentColor = lastBlob.blobColor;
@@ -41,5 +46,4 @@ public class PlayerColorAction : MonoBehaviour
             //PRECISO DE UM NOME/ID PARA AS CORES - feito já XD
         }
     }
-    
 }
