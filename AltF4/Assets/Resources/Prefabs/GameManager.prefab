@@ -77,6 +77,9 @@ MonoBehaviour:
   gameData:
     positionPlayer: {x: 0, y: 0, z: 0}
     emotions: []
+    currentLanguage: 
+  configData:
+    currentLanguage: 
 --- !u!114 &8414608117657014548
 MonoBehaviour:
   m_ObjectHideFlags: 0
