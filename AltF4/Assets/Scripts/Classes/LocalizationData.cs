@@ -5,4 +5,5 @@ using System;
 public class LocalizationData
 {
     public Dictionary<string, string> localizedTexts;
+    public Dictionary<string, Dictionary<string, string>> narrationsTexts;
 }

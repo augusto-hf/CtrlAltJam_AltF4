@@ -1,11 +1,30 @@
 {
-    "localizedTexts": 
-    {
+    "localizedTexts": {
         "newGame": "New Game",
         "continue": "Continue",
         "exit": "Exit",
         "config": "Config",
         "resume": "Resume",
-        "mainMenu": "Main menu"
+        "mainMenu": "Main menu",
+        "error": "Invalid information"
+    },
+    "narrationsTexts": {
+        "blue": {
+            "0": "Before the world was colorful, why did it become so gray?",
+            "1": "When did I stop perceiving colors?",
+            "2": "Are my colors still alive?"
+        },
+        "orange": {
+            "0": "The colors around bring peace.",
+            "1": "Colors make everything happier!",
+            "2": "One more, another one! I want to color everything again!",
+            "3": "I can feel the vibration of colors!"
+        },
+        "green": {
+            "0": "The colorful world is much more interesting!",
+            "1": "Seeing so many colors makes me much more excited!",
+            "2": "The world can become colorful again.",
+            "3": "To color, you just need to feel it."
+        }
     }
 }

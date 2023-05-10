@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour
     private CameraMove menuControll;
     private PlayerCore playerCore;
     private MenuManager menuManager;
+    private NarrationManager narrationManager;
 
     private GameObject[] savePoint;
 
@@ -18,6 +19,7 @@ public class EventManager : MonoBehaviour
         gameManager = GetComponent<GameManager>();
         saveManager = GetComponent<SaveManager>();
         menuManager = GetComponent<MenuManager>();
+        narrationManager = GetComponent<NarrationManager>();
         menuControll = Camera.main.GetComponent<CameraMove>();
 
         playerCore = GameObject.FindWithTag("Player").GetComponent<PlayerCore>();
@@ -35,6 +37,10 @@ public class EventManager : MonoBehaviour
         //save game
         gameManager.onSaved += saveManager.Save;
         playerCore.onPickColor += saveManager.SaveNewEmotion;
+        
+        //narration
+        playerCore.onPickColor += narrationManager.ReproduceNarration;
+
         foreach (GameObject point in savePoint)
         {
             SavePoint savePoint = point.GetComponent<SavePoint>();

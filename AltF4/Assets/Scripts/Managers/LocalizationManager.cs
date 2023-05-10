@@ -8,10 +8,10 @@ using System.Linq;
 
 public class LocalizationManager : MonoBehaviour
 {
-    public static LocalizationManager localizationInstance; //instancia do script
+    public static LocalizationManager localizationInstance; 
 
-    public string currentLanguage = "pt"; //idioma atual do jogo
-    private LocalizationData localizationData; //objeto de dados de localização
+    public string currentLanguage = "pt"; 
+    private LocalizationData localizationData; 
 
     void Awake()
     {
@@ -20,14 +20,13 @@ public class LocalizationManager : MonoBehaviour
             localizationInstance = this;
         }
 
-        //carrega o idioma atual do sistema
         currentLanguage = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
         Debug.Log(currentLanguage);
-        //carrega o arquivo de texto
+
         LoadLocalizedText(currentLanguage);
     }
 
-    //carrega o arquivo de texto
+    
     public void LoadLocalizedText(string language)
     {
         string filePath = "Localization/" + language;
@@ -47,13 +46,10 @@ public class LocalizationManager : MonoBehaviour
         }
     }
 
-
-    //retorna a tradução da chave especificada
     public string GetLocalizedValue(string key)
     {
         string value = key;
 
-        //verifica se o objeto de dados de localização existe e contém a chave especificada
         if (localizationData != null)
         {
             if(localizationData.localizedTexts.ContainsKey(key))
@@ -62,7 +58,31 @@ public class LocalizationManager : MonoBehaviour
             }
             else
             {
-                value = localizationData.localizedTexts["null"];
+                value = localizationData.localizedTexts["error"];
+            }
+        }
+
+        return value;
+    }
+
+    public int GetSizeDictionary(string color)
+    {
+        if (localizationData != null)
+        {
+            return localizationData.narrationsTexts[color].Count;
+        }
+        return 0;
+    }
+
+    public string GetLocalizedValueForNarration(string color, string key)
+    {
+        string value = localizationData.localizedTexts["error"];
+
+        if (localizationData != null)
+        {
+            if(localizationData.narrationsTexts[color].ContainsKey(key))
+            {
+                value = localizationData.narrationsTexts[color][key];
             }
         }
 
