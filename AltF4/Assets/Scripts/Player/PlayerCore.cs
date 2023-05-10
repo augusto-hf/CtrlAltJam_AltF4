@@ -11,6 +11,7 @@ public class PlayerCore : MonoBehaviour
     public PlayerChecks Check { get; private set; }
     public PlayerMovement Movement { get; private set;}
     public PlayerControl Controller { get; private set; }
+    public PlayerColorAction Color { get; private set; }
 
     public event Action<string> onPickColor;
 
@@ -18,6 +19,7 @@ public class PlayerCore : MonoBehaviour
     {
         Check = GetComponent<PlayerChecks>();
         Movement = GetComponent<PlayerMovement>();
+        Color = GetComponent<PlayerColorAction>();
     }
 
     private void Start()

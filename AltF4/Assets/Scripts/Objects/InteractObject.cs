@@ -9,7 +9,7 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 
     public Rigidbody2D Rb { get; private set; }
     public bool CanInteract { get => canInteract; }
-    public bool a { get; set;}
+    public bool playerOnTop { get; set;}
     public Vector2 Direction { get; set;}
 
     private BoxCollider2D box;
@@ -25,7 +25,7 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
     private void OnCollisionEnter2D(Collision2D other) 
     {
 
-        if (PlayerAboveObject(other.transform))
+        if (PlayerAboveObject(other.transform) && other.gameObject.CompareTag("Player"))
         {
             if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
             {
@@ -37,11 +37,11 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 
     private void OnCollisionStay2D(Collision2D other) 
     {
-        if(PlayerAboveObject(other.transform))
+        if(PlayerAboveObject(other.transform) && other.gameObject.CompareTag("Player"))
         {
             if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
             {
-                if (a)
+                if (playerOnTop)
                     this.Rb.velocity = new Vector2(Rb.velocity.x, 0);
             }
         }
@@ -51,11 +51,15 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
+        if (other.gameObject.CompareTag("Player"))
         {
-            a = false;
-            body.transform.SetParent(null);
+            if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
+            {
+                playerOnTop = false;
+                body.transform.SetParent(null);
+            }
         }
+        
     }
 
     private void OnDrawGizmos()

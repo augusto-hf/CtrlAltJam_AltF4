@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float currentMaxSpeed;
 
     public Vector2 Velocity { get => rb.velocity; }
-    public bool HasJumpBuff { get; private set;}
+    public bool HasBluePassive { get; private set;}
     
     private void Awake()
     {
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (player.Check.IsGrounded)
         {
-            HasJumpBuff = false;
+            HasBluePassive = false;
         }
         Fall();
     }
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector2.down * rb.velocity.y * player.Data.JumpCutMultiplier, ForceMode2D.Impulse);
     }
 
-    public void JumpBuff() => HasJumpBuff = true;
+    public void SetBluePassive() => HasBluePassive = true;
     
     #endregion
     

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PurpleAction : MonoBehaviour, IColor
 {
+    public ColorType Type { get => ColorType.NoColor; }
 
     private void Awake()
     {
