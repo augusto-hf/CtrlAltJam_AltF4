@@ -43,7 +43,7 @@ public class PlayerHook : MonoBehaviour
             Debug.Log("To tentando puxar");
             float distanceToObject = Vector2.Distance(transform.position, line.GetPosition(1));
 
-            if (!player.Controller.TongueButton && !finishedGrappling || distanceToObject > hookMaxDistance)
+            if (!player.Controller.TongueButton|| distanceToObject > hookMaxDistance)
             {
                 finishedGrappling = true;
                 StartCoroutine(returnGrapple());               
