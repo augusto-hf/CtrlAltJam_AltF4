@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3498741887886869232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.32, z: 0}
+  m_LocalPosition: {x: 0, y: -0.334, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,8 +100,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336683651438568577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0.007000059, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.6875, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6336683652554037018}
@@ -168,7 +168,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6336683652554037018}
-  - component: {fileID: 3348794852700304220}
   - component: {fileID: 6336683652554037019}
   - component: {fileID: 6336683652554037020}
   - component: {fileID: 2529864217549936242}
@@ -202,22 +201,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &3348794852700304220
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336683652554037023}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.027590694, y: 0.009031509}
-  m_Size: {x: 1.4840513, y: 0.6553708}
-  m_Direction: 1
 --- !u!61 &6336683652554037019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,9 +208,9 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336683652554037023}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1373aec410957d74992b34001c24ad22, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -242,7 +225,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
+  m_Size: {x: 1.5, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &6336683652554037020
 Rigidbody2D:
@@ -290,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0aecf0d855bd4dbdf73e6bad33460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 1
+  canMove: 0
 --- !u!114 &6336683652554037022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +290,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundDetectorPoint: {fileID: 4609767914332199521}
-  size: {x: 0.97, y: 0.05}
+  size: {x: 1.48, y: 0.05}
 --- !u!114 &-215635321352401057
 MonoBehaviour:
   m_ObjectHideFlags: 0
