@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class NarrationManager : MonoBehaviour
 {
     [SerializeField] private GameObject textBoxObj;
-
+    [SerializeField] private AudioSource audioNarration;
     [SerializeField] private float typingSpeed = 0.1f;
     [SerializeField] private TextMeshProUGUI legendText;
 
@@ -38,11 +38,13 @@ public class NarrationManager : MonoBehaviour
         }
 
         string text = LocalizationManager.localizationInstance.GetLocalizedValueForNarration(color, keyValue.ToString());
+        audioNarration.clip = Resources.Load<AudioClip>("Audio/Narrations/"+color+ "/"+ keyValue.ToString());
         StartCoroutine(ShowText(text));
     }
 
     IEnumerator ShowText(string text)
     {
+        audioNarration.Play();
         legendText.text = "";
         
         textBoxObj.SetActive(true);
@@ -53,7 +55,7 @@ public class NarrationManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(audioNarration.clip.length);
         textBoxObj.SetActive(false);
     }
 }
