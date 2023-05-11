@@ -36,7 +36,5 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("isJumping", false);
 
         animator.SetBool("isFalling", player.Check.IsFalling);
-        //if (!player.Controller.ColorButton && player.Check.IsGrounded && player.Color.CurrentColor.Type == ColorType.Blue || player.Check.IsGrounded && player.Color.CurrentColor.Type != ColorType.Blue)
-
     }
 }
