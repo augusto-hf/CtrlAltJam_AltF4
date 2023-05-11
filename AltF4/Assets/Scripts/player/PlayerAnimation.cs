@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     private PlayerCore player;
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     void Awake()
     {
@@ -16,7 +16,7 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
-        animator.SetFloat("walkDirection", player.Controller.Axis.x);
+        animator.SetInteger("walk_Direction", (int)player.Controller.Axis.x);
         animator.SetBool("tongue", player.Controller.TongueButton);
 
         setJumpAndFall();
