@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class OrangePassive : MonoBehaviour
 {
-    [SerializeField] private float objectPassiveSpeed;
-    [SerializeField] private int xDirection;
-
-    private List<IObjectInteractColor> interactorList = new List<IObjectInteractColor>();
+    [SerializeField] private float objectPassiveMaxSpeed;
+    [SerializeField] private float objectAccelerateRatio;
+    [SerializeField] private int defaulDirection;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -20,7 +19,7 @@ public class OrangePassive : MonoBehaviour
         {
             if (!interactor.CanInteract) return;
 
-            MovePassiveObjectForce(interactor.Rb);
+            MovePassiveObjectForce(interactor.Rb, interactor.LastVelocityDirection);
 
         }
     }
@@ -35,7 +34,7 @@ public class OrangePassive : MonoBehaviour
                 interactor.Rb.velocity = new Vector2 (interactor.Rb.velocity.x, 0);
             }
 
-            MovePassiveObjectForce(interactor.Rb);
+            MovePassiveObjectForce(interactor.Rb, interactor.LastVelocityDirection);
         }
         
     }
@@ -63,14 +62,19 @@ public class OrangePassive : MonoBehaviour
         player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
     }
 
-    private void MovePassiveObjectForce(Rigidbody2D rb)
+    private void MovePassiveObjectForce(Rigidbody2D rb, Vector2 direction)
     {
-        float targetVelocity = xDirection * objectPassiveSpeed;
-        float speedDiff = targetVelocity - rb.velocity.x;
+        float directionX = Mathf.Abs(direction.x) > 0 ? direction.x : Mathf.Sign(defaulDirection); 
+        float targetVelocity = directionX * objectPassiveMaxSpeed;
+        float speedToReach = targetVelocity - rb.velocity.x;
 
         if (Mathf.Abs(rb.velocity.x) < targetVelocity )
         {
-            rb.AddForce((Vector2.right * xDirection) * objectPassiveSpeed);
+            rb.AddForce((Vector2.right * directionX) * speedToReach * objectAccelerateRatio);
+            if (Mathf.Abs(rb.velocity.x) >= targetVelocity)
+            {
+                rb.velocity = new Vector2(targetVelocity, rb.velocity.y);
+            }
         }
 
     }

@@ -7,12 +7,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PhysicsMaterial2D playerSlope;
     [SerializeField] private PhysicsMaterial2D playerDefault;
     [SerializeField] private PhysicsMaterial2D noFriction;
+    
+    public bool canMove = false;
+
     private PlayerCore player;
     private Rigidbody2D rb;
     private float currentMaxSpeed;
     private bool isJumping;
     private bool isOnSlop;
-    public bool canMove = false;
+    private bool isFacingRight;
 
     public Vector2 Velocity { get => rb.velocity; }
     public bool HasBluePassive { get; private set;}
@@ -21,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
         rb = GetComponent<Rigidbody2D>();
+        isFacingRight = this.transform.rotation.eulerAngles.y == 0;
 
 
         rb.gravityScale = player.Data.GravityScale;
@@ -29,9 +33,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.DrawRay(this.transform.position, rb.velocity.normalized, Color.blue);
+        Debug.DrawRay(this.transform.position, rb.velocity.normalized, Color.cyan);
         Checkers();
-        Walk();
+        HorizontalMovement();
         VerticalMovement();
     }
 
@@ -47,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (player.Check.isOnSlop && player.Controller.Axis.x == 0)
         {
-            Debug.Log("b");
             rb.sharedMaterial = playerSlope;
         }
         else if (player.Check.isOnSlop && player.Controller.Axis.x != 0)
@@ -62,6 +65,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     #region Horizontal Movement
+
+    private void HorizontalMovement()
+    {
+        Flip();
+        Walk();
+        
+    }
+
     private void Walk()
     {
         if (!canMove) return;
@@ -104,6 +115,14 @@ public class PlayerMovement : MonoBehaviour
     {
         currentMaxSpeed = maxSpeed;
     }
+    private void Flip()
+    {
+        if (isFacingRight && player.Controller.Axis.x < 0 || !isFacingRight && player.Controller.Axis.x > 0 )
+        {
+            isFacingRight = !isFacingRight;
+            this.transform.Rotate(0,180,0);
+        }
+    }
 
     #endregion 
     
@@ -111,7 +130,6 @@ public class PlayerMovement : MonoBehaviour
     
     private void VerticalMovement()
     {
-        
         Fall();
     }
 

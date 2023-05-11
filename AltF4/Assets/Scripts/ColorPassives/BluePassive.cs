@@ -6,6 +6,7 @@ public class BluePassive : MonoBehaviour
 {
     [SerializeField] private float defaultJumpFoce;
     [SerializeField] private float playerJumpBuff;
+    [SerializeField] private Vector2 direction;
 
     private void Update()
     {
@@ -28,14 +29,14 @@ public class BluePassive : MonoBehaviour
                 additionalBuff = playerJumpBuff;
             }
 
-            JumpImpulse(rb, player.Data.JumpForce + additionalBuff);
+            Impulse(rb, player.Data.JumpForce + additionalBuff, direction);
 
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
             if (!interactor.CanInteract) return;
 
-            JumpImpulse(interactor.Rb, defaultJumpFoce);
+            Impulse(interactor.Rb, defaultJumpFoce, direction);
         }
     }
 
@@ -51,18 +52,22 @@ public class BluePassive : MonoBehaviour
         {
             if (!interactor.CanInteract) return;
 
-            JumpImpulse(interactor.Rb, defaultJumpFoce);
+            Impulse(interactor.Rb, defaultJumpFoce, direction);
         }
     }
 
-    public void JumpImpulse(Rigidbody2D rb, float force)
+    public void Impulse(Rigidbody2D rb, float force, Vector2 direction)
     {
         float currentForce = force;
+        Vector2 impulseDirection = Vector2.zero;
+        
         
         if (rb.velocity.y < 0)
             currentForce -= rb.velocity.y;
 
-        rb.AddForce(Vector2.up * currentForce, ForceMode2D.Impulse);
+        impulseDirection = direction == Vector2.zero ? Vector2.up : direction.normalized;
+
+        rb.AddForce(impulseDirection * currentForce, ForceMode2D.Impulse);
     }
 
     
