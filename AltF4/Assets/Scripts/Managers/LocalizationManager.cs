@@ -5,12 +5,12 @@ using System.Text;
 using System.Globalization;
 using Newtonsoft.Json;
 using System.Linq;
+using System;
 
 public class LocalizationManager : MonoBehaviour
 {
     public static LocalizationManager localizationInstance; 
-
-    public string currentLanguage = "pt"; 
+    public string currentLanguage = ""; 
     private LocalizationData localizationData; 
 
     void Awake()
@@ -19,9 +19,6 @@ public class LocalizationManager : MonoBehaviour
         {
             localizationInstance = this;
         }
-
-        //currentLanguage = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
-        //LoadLocalizedText(currentLanguage);
     }
 
     public string SetNewLanguage(string language)
@@ -34,6 +31,7 @@ public class LocalizationManager : MonoBehaviour
         }
 
         LoadLocalizedText(currentLanguage);
+        ApplyNewLocalization();
 
         return currentLanguage;
     }
@@ -98,5 +96,16 @@ public class LocalizationManager : MonoBehaviour
         }
 
         return value;
+    }
+
+    public void ApplyNewLocalization()
+    {
+        GameObject[] texts = GameObject.FindGameObjectsWithTag("TextLocalized");
+
+        foreach (GameObject text in texts)
+        {
+            SetTextLocalized newText = text.GetComponent<SetTextLocalized>();
+            newText.NewTextLocalized();
+        }
     }
 }

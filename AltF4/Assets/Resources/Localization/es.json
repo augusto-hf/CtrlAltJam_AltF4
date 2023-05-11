@@ -6,6 +6,7 @@
         "config": "Configuraciones",
         "resume": "Reanudar",
         "mainMenu": "Menú Principal",
+        "apply":"Aplicar",
         "error": "Información inválida"
     },
     "narrationsTexts": {

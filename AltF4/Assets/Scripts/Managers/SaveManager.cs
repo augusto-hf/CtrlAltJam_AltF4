@@ -51,9 +51,19 @@ public class SaveManager : MonoBehaviour
             configData = LoadDefaultSave(FILE_DEFAULT_SAVE_CONFIG, configData);
         }
 
-        configData.currentLanguage = LocalizationManager.localizationInstance.SetNewLanguage(configData.currentLanguage);
+        UpdatedConfig();
+    }
+    public void updatedNewConfig()
+    {
+        configData.currentLanguage = LocalizationManager.localizationInstance.SetNewLanguage(LocalizationManager.localizationInstance.currentLanguage);
         SaveConfig();
 
+    }
+    
+    public void UpdatedConfig()
+    {
+        configData.currentLanguage = LocalizationManager.localizationInstance.SetNewLanguage(configData.currentLanguage);
+        SaveConfig();
     }
 
     public void SaveConfig() 
@@ -62,9 +72,6 @@ public class SaveManager : MonoBehaviour
         string json = JsonUtility.ToJson(configData, true); 
         File.WriteAllText(filePathConfig, json); 
     }
-
-
-
 
     public void ApplyPositionInPlayer(Transform positionPlayer)
     {

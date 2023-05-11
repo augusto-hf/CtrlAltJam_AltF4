@@ -9,6 +9,7 @@ TagManager:
   - InputManager
   - GrappableObject
   - SavePoint
+  - TextLocalized
   layers:
   - Default
   - TransparentFX

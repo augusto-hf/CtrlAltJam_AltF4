@@ -6,6 +6,7 @@
         "config": "Config",
         "resume": "Resume",
         "mainMenu": "Main menu",
+        "apply":"Apply",
         "error": "Invalid information"
     },
     "narrationsTexts": {

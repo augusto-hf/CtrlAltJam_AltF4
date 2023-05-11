@@ -8,11 +8,20 @@ public class SetTextLocalized : MonoBehaviour
     [SerializeField] private string key;
     private TextMeshProUGUI selfText;
 
-    void Start()
+    private void Awake() 
     {
         selfText = GetComponent<TextMeshProUGUI>();
-        selfText.text = LocalizationManager.localizationInstance.GetLocalizedValue(key);
     }
 
+    void Start()
+    {
+        NewTextLocalized();
+    }
+
+
+    public void NewTextLocalized()
+    {
+        selfText.text = LocalizationManager.localizationInstance.GetLocalizedValue(key);
+    }
     
 }

@@ -55,6 +55,7 @@ public class EventManager : MonoBehaviour
         gameManager.onSetPlayerPosition += saveManager.ApplyPositionInPlayer;
 
         gameManager.onGameStarted += menuManager.ChangeMenu;   
+
     }
 
 }
