@@ -50,9 +50,13 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("b");
             rb.sharedMaterial = playerSlope;
         }
-        else
+        else if (player.Check.isOnSlop && player.Controller.Axis.x != 0)
         {
             rb.sharedMaterial = noFriction;
+        }
+        else
+        {
+            rb.sharedMaterial = playerDefault;
         }
         
     }

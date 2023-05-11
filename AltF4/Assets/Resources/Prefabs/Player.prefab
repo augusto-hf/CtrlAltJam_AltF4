@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3498741887886869232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.236, z: 0}
+  m_LocalPosition: {x: 0, y: -0.267, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -132,7 +132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336683651438568577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -292,7 +292,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.06}
-  m_Size: {x: 1, y: 0.35}
+  m_Size: {x: 1, y: 0.4}
   m_Direction: 1
 --- !u!114 &2529864217549936242
 MonoBehaviour:
@@ -341,7 +341,7 @@ MonoBehaviour:
   groundDetectorPoint: {fileID: 4609767914332199521}
   size: {x: 0.76, y: 0.05}
   maxAngleSlope: 80
-  slopeDetectorDistance: 0.21
+  slopeDetectorDistance: 0.3
   slopeDetectorOffset: 0.1
 --- !u!114 &-215635321352401057
 MonoBehaviour:
