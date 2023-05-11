@@ -8,11 +8,16 @@ public class PlayerChecks : MonoBehaviour
     [SerializeField] private Transform groundDetectorPoint;
     [SerializeField] private Vector2 size;
     [SerializeField] private float maxAngleSlope;
+    [SerializeField] private float slopeDetectorDistance;
+    [SerializeField] private float slopeDetectorOffset;
     private PlayerCore player;
     private CapsuleCollider2D capsule;
     public bool IsGrounded { get; private set; }
     public float LastTimeGrounded { get; private set;}
     public bool IsFalling { get; private set; }
+    public bool isOnSlop { get; private set; }
+    public float SlopeAngle { get; private set; }
+    public Vector2 SlopeDirection { get; private set; }
 
     void Awake()
     {
@@ -25,60 +30,40 @@ public class PlayerChecks : MonoBehaviour
     {
         IsGrounded = OnGround();
 
-        setLastTimeOnGround();
+        CoyoteTime();
+        SlopeDetector();
 
         IsFalling = OnFall();
     }
 
-    public bool IsOnSlop(out float slopeAngle)
+    private void SlopeDetector()
     {
-        float angle = 0;
-        Vector2 point = new Vector2(this.transform.position.x + (capsule.bounds.extents.x - 0.2f), this.transform.position.y - capsule.bounds.extents.y);
+        Vector2 point = new Vector2(capsule.bounds.center.x + (capsule.bounds.extents.x - slopeDetectorOffset), capsule.bounds.center.y);
+        RaycastHit2D hit = Physics2D.Raycast(point, Vector2.down, slopeDetectorDistance, ground);
 
-        RaycastHit2D ray = Physics2D.Raycast(point, this.transform.right, 0.2f, ground);
-        Debug.DrawRay(point, this.transform.right * 0.2f, Color.green);
+        var hitColor = hit ? Color.green : Color.red;
 
-        if (ray)
+        Debug.DrawRay(point, Vector2.down * slopeDetectorDistance, hitColor);
+
+        if (hit)
         {
-            Debug.DrawRay(ray.point, ray.normal, Color.magenta);
-            Debug.DrawRay(ray.point, Vector2.Perpendicular(ray.normal), Color.blue);
-            
-            angle = Vector2.Angle(ray.normal, this.transform.up);
+            SlopeDirection = Vector2.Perpendicular(hit.normal).normalized;
+            SlopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+            isOnSlop = SlopeAngle != 0;
+
+            Debug.DrawRay(hit.point, SlopeDirection, Color.blue);
+            Debug.DrawRay(hit.point, hit.normal, Color.magenta);
 
         }
-
-        slopeAngle = angle;
-
-        bool onSlop = angle > maxAngleSlope;
-
-        return onSlop;
-
     }
-    public bool IsOnSlop()
-    {
-        float angle = 0;
-        Vector2 point = new Vector2(this.transform.position.x + (capsule.bounds.extents.x - 0.2f), this.transform.position.y - capsule.bounds.extents.y);
-
-        RaycastHit2D ray = Physics2D.Raycast(point, this.transform.right, 0.2f, ground);
-
-        if (ray)
-        {
-            angle = Vector2.Angle(ray.normal, this.transform.up);
-
-        }
-
-        bool onSlop = angle > maxAngleSlope;
-
-        return onSlop;
-
-    }
+   
     private bool OnGround()
     {
         var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, size, 0, ground);
         return groundCheck;
     }
 
-    private void setLastTimeOnGround()
+    private void CoyoteTime()
     {
         if (OnGround())
         {
