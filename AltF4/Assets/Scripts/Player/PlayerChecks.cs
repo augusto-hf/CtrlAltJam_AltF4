@@ -12,6 +12,7 @@ public class PlayerChecks : MonoBehaviour
     private CapsuleCollider2D capsule;
     public bool IsGrounded { get; private set; }
     public float LastTimeGrounded { get; private set;}
+    public bool IsFalling { get; private set; }
 
     void Awake()
     {
@@ -23,20 +24,10 @@ public class PlayerChecks : MonoBehaviour
     void FixedUpdate()
     {
         IsGrounded = OnGround();
-        
-        if (OnGround())
-        {
-            LastTimeGrounded = player.Data.CoyoteTime;
-        }
-        else if (!OnGround())
-        {
-            LastTimeGrounded -= Time.deltaTime;
-            if (LastTimeGrounded < 0)
-            {
-                LastTimeGrounded = 0;
-            }
-        }
-    
+
+        setLastTimeOnGround();
+
+        IsFalling = OnFall();
     }
 
     public bool IsOnSlop(out float slopeAngle)
@@ -87,6 +78,30 @@ public class PlayerChecks : MonoBehaviour
         return groundCheck;
     }
 
+    private void setLastTimeOnGround()
+    {
+        if (OnGround())
+        {
+            LastTimeGrounded = player.Data.CoyoteTime;
+        }
+        else if (!OnGround())
+        {
+            LastTimeGrounded -= Time.deltaTime;
+            if (LastTimeGrounded < 0)
+            {
+                LastTimeGrounded = 0;
+            }
+        }
+
+    }
+
+    private bool OnFall()
+    {
+        if (player.rb.velocity.y < 0 && !OnGround())
+            return true;
+        else
+            return false;
+    }
     private void OnDrawGizmos() 
     {
         if (groundDetectorPoint == null) return;

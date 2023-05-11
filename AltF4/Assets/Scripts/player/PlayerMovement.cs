@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
         rb = GetComponent<Rigidbody2D>();
-        
+
+
         rb.gravityScale = player.Data.GravityScale;
         currentMaxSpeed = player.Data.MaxHorizontalSpeed;
     }

@@ -12,6 +12,7 @@ public class PlayerColorAction : MonoBehaviour
 
     public IColor CurrentColor { get => currentColor; }
 
+
     private void Awake()
     {
         currentColor = StartingColorReference.gameObject.GetComponent<IColor>();

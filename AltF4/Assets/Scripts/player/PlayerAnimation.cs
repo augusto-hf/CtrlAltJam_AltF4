@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerAnimation : MonoBehaviour
+{
+    private PlayerCore player;
+    private Animator animator;
+
+    void Awake()
+    {
+        player = GetComponent<PlayerCore>();
+        animator = GetComponentInChildren<Animator>();
+    }
+
+
+    void Update()
+    {
+        animator.SetFloat("walkDirection", player.Controller.Axis.x);
+        animator.SetBool("tongue", player.Controller.TongueButton);
+
+        setJumpAndFall();
+
+        if (player.Color.CurrentColor.Type == ColorType.Orange)
+            animator.SetBool("isRunning", player.Controller.ColorButton);
+        else
+            animator.SetBool("isRunning", false);
+    }
+
+    private void setJumpAndFall()
+    {
+        if (player.Color.CurrentColor.Type == ColorType.Blue)
+            animator.SetBool("isJumping", player.Controller.ColorButton);
+
+        else
+            animator.SetBool("isJumping", false);
+
+        animator.SetBool("isFalling", player.Check.IsFalling);
+        //if (!player.Controller.ColorButton && player.Check.IsGrounded && player.Color.CurrentColor.Type == ColorType.Blue || player.Check.IsGrounded && player.Color.CurrentColor.Type != ColorType.Blue)
+
+    }
+}

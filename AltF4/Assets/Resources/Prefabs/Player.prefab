@@ -116,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6336683651438568576}
   - component: {fileID: 6336683651438568607}
+  - component: {fileID: 1136625044}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -190,6 +191,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1136625044
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683651438568577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2819dbac88bec264da4f65b6d73b1ac6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6336683652554037023
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,14 +221,15 @@ GameObject:
   m_Component:
   - component: {fileID: 6336683652554037018}
   - component: {fileID: 6336683652554037020}
+  - component: {fileID: 1138887062}
   - component: {fileID: 2529864217549936242}
   - component: {fileID: 6336683652554037021}
   - component: {fileID: 6336683652554037022}
   - component: {fileID: -215635321352401057}
   - component: {fileID: 8816518472539381874}
   - component: {fileID: 5683729516090076869}
+  - component: {fileID: 4604940917045427784}
   - component: {fileID: 1626766909}
-  - component: {fileID: 1138887062}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -256,6 +278,22 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!70 &1138887062
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683652554037023}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 1373aec410957d74992b34001c24ad22, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.48, y: 0.69}
+  m_Direction: 1
 --- !u!114 &2529864217549936242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,6 +485,18 @@ MonoBehaviour:
   dragableObject: GrappableObject
   interactableObject: ColorPower
   terrain: Ground
+--- !u!114 &4604940917045427784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683652554037023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf210ba704d3ef47ae6965a2407938a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1626766909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,22 +509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaf88b72e0544a42a2cfd5a28bcdc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &1138887062
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336683652554037023}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 1373aec410957d74992b34001c24ad22, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.48, y: 0.69}
-  m_Direction: 1
 --- !u!1 &7320957796236712430
 GameObject:
   m_ObjectHideFlags: 0
