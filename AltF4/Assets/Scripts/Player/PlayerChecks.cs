@@ -10,6 +10,7 @@ public class PlayerChecks : MonoBehaviour
     [SerializeField] private float maxAngleSlope;
     [SerializeField] private float slopeDetectorDistance;
     [SerializeField] private float slopeDetectorOffset;
+    
     private PlayerCore player;
     private CapsuleCollider2D capsule;
     public bool IsGrounded { get; private set; }
@@ -87,6 +88,7 @@ public class PlayerChecks : MonoBehaviour
         else
             return false;
     }
+    
     private void OnDrawGizmos() 
     {
         if (groundDetectorPoint == null) return;

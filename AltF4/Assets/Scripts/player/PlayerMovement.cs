@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Fall()
     {
-        if (rb.velocity.y < 0 && !player.Check.IsGrounded)
+        if (player.Check.IsFalling)
         {
             rb.gravityScale = player.Data.GravityScale * player.Data.FallMultiplier;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -player.Data.MaxFallSpeed));

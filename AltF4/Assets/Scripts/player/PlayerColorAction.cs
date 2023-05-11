@@ -29,10 +29,10 @@ public class PlayerColorAction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        takeColor(other.gameObject);
+        TakeColor(other.gameObject);
     }
     
-    public void takeColor(GameObject colorObject)
+    public void TakeColor(GameObject colorObject)
     {
         if (colorObject.CompareTag("ColorPower"))
         {
