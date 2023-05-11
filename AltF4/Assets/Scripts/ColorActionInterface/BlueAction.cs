@@ -33,7 +33,7 @@ public class BlueAction : MonoBehaviour, IColor
             player.Movement.JumpForceApply();
             isJumping = true;
         }
-        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasBluePassive)
+        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasBluePassive && !player.Check.isOnSlop)
         {
             player.Movement.JumpCutForceApply();
         }
