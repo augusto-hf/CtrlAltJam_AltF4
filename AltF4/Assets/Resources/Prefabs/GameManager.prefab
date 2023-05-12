@@ -81,6 +81,8 @@ MonoBehaviour:
     currentLanguage: 
   configData:
     currentLanguage: 
+    volumeMusics: 0
+    volumeSounds: 0
 --- !u!114 &8414608117657014548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +98,8 @@ MonoBehaviour:
   menuPrincipal: {fileID: 0}
   menuGaming: {fileID: 0}
   drop: {fileID: 0}
+  sliderMusic: {fileID: 0}
+  sliderSounds: {fileID: 0}
 --- !u!114 &6503141485143443907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036fc56088b65aa4eb0030fbea85a500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMusic: {fileID: 0}
+  volumeMusics: 1
+  volumeSounds: 1
