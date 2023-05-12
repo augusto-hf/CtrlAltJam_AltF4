@@ -188,7 +188,7 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.26060605
+          time: 0
           value: 0
           inSlope: 0
           outSlope: 0
@@ -197,8 +197,44 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.26070604
-          value: 0.5274261
+          time: 0.0001
+          value: 0.5151515
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.16760187
+          value: 0.5151515
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.16770187
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.49265364
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.49275362
+          value: 0.5194805
           inSlope: 0.025183287
           outSlope: 0.025183287
           tangentMode: 0
@@ -206,8 +242,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.7111111
-          value: 0.5274261
+          time: 0.7151515
+          value: 0.52380955
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -262,7 +298,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: semAzul
+  m_Name: orange
   m_EditorClassIdentifier: 
   components:
   - {fileID: -2600790945128174081}

@@ -105,7 +105,7 @@ public class LocalizationManager : MonoBehaviour
         foreach (GameObject text in texts)
         {
             SetTextLocalized newText = text.GetComponent<SetTextLocalized>();
-            newText.NewTextLocalized();
+            StartCoroutine(newText.NewTextLocalized());
         }
     }
 }

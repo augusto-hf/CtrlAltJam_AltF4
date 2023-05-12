@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     
     private Transform playerCore;
 
+    [SerializeField] private GameObject mainMenu;
+
     public bool gameISRunning = false;
 
     private void Awake() 
@@ -45,12 +47,14 @@ public class GameManager : MonoBehaviour
     void StartedGame()
     {
         gameISRunning = true;
+        mainMenu.SetActive(!gameISRunning);
         onGameStarted?.Invoke(gameISRunning);
     }
 
     public void StopedGame()
     {
         gameISRunning = false;
+        mainMenu.SetActive(!gameISRunning);
         onGameStarted?.Invoke(gameISRunning);
     }
 

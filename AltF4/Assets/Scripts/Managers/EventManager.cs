@@ -31,7 +31,6 @@ public class EventManager : MonoBehaviour
     {
         //new game
         gameManager.onNewGame += saveManager.NewGame;
-        gameManager.onNewGame +=  menuControll.ChangeTarget;
         gameManager.onNewGame += playerCore.StopAndRunPlayer;
 
         //save game
@@ -49,12 +48,14 @@ public class EventManager : MonoBehaviour
 
         //loadGame
         gameManager.onLoad += saveManager.Load;
-        gameManager.onLoad +=  menuControll.ChangeTarget;
         gameManager.onLoad += playerCore.StopAndRunPlayer;
-        menuControll.openMenu += playerCore.StopAndRunPlayer;
-        gameManager.onSetPlayerPosition += saveManager.ApplyPositionInPlayer;
+        gameManager.onSetPlayerPosition += saveManager.ApplyPositionInPlayer;   
+
+        //menu
+        gameManager.onGameStarted += menuControll.GetIfGameIsRunning;
 
         gameManager.onGameStarted += menuManager.ChangeMenu;   
+        menuControll.openMenu += playerCore.StopAndRunPlayer;
 
     }
 

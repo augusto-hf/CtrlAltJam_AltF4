@@ -7,21 +7,15 @@ public class CameraMove : MonoBehaviour
 {
     
     [SerializeField] private bool menuActive = false;
-    
-    private float smoothTimeFinal = 0.6f;
-    private float offSetXFinal; 
-    private float offSetYFinal;
+    [SerializeField] private bool gameISRunning = false;
 
-    private Vector3 velocity = Vector3.zero;
-    [SerializeField] private GameObject playerCamera;
-    [SerializeField] private GameObject canvasCamera;
+    [SerializeField] private GameObject pause;
 
     public event Action openMenu;
 
-
     private void Update() 
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && gameISRunning)
         {
             ChangeTarget();
         }
@@ -30,18 +24,13 @@ public class CameraMove : MonoBehaviour
     public void ChangeTarget()
     {
         menuActive = !menuActive;
-
-        if(!menuActive)
-        {
-            playerCamera.SetActive(true);
-            canvasCamera.SetActive(false);
-            return;
-        }
-
-        playerCamera.SetActive(false);
-        canvasCamera.SetActive(true);
-
+        pause.SetActive(menuActive);
         openMenu?.Invoke();
+    }
+
+    public void GetIfGameIsRunning(bool value)
+    {
+        gameISRunning = value;
     }
 
 

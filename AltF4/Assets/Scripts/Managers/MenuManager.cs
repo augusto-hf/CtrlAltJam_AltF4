@@ -7,7 +7,7 @@ using TMPro;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject menuPrincipal;
-    [SerializeField] private GameObject menuGaming;
+    [SerializeField] private GameObject rooms;
     [SerializeField] private TMP_Dropdown drop;
     [SerializeField] private Slider sliderMusic;
     [SerializeField] private Slider sliderSounds;
@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
     public void ChangeMenu(bool active)
     {
         menuPrincipal.SetActive(!active);
-        menuGaming.SetActive(active);
+        rooms.SetActive(active);
     }
 
     private void SetDropdownOptions()

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraTransitionRoom : MonoBehaviour
 {
     [SerializeField] private GameObject roomCam;
+    
     private void OnTriggerEnter2D(Collider2D other) 
     {
 
