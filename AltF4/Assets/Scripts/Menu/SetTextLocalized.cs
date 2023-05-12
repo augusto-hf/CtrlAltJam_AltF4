@@ -21,7 +21,7 @@ public class SetTextLocalized : MonoBehaviour
 
     public IEnumerator NewTextLocalized()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
         selfText.text = LocalizationManager.localizationInstance.GetLocalizedValue(key);
     }
     

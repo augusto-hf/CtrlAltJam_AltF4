@@ -8,8 +8,9 @@
         "mainMenu": "Main menu",
         "apply":"Apply",
         "idioma": "Language:",
-        "music": "Musics:",
+        "musics": "Musics:",
         "sounds": "Sounds:",
+        "pause": "Pause",
         "error": "Invalid information"
     },
     "narrationsTexts": {
