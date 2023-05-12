@@ -3542,6 +3542,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3947449838738797488, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947449838738797488, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590991936574768, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590991936574771, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992195243955, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992195243955, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992195243955, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992195243955, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992195243955, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992195243955, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8013590992492922195, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
       propertyPath: m_Name
       value: CanvasNarration
@@ -3632,6 +3672,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8013590992492922207, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992658644769, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992658644769, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992658644769, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013590992658644769, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
