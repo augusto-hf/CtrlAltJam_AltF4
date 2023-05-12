@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     
     public bool canMove = false;
 
+    [SerializeField] private Vector2 speed;
     private PlayerCore player;
     private Rigidbody2D rb;
     private float currentMaxSpeed;
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         Checkers();
         HorizontalMovement();
         VerticalMovement();
+        speed = Velocity;
     }
 
     private void Checkers()
@@ -106,6 +108,9 @@ public class PlayerMovement : MonoBehaviour
             
             rb.AddForce(Vector2.right * xMovement , ForceMode2D.Force);
         }
+
+        //rb.velocity = new Vector2(player.Controller.Axis.x * player.Data.MaxHorizontalSpeed, rb.velocity.y);
+
     }
     public void SetMaxSpeed(float maxSpeed)
     {

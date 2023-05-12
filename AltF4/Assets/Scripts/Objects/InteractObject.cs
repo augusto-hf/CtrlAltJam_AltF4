@@ -7,9 +7,10 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
 {
     [SerializeField] private bool canInteract;
     [SerializeField] private Transform groundDetectorPoint;
-    [SerializeField] private float size;
+    [SerializeField] private Vector2 size;
     [SerializeField] private LayerMask ground;
 
+    public bool moveTestAAAAAAAAAAAAH = false;
     public Rigidbody2D Rb { get; private set; }
     public bool CanInteract { get => canInteract; }
     public bool playerOnTop { get; set;}
@@ -30,6 +31,8 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
         {
             LastVelocityDirection = Rb.velocity.normalized;
         }
+
+       
     }
 
 
@@ -53,7 +56,9 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
             if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
             {
                 if (playerOnTop)
+                {                  
                     this.Rb.velocity = new Vector2(Rb.velocity.x, 0);
+                }
             }
         }
     }
@@ -65,7 +70,7 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
         if (other.gameObject.CompareTag("Player"))
         {
             if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
-            {
+            {        
                 playerOnTop = false;
                 body.transform.SetParent(null);
             }
