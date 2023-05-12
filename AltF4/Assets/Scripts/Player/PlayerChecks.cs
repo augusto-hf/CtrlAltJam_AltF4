@@ -40,23 +40,39 @@ public class PlayerChecks : MonoBehaviour
     private void SlopeDetector()
     {
         int direction = player.Movement.IsFacingRight ? 1 : -1;
-        Vector2 point = new Vector2(capsule.bounds.center.x + (capsule.bounds.extents.x - slopeDetectorOffset) * direction , capsule.bounds.center.y);
-        RaycastHit2D hit = Physics2D.Raycast(point, Vector2.down, slopeDetectorDistance, ground);
+        Vector2 pointRight = new Vector2(capsule.bounds.center.x + (capsule.bounds.extents.x - slopeDetectorOffset) * direction , capsule.bounds.center.y);
+        Vector2 pointLeft = new Vector2(capsule.bounds.center.x - (capsule.bounds.extents.x - slopeDetectorOffset) * direction , capsule.bounds.center.y);
+
+        RaycastHit2D hitRight = Physics2D.Raycast(pointRight, Vector2.down, slopeDetectorDistance, ground);
+        RaycastHit2D hitLeft = Physics2D.Raycast(pointLeft, Vector2.down, slopeDetectorDistance, ground);
+
+        bool hit = hitLeft || hitRight;
 
         var hitColor = hit ? Color.green : Color.red;
 
-        Debug.DrawRay(point, Vector2.down * slopeDetectorDistance, hitColor);
+        Debug.DrawRay(pointRight, Vector2.down * slopeDetectorDistance, hitColor);
+        Debug.DrawRay(pointLeft, Vector2.down * slopeDetectorDistance, hitColor);
 
-        if (hit)
+        if (hitRight)
         {
-            SlopeDirection = Vector2.Perpendicular(hit.normal).normalized;
-            SlopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+            SlopeDirection = Vector2.Perpendicular(hitRight.normal).normalized;
+            SlopeAngle = Vector2.Angle(hitRight.normal, Vector2.up);
             isOnSlop = SlopeAngle != 0;
 
-            Debug.DrawRay(hit.point, SlopeDirection, Color.blue);
-            Debug.DrawRay(hit.point, hit.normal, Color.magenta);
+            Debug.DrawRay(hitRight.point, SlopeDirection, Color.blue);
+            Debug.DrawRay(hitRight.point, hitRight.normal, Color.magenta);
 
         }
+        else if (hitLeft)
+        {
+            SlopeDirection = Vector2.Perpendicular(hitLeft.normal).normalized;
+            SlopeAngle = Vector2.Angle(hitLeft.normal, Vector2.up);
+            isOnSlop = SlopeAngle != 0;
+
+            Debug.DrawRay(hitLeft.point, SlopeDirection, Color.blue);
+            Debug.DrawRay(hitLeft.point, hitLeft.normal, Color.magenta);
+        }
+
     }
    
     private bool OnGround()
