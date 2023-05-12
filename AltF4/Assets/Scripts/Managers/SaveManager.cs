@@ -5,6 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.Collections;
 
 public class SaveManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class SaveManager : MonoBehaviour
     const string FILE_DEFAULT_SAVE_CONFIG = "Data/SaveGame/DefaultConfig";
     const string FILE_SAVE = "/save.json"; 
     const string FILE_CONFIG = "/config.json"; 
+    
+    [SerializeField] private GameObject IcoSaved;
 
     public GameData gameData;
     public ConfigData configData;
@@ -121,10 +124,19 @@ public class SaveManager : MonoBehaviour
 
     public void Save() 
     {
+        StartCoroutine(ShowIco());
         Debug.Log("Save Game");
         string json = JsonUtility.ToJson(gameData, true); 
         File.WriteAllText(filePathSave, json); 
     }
+
+    IEnumerator ShowIco()
+    {
+        IcoSaved.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        IcoSaved.SetActive(false);
+    }
+
 
     public void Load() 
     {
@@ -157,4 +169,5 @@ public class SaveManager : MonoBehaviour
 
         return data;
     }
+
 }

@@ -27685,6 +27685,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1636309875}
+    - target: {fileID: 423004866, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8013590992492922195, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
       propertyPath: m_Name
       value: CanvasGaming
@@ -27693,6 +27697,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 477325760}
+    - target: {fileID: 8013590992492922204, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1764004935
+      objectReference: {fileID: 0}
     - target: {fileID: 8013590992492922207, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -32357,6 +32365,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 477325760}
+    - target: {fileID: 1605854385391002121, guid: f695092d8a426d642bf1ff4152524651, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1764004935
+      objectReference: {fileID: 0}
     - target: {fileID: 1605854385391002122, guid: f695092d8a426d642bf1ff4152524651, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
