@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6503141485143443907}
   - component: {fileID: 2814681327026160498}
   - component: {fileID: 8429439325425054252}
+  - component: {fileID: 2120500748374318616}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd67f0413ed2524aa573d259bb5e4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
   gameISRunning: 0
 --- !u!114 &8414608117657014549
 MonoBehaviour:
@@ -81,6 +83,8 @@ MonoBehaviour:
     currentLanguage: 
   configData:
     currentLanguage: 
+    volumeMusics: 0
+    volumeSounds: 0
 --- !u!114 &8414608117657014548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,8 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPrincipal: {fileID: 0}
-  menuGaming: {fileID: 0}
+  rooms: {fileID: 0}
   drop: {fileID: 0}
+  sliderMusic: {fileID: 0}
+  sliderSounds: {fileID: 0}
 --- !u!114 &6503141485143443907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,5 +141,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 036fc56088b65aa4eb0030fbea85a500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMusic: {fileID: 0}
+  volumeMusics: 1
+  volumeSounds: 1
+--- !u!114 &2120500748374318616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414608117657014545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5728f31078388024e9555a4318c7fcb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

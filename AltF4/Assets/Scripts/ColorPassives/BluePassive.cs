@@ -65,16 +65,12 @@ public class BluePassive : MonoBehaviour
     {
         float currentForce = force;
         Vector2 impulseDirection = Vector2.zero;
-        
-        
-        if (rb.velocity.y < 0)
-            currentForce -= rb.velocity.y;
+
+        rb.velocity = Vector2.zero;
 
         impulseDirection = direction == Vector2.zero ? Vector2.up : direction.normalized;
 
         rb.AddForce(impulseDirection * currentForce, ForceMode2D.Impulse);
     }
-
-    
 
 }

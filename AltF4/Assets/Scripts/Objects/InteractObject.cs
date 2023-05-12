@@ -32,7 +32,6 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
             LastVelocityDirection = Rb.velocity.normalized;
         }
 
-       
     }
 
 
@@ -55,10 +54,7 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
         {
             if (other.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D body))
             {
-                if (playerOnTop)
-                {                  
-                    this.Rb.velocity = new Vector2(Rb.velocity.x, 0);
-                }
+                
             }
         }
     }
