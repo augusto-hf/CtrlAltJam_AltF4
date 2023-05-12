@@ -9,10 +9,18 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject menuPrincipal;
     [SerializeField] private GameObject menuGaming;
     [SerializeField] private TMP_Dropdown drop;
+    [SerializeField] private Slider sliderMusic;
+    [SerializeField] private Slider sliderSounds;
 
     private void Awake() 
     {
         SetDropdownOptions();
+    }
+
+    private void Start() 
+    {
+        UpdatedSliderVolumeMusic();    
+        UpdatedSliderVolumeSound();    
     }
     
     public void ChangeMenu(bool active)
@@ -39,6 +47,26 @@ public class MenuManager : MonoBehaviour
 
     }
 
+    public void UpdatedSliderVolumeSound()
+    {
+        sliderSounds.value = AudioManager.audioInstance.volumeSounds;
+    }
+
+    public void UpdatedSliderVolumeMusic()
+    {
+        sliderMusic.value = AudioManager.audioInstance.volumeMusics;
+    }
+
+    public void SetNewVolumeSound()
+    {
+        AudioManager.audioInstance.volumeSounds = sliderSounds.value;
+    }
+    public void SetNewVolumeMusic()
+    {
+        AudioManager.audioInstance.volumeMusics = sliderMusic.value;
+        AudioManager.audioInstance.SetNewVolumeMusic();
+    }
+
     public void NewSelectedOption()
     {
         LocalizationManager.localizationInstance.currentLanguage = drop.options[drop.value].text.ToLower();
@@ -58,6 +86,5 @@ public class MenuManager : MonoBehaviour
         }
         
         drop.RefreshShownValue();
-
     }
 }

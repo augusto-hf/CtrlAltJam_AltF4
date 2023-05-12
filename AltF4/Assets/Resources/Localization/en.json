@@ -7,6 +7,9 @@
         "resume": "Resume",
         "mainMenu": "Main menu",
         "apply":"Apply",
+        "idioma": "Language:",
+        "music": "Musics:",
+        "sounds": "Sounds:",
         "error": "Invalid information"
     },
     "narrationsTexts": {

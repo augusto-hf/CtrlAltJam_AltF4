@@ -56,6 +56,10 @@ public class SaveManager : MonoBehaviour
     public void updatedNewConfig()
     {
         configData.currentLanguage = LocalizationManager.localizationInstance.SetNewLanguage(LocalizationManager.localizationInstance.currentLanguage);
+
+        configData.volumeMusics = AudioManager.audioInstance.volumeMusics;
+        configData.volumeSounds = AudioManager.audioInstance.volumeSounds;
+
         SaveConfig();
 
     }
@@ -63,7 +67,7 @@ public class SaveManager : MonoBehaviour
     public void UpdatedConfig()
     {
         configData.currentLanguage = LocalizationManager.localizationInstance.SetNewLanguage(configData.currentLanguage);
-        SaveConfig();
+        AudioManager.audioInstance.GetVolumesSaved(configData.volumeMusics, configData.volumeSounds);
     }
 
     public void SaveConfig() 
