@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float currentMaxSpeed;
     private bool isJumping;
-    private bool isOnSlop;
     private bool isFacingRight;
 
     public Vector2 Velocity { get => rb.velocity; }
