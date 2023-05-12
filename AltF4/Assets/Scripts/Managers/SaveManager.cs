@@ -87,14 +87,14 @@ public class SaveManager : MonoBehaviour
 
     public void SaveNewEmotion(string nameEmotion)
     {
-        bool findEmotion = CheckIfEmotionExist(nameEmotion);
+        bool IsFind = CheckIfEmotionExist(nameEmotion);
 
-        if (!findEmotion)
+        if (!IsFind)
         {
             gameData.emotions.Add(nameEmotion);
         }
 
-        newColorPicks?.Invoke(findEmotion, nameEmotion);
+        newColorPicks?.Invoke(IsFind, nameEmotion);
 
         Save();
     }

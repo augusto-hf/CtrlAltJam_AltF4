@@ -22,6 +22,8 @@ public class EventManager : MonoBehaviour
         saveManager = GetComponent<SaveManager>();
         menuManager = GetComponent<MenuManager>();
         narrationManager = GetComponent<NarrationManager>();
+        postProcessingManager = GetComponent<PostProcessingManager>();
+        
         menuControll = Camera.main.GetComponent<CameraMove>();
 
         playerCore = GameObject.FindWithTag("Player").GetComponent<PlayerCore>();
