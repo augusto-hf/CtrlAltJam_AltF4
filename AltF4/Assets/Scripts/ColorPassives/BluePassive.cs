@@ -6,6 +6,7 @@ public class BluePassive : MonoBehaviour
 {
     [SerializeField] private float defaultJumpFoce;
     [SerializeField] private float playerJumpBuff;
+    [SerializeField] private float playerInpulseAddtional;
     [SerializeField] private Vector2 direction;
 
     private void Update()
@@ -27,6 +28,10 @@ public class BluePassive : MonoBehaviour
             if (player.Color.CurrentColor.Type == ColorType.Blue)
             {
                 additionalBuff = playerJumpBuff;
+            }
+            else
+            {
+                additionalBuff = playerInpulseAddtional;
             }
 
             Impulse(rb, player.Data.JumpForce + additionalBuff, direction);
