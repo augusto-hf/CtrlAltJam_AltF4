@@ -19,6 +19,8 @@ public class SaveManager : MonoBehaviour
     private string filePathSave;
     private string filePathConfig;
 
+    public event Action<bool, string> newColorPicks;
+
     private void Awake() 
     {
         filePathSave = Application.persistentDataPath + FILE_SAVE; 
@@ -85,15 +87,28 @@ public class SaveManager : MonoBehaviour
 
     public void SaveNewEmotion(string nameEmotion)
     {
-        string findEmotion = gameData.emotions.Find(x => x == nameEmotion);
+        bool findEmotion = CheckIfEmotionExist(nameEmotion);
 
-        if (findEmotion == null)
+        if (!findEmotion)
         {
             gameData.emotions.Add(nameEmotion);
-            Debug.Log("Narração");
         }
 
+        newColorPicks?.Invoke(findEmotion, nameEmotion);
+
         Save();
+    }
+
+    public bool CheckIfEmotionExist(string nameEmotion)
+    {
+        string findEmotion = gameData.emotions.Find(x => x == nameEmotion);
+
+        if (findEmotion != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void SavePositionPlayer(Transform positionPlayer)

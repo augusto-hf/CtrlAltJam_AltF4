@@ -12,6 +12,8 @@ public class EventManager : MonoBehaviour
     private MenuManager menuManager;
     private NarrationManager narrationManager;
 
+    private PostProcessingManager postProcessingManager;
+
     private GameObject[] savePoint;
 
     private void Awake() 
@@ -56,6 +58,8 @@ public class EventManager : MonoBehaviour
 
         gameManager.onGameStarted += menuManager.ChangeMenu;   
         menuControll.openMenu += playerCore.StopAndRunPlayer;
+
+        saveManager.newColorPicks += postProcessingManager.ChangeProfile;
 
     }
 
