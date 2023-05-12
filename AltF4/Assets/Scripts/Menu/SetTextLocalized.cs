@@ -15,13 +15,13 @@ public class SetTextLocalized : MonoBehaviour
 
     void Start()
     {
-        NewTextLocalized();
+        //NewTextLocalized();
+        StartCoroutine(NewTextLocalized());
     }
 
-
-    public void NewTextLocalized()
+    public IEnumerator NewTextLocalized()
     {
-        Debug.Log(transform.parent.name);
+        yield return new WaitForSeconds(0.1f);
         selfText.text = LocalizationManager.localizationInstance.GetLocalizedValue(key);
     }
     
