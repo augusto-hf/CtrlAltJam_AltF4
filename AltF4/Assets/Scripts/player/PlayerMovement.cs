@@ -106,11 +106,6 @@ public class PlayerMovement : MonoBehaviour
             
             rb.AddForce(Vector2.right * xMovement , ForceMode2D.Force);
         }
-        
-        
-        
-        
-
     }
     public void SetMaxSpeed(float maxSpeed)
     {
@@ -118,10 +113,15 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Flip()
     {
-        if ((isFacingRight && player.Controller.Axis.x < 0 || !isFacingRight && player.Controller.Axis.x > 0 ) && !player.Controller.TongueButton)
+        if ((isFacingRight && player.Controller.Axis.x < 0 || !isFacingRight && player.Controller.Axis.x > 0))
         {
-            isFacingRight = !isFacingRight;
-            this.transform.Rotate(0,180,0);
+            if (!player.Controller.TongueButton)
+            {
+                isFacingRight = !isFacingRight;
+                this.transform.Rotate(0, 180, 0);
+            }
+            else
+                return;
         }
     }
 

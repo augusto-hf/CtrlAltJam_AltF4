@@ -95,8 +95,8 @@ public class PlayerHook : MonoBehaviour
     }
 
     private bool isHookedObjectInFront() {
-        Vector2 direction = (targetObject.transform.position - transform.position);
-        if (direction.x > 0 || direction.x == 0)
+        Vector2 direction = (transform.position - line.GetPosition(1));
+        if (direction.x >= 0)
             return true;
         else
             return false;
