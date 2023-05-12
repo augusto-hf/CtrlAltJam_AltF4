@@ -6,6 +6,9 @@ using UnityEngine;
 public class InteractObject : MonoBehaviour, IObjectInteractColor
 {
     [SerializeField] private bool canInteract;
+    [SerializeField] private Transform groundDetectorPoint;
+    [SerializeField] private float size;
+    [SerializeField] private LayerMask ground;
 
     public Rigidbody2D Rb { get; private set; }
     public bool CanInteract { get => canInteract; }
@@ -68,6 +71,12 @@ public class InteractObject : MonoBehaviour, IObjectInteractColor
             }
         }
         
+    }
+
+    private bool ObjectOnGround()
+    {
+        var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, size, 0, ground);
+        return groundCheck;
     }
 
     private void OnDrawGizmos()
