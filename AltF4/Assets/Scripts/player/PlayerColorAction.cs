@@ -44,6 +44,7 @@ public class PlayerColorAction : MonoBehaviour
             currentColor.ResetAction(player);
             currentColor = lastBlob.blobColor;
             player.PickColor(lastBlob.nameColor);
+
             //PRECISO DE UM NOME/ID PARA AS CORES - feito já XD
         }
     }
