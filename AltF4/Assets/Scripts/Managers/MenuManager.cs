@@ -20,7 +20,8 @@ public class MenuManager : MonoBehaviour
     private void Start() 
     {
         UpdatedSliderVolumeMusic();    
-        UpdatedSliderVolumeSound();    
+        UpdatedSliderVolumeSound();
+        UpdatedDropDownOptions();    
     }
     
     public void ChangeMenu(bool active)

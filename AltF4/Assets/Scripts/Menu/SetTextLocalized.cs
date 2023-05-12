@@ -21,6 +21,7 @@ public class SetTextLocalized : MonoBehaviour
 
     public void NewTextLocalized()
     {
+        Debug.Log(transform.parent.name);
         selfText.text = LocalizationManager.localizationInstance.GetLocalizedValue(key);
     }
     
