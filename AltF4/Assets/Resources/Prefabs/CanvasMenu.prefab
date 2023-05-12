@@ -148,9 +148,9 @@ RectTransform:
   m_Father: {fileID: 1605854386443760656}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -76.666664}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1605854384785041906
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -234,7 +234,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1605854384785041905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StopedGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1605854384920320793
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +259,7 @@ GameObject:
   - component: {fileID: 1605854384920320796}
   - component: {fileID: 1605854384920320795}
   - component: {fileID: 8259524511647085388}
+  - component: {fileID: 843659791}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: TextLocalized
@@ -384,6 +397,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: config
+--- !u!114 &843659791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605854384920320793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: config
 --- !u!1 &1605854385039972070
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -841,7 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -896,6 +922,7 @@ GameObject:
   - component: {fileID: 1605854385528315665}
   - component: {fileID: 1605854385528315664}
   - component: {fileID: 6676524324046353942}
+  - component: {fileID: 418627654}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: TextLocalized
@@ -951,9 +978,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Exit
-
-'
+  m_text: Exit Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -980,8 +1005,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 7.5
-  m_fontSizeBase: 7.5
+  m_fontSize: 7
+  m_fontSizeBase: 7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1023,6 +1048,19 @@ MonoBehaviour:
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &6676524324046353942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605854385528315662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: mainMenu
+--- !u!114 &418627654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1202,7 +1240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1304,9 +1342,9 @@ RectTransform:
   m_Father: {fileID: 1605854386443760656}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1605854385603727699
@@ -1360,7 +1398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1390,7 +1428,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1605854385603727698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CameraMove, Assembly-CSharp
+        m_MethodName: ChangeTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1605854385607916678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,9 +1476,9 @@ RectTransform:
   m_Father: {fileID: 1605854386443760656}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -43.333332}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1605854385607916682
@@ -1482,7 +1532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1525,6 +1575,7 @@ GameObject:
   - component: {fileID: 1605854385679254759}
   - component: {fileID: 1605854385679254758}
   - component: {fileID: 4573604376322651502}
+  - component: {fileID: 1605854386414366795}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: TextLocalized
@@ -1662,6 +1713,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: continue
+--- !u!114 &1605854386414366795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605854385679254756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: continue
 --- !u!1 &1605854385718399184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1777,7 @@ GameObject:
   - component: {fileID: 1605854385947354388}
   - component: {fileID: 1605854385947354387}
   - component: {fileID: 6826559677076457511}
+  - component: {fileID: 1605854386414366793}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: TextLocalized
@@ -1852,6 +1917,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: exit
+--- !u!114 &1605854386414366793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605854385947354385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: exit
 --- !u!1 &1605854386013604508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,6 +1942,7 @@ GameObject:
   - component: {fileID: 1605854386013604511}
   - component: {fileID: 1605854386013604510}
   - component: {fileID: 2865227062413619330}
+  - component: {fileID: 1605854386414366796}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: TextLocalized
@@ -2001,6 +2080,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: newGame
+--- !u!114 &1605854386414366796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605854386013604508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: newGame
 --- !u!1 &1605854386356072188
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2172,7 @@ GameObject:
   - component: {fileID: 1605854386357519256}
   - component: {fileID: 1605854386357519255}
   - component: {fileID: 2816206569730303320}
+  - component: {fileID: 1605854386414366792}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: TextLocalized
@@ -2217,6 +2310,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: resume
+--- !u!114 &1605854386414366792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605854386357519253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: resume
 --- !u!1 &1605854386443760655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,6 +2401,7 @@ GameObject:
   - component: {fileID: 1605854386497100264}
   - component: {fileID: 1605854386497100263}
   - component: {fileID: 8951665652487757982}
+  - component: {fileID: 1605854386414366794}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: TextLocalized
@@ -2432,6 +2539,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: config
+--- !u!114 &1605854386414366794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605854386497100261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: config
 --- !u!1 &1605854386697000751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2523,7 +2643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4641,7 +4761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: sounds
 --- !u!1 &7296241743971716277
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,7 +5189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: musics
 --- !u!1 &8150909532683101088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,8 +5504,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
-        m_MethodName: updatedNewConfig
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: SetNewVolumeSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: SetNewVolumeMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5760,7 +5892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeca9ff4fe7b20c44a6a1c12d0126262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: idioma
 --- !u!1 &9051331995712496158
 GameObject:
   m_ObjectHideFlags: 0
