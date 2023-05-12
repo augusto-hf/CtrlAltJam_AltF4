@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 438181323011620091}
   - component: {fileID: 438181323011620088}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,4 +48,4 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: de07de623e13d2140b91c50b4211c7f2, type: 2}
+  sharedProfile: {fileID: 11400000, guid: d6c73b8cf5c45944b9c73fcc8d257903, type: 2}
