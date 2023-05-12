@@ -70,7 +70,7 @@ public class LocalizationManager : MonoBehaviour
                 value = localizationData.localizedTexts["error"];
             }
         }
-
+        
         return value;
     }
 
