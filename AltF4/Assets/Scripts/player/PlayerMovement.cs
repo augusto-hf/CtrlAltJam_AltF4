@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Flip()
     {
-        if (isFacingRight && player.Controller.Axis.x < 0 || !isFacingRight && player.Controller.Axis.x > 0 )
+        if ((isFacingRight && player.Controller.Axis.x < 0 || !isFacingRight && player.Controller.Axis.x > 0 ) && !player.Controller.TongueButton)
         {
             isFacingRight = !isFacingRight;
             this.transform.Rotate(0,180,0);

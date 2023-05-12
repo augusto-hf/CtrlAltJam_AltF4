@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f26f7028e93486b48958185759b123d2
+guid: 1e87d12fb09e44441bd1c03e65c8df33
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_0
+      name: andando_qualidade_baixa_esquerda_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14659ed6e0b876c47b74650f600dd3eb
-      internalID: -338704746
+      spriteID: ec33ab7334b407a4f8e060853bddf11b
+      internalID: -1602815467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_1
+      name: andando_qualidade_baixa_esquerda_1
       rect:
         serializedVersion: 2
         x: 342
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 052e3405beb82a749bc3b73636cd79b7
-      internalID: 172889517
+      spriteID: 40fde07704e6c484cbf05b6d93f40504
+      internalID: -742553023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_2
+      name: andando_qualidade_baixa_esquerda_2
       rect:
         serializedVersion: 2
         x: 684
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25f88313baab84a4bba40256f22fcccc
-      internalID: -1634611695
+      spriteID: 079b5854547abff44bf4dcdd7403259d
+      internalID: 1426145862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_3
+      name: andando_qualidade_baixa_esquerda_3
       rect:
         serializedVersion: 2
         x: 1026
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1e256df783ca924aadef83a9d398da8
-      internalID: -534185613
+      spriteID: 0cf065b76d2feb44e9d0ab085e9a9caa
+      internalID: 1694273125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_4
+      name: andando_qualidade_baixa_esquerda_4
       rect:
         serializedVersion: 2
         x: 1368
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ed02afb7e933114080b76e19eb9292a
-      internalID: 355449823
+      spriteID: 3e85ec291841722479dffc33e612418e
+      internalID: 1223313771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_5
+      name: andando_qualidade_baixa_esquerda_5
       rect:
         serializedVersion: 2
         x: 1710
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa03535d2cc3d0e4f8753b625e057a52
-      internalID: -1935757473
+      spriteID: f0e1791baf0a50546b5a8097d8b6a28f
+      internalID: -1930886854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_6
+      name: andando_qualidade_baixa_esquerda_6
       rect:
         serializedVersion: 2
         x: 2052
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fd017c7f5711134094bfa549b241e87
-      internalID: -885254525
+      spriteID: adf28aba46c68b849818376524d50cfe
+      internalID: -936511543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_7
+      name: andando_qualidade_baixa_esquerda_7
       rect:
         serializedVersion: 2
         x: 2394
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b835ff85a563b014996eb903ba05d4cf
-      internalID: 295828099
+      spriteID: 41970da2b03859f49a6785cb21ee3776
+      internalID: 454373616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_8
+      name: andando_qualidade_baixa_esquerda_8
       rect:
         serializedVersion: 2
         x: 2736
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f4011bd1c123c5458d62c3391c763db
-      internalID: 1109932185
+      spriteID: f5cf7e642d1791c468ce88cd4e79eccd
+      internalID: -1655327125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: correndo_qualidade_baixa-Sheet_9
+      name: andando_qualidade_baixa_esquerda_9
       rect:
         serializedVersion: 2
         x: 3078
         y: 0
         width: 342
-        height: 342
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,8 +344,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 666fa18b0a956014aaf46e1525ae9d37
-      internalID: 983544254
+      spriteID: fc5695226893c27409b7d3dd180f4e17
+      internalID: 1359647388
       vertices: []
       indices: 
       edges: []
@@ -361,16 +361,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      correndo_qualidade_baixa-Sheet_2: -1634611695
-      correndo_qualidade_baixa-Sheet_0: -338704746
-      correndo_qualidade_baixa-Sheet_9: 983544254
-      correndo_qualidade_baixa-Sheet_8: 1109932185
-      correndo_qualidade_baixa-Sheet_3: -534185613
-      correndo_qualidade_baixa-Sheet_1: 172889517
-      correndo_qualidade_baixa-Sheet_5: -1935757473
-      correndo_qualidade_baixa-Sheet_4: 355449823
-      correndo_qualidade_baixa-Sheet_6: -885254525
-      correndo_qualidade_baixa-Sheet_7: 295828099
+      andando_qualidade_baixa_esquerda_0: -1602815467
+      andando_qualidade_baixa_esquerda_9: 1359647388
+      andando_qualidade_baixa_esquerda_8: -1655327125
+      andando_qualidade_baixa_esquerda_2: 1426145862
+      andando_qualidade_baixa_esquerda_1: -742553023
+      andando_qualidade_baixa_esquerda_3: 1694273125
+      andando_qualidade_baixa_esquerda_4: 1223313771
+      andando_qualidade_baixa_esquerda_5: -1930886854
+      andando_qualidade_baixa_esquerda_6: -936511543
+      andando_qualidade_baixa_esquerda_7: 454373616
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

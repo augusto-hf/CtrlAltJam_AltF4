@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &855463799503204804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7591971236583729125}
-  m_Layer: 0
-  m_Name: leftTongue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7591971236583729125
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855463799503204804}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -0.065, z: -0.6475981}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6336683652554037018}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3498741887886869232
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +198,6 @@ GameObject:
   - component: {fileID: 8816518472539381874}
   - component: {fileID: 5683729516090076869}
   - component: {fileID: 4604940917045427784}
-  - component: {fileID: 1626766909}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -252,7 +220,6 @@ Transform:
   - {fileID: 6336683651438568576}
   - {fileID: 4609767914332199521}
   - {fileID: 4466641799175014683}
-  - {fileID: 7591971236583729125}
   - {fileID: 5105274287945571479}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -483,8 +450,7 @@ MonoBehaviour:
     m_Bits: 64
   minimumDistanceToDrag: 3
   dragForce: 0.9
-  leftStartingPoint: {fileID: 7591971236583729125}
-  rightStartingPoint: {fileID: 5105274287945571479}
+  startingPoint: {fileID: 5105274287945571479}
   dragableObject: GrappableObject
   interactableObject: ColorPower
   terrain: Ground
@@ -500,19 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf210ba704d3ef47ae6965a2407938a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
---- !u!114 &1626766909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336683652554037023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aaf88b72e0544a42a2cfd5a28bcdc40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7320957796236712430
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5105274287945571479}
   m_Layer: 0
-  m_Name: rightTongue
+  m_Name: tonguePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -542,5 +495,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6336683652554037018}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

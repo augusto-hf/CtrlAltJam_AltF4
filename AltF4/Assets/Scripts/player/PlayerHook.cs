@@ -15,20 +15,20 @@ public class PlayerHook : MonoBehaviour
     [Header("Drag Object Values")]
     [SerializeField] private float minimumDistanceToDrag, dragForce;
 
-    [Header("Hook Starting Points")]
-    [SerializeField] private Transform leftStartingPoint, rightStartingPoint;
-    private Transform currentStartingPoint;
+    [Header("Hook Starting")]
+    [SerializeField] private Transform startingPoint;
 
     [Header("Valid Targets")]
     [SerializeField] private string dragableObject;
     [SerializeField] private string interactableObject;
     [SerializeField] private string terrain;
 
-    private Vector2 hitLocation, grapplingEnd;
+    private Vector2 hitLocation, grapplingEnd, directionn;
     private GameObject targetObject;
     private bool retractingGrapple = false, startedGrappling = false, finishedGrappling = false;
     private bool isHittingDragableObject = false, isTooFarFromObject = false;
     private string hittedObjectTag;
+    public bool IsHookedObjectInFront { get => isHookedObjectInFront(); }
     void Awake()
     {
         player = GetComponent<PlayerCore>();
@@ -43,8 +43,9 @@ public class PlayerHook : MonoBehaviour
 
         if (retractingGrapple)
         {
-            line.SetPosition(0, currentStartingPoint.position);
-
+            line.SetPosition(0, startingPoint.position);
+            isHookedObjectInFront();
+            
             float distanceToObject = Vector2.Distance(transform.position, line.GetPosition(1));
 
             if (!player.Controller.TongueButton|| distanceToObject > hookMaxDistance)
@@ -67,7 +68,6 @@ public class PlayerHook : MonoBehaviour
     }
     public void StartHook()
     {
-        hookStartingPointt();
         Vector2 direction = new Vector2(player.Controller.LastAxis.x, 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, hookMaxDistance, grapplableMask);
         if (hit.collider == null)
@@ -92,16 +92,14 @@ public class PlayerHook : MonoBehaviour
             Vector2 direction = (transform.position - targetObject.transform.position);
             targetObject.GetComponent<Rigidbody2D>().AddForce(direction * dragForce);
         }
-
     }
 
-    private void hookStartingPointt()
-    {
-        Vector2 direction = new Vector2(player.Controller.LastAxis.x, 0);
-        if (direction.x > 0)
-            currentStartingPoint = rightStartingPoint;
+    private bool isHookedObjectInFront() {
+        Vector2 direction = (targetObject.transform.position - transform.position);
+        if (direction.x > 0 || direction.x == 0)
+            return true;
         else
-            currentStartingPoint = leftStartingPoint;
+            return false;
     }
 
     IEnumerator Grapple()
@@ -110,8 +108,8 @@ public class PlayerHook : MonoBehaviour
         float time = 10;
         startedGrappling = true;
 
-        line.SetPosition(0, currentStartingPoint.position);
-
+        line.SetPosition(0, startingPoint.position);
+        
 
         for (float t = 0; t < time; t += hookSpeed * Time.deltaTime)
         {
@@ -119,7 +117,7 @@ public class PlayerHook : MonoBehaviour
                 grapplingEnd = Vector2.Lerp(transform.position, targetObject.transform.position, t / time);
             else
                 grapplingEnd = Vector2.Lerp(transform.position, hitLocation, t / time);
-            line.SetPosition(0, currentStartingPoint.position);
+            line.SetPosition(0, startingPoint.position);
             line.SetPosition(1, grapplingEnd);
             yield return null;
         }
@@ -136,7 +134,7 @@ public class PlayerHook : MonoBehaviour
                 grapplingEnd = Vector2.Lerp(targetObject.transform.position, transform.position, t / time);
             else
                 grapplingEnd = Vector2.Lerp(hitLocation, transform.position, t / time);
-            line.SetPosition(0, currentStartingPoint.position);
+            line.SetPosition(0, startingPoint.position);
             line.SetPosition(1, grapplingEnd);
             
             yield return null;

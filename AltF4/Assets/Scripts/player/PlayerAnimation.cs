@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     private PlayerCore player;
-    [SerializeField] private Animator animator;
+    private Animator animator;
 
     void Awake()
     {
