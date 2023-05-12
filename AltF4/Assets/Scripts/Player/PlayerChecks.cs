@@ -39,7 +39,8 @@ public class PlayerChecks : MonoBehaviour
 
     private void SlopeDetector()
     {
-        Vector2 point = new Vector2(capsule.bounds.center.x + (capsule.bounds.extents.x - slopeDetectorOffset), capsule.bounds.center.y);
+        int direction = player.Movement.IsFacingRight ? 1 : -1;
+        Vector2 point = new Vector2(capsule.bounds.center.x + (capsule.bounds.extents.x - slopeDetectorOffset) * direction , capsule.bounds.center.y);
         RaycastHit2D hit = Physics2D.Raycast(point, Vector2.down, slopeDetectorDistance, ground);
 
         var hitColor = hit ? Color.green : Color.red;

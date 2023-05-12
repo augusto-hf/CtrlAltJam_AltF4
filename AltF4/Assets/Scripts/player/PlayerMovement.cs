@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 Velocity { get => rb.velocity; }
     public bool HasBluePassive { get; private set;}
+    public bool IsFacingRight { get => isFacingRight; }
     
     private void Awake()
     {
