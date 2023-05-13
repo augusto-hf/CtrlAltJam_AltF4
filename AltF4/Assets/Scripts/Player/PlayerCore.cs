@@ -14,6 +14,8 @@ public class PlayerCore : MonoBehaviour
     public PlayerColorAction Color { get; private set; }
     public PlayerHook Hook { get; private set; }
     public PlayerAnimation Animation { get; private set; }
+    public PlayerHealth Health { get; private set; }
+    
     public Rigidbody2D rb { get; private set; }
 
     public event Action<string> onPickColor;
@@ -25,6 +27,7 @@ public class PlayerCore : MonoBehaviour
         Color = GetComponent<PlayerColorAction>();
         Hook = GetComponent<PlayerHook>();
         Animation = GetComponent<PlayerAnimation>();
+        Health = GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody2D>();
     }
 

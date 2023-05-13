@@ -122,6 +122,7 @@ public class PlayerChecks : MonoBehaviour
     public void OnWall()
     {
         int direction = player.Movement.IsFacingRight ? 1 : -1;
+        
         Vector2 point = new Vector2(capsule.bounds.center.x + capsule.bounds.extents.x  * direction , capsule.bounds.center.y);
         RaycastHit2D wallPoint = Physics2D.Raycast(point, this.transform.right, wallCheckDistance, ground);
         var hitColor = wallPoint ? Color.green : Color.red;

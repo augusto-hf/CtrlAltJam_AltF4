@@ -34,6 +34,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (player.Health.IsDead)
+        {
+            rb.isKinematic = true;
+            return;            
+        }
+        else
+        {
+            rb.isKinematic = false;
+        }
+        
         Debug.DrawRay(this.transform.position, rb.velocity.normalized, Color.cyan);
         Checkers();
         HorizontalMovement();
