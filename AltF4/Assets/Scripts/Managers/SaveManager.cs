@@ -34,6 +34,10 @@ public class SaveManager : MonoBehaviour
         Debug.Log("Local de salvamento: " + filePathSave); 
 
         LoadConfig();
+        UpdatedButtonContinue();
+    }
+    public void UpdatedButtonContinue()
+    {
         buttonContinue.interactable = CheckIfExistSave();
     }
 
