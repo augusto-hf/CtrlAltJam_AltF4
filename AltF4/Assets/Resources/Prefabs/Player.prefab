@@ -460,12 +460,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hookSpeed: 120
-  hookMaxDistance: 7
+  hookMaxDistance: 10
   grapplableMask:
     serializedVersion: 2
     m_Bits: 3072
-  minimumDistanceToDrag: 1
-  dragForce: 0.9
+  minimumDistanceToDrag: 0.2
+  dragForce: 1.5
   startingPoint: {fileID: 5105274287945571479}
   dragableObject: GrappableObject
   interactableObject: ColorPower
