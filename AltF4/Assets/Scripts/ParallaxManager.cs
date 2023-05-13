@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ParallaxManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Camera cam;
+    [SerializeField] private Transform ImageToParallax;
+    Vector2 StartPosition;
+    float StartZ;
+
+    Vector2 travel =>  (Vector2)cam.transform.position - StartPosition;
     void Start()
     {
-        
+        StartPosition = transform.position;
+        StartZ = transform.position.z;
     }
 
     // Update is called once per frame
