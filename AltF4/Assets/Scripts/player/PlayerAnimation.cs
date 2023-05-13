@@ -6,6 +6,8 @@ public class PlayerAnimation : MonoBehaviour
 {
     private PlayerCore player;
     private Animator animator;
+    [SerializeField] private ParticleSystem dust;
+    [SerializeField] private Transform pointDust;
     void Awake()
     {
         player = GetComponent<PlayerCore>();
@@ -23,6 +25,10 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("isRunning", player.Controller.ColorButton);
         else
             animator.SetBool("isRunning", false);
+
+
+            
+
     }
 
     private void setJumpAndFall()
