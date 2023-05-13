@@ -26,6 +26,6 @@ public class ParallaxManager : MonoBehaviour
     void Update()
     {
         Vector2 newPos = startPosition + travel * parallaxFactor;
-        transform.position = new Vector3(newPos.x, newPos.y, startZ)
+        transform.position = new Vector3(newPos.x, newPos.y, startZ);
     }
 }
