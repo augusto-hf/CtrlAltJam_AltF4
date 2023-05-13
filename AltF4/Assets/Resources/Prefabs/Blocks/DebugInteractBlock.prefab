@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6776108345210785829}
   - component: {fileID: 6776108345210785828}
   - component: {fileID: 6776108345210785848}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: DebugInteractBlock
   m_TagString: GrappableObject
   m_Icon: {fileID: 0}
@@ -147,3 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInteract: 1
+  groundDetectorPoint: {fileID: 0}
+  size: {x: 0, y: 0}
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
+  moveTestAAAAAAAAAAAAH: 0

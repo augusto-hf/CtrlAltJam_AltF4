@@ -785,7 +785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785851, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5
+      value: 31.12
       objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785851, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1198,13 +1198,21 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 2146498812}
+    - target: {fileID: 5683729516090076869, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
+      propertyPath: hookMaxDistance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683729516090076869, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
+      propertyPath: grapplableMask.m_Bits
+      value: 3072
+      objectReference: {fileID: 0}
     - target: {fileID: 6336683652554037018, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6336683652554037018, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.748077
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 6336683652554037018, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1241,6 +1249,10 @@ PrefabInstance:
     - target: {fileID: 6336683652554037018, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336683652554037022, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
+      propertyPath: ground.m_Bits
+      value: 1088
       objectReference: {fileID: 0}
     - target: {fileID: 6336683652554037023, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: m_Name
@@ -2153,6 +2165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultJumpFoce: 5
   playerJumpBuff: 2
+  playerInpulseAddtional: 0
   direction: {x: 0, y: 0}
 --- !u!66 &985364548
 CompositeCollider2D:
@@ -10639,7 +10652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 442503765224025410, guid: 9ff2911e48184b54eb7277d975340b91, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5282485609175262707, guid: 9ff2911e48184b54eb7277d975340b91, type: 3}
       propertyPath: m_RootOrder
@@ -10687,7 +10700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8578487550634178261, guid: 9ff2911e48184b54eb7277d975340b91, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ff2911e48184b54eb7277d975340b91, type: 3}
@@ -12437,7 +12450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2329458659518803549, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5871313350738654666, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
       propertyPath: m_Name
@@ -12445,7 +12458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5871313350738654666, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb78bbe29eaa7ba45a197f062f182c02, type: 3}

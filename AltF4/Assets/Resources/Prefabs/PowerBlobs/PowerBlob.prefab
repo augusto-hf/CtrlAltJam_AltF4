@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2620965897924027974}
   - component: {fileID: 5187401207562044023}
   - component: {fileID: 6960809470752768436}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VisualAndHitbox
   m_TagString: ColorPower
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057928800272166170}
   - component: {fileID: 860348821051565063}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PowerBlob
   m_TagString: ColorPower
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8777836740461482517}
   - component: {fileID: 3543725109954787860}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GrayVisual
   m_TagString: ColorPower
   m_Icon: {fileID: 0}
