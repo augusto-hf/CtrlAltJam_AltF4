@@ -64,6 +64,8 @@ public class EventManager : MonoBehaviour
 
         saveManager.newColorPicks += postProcessingManager.ChangeProfile;
 
+        postProcessingManager.LoadProfile(saveManager.gameData.currentEmotions);
+
     }
 
 }
