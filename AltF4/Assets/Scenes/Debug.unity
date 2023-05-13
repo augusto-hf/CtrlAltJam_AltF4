@@ -32265,7 +32265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910425525899097194, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: m_Mass
-      value: 0.9
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 6910425525899097204, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: m_RootOrder
@@ -32721,7 +32721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910425525899097194, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: m_Mass
-      value: 0.9
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 6910425525899097204, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: m_RootOrder
@@ -32941,6 +32941,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1632924081}
+    - target: {fileID: 1605854385391002123, guid: f695092d8a426d642bf1ff4152524651, type: 3}
+      propertyPath: offSetY
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1605854385496259295, guid: f695092d8a426d642bf1ff4152524651, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
