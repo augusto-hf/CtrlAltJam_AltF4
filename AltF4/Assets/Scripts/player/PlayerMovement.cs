@@ -106,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             float xMovement  = speedToReach * accelRate;
             
             rb.AddForce(Vector2.right * xMovement , ForceMode2D.Force);
+            
         }
 
         //rb.velocity = new Vector2(player.Controller.Axis.x * player.Data.MaxHorizontalSpeed, rb.velocity.y);

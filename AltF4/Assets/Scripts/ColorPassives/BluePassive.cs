@@ -37,6 +37,8 @@ public class BluePassive : MonoBehaviour
 
             Impulse(rb, player.Data.JumpForce + additionalBuff, direction);
 
+            Debug.Log("Set passive");
+
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
         {
@@ -67,7 +69,7 @@ public class BluePassive : MonoBehaviour
         float currentForce = force;
         Vector2 impulseDirection = Vector2.zero;
 
-        rb.velocity = Vector2.zero;
+        //rb.velocity = Vector2.zero;
 
         impulseDirection = direction == Vector2.zero ? Vector2.up : direction.normalized;
 

@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785830, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785851, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_RootOrder
@@ -92470,15 +92470,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 97279712651254704, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1761830285411006308, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: playerJumpBuff
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1761830285411006308, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: playerInpulseAddtional
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6910425525899097193, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: m_Name
@@ -92486,7 +92486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6910425525899097193, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6910425525899097194, guid: 0d1b3767dbd94c4498ae5ca162d6122a, type: 3}
       propertyPath: m_Mass
@@ -93053,7 +93053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785830, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785848, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: moveTestAAAAAAAAAAAAH
@@ -94421,7 +94421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultJumpFoce: 5
-  playerJumpBuff: 3
+  playerJumpBuff: 5
   playerInpulseAddtional: 0
   direction: {x: 0, y: 1}
 --- !u!19719996 &904911446
@@ -124215,6 +124215,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1114527851}
     m_Modifications:
+    - target: {fileID: 1737095112814543123, guid: a036b6256261aba45bb5694d5b0d8d7b, type: 3}
+      propertyPath: direction.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6349018447668179002, guid: a036b6256261aba45bb5694d5b0d8d7b, type: 3}
       propertyPath: m_Name
       value: PushUp
@@ -124459,7 +124463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5991925509490557212, guid: bc2b787007bdcb3409a5934cab00329e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc2b787007bdcb3409a5934cab00329e, type: 3}

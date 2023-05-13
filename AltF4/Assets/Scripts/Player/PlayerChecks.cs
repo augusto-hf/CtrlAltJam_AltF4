@@ -98,7 +98,7 @@ public class PlayerChecks : MonoBehaviour
 
     }
 
-    private bool OnFall()
+    public bool OnFall()
     {
         if (player.rb.velocity.y < 0 && !OnGround())
             return true;
