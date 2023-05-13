@@ -318,14 +318,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068d2b4645c28994899250d182585e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground:
+  solid:
     serializedVersion: 2
     m_Bits: 1088
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
   groundDetectorPoint: {fileID: 4609767914332199521}
   size: {x: 0.76, y: 0.05}
   maxAngleSlope: 80
   slopeDetectorDistance: 0.3
   slopeDetectorOffset: 0.1
+  wallCheckDistance: 0.1
 --- !u!114 &-215635321352401057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hookSpeed: 120
-  hookMaxDistance: 10
+  hookMaxDistance: 7
   grapplableMask:
     serializedVersion: 2
     m_Bits: 3072

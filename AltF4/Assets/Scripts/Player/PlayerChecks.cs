@@ -127,7 +127,16 @@ public class PlayerChecks : MonoBehaviour
         var hitColor = wallPoint ? Color.green : Color.red;
 
         Debug.DrawRay(point, this.transform.right * wallCheckDistance, hitColor);
-        IsFacingWall = wallPoint;
+
+        if (wallPoint)
+        {
+            IsFacingWall = Vector2.Angle(wallPoint.normal, Vector2.up) == 0;
+        }
+        else
+        {
+            IsFacingWall = false;
+        }
+        
     }
 
 }
