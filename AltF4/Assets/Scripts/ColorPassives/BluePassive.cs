@@ -34,6 +34,7 @@ public class BluePassive : MonoBehaviour
                 additionalBuff = playerInpulseAddtional;
             }
 
+
             Impulse(rb, player.Data.JumpForce + additionalBuff, direction);
 
         }

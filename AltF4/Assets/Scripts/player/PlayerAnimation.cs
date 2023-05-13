@@ -13,7 +13,6 @@ public class PlayerAnimation : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
-
     void Update()
     {
         animator.SetInteger("walk_Direction", (int)player.Controller.Axis.x);
@@ -32,9 +31,20 @@ public class PlayerAnimation : MonoBehaviour
         if (player.Color.CurrentColor.Type == ColorType.Blue)
             animator.SetBool("isJumping", player.Controller.ColorButton);
 
-        else
+        //else
+           //animator.SetBool("isJumping", false);
+
+        if(player.Check.IsFalling)
+        {
             animator.SetBool("isJumping", false);
+        }
+        if(!player.Check.OnGround() && !player.Check.IsFalling)
+        {
+            animator.SetBool("isJumping", true);
+        }
 
         animator.SetBool("isFalling", player.Check.IsFalling);
     }
+
+
 }

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3804287516880135474, guid: 0b875de11511ab64496067026f604fb4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1552772031, guid: 4f33b0e9088cba64ba8bd6a306f3163b, type: 3}
+      objectReference: {fileID: 275969709, guid: 4f33b0e9088cba64ba8bd6a306f3163b, type: 3}
     - target: {fileID: 5608110477823006482, guid: 0b875de11511ab64496067026f604fb4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9204801743572294623, guid: 0b875de11511ab64496067026f604fb4, type: 3}
       propertyPath: m_Name
-      value: Danger
+      value: PushUp
       objectReference: {fileID: 0}
     - target: {fileID: 9204801743572294623, guid: 0b875de11511ab64496067026f604fb4, type: 3}
       propertyPath: m_Layer
@@ -66,3 +66,24 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6789180521419681444, guid: 0b875de11511ab64496067026f604fb4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b875de11511ab64496067026f604fb4, type: 3}
+--- !u!1 &6349018447668179002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9204801743572294623, guid: 0b875de11511ab64496067026f604fb4, type: 3}
+  m_PrefabInstance: {fileID: 2855907549984336869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1737095112814543123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6349018447668179002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c066361c4a7464598abdf5177c4211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultJumpFoce: 10
+  playerJumpBuff: 0
+  playerInpulseAddtional: 3
+  direction: {x: 0, y: 0}

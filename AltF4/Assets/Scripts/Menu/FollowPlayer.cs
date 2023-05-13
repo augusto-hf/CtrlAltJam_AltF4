@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private  float offSetY; 
     [SerializeField] private  float smoothTime = 0.3f; 
     private Vector3 velocity = Vector3.zero;
 
@@ -16,7 +17,7 @@ public class FollowPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, transform.position.z); 
+        Vector3 targetPosition = new Vector3(player.position.x, player.position.y + offSetY, transform.position.z); 
 
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }

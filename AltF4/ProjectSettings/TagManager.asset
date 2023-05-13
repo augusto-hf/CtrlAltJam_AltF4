@@ -50,6 +50,12 @@ TagManager:
   - name: background
     uniqueID: 2754443175
     locked: 0
+  - name: Map
+    uniqueID: 4018559407
+    locked: 0
+  - name: player
+    uniqueID: 3784949447
+    locked: 0
   - name: UI
     uniqueID: 1764004935
     locked: 0

@@ -75,7 +75,7 @@ public class PlayerChecks : MonoBehaviour
 
     }
    
-    private bool OnGround()
+    public bool OnGround()
     {
         var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, size, 0, ground);
         return groundCheck;
