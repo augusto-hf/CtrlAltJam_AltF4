@@ -25,17 +25,26 @@ public class CameraMove : MonoBehaviour
     public void ChangeTarget()
     {
         menuActive = !menuActive;
-        pause.SetActive(menuActive);
         openMenu?.Invoke();
 
         if(menuActive)
         {
+            ActivePause();
             pauseAnimator.Play("start");
             return;
         }
-        
+
+
         pauseAnimator.Play("exit");
+
+        float time = pauseAnimator.GetCurrentAnimatorStateInfo(0).length;
+        Invoke("ActivePause", time);
         
+    }
+
+    public void ActivePause()
+    {
+        pause.SetActive(menuActive);
     }
 
     public void GetIfGameIsRunning(bool value)
