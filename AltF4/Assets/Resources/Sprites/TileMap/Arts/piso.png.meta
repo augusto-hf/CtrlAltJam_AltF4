@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 33
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,6 +102,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -114,23 +126,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -141,22 +141,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: piso_12
+      name: piso_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 50
+        x: 972
+        y: 1135
         width: 162
-        height: 164
+        height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 242b1c3810765f24786b1dff16e9ff41
-      internalID: -1048723495
+      spriteID: d84874b3cf72a064181b9177b83b8c4f
+      internalID: -431119717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_6
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d518326ba71ee4ca21d632df908986
+      internalID: 509122328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_7
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630ffbcde988b414d9c741b1187c36a7
+      internalID: -2042516200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_8
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d98911aa718aac49a654c5155ec21e8
+      internalID: 1195249218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_9
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471131ce41765b4488d079373a2e5349
+      internalID: 722109947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_10
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa8d28400ae19f40a673411a0055efe
+      internalID: -108314436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_11
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c194eeeb6ff5a3f438cd60d4db68480e
+      internalID: -1306537952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_12
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43394f900ce2434bb6f55bca0298bda
+      internalID: 441762593
       vertices: []
       indices: 
       edges: []
@@ -165,19 +312,1027 @@ TextureImporter:
       name: piso_13
       rect:
         serializedVersion: 2
-        x: 391
-        y: 1
-        width: 190
-        height: 220
+        x: 2268
+        y: 1135
+        width: 162
+        height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c54b866b543f1024cb4754023e1a5efd
-      internalID: 1087988406
+      spriteID: 25e06b3d2f657ed4d843c80c30741ea7
+      internalID: -90708622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_14
+      rect:
+        serializedVersion: 2
+        x: 2430
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2e56f90358fed4994cf2cdb61a733c
+      internalID: 1725487850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_15
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2974b41b90412a43be47114ff4ba06a
+      internalID: 339132503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_16
+      rect:
+        serializedVersion: 2
+        x: 2754
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fad5d341fe77564882d88cbcdcf6596
+      internalID: -553193216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_17
+      rect:
+        serializedVersion: 2
+        x: 2916
+        y: 1135
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f919aa374ec7ca2458a5d0634bdcae7e
+      internalID: -1985990910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_18
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 973
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f44b87fcc67a3f409160231bdc763ca
+      internalID: 514535314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_19
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 973
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529c889ec10462f4d8dab2bbf7f32b00
+      internalID: -1805628613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_20
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 973
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9475785d657026246be29f78cbe0c732
+      internalID: 942729025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_21
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 973
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697655e288356094591308de7b5a245b
+      internalID: 1271921464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_22
+      rect:
+        serializedVersion: 2
+        x: 2430
+        y: 973
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00da924be454f494a82515af18e16391
+      internalID: 1672696013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_23
+      rect:
+        serializedVersion: 2
+        x: 2754
+        y: 973
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9afa6927a2487409cfc9563be87e3e
+      internalID: -1073586976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 649
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400c35022adcfcf488764ac95960615c
+      internalID: 335115403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_34
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 649
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353ac6ff487c1f840a9ac39219c5871f
+      internalID: 1534137690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_36
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 649
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d69f6f4190e5e4e9d5dae58ed33664
+      internalID: 219194340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_38
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 649
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6f8ba03708dbf4a925de764ace2a41
+      internalID: 1239908127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_40
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 649
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16e930ec9eb0244fb892ad913e57140
+      internalID: -956989571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_42
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 649
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75e81add0b7d7245855078f66cc6da6
+      internalID: 281983653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_44
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 649
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b43797c26d9f714dac6662ba3a03830
+      internalID: -520170654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 487
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7f660727f2c9c4f9a8c4b14f6e3410
+      internalID: -1417965919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_48
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 487
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2c9661d610f1746adb29334a35840b
+      internalID: 2048317163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_49
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 487
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d95f0a0ab98df488124b02f2f38256
+      internalID: -862998189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_51
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 487
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91ed7470376bd042b9972ddc1a185c3
+      internalID: -1751375488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_53
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 487
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16466485fc321494f8de18ffdf4c447d
+      internalID: 1218729292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_55
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 487
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eecb7f3ec060e764ab68404726b58bd5
+      internalID: -906752086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1914fc608272ff47ba0a03e143d0c4d
+      internalID: 1936839681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_66
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b348ba27b202aae478f11aac1acc58ff
+      internalID: 1367977158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_68
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a94fb74da73dea46b38a50f4133ea33
+      internalID: 870983651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_71
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d730b7f146ab8344a3189b48fb5ea24
+      internalID: 1325767530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_72
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43bfaebd5310db4c9f740669335c72c
+      internalID: 329140193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_73
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f259fc1266ec49f438121db727659025
+      internalID: -1722518872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_74
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e5ee68f6b7135348899492a14308e08
+      internalID: 2100041606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_76
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a418af41e9eaf46a9fd8c5a5bf1d09
+      internalID: -1118538707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_78
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bb22d39cf397445a74d1d08fbd0b18
+      internalID: -1404318034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_80
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83525cce98b399048afa8d2f9299f78f
+      internalID: 1922271512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_82
+      rect:
+        serializedVersion: 2
+        x: 2916
+        y: 325
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136275e915ab2ae45a31ee7c12223d0e
+      internalID: 1629078244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_83
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 163
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb8f99c77c85b54ca6538ea6200b382
+      internalID: -374213062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_89
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 163
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c42faaa80bf7f459d94f2572722e90
+      internalID: -1960293407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_91
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 163
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d05643354b7e54bb487165f528fd71
+      internalID: -1966787941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_95
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 163
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987f5fe359f77d44aa02597b8d4bba2b
+      internalID: -1185878886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_97
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 163
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a53a0f9d5935c468c4217d50b81134
+      internalID: 1314202046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97ae52adaa52fa4885c8f413559dafe
+      internalID: 1015291791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_104
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8bc673236deb745a064396773c3c61
+      internalID: -778721922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_106
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd0517d7fb06544c828fc73b23e1aa1
+      internalID: -166563250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_108
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016f2082a3d922349876b0f41282f104
+      internalID: -1169685554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_111
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9779e0d86334684babcb374673a1fc5
+      internalID: -427079835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_113
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ca47ceb871e494abf63de713ce46e8
+      internalID: 1693287470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_114
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d27e9a79725ff141823c96955b26951
+      internalID: -1191210720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_115
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fc6ec95bd489f4dbd028bbc792579c
+      internalID: -606035663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piso_117
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 1
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe6b603723e84ef4abdf6adddfafc5b5
+      internalID: 1394418758
       vertices: []
       indices: 
       edges: []
@@ -193,22 +1348,126 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      piso_11: 1452784655
-      piso_7: -693067443
-      piso_3: -1222589297
-      piso_2: 543389736
-      piso_13: 1087988406
-      piso_8: -909023789
-      piso_0: 1958843251
-      piso_4: -1485719374
-      piso_10: 1169900442
-      piso_6: 1336554176
-      piso_9: 1518252747
-      piso_5: 1229797645
-      piso_12: -1048723495
-      piso_14: 880360015
-      piso_1: -1700766903
-      piso_15: -209304504
+      piso_20: 942729025
+      piso_26: 51401759
+      piso_61: 815450144
+      piso_85: 1900899823
+      piso_2: -1247103573
+      piso_75: 898076739
+      piso_33: -11416055
+      piso_41: 717539364
+      piso_91: -1966787941
+      piso_30: -1674658710
+      piso_119: 271376287
+      piso_94: 1002621890
+      piso_104: -778721922
+      piso_111: -427079835
+      piso_112: 1066089281
+      piso_6: 509122328
+      piso_64: 1936839681
+      piso_107: 521319437
+      piso_42: 281983653
+      piso_109: -132302711
+      piso_29: -1270735147
+      piso_53: 1218729292
+      piso_59: -1803947963
+      piso_39: -1245576182
+      piso_116: -178783789
+      piso_48: 2048317163
+      piso_102: 1015291791
+      piso_98: 589897997
+      piso_92: 1229346256
+      piso_57: 800361801
+      piso_58: 442678840
+      piso_67: 1860982470
+      piso_106: -166563250
+      piso_96: -1421245807
+      piso_31: -863026941
+      piso_13: -90708622
+      piso_37: -1432577433
+      piso_8: 1195249218
+      piso_38: 1239908127
+      piso_97: 1314202046
+      piso_25: -22837625
+      piso_4: -1681789915
+      piso_21: 1271921464
+      piso_81: -1497996898
+      piso_84: -586900367
+      piso_9: 722109947
+      piso_83: -374213062
+      piso_105: 1447199314
+      piso_101: -1807357782
+      piso_5: -431119717
+      piso_17: -1985990910
+      piso_88: -475039829
+      piso_90: 534382536
+      piso_35: -1091213631
+      piso_19: -1805628613
+      piso_16: -553193216
+      piso_24: 2103020801
+      piso_60: -241288760
+      piso_86: 361066371
+      piso_15: 339132503
+      piso_103: 776282797
+      piso_72: 329140193
+      piso_52: -1872926331
+      piso_108: -1169685554
+      piso_22: 1672696013
+      piso_11: -1306537952
+      piso_93: 1363265366
+      piso_3: 847232662
+      piso_55: -906752086
+      piso_110: 218790340
+      piso_32: 335115403
+      piso_63: -230202376
+      piso_46: -1417965919
+      piso_0: 356384984
+      piso_28: -2054859203
+      piso_56: 1271878249
+      piso_47: -1538881042
+      piso_114: -1191210720
+      piso_44: -520170654
+      piso_51: -1751375488
+      piso_69: -1539679003
+      piso_66: 1367977158
+      piso_36: 219194340
+      piso_117: 1394418758
+      piso_74: 2100041606
+      piso_100: -716666274
+      piso_73: -1722518872
+      piso_1: -1814348024
+      piso_65: -258504690
+      piso_27: -1941397793
+      piso_40: -956989571
+      piso_68: 870983651
+      piso_62: 1336873842
+      piso_23: -1073586976
+      piso_49: -862998189
+      piso_43: -917925965
+      piso_87: 1620624323
+      piso_7: -2042516200
+      piso_50: 2099062783
+      piso_80: 1922271512
+      piso_76: -1118538707
+      piso_77: 792722494
+      piso_45: -1723186288
+      piso_118: -1777498917
+      piso_10: -108314436
+      piso_99: 103727572
+      piso_79: 1546918474
+      piso_12: 441762593
+      piso_14: 1725487850
+      piso_95: -1185878886
+      piso_89: -1960293407
+      piso_82: 1629078244
+      piso_34: 1534137690
+      piso_115: -606035663
+      piso_18: 514535314
+      piso_71: 1325767530
+      piso_113: 1693287470
+      piso_78: -1404318034
+      piso_54: 1489914346
+      piso_70: -1186798143
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
