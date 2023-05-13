@@ -1,0 +1,1067 @@
+fileFormatVersion: 2
+guid: 0b35b5c18587ef740a7c567883319f01
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: espinhos_10
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 405.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9541a3a66815f646b4ca923250a6479
+      internalID: 1480026035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_11
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 405.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a965f42d92c1802498e6aa634e66061e
+      internalID: 1774600154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_12
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 405.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd830d5ed24f1af47a0e33be84dbb48a
+      internalID: -1281895830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_13
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 406
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e3899595814d2438c7d6db7888e81e
+      internalID: -749914977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_15
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 405.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0ed28282dc9a14389ae9b4fef8e56a
+      internalID: -1543632508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_16
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 405.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbf7c0bc29aec547815610aab8c1582
+      internalID: -1469019211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_17
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 405.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca85d1555e808f64b80a5d822f4d4ca1
+      internalID: 1715129540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_18
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 406
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa1cc13447e5bf4da67d5d1c506fbcf
+      internalID: 2134583149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_19
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 324.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3713398ba94e36142847ec53a161a2cb
+      internalID: -955634699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_20
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 324.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa5d4c5ec326e349ad2a5768ed4eb67
+      internalID: -263265380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_22
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 324.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ce3b17ea169104fa23bf3ce36a9186
+      internalID: -916297626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_23
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 324.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5b0c60425ad61419b3142e63e62301
+      internalID: 67240065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_24
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 324.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c967a66f634c5734fa474771063ecaf0
+      internalID: 1752593785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_25
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 324.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d409f6100deb084a9043fcd322e0fd4
+      internalID: 680933694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_27
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 324.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a7f08a8f2dcba43a117f32a0568c21
+      internalID: -112376423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_28
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 324.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3b85fcf174fd84cb854c2d49867ae3
+      internalID: 1468530090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838c7cf3e79903b4394e457aba93e746
+      internalID: -13714958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_42
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6914acb11ca555546bc292dc281feea9
+      internalID: -1421654877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_43
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cac949e1fe46834dba24d13beab1219
+      internalID: 1497598891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_44
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e1f37caedb38c4a99c9680dd2b5cbf
+      internalID: 767380932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_45
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa9e29ec49de3f459f586ff14d41fa9
+      internalID: -923157861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_46
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7751788f978187444b2a486d3785cfb3
+      internalID: 547004309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_47
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b3381bbbfebdfe49aa6a24037187b9b
+      internalID: -1986951134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_48
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 82
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65643dd5baf289b43a2126b96134e6ac
+      internalID: 304206652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_50
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c219e7aa6d6ed4f8c084459e54fa42
+      internalID: -1004958397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_51
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506a644bee78fa6498687ff745727de6
+      internalID: 648580918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_52
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 81.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41788fdb8f76c9a4eba2c49528d39ee1
+      internalID: 1288879176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_53
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 82
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a217ae3162dbf54e99e7ae6175f025f
+      internalID: -361126591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5883041397a9c5489793b7d66bb5471
+      internalID: 485518290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_55
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b5b4d74fb29ce44838f5bebc6c1759
+      internalID: 377750960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_56
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2defd1829ba1a454a8ce0ebc5f88a020
+      internalID: 1832095404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_57
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 0
+        width: 81
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e678eec2f0f084f803f39d41068009
+      internalID: -1176671805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_58
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047ed7731c20658419e842602569fa3d
+      internalID: 2026796478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_59
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172490ffe82fd894981f49af751c116a
+      internalID: 660262609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_61
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad4d440c1a6253a4cb379c3498e44258
+      internalID: 131108390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_62
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad2e816eab7bf8449f2468159be40e7
+      internalID: 157037811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_63
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d450f89706f0f4547b54182801a54a18
+      internalID: 884016458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_64
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd6e967bdee0cd4db6293d5bea65d35
+      internalID: -934244025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_66
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2b3431258e520428ecc5f68ac0cd9a
+      internalID: -822957045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espinhos_67
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 0.875
+        width: 81
+        height: 81.125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301beb073df585e4b9526c08e588202c
+      internalID: 867793069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      espinhos_34: -2124090066
+      espinhos_14: 1964893343
+      espinhos_6: -803832387
+      espinhos_52: 1288879176
+      espinhos_26: -213505698
+      espinhos_45: -923157861
+      espinhos_28: 1468530090
+      espinhos_41: -13714958
+      espinhos_58: 2026796478
+      espinhos_21: 902762566
+      espinhos_43: 1497598891
+      espinhos_50: -1004958397
+      espinhos_64: -934244025
+      espinhos_60: -1685078752
+      espinhos_66: -822957045
+      espinhos_54: 485518290
+      espinhos_39: 2057235666
+      espinhos_15: -1543632508
+      espinhos_16: -1469019211
+      espinhos_11: 1774600154
+      espinhos_1: -652894202
+      espinhos_63: 884016458
+      espinhos_0: 791887324
+      espinhos_33: -926384421
+      espinhos_27: -112376423
+      espinhos_22: -916297626
+      espinhos_47: -1986951134
+      espinhos_38: 809889224
+      espinhos_2: -347727699
+      espinhos_4: 690271875
+      espinhos_19: -955634699
+      espinhos_23: 67240065
+      espinhos_5: -773353958
+      espinhos_36: -1568356010
+      espinhos_42: -1421654877
+      espinhos_67: 867793069
+      espinhos_3: -799817133
+      espinhos_10: 1480026035
+      espinhos_8: 1004398502
+      espinhos_29: -1007761588
+      espinhos_31: -1079692124
+      espinhos_37: -400447962
+      espinhos_48: 304206652
+      espinhos_12: -1281895830
+      espinhos_44: 767380932
+      espinhos_51: 648580918
+      espinhos_7: -557313847
+      espinhos_25: 680933694
+      espinhos_62: 157037811
+      espinhos_20: -263265380
+      espinhos_40: -246586718
+      espinhos_46: 547004309
+      espinhos_65: 1671172238
+      espinhos_57: -1176671805
+      espinhos_17: 1715129540
+      espinhos_59: 660262609
+      espinhos_56: 1832095404
+      espinhos_53: -361126591
+      espinhos_32: -1756717526
+      espinhos_35: 1440175441
+      espinhos_24: 1752593785
+      espinhos_55: 377750960
+      espinhos_61: 131108390
+      espinhos_49: -72653708
+      espinhos_9: 189362529
+      espinhos_13: -749914977
+      espinhos_18: 2134583149
+      espinhos_30: -1039231485
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
