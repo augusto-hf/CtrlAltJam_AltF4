@@ -469,7 +469,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3072
   minimumDistanceToDrag: 0.2
-  dragForce: 1
+  dragForce: 2
   startingPoint: {fileID: 5105274287945571479}
   dragableObject: GrappableObject
   interactableObject: ColorPower
