@@ -5,7 +5,6 @@ using UnityEngine;
 public class BluePassive : MonoBehaviour
 {
     [SerializeField] private float defaultJumpFoce;
-    [SerializeField] private float playerJumpBuff;
     [SerializeField] private float playerInpulseAddtional;
     [SerializeField] private Vector2 direction;
 
@@ -23,21 +22,8 @@ public class BluePassive : MonoBehaviour
 
             player.Movement.SetBluePassive();
 
-            float additionalBuff = 0;
-            
-            if (player.Color.CurrentColor.Type == ColorType.Blue)
-            {
-                additionalBuff = playerJumpBuff;
-            }
-            else
-            {
-                additionalBuff = playerInpulseAddtional;
-            }
 
-
-            Impulse(rb, player.Data.JumpForce + additionalBuff, direction);
-
-            Debug.Log("Set passive");
+            Impulse(rb, player.Data.JumpForce + playerInpulseAddtional, direction);
 
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
