@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove || player.Check.IsFacingWall) return;
 
-        if (player.Check.isOnSlop)
+        if (player.Check.isOnSlop && !isJumping)
         {
             
             float targetVelocityX = player.Check.SlopeDirection.x * -player.Controller.Axis.x * currentMaxSpeed;
