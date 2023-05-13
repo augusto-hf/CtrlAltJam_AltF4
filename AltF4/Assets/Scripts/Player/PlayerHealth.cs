@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public event Action OnPlayerDeath;
     private CapsuleCollider2D capsule;
     private SpriteRenderer sprite;
+    private SaveManager saveManager;
     private bool isDead;
 
     public bool IsDead { get => isDead; }
@@ -17,6 +17,12 @@ public class PlayerHealth : MonoBehaviour
         capsule = GetComponent<CapsuleCollider2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
+
+    private void Start()
+    {
+        saveManager =  GameObject.FindWithTag("GameController").GetComponent<SaveManager>();
+    }
+
 
     public void Death()
     {
@@ -30,16 +36,16 @@ public class PlayerHealth : MonoBehaviour
         
         while (sprite.color.a > 0)
         {
-            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, Mathf.MoveTowards(sprite.color.a, 0, 1/Time.deltaTime));
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, Mathf.MoveTowards(sprite.color.a, 0, Time.deltaTime/2));
             yield return null;
         }
+        Revive();
+        saveManager.Load();
 
-        OnPlayerDeath?.Invoke();
     }
 
-    public void Revive(Vector2 checkPointPosition)
+    public void Revive()
     {
-        this.transform.position = checkPointPosition;
         isDead = false;
         capsule.isTrigger = false;
     }
