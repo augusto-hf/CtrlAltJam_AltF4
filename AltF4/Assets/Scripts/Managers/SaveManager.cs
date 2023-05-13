@@ -44,6 +44,7 @@ public class SaveManager : MonoBehaviour
     public void LoadEmotionPlayer(string nameColor)
     {
         GameObject[] allBlobs = GameObject.FindGameObjectsWithTag("ColorPower");
+        PlayerColorAction playerColor = GameObject.FindWithTag("Player").GetComponent<PlayerColorAction>();
 
         foreach (GameObject blob in allBlobs) 
         {
@@ -53,12 +54,14 @@ public class SaveManager : MonoBehaviour
             {
                 if(blobManager.nameColor == nameColor)
                 {
-                    PlayerColorAction playerColor = GameObject.FindWithTag("Player").GetComponent<PlayerColorAction>();
                     playerColor.TakeColor(blob);
                     return;
                 }
             }
+
         }
+        
+        playerColor.GiveNoColor();
     }
     
     public void UpdatedButtonContinue()
