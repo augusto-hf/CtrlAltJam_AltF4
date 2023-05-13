@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (player.Health.IsDead)
         {
+            rb.velocity = Vector2.zero;
             rb.isKinematic = true;
             return;            
         }
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.isKinematic = false;
         }
-        
+
         Debug.DrawRay(this.transform.position, rb.velocity.normalized, Color.cyan);
         Checkers();
         HorizontalMovement();

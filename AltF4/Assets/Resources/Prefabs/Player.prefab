@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 8816518472539381874}
   - component: {fileID: 5683729516090076869}
   - component: {fileID: 4604940917045427784}
+  - component: {fileID: 1632924091}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -252,7 +253,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
@@ -269,7 +270,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 6336683652554037023}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6715282f29be63b4c9464300ebd19442, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -488,6 +489,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dust: {fileID: 1319453387410290959, guid: 4bcafecff0064754d8f282e53b4b15e4, type: 3}
   pointDust: {fileID: 4609767914332199521}
+--- !u!114 &1632924091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683652554037023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a351c2a881d074bad1b57f8d46f14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7320957796236712430
 GameObject:
   m_ObjectHideFlags: 0
