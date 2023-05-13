@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk()
     {
-        if (!canMove) return;
+        if (!canMove || player.Check.IsFacingWall) return;
 
         if (player.Check.isOnSlop)
         {

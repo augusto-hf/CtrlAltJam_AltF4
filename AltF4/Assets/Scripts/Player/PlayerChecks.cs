@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerChecks : MonoBehaviour
 {
+    [SerializeField] private LayerMask solid;
     [SerializeField] private LayerMask ground;
     [SerializeField] private Transform groundDetectorPoint;
     [SerializeField] private Vector2 size;
     [SerializeField] private float maxAngleSlope;
     [SerializeField] private float slopeDetectorDistance;
     [SerializeField] private float slopeDetectorOffset;
+    [SerializeField] private float wallCheckDistance;
     
     private PlayerCore player;
     private CapsuleCollider2D capsule;
@@ -17,6 +19,7 @@ public class PlayerChecks : MonoBehaviour
     public float LastTimeGrounded { get; private set;}
     public bool IsFalling { get; private set; }
     public bool isOnSlop { get; private set; }
+    public bool IsFacingWall {get; private set;}
     public float SlopeAngle { get; private set; }
     public Vector2 SlopeDirection { get; private set; }
 
@@ -33,6 +36,7 @@ public class PlayerChecks : MonoBehaviour
 
         CoyoteTime();
         SlopeDetector();
+        OnWall();
 
         IsFalling = OnFall();
     }
@@ -77,7 +81,7 @@ public class PlayerChecks : MonoBehaviour
    
     public bool OnGround()
     {
-        var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, size, 0, ground);
+        var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, size, 0, solid);
         return groundCheck;
     }
 
@@ -106,7 +110,7 @@ public class PlayerChecks : MonoBehaviour
             return false;
     }
     
-    private void OnDrawGizmos() 
+    private void OnDrawGizmos()
     {
         if (groundDetectorPoint == null) return;
 
@@ -114,4 +118,16 @@ public class PlayerChecks : MonoBehaviour
         Gizmos.DrawWireCube(groundDetectorPoint.position, new Vector3(size.x, size.y, 0));
 
     }
+
+    public void OnWall()
+    {
+        int direction = player.Movement.IsFacingRight ? 1 : -1;
+        Vector2 point = new Vector2(capsule.bounds.center.x + capsule.bounds.extents.x  * direction , capsule.bounds.center.y);
+        RaycastHit2D wallPoint = Physics2D.Raycast(point, this.transform.right, wallCheckDistance, ground);
+        var hitColor = wallPoint ? Color.green : Color.red;
+
+        Debug.DrawRay(point, this.transform.right * wallCheckDistance, hitColor);
+        IsFacingWall = wallPoint;
+    }
+
 }
