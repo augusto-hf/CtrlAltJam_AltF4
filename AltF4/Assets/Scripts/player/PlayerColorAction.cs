@@ -15,8 +15,9 @@ public class PlayerColorAction : MonoBehaviour
 
     private void Awake()
     {
-        currentColor = StartingColorReference.gameObject.GetComponent<IColor>();
+        GiveNoColor();
     }
+
     private void Start()
     {
         player = GetComponent<PlayerCore>();
@@ -46,5 +47,10 @@ public class PlayerColorAction : MonoBehaviour
 
             player.PickColor(lastBlob.nameColor);
         }
+    }
+
+    public void GiveNoColor()
+    {
+        currentColor = StartingColorReference.gameObject.GetComponent<IColor>();
     }
 }

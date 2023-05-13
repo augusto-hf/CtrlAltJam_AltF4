@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,6 +59,11 @@ public class GameManager : MonoBehaviour
         gameISRunning = false;
         mainMenu.SetActive(!gameISRunning);
         onGameStarted?.Invoke(gameISRunning);
+    }
+
+    public void ResetScene()
+    {
+        SceneManager.LoadScene("Debug");
     }
 
     public void QuitGame()
