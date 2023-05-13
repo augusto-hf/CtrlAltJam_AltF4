@@ -118906,6 +118906,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8414608118561188946}
+    - target: {fileID: 3947449838738797488, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947449838738797488, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8013590992492922195, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
       propertyPath: m_Name
       value: CanvasGaming
@@ -124082,6 +124090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 8351209390952641026, guid: 75f4c7e866f8c684db93213b52419df0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ae6e4188872507242bd4d133f4b33efe, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75f4c7e866f8c684db93213b52419df0, type: 3}
 --- !u!1001 &2575139730451909975
