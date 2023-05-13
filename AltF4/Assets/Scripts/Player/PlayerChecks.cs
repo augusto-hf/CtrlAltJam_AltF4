@@ -130,7 +130,7 @@ public class PlayerChecks : MonoBehaviour
 
         if (wallPoint)
         {
-            IsFacingWall = Vector2.Angle(wallPoint.normal, Vector2.up) == 0;
+            IsFacingWall = Vector2.Angle(wallPoint.normal, Vector2.up) >= 90;
         }
         else
         {

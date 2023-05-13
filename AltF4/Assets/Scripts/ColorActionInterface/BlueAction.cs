@@ -27,8 +27,6 @@ public class BlueAction : MonoBehaviour, IColor
     {
         if (player == null) return;
 
-        Debug.Log(player.Movement.HasBluePassive);
-
         if (player.Controller.ColorButton && CanJump(player) && !player.Movement.HasBluePassive)
         {
             player.Movement.JumpForceApply();

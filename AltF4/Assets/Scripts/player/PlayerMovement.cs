@@ -77,7 +77,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk()
     {
-        if (!canMove || player.Check.IsFacingWall) return;
+        if (!canMove) return;
+
+        if (player.Check.IsFacingWall)
+        {
+            Debug.Log("stuck wall");
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            return;
+        }
 
         if (player.Check.isOnSlop && !isJumping)
         {
