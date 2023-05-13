@@ -78,10 +78,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IcoSaved: {fileID: 0}
+  buttonContinue: {fileID: 0}
   gameData:
     positionPlayer: {x: 0, y: 0, z: 0}
     emotions: []
-    currentLanguage: 
+    currentEmotions: 
   configData:
     currentLanguage: 
     volumeMusics: 0
@@ -145,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMusic: {fileID: 0}
+  target: {fileID: 0}
   volumeMusics: 1
   volumeSounds: 1
 --- !u!114 &2120500748374318616
