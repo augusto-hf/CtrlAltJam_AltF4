@@ -124401,6 +124401,10 @@ PrefabInstance:
       propertyPath: pointDust
       value: 
       objectReference: {fileID: 988011451}
+    - target: {fileID: 5683729516090076869, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
+      propertyPath: hookMaxDistance
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6336683651438568607, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
       propertyPath: m_SortingLayer
       value: 3

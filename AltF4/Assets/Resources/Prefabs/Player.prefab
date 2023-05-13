@@ -460,10 +460,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hookSpeed: 120
-  hookMaxDistance: 3
+  hookMaxDistance: 7
   grapplableMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 3072
   minimumDistanceToDrag: 1
   dragForce: 0.9
   startingPoint: {fileID: 5105274287945571479}
@@ -482,6 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf210ba704d3ef47ae6965a2407938a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dust: {fileID: 0}
+  pointDust: {fileID: 0}
 --- !u!1 &7320957796236712430
 GameObject:
   m_ObjectHideFlags: 0
