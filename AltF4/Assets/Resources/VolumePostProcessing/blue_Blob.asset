@@ -161,7 +161,7 @@ MonoBehaviour:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0.5366412
+          time: 0.47666666
           value: 0
           inSlope: 0
           outSlope: 0
@@ -170,8 +170,8 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.5367412
-          value: 0.55479455
+          time: 0.47676665
+          value: 0.5755396
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
     m_Value: 0.9
   intensity:
     m_OverrideState: 1
-    m_Value: 0.48
+    m_Value: 1.5
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
