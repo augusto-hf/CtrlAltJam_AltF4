@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SaveManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class SaveManager : MonoBehaviour
     const string FILE_CONFIG = "/config.json"; 
     
     [SerializeField] private GameObject IcoSaved;
+    [SerializeField] private Button buttonContinue;
 
     public GameData gameData;
     public ConfigData configData;
@@ -32,6 +34,16 @@ public class SaveManager : MonoBehaviour
         Debug.Log("Local de salvamento: " + filePathSave); 
 
         LoadConfig();
+        buttonContinue.interactable = CheckIfExistSave();
+    }
+
+    public bool CheckIfExistSave()
+    {
+        if (File.Exists(filePathSave)) 
+        {
+            return true;
+        }
+        return false;
     }
 
     public void ResetConfig()
@@ -58,6 +70,7 @@ public class SaveManager : MonoBehaviour
 
         UpdatedConfig();
     }
+
     public void updatedNewConfig()
     {
         configData.currentLanguage = LocalizationManager.localizationInstance.SetNewLanguage(LocalizationManager.localizationInstance.currentLanguage);
@@ -77,14 +90,12 @@ public class SaveManager : MonoBehaviour
 
     public void SaveConfig() 
     {
-        Debug.Log("Save Config");
         string json = JsonUtility.ToJson(configData, true); 
         File.WriteAllText(filePathConfig, json); 
     }
 
     public void ApplyPositionInPlayer(Transform positionPlayer)
     {
-        Debug.Log("Apply Position");
         positionPlayer.position = gameData.positionPlayer;
     }
 
@@ -97,6 +108,8 @@ public class SaveManager : MonoBehaviour
             gameData.emotions.Add(nameEmotion);
         }
 
+        gameData.currentEmotions = nameEmotion;
+        
         newColorPicks?.Invoke(IsFind, nameEmotion);
 
         Save();
@@ -116,7 +129,6 @@ public class SaveManager : MonoBehaviour
 
     public void SavePositionPlayer(Transform positionPlayer)
     {
-        Debug.Log("Save Position");
         gameData.positionPlayer = positionPlayer.position;
 
         Save();
@@ -125,7 +137,7 @@ public class SaveManager : MonoBehaviour
     public void Save() 
     {
         StartCoroutine(ShowIco());
-        Debug.Log("Save Game");
+
         string json = JsonUtility.ToJson(gameData, true); 
         File.WriteAllText(filePathSave, json); 
     }
@@ -137,10 +149,9 @@ public class SaveManager : MonoBehaviour
         IcoSaved.SetActive(false);
     }
 
-
     public void Load() 
     {
-        if (File.Exists(filePathSave)) 
+        if (CheckIfExistSave()) 
         {
             string json = File.ReadAllText(filePathSave);
             gameData = JsonConvert.DeserializeObject<GameData>(json); 
@@ -153,9 +164,10 @@ public class SaveManager : MonoBehaviour
 
     public void NewGame() 
     {
-        if (File.Exists(filePathSave)) 
+        if (CheckIfExistSave()) 
         {
             File.Delete(filePathSave); 
+            buttonContinue.interactable = false;
         }
 
         gameData = LoadDefaultSave(FILE_DEFAULT_SAVE_GAME, gameData);

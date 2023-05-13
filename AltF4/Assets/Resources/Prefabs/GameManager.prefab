@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b982278b2075234faf687420615d8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IcoSaved: {fileID: 0}
   gameData:
     positionPlayer: {x: 0, y: 0, z: 0}
     emotions: []
@@ -158,3 +159,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5728f31078388024e9555a4318c7fcb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  postProcessing: {fileID: 0}

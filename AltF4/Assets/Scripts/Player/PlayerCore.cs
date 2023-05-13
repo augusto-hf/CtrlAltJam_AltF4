@@ -37,9 +37,18 @@ public class PlayerCore : MonoBehaviour
     {
     }
 
+    public void SetCollorSaved()
+    {
+        
+    }
+
     public void StopAndRunPlayer()
     {
         Movement.canMove = !Movement.canMove;
+    }
+    public Transform ReturnTranform()
+    {
+        return GetComponent<Transform>();
     }
 
     public void PickColor(string nameColor)

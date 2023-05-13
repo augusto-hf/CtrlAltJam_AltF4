@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         onNewGame?.Invoke();
+        onSetPlayerPosition?.Invoke(playerCore);
         StartedGame();
     }
     

@@ -36,7 +36,7 @@ public class EventManager : MonoBehaviour
         //new game
         gameManager.onNewGame += saveManager.NewGame;
         gameManager.onNewGame += playerCore.StopAndRunPlayer;
-
+        
         //save game
         gameManager.onSaved += saveManager.Save;
         playerCore.onPickColor += saveManager.SaveNewEmotion;
@@ -54,6 +54,7 @@ public class EventManager : MonoBehaviour
         gameManager.onLoad += saveManager.Load;
         gameManager.onLoad += playerCore.StopAndRunPlayer;
         gameManager.onSetPlayerPosition += saveManager.ApplyPositionInPlayer;   
+        //setar nova posição do player aqui
 
         //menu
         gameManager.onGameStarted += menuControll.GetIfGameIsRunning;

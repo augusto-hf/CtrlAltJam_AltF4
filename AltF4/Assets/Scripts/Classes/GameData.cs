@@ -9,6 +9,6 @@ public class GameData
 
     public List<string> emotions = new List<string>();
     
-    public string currentLanguage;
+    public string currentEmotions;
 
 }

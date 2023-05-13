@@ -1,4 +1,5 @@
 {
-    "positionPlayer":{"x":0.0,"y":-3.19,"z":0.0},
-    "emotions":[]
+    "positionPlayer":{"x":-7.52,"y":-3.7,"z":0.0},
+    "emotions":[],
+    "currentEmotions": ""
 }
