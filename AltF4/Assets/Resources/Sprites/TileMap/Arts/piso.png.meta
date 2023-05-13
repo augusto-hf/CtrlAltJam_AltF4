@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 162
+  spritePixelsToUnits: 158
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1107,13 +1107,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piso_95
+      name: aaaaapezi
       rect:
         serializedVersion: 2
-        x: 1944
-        y: 163
-        width: 162
-        height: 162
+        x: 1945
+        y: 156
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1128,13 +1128,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: piso_97
+      name: aaaaaaaaapezin
       rect:
         serializedVersion: 2
-        x: 2268
-        y: 163
-        width: 162
-        height: 162
+        x: 2271
+        y: 156
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1337,6 +1337,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: aaaaapezin
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 156
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0021eb8d9da0de458c727eb036f0448
+      internalID: 356384984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaplataforma
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 189
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4cc6a5d6c46ca54aa7ade7be38feedd
+      internalID: -1814348024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaapeziin
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 156
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb35f5b07b098d84a939905f1cbf6f0e
+      internalID: -394724789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1369,12 +1432,15 @@ TextureImporter:
       piso_42: 281983653
       piso_109: -132302711
       piso_29: -1270735147
+      aaaplataforma: -1814348024
       piso_53: 1218729292
       piso_59: -1803947963
       piso_39: -1245576182
       piso_116: -178783789
       piso_48: 2048317163
       piso_102: 1015291791
+      aaapeziin: -394724789
+      aaaaapezi: -1185878886
       piso_98: 589897997
       piso_92: 1229346256
       piso_57: 800361801
@@ -1387,7 +1453,6 @@ TextureImporter:
       piso_37: -1432577433
       piso_8: 1195249218
       piso_38: 1239908127
-      piso_97: 1314202046
       piso_25: -22837625
       piso_4: -1681789915
       piso_21: 1271921464
@@ -1421,10 +1486,9 @@ TextureImporter:
       piso_32: 335115403
       piso_63: -230202376
       piso_46: -1417965919
-      piso_0: 356384984
       piso_28: -2054859203
-      piso_56: 1271878249
       piso_47: -1538881042
+      piso_56: 1271878249
       piso_114: -1191210720
       piso_44: -520170654
       piso_51: -1751375488
@@ -1435,7 +1499,6 @@ TextureImporter:
       piso_74: 2100041606
       piso_100: -716666274
       piso_73: -1722518872
-      piso_1: -1814348024
       piso_65: -258504690
       piso_27: -1941397793
       piso_40: -956989571
@@ -1452,12 +1515,13 @@ TextureImporter:
       piso_77: 792722494
       piso_45: -1723186288
       piso_118: -1777498917
+      aaaaapezin: 356384984
+      aaaaaaaaapezin: 1314202046
       piso_10: -108314436
       piso_99: 103727572
       piso_79: 1546918474
       piso_12: 441762593
       piso_14: 1725487850
-      piso_95: -1185878886
       piso_89: -1960293407
       piso_82: 1629078244
       piso_34: 1534137690
