@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   groundDetectorPoint: {fileID: 4609767914332199521}
   size: {x: 0.76, y: 0.05}
   maxAngleSlope: 80
