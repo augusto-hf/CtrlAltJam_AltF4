@@ -40,6 +40,26 @@ public class SaveManager : MonoBehaviour
         LoadConfig();
         UpdatedButtonContinue();  
     }
+
+    public void LoadEmotionPlayer(string nameColor)
+    {
+        GameObject[] allBlobs = GameObject.FindGameObjectsWithTag("ColorPower");
+
+        foreach (GameObject blob in allBlobs) 
+        {
+            BlobManager blobManager = blob.GetComponent<BlobManager>();
+            
+            if(blobManager != null )
+            {
+                if(blobManager.nameColor == nameColor)
+                {
+                    PlayerColorAction playerColor = GameObject.FindWithTag("Player").GetComponent<PlayerColorAction>();
+                    playerColor.TakeColor(blob);
+                    return;
+                }
+            }
+        }
+    }
     
     public void UpdatedButtonContinue()
     {
@@ -172,6 +192,8 @@ public class SaveManager : MonoBehaviour
         { 
             gameData = LoadDefaultSave(FILE_DEFAULT_SAVE_GAME, gameData);
         }
+
+        LoadEmotionPlayer(gameData.currentEmotions);
     }
 
     public void NewGame() 
