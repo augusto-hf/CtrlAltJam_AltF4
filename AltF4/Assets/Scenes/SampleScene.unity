@@ -519,6 +519,10 @@ PrefabInstance:
       value: dustJump
       objectReference: {fileID: 0}
     - target: {fileID: 1319453387410290959, guid: 4bcafecff0064754d8f282e53b4b15e4, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319453387410290959, guid: 4bcafecff0064754d8f282e53b4b15e4, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.3
       objectReference: {fileID: 0}

@@ -7,6 +7,8 @@ public class PlayerAnimation : MonoBehaviour
     private PlayerCore player;
     private Animator animator;
 
+    private ParticleSystem dust;
+
     void Awake()
     {
         player = GetComponent<PlayerCore>();
@@ -41,9 +43,15 @@ public class PlayerAnimation : MonoBehaviour
         if(!player.Check.OnGround() && !player.Check.IsFalling)
         {
             animator.SetBool("isJumping", true);
+            playDust();
         }
 
         animator.SetBool("isFalling", player.Check.IsFalling);
+    }
+
+    public void playDust()
+    {
+        dust.Play();
     }
 
 
