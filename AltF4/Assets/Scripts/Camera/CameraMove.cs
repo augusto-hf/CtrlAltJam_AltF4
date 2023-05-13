@@ -10,6 +10,7 @@ public class CameraMove : MonoBehaviour
     [SerializeField] private bool gameISRunning = false;
 
     [SerializeField] private GameObject pause;
+    [SerializeField] private Animator pauseAnimator;
 
     public event Action openMenu;
 
@@ -26,6 +27,15 @@ public class CameraMove : MonoBehaviour
         menuActive = !menuActive;
         pause.SetActive(menuActive);
         openMenu?.Invoke();
+
+        if(menuActive)
+        {
+            pauseAnimator.Play("start");
+            return;
+        }
+        
+        pauseAnimator.Play("exit");
+        
     }
 
     public void GetIfGameIsRunning(bool value)

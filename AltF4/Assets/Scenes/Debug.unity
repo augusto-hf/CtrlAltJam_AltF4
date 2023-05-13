@@ -118820,6 +118820,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8414608118561188946}
+    - target: {fileID: 4788118409718430539, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -82.599976
+      objectReference: {fileID: 0}
     - target: {fileID: 8013590992492922195, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
       propertyPath: m_Name
       value: CanvasGaming
@@ -118935,6 +118939,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1248419559 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1248419559, guid: 4731856ce18c86e48aa41cf178d5ed21, type: 3}
+  m_PrefabInstance: {fileID: 1248419554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1251721762
 GameObject:
   m_ObjectHideFlags: 3
@@ -123795,6 +123804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1605854385391002118, guid: f695092d8a426d642bf1ff4152524651, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1605854385391002121, guid: f695092d8a426d642bf1ff4152524651, type: 3}
       propertyPath: m_Camera
       value: 
@@ -124112,6 +124125,10 @@ PrefabInstance:
       propertyPath: pause
       value: 
       objectReference: {fileID: 2104165485}
+    - target: {fileID: 2264666794864659391, guid: 75f4c7e866f8c684db93213b52419df0, type: 3}
+      propertyPath: pauseAnimator
+      value: 
+      objectReference: {fileID: 1248419559}
     - target: {fileID: 2264666794864659394, guid: 75f4c7e866f8c684db93213b52419df0, type: 3}
       propertyPath: m_Name
       value: Main Camera

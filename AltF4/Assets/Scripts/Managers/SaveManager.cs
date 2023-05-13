@@ -148,9 +148,12 @@ public class SaveManager : MonoBehaviour
 
     IEnumerator ShowIco()
     {
-        IcoSaved.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        IcoSaved.SetActive(false);
+        if(!IcoSaved.activeSelf)
+        {
+            IcoSaved.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            IcoSaved.SetActive(false);
+        }
     }
 
     public void Load() 
