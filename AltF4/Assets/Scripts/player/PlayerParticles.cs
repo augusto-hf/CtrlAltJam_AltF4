@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PlayerParticles : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private ParticleSystem dust;
+    [SerializeField] private Transform pointDust;
 
-    // Update is called once per frame
-    void Update()
+    public void playDust()
     {
-        
+        Instantiate(dust, pointDust.position, Quaternion.identity);
     }
 }
