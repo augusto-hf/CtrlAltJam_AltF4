@@ -147,8 +147,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -510017849
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 1150340764, guid: 1a4e27db59d376f4db663ff3cde31ecf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -254,7 +254,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
   playerSlope: {fileID: 6200000, guid: 26cfa54b68758194985c519ca1e7773d, type: 2}
   playerDefault: {fileID: 6200000, guid: 1373aec410957d74992b34001c24ad22, type: 2}
   noFriction: {fileID: 6200000, guid: 6715282f29be63b4c9464300ebd19442, type: 2}
-  canMove: 1
+  canMove: 0
   speed: {x: 0, y: 0}
 --- !u!114 &6336683652554037022
 MonoBehaviour:
@@ -482,8 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faf210ba704d3ef47ae6965a2407938a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dust: {fileID: 0}
-  pointDust: {fileID: 0}
+  dust: {fileID: 1319453387410290959, guid: 4bcafecff0064754d8f282e53b4b15e4, type: 3}
+  pointDust: {fileID: 4609767914332199521}
 --- !u!1 &7320957796236712430
 GameObject:
   m_ObjectHideFlags: 0
