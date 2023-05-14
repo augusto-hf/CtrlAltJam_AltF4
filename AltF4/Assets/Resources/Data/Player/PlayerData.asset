@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eebe554f05fd5f48a3a87aa4847d8fd, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  _horizontalAcceleration: 5
-  _horizontalDeceleration: 5.6
-  _maxHorizontalSpeed: 7
+  _horizontalAcceleration: 3
+  _horizontalDeceleration: 5
+  _maxHorizontalSpeed: 5
   _maxRunSpeed: 16
-  _jumpForce: 10
+  _jumpForce: 11
   _jumpCutMultiplier: 1.2
   _coyoteTime: 0.3
   _fallMultiplier: 3
