@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    private PlayerCore core;
     private CapsuleCollider2D capsule;
     private SpriteRenderer sprite;
-    private SaveManager saveManager;
+    private GameManager saveManager;
     private bool isDead;
+    private float alpha;
+    private Color defaulColor;
+    private Color invisibleColor;
 
     public bool IsDead { get => isDead; }
 
@@ -16,11 +20,13 @@ public class PlayerHealth : MonoBehaviour
     {
         capsule = GetComponent<CapsuleCollider2D>();
         sprite = GetComponentInChildren<SpriteRenderer>();
+        defaulColor = sprite.color;
+        invisibleColor = new Color (defaulColor.r, defaulColor.g, defaulColor.b, 0);
     }
 
     private void Start()
     {
-        saveManager =  GameObject.FindWithTag("GameController").GetComponent<SaveManager>();
+        saveManager =  GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
 
 
@@ -33,14 +39,17 @@ public class PlayerHealth : MonoBehaviour
     {
         capsule.isTrigger = true;
         isDead = true;
-        
-        while (sprite.color.a > 0)
+
+        while(sprite.color.a > 0)
         {
-            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, Mathf.MoveTowards(sprite.color.a, 0, Time.deltaTime/2));
+            alpha -= 0.1f * Time.deltaTime;
+            sprite.color = Color.Lerp(defaulColor, invisibleColor, alpha);
             yield return null;
         }
-        Revive();
-        saveManager.Load();
+        
+        yield return new WaitForSeconds(1);
+        
+        saveManager.LoadGame();
 
     }
 
@@ -48,5 +57,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = false;
         capsule.isTrigger = false;
+        alpha = 1;
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, alpha);
     }
 }

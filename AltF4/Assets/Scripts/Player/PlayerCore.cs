@@ -47,6 +47,13 @@ public class PlayerCore : MonoBehaviour
 
     public void StopAndRunPlayer()
     {
+        if (Health.IsDead)
+        {
+            Movement.canMove = true;
+            Health.Revive();
+            return;
+        }
+        
         Movement.canMove = !Movement.canMove;
     }
     public Transform ReturnTranform()
@@ -58,6 +65,8 @@ public class PlayerCore : MonoBehaviour
     {
         onPickColor?.Invoke(nameColor);
     }
+
+    
 
     
 }
