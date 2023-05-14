@@ -23,6 +23,7 @@ public class ParallaxManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
         Vector2 newPos = startPosition + travel * parallaxFactor;
