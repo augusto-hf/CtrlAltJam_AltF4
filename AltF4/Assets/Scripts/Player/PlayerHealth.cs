@@ -29,6 +29,11 @@ public class PlayerHealth : MonoBehaviour
         saveManager =  GameObject.FindWithTag("GameController").GetComponent<GameManager>();
     }
 
+    private void Update ()
+    {
+
+    }
+
 
     public void Death()
     {
@@ -40,14 +45,10 @@ public class PlayerHealth : MonoBehaviour
         capsule.isTrigger = true;
         isDead = true;
 
-        while(sprite.color.a > 0)
-        {
-            alpha -= 0.1f * Time.deltaTime;
-            sprite.color = Color.Lerp(defaulColor, invisibleColor, alpha);
-            yield return null;
-        }
-        
+        sprite.color = invisibleColor;
+
         yield return new WaitForSeconds(1);
+        
         
         saveManager.LoadGame();
 
