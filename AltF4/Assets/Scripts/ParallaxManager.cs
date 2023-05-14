@@ -6,6 +6,8 @@ public class ParallaxManager : MonoBehaviour
 {
     [SerializeField] private Camera cam;
     [SerializeField] private Transform ImageToParallax;
+    [SerializeField] private float Offset;
+
     Vector2 startPosition;
     float startZ;
 
@@ -13,7 +15,7 @@ public class ParallaxManager : MonoBehaviour
 
     float distanceFromSubject => transform.position.z - ImageToParallax.position.z;
 
-    float clippingPlane => cam.transform.position.z + (distanceFromSubject > 0? cam.farClipPlane : cam.nearClipPlane);
+    float clippingPlane => cam.transform.position.z + (distanceFromSubject > 0? 50 : -10);
 
     float parallaxFactor => Mathf.Abs(distanceFromSubject/clippingPlane);
     void Start()
@@ -27,6 +29,6 @@ public class ParallaxManager : MonoBehaviour
     void Update()
     {
         Vector2 newPos = startPosition + travel * parallaxFactor;
-        transform.position = new Vector3(newPos.x, newPos.y, startZ);
+        transform.position = new Vector3(newPos.x, cam.transform.position.y + Offset, startZ);
     }
 }
