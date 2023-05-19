@@ -22,7 +22,6 @@ public class BluePassive : MonoBehaviour
 
             player.Movement.SetBluePassive();
 
-
             Impulse(rb, player.Data.JumpForce + playerInpulseAddtional, direction);
 
         }
@@ -38,7 +37,7 @@ public class BluePassive : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            var player = other.gameObject.GetComponent<PlayerCore>(); 
+            var player = other.gameObject.GetComponent<PlayerCore>();
             player.Movement.SetBluePassive();
 
         }
