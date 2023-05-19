@@ -23,8 +23,8 @@ TagManager:
   - NoPostProcessing
   - InteractBlocks
   - Blob
-  - 
-  - 
+  - AreaSystem
+  - AreaEffect
   - 
   - 
   - 

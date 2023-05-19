@@ -679,6 +679,10 @@ PrefabInstance:
       value: 32.627983
       objectReference: {fileID: 0}
     - target: {fileID: 5643927128876753351, guid: bf95b3ac01e65e14691cdbccd0ca8a3c, type: 3}
+      propertyPath: m_Size.y
+      value: 4.7752175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643927128876753351, guid: bf95b3ac01e65e14691cdbccd0ca8a3c, type: 3}
       propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
@@ -692,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643927128876753368, guid: bf95b3ac01e65e14691cdbccd0ca8a3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.8
+      value: 40.6
       objectReference: {fileID: 0}
     - target: {fileID: 5643927128876753368, guid: bf95b3ac01e65e14691cdbccd0ca8a3c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -818,6 +822,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5991925509490557203}
     m_Modifications:
+    - target: {fileID: 7993748515204811973, guid: 2f82a957fb2a538488b5f47f9b6fda01, type: 3}
+      propertyPath: m_Size.x
+      value: 14.7988205
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993748515204811973, guid: 2f82a957fb2a538488b5f47f9b6fda01, type: 3}
+      propertyPath: m_Size.y
+      value: 4.1007047
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993748515204811973, guid: 2f82a957fb2a538488b5f47f9b6fda01, type: 3}
+      propertyPath: m_Center.x
+      value: 3.0528297
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993748515204811973, guid: 2f82a957fb2a538488b5f47f9b6fda01, type: 3}
+      propertyPath: m_Center.y
+      value: 0.59086776
+      objectReference: {fileID: 0}
     - target: {fileID: 7993748515204811975, guid: 2f82a957fb2a538488b5f47f9b6fda01, type: 3}
       propertyPath: m_Name
       value: AreaVolume_OrangeBlob
