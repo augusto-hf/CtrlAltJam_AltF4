@@ -6,8 +6,6 @@ public class PlayerAnimation : MonoBehaviour
 {
     private PlayerCore player;
     private Animator animator;
-    [SerializeField] private ParticleSystem dust;
-    [SerializeField] private Transform pointDust;
     void Awake()
     {
         player = GetComponent<PlayerCore>();
