@@ -6,23 +6,58 @@ public class PlayerParticles : MonoBehaviour
 {
     private PlayerCore player;
     private Animator animator;
-    [SerializeField] private ParticleSystem jumpDust, fallDust, blueJumpDust;
-    [SerializeField] private Transform downFeetPoint, behindFeetPoint, tongueFeetPoint;
+    [SerializeField] private ParticleSystem jumpBlueParticles, landingParticle, walkingParticle;
+    [SerializeField] private Transform downFeetPoint, behindFeetPoint, tonguePoint;
+
+    private bool alreadyTouchedGround = false;
 
     void Update()
     {
+        particleOnPowerJump();
+        particleOnFall();
 
+        particleOnWalk();
+        particleOnRun();
     }
-    #region Jump&Fall Particles
-    void particleOnJump()
+    #region Movement Particles
+    void particleOnWalk()
     {
+        if (player.Check.OnGround() && player.rb.velocity.x > 0)
+        {
+            if (player.Color.CurrentColor.Type == ColorType.Orange && player.Controller.ColorButton)
+                return;
+            else
+                playParticle(jumpBlueParticles, behindFeetPoint.position);
+        }
+    }
+    void particleOnRun()
+    {
+        if (player.Check.OnGround() && player.rb.velocity.x > 0)
+        {
+            if (player.Color.CurrentColor.Type == ColorType.Orange && player.Controller.ColorButton)
+                playParticle(jumpBlueParticles, behindFeetPoint.position);
+        }
+    }
+    #endregion
 
+    #region Jumping&Landing Particles
+    void particleOnPowerJump()
+    {
+        if (player.Color.CurrentColor.Type == ColorType.Blue && player.Check.OnGround() && player.Controller.ColorButton)
+        {
+            playParticle(jumpBlueParticles, downFeetPoint.position);
+        }
     }
     void particleOnFall()
     {
-        if (player.Check.IsFalling && player.Check.OnGround())
+        if (player.Check.OnGround() && !alreadyTouchedGround)
         {
-            playParticle(fallDust, downFeetPoint.position);
+            alreadyTouchedGround = true;
+            playParticle(landingParticle, downFeetPoint.position);
+        }
+        if (!player.Check.OnGround())
+        {
+            alreadyTouchedGround = false;
         }
     }
 
