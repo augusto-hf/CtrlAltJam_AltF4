@@ -24,10 +24,7 @@ public class PlayerAnimation : MonoBehaviour
         if (player.Color.CurrentColor.Type == ColorType.Orange)
             animator.SetBool("isRunning", player.Controller.ColorButton);
         else
-            animator.SetBool("isRunning", false);
-
-
-            
+            animator.SetBool("isRunning", false);     
 
     }
 

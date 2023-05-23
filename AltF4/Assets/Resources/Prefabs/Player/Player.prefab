@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 6336683651438568576}
   - component: {fileID: 6336683651438568607}
   - component: {fileID: 1136625044}
-  - component: {fileID: 6993579229481251983}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -181,20 +180,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6993579229481251983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336683651438568577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aaf88b72e0544a42a2cfd5a28bcdc40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dust: {fileID: 1319453387410290959, guid: 4bcafecff0064754d8f282e53b4b15e4, type: 3}
-  pointDust: {fileID: 4609767914332199521}
 --- !u!1 &6336683652554037023
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0aecf0d855bd4dbdf73e6bad33460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 1
+  canMove: 0
   speed: {x: 0, y: 0}
   accel: 0
 --- !u!114 &6336683652554037022
