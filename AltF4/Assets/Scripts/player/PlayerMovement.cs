@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("stuck wall");
             rb.velocity = new Vector2(0, rb.velocity.y);
-            return;   
+            return;
         }
 
 

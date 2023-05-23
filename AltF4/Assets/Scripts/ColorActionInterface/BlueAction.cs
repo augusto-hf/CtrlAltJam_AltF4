@@ -32,7 +32,7 @@ public class BlueAction : MonoBehaviour, IColor
             player.Movement.JumpForceApply();
             isJumping = true;
         }
-        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasBluePassive && !player.Check.isOnSlop)
+        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasBluePassive)
         {
             player.Movement.JumpCutForceApply();
         }
@@ -41,6 +41,7 @@ public class BlueAction : MonoBehaviour, IColor
         {
             isJumping = false;
         }
+
     }
 
     private bool CanJump(PlayerCore player)

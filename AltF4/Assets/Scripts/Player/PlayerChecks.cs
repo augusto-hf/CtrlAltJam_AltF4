@@ -94,7 +94,7 @@ public class PlayerChecks : MonoBehaviour
         {
             LastTimeGrounded = player.Data.CoyoteTime;
         }
-        else if (!OnGround())
+        else
         {
             LastTimeGrounded -= Time.deltaTime;
             if (LastTimeGrounded < 0)
