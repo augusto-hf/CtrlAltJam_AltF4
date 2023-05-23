@@ -14,7 +14,7 @@ public class PlayerParticles : MonoBehaviour
     void Update()
     {
         particleOnPowerJump();
-        particleOnFall();
+        particleOnLanding();
 
         particleOnWalk();
         particleOnRun();
@@ -48,7 +48,7 @@ public class PlayerParticles : MonoBehaviour
             playParticle(jumpBlueParticles, downFeetPoint.position);
         }
     }
-    void particleOnFall()
+    void particleOnLanding()
     {
         if (player.Check.OnGround() && !alreadyTouchedGround)
         {
