@@ -17,16 +17,16 @@ public class PlayerControl : MonoBehaviour
         TongueButton = Input.GetButton("Tongue");
 
         if (Input.GetAxis("Horizontal") != 0)
-            LastHorizontalAxis = Input.GetAxis("Horizontal");
+            LastHorizontalAxis = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetAxis("Vertical") != 0)
-            LastVerticalAxis = Input.GetAxis("Vertical");
+            LastVerticalAxis = Input.GetAxisRaw("Vertical");
 
     }
 
     private Vector2 GetAxis()
     {
-        return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
     private Vector2 GetLastAxis()

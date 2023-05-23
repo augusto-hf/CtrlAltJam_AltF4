@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 public class PlayerChecks : MonoBehaviour
@@ -35,7 +38,6 @@ public class PlayerChecks : MonoBehaviour
         IsGrounded = OnGround();
 
         CoyoteTime();
-        SlopeDetector();
         OnWall();
 
         IsFalling = OnFall();
@@ -67,7 +69,8 @@ public class PlayerChecks : MonoBehaviour
             Debug.DrawRay(hitRight.point, hitRight.normal, Color.magenta);
 
         }
-        else if (hitLeft)
+        
+        if (hitLeft)
         {
             SlopeDirection = Vector2.Perpendicular(hitLeft.normal).normalized;
             SlopeAngle = Vector2.Angle(hitLeft.normal, Vector2.up);
@@ -110,6 +113,7 @@ public class PlayerChecks : MonoBehaviour
             return false;
     }
     
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (groundDetectorPoint == null) return;
@@ -118,13 +122,15 @@ public class PlayerChecks : MonoBehaviour
         Gizmos.DrawWireCube(groundDetectorPoint.position, new Vector3(size.x, size.y, 0));
 
     }
-
+    #endif
+    
     public void OnWall()
     {
         int direction = player.Movement.IsFacingRight ? 1 : -1;
         
         Vector2 point = new Vector2(capsule.bounds.center.x + capsule.bounds.extents.x  * direction , capsule.bounds.center.y);
         RaycastHit2D wallPoint = Physics2D.Raycast(point, this.transform.right, wallCheckDistance, ground);
+        
         var hitColor = wallPoint ? Color.green : Color.red;
 
         Debug.DrawRay(point, this.transform.right * wallCheckDistance, hitColor);

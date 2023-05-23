@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private PhysicsMaterial2D playerSlope;
-    [SerializeField] private PhysicsMaterial2D playerDefault;
-    [SerializeField] private PhysicsMaterial2D noFriction;
     
     public bool canMove = false;
 
     [SerializeField] private Vector2 speed;
+    [SerializeField] private float accel;
     private PlayerCore player;
     private Rigidbody2D rb;
     private float currentMaxSpeed;
@@ -46,9 +44,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Debug.DrawRay(this.transform.position, rb.velocity.normalized, Color.cyan);
+        
         Checkers();
         HorizontalMovement();
         VerticalMovement();
+        
         speed = Velocity;
     }
 
@@ -60,19 +60,6 @@ public class PlayerMovement : MonoBehaviour
             HasBluePassive = false;
             isJumping = false;
 
-        }
-
-        if (player.Check.isOnSlop && player.Controller.Axis.x == 0)
-        {
-            rb.sharedMaterial = playerSlope;
-        }
-        else if (player.Check.isOnSlop && player.Controller.Axis.x != 0)
-        {
-            rb.sharedMaterial = noFriction;
-        }
-        else
-        {
-            rb.sharedMaterial = playerDefault;
         }
         
     }
@@ -94,46 +81,27 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("stuck wall");
             rb.velocity = new Vector2(0, rb.velocity.y);
-            return;
+            return;   
         }
 
-        if (player.Check.isOnSlop && !isJumping)
-        {
-            
-            float targetVelocityX = player.Check.SlopeDirection.x * -player.Controller.Axis.x * currentMaxSpeed;
-            float targetVelocityY = player.Check.SlopeDirection.y * -player.Controller.Axis.x * currentMaxSpeed;
-            Vector2 targetVelocity = new Vector2(targetVelocityX, targetVelocityY);
 
-            Debug.Log(targetVelocity);
-            
-            Vector2 speedToReach = targetVelocity - rb.velocity;
-            
-            float accelRate = Mathf.Abs(targetVelocity.magnitude) > 0.01f ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
+        float targetVeloticy = player.Controller.Axis.x * currentMaxSpeed;
 
-            rb.AddForce(speedToReach * accelRate);
+        float speedToReach = targetVeloticy - rb.velocity.x;
+            
+        float accelRate = (Mathf.Abs(targetVeloticy) > 0.01f) ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
 
-        }
-        else
-        {
-            float targetVeloticy = player.Controller.Axis.x * currentMaxSpeed;
+        accel = accelRate;
 
-            float speedToReach = targetVeloticy - rb.velocity.x;
-            
-            float accelRate = Mathf.Abs(targetVeloticy) > 0.01f ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
-            
-            float xMovement  = speedToReach * accelRate;
-            
-            rb.AddForce(Vector2.right * xMovement , ForceMode2D.Force);
-            
-        }
-
-        //rb.velocity = new Vector2(player.Controller.Axis.x * player.Data.MaxHorizontalSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(rb.velocity.x + (Time.fixedDeltaTime  * speedToReach * accelRate), rb.velocity.y);
 
     }
+    
     public void SetMaxSpeed(float maxSpeed)
     {
         currentMaxSpeed = maxSpeed;
     }
+    
     private void Flip()
     {
         if ((isFacingRight && player.Controller.Axis.x < 0 || !isFacingRight && player.Controller.Axis.x > 0))
