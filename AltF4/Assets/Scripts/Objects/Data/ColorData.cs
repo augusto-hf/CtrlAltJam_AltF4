@@ -9,7 +9,7 @@ public class ColorData : ScriptableObject
     [SerializeField] private int _staminaAmount;
     [SerializeField] private int _jumpCharge;
 
-    public int StaminaAmount { get => Mathf.Clamp(_staminaAmount, 0, PlayerStamina.MAX_STAMINA); }
-    public int JumpCharge { get => _jumpCharge; }
+    public float StaminaAmount { get => Mathf.Clamp(_staminaAmount, PlayerStamina.MIN_STAMINA, PlayerStamina.MAX_STAMINA); }
+    public int JumpCharge { get => Mathf.Clamp(_jumpCharge, 0, 1); }
     public ColorType Type { get => _colorType; }
 }

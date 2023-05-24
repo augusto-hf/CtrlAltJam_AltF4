@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 speed;
     private PlayerCore player;
     private Rigidbody2D rb;
-    private PlayerStamina stamina;
     private float currentMaxSpeed;
     private int jumpCharges;
     private bool isJumping;
@@ -24,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
         rb = GetComponent<Rigidbody2D>();
-        stamina = new PlayerStamina(PlayerStamina.MAX_STAMINA);
         
         isFacingRight = this.transform.rotation.eulerAngles.y == 0;
 
@@ -54,11 +52,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             RestoreAllMovement();
-        }
-
-        if (player.Check.IsGrounded)
-        {
-            isJumping = false;
         }
         
     }
@@ -130,37 +123,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    #region Jump
 
-    public void Jump()
-    {
-        if (player.Controller.ColorButton && CanJump() && !player.Movement.HasBluePassive)
-        {
-            player.Movement.JumpForceApply();
-            isJumping = true;
-        }
-        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasBluePassive)
-        {
-            player.Movement.JumpCutForceApply();
-        }
-    }
-
-    public void JumpForceApply()
-    {
-        isJumping = true;
-        rb.velocity = new Vector2(rb.velocity.x, player.Data.JumpForce);
-    }
-
-    public void JumpCutForceApply()
-    {
-        rb.AddForce(Vector2.down * rb.velocity.y * player.Data.JumpCutMultiplier, ForceMode2D.Impulse);
-    }
-    private bool CanJump()
-    {
-        return player.Check.LastTimeGrounded > 0 && !isJumping;
-    }
-
-    #endregion
 
     #endregion
 

@@ -15,6 +15,7 @@ public class PlayerCore : MonoBehaviour
     public PlayerHook Hook { get; private set; }
     public PlayerAnimation Animation { get; private set; }
     public PlayerHealth Health { get; private set; }
+    public PlayerColorAbilities Abilities { get; private set;}
     
     public Rigidbody2D rb { get; private set; }
 
@@ -28,6 +29,8 @@ public class PlayerCore : MonoBehaviour
         Hook = GetComponent<PlayerHook>();
         Animation = GetComponent<PlayerAnimation>();
         Health = GetComponent<PlayerHealth>();
+        Abilities = GetComponent<PlayerColorAbilities>();
+        
         rb = GetComponent<Rigidbody2D>();
     }
 

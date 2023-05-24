@@ -51,6 +51,16 @@ public class PlayerColorManager : MonoBehaviour
         }
     }
 
+    public void ConsumeColor()
+    {
+        if (lastBlob == null ) return;
+
+        lastBlob.RespawnPower();
+        lastBlob = null;
+        GiveNoColor();
+        abilities.SetConsumeBuffs(currentColor.ColorData);
+    }
+
     public void GiveNoColor()
     {
         currentColor = StartingColorReference.gameObject.GetComponent<IColor>();

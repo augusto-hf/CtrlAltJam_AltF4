@@ -29,13 +29,13 @@ public class PlayerParticles : MonoBehaviour
     {
         if (player.Check.OnGround() && Mathf.Abs(player.rb.velocity.x) > 0.5f && Mathf.Abs(player.Controller.Axis.x) > 0)
         {
-            if (player.ColorManager.CurrentColor.ColorData.Type != ColorType.Orange) 
+            if (player.ColorManger.CurrentColor.ColorData.Type != ColorType.Orange) 
             {
                 playConstantParticle(runningParticle);
             }
             else
             {
-                if (player.Controller.ColorButton)
+                if (player.Controller.ColorButtonHold)
                 {
                     stopConstantParticle(walkingParticle);
                     playConstantParticle(runningParticle);
@@ -58,7 +58,7 @@ public class PlayerParticles : MonoBehaviour
     #region Jumping&Landing Particles
     void particleOnPowerJump()
     {
-        if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Blue && player.Check.OnGround() && player.Controller.ColorButton)
+        if (player.ColorManger.CurrentColor.ColorData.Type == ColorType.Blue && player.Check.OnGround() && player.Controller.ColorButtonDown)
         {
             playOneTimeParticle(jumpBlueParticles, downFeetPoint.position);
         }
