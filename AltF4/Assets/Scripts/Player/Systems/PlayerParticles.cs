@@ -29,7 +29,7 @@ public class PlayerParticles : MonoBehaviour
     {
         if (player.Check.OnGround() && Mathf.Abs(player.rb.velocity.x) > 0.5f && Mathf.Abs(player.Controller.Axis.x) > 0)
         {
-            if (player.ColorManger.CurrentColor.ColorData.Type != ColorType.Orange) 
+            if (player.Colormanager.CurrentColor.ColorData.Type != ColorType.Orange) 
             {
                 playConstantParticle(runningParticle);
             }
