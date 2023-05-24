@@ -141,181 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: blocos_coloridos_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 803
-        width: 4
-        height: 169
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a075ede3d67c0074684e1b02c18ef8e0
-      internalID: 739521661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blocos_coloridos_1
-      rect:
-        serializedVersion: 2
-        x: 1618
-        y: 488
-        width: 165
-        height: 165
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a27c0deee1ab5f340a27d70d34e939c1
-      internalID: 1084404223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blocos_coloridos_2
-      rect:
-        serializedVersion: 2
-        x: 2267
-        y: 491
-        width: 163
-        height: 163
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71b91c1a5ecb4064b9b953f2a9286310
-      internalID: 1762584723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blocos_coloridos_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 485
-        width: 5
-        height: 165
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d4353902dc74b54a8eacfa5ae938102
-      internalID: 355619491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blocos_coloridos_4
-      rect:
-        serializedVersion: 2
-        x: 309
-        y: 440
-        width: 190
-        height: 217
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57cb59fa28ccfc64fb8f012619fdf114
-      internalID: -1203176999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blocos_coloridos_5
-      rect:
-        serializedVersion: 2
-        x: 646
-        y: 485
-        width: 164
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e38eefd246dfc25418ead505b0a19ca8
-      internalID: 505676436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blocos_coloridos_6
-      rect:
-        serializedVersion: 2
-        x: 971
-        y: 485
-        width: 164
-        height: 172
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fce74008d4743249bae19947d3ce426
-      internalID: -939231049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blocos_coloridos_7
-      rect:
-        serializedVersion: 2
-        x: 1294
-        y: 485
-        width: 165
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3155d84f801b2c43a5c6db262b6cdc8
-      internalID: 904429458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blocos_coloridos_8
       rect:
         serializedVersion: 2
-        x: 1943
-        y: 485
-        width: 165
-        height: 170
+        x: 648
+        y: 648
+        width: 162
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,34 +162,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blocos_coloridos_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 4
-        height: 326
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0e58d6790d44e640ae91967bc4dd0d7
-      internalID: 1329174321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blocos_coloridos_10
       rect:
         serializedVersion: 2
-        x: 309
-        y: 116
-        width: 190
-        height: 217
+        x: 972
+        y: 648
+        width: 162
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,34 +183,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blocos_coloridos_11
-      rect:
-        serializedVersion: 2
-        x: 646
-        y: 161
-        width: 164
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96c4a2effa002d842a531d1c46b4c44f
-      internalID: -2042513868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blocos_coloridos_12
       rect:
         serializedVersion: 2
-        x: 971
-        y: 161
-        width: 164
-        height: 172
+        x: 1296
+        y: 648
+        width: 162
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,32 +204,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blocos_coloridos_13
-      rect:
-        serializedVersion: 2
-        x: 1294
-        y: 161
-        width: 165
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f066b9d49652721419a494c4bb8eb680
-      internalID: 2010573868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blocos_coloridos_14
       rect:
         serializedVersion: 2
-        x: 1619
-        y: 163
+        x: 1620
+        y: 648
         width: 162
         height: 162
       alignment: 0
@@ -456,34 +225,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blocos_coloridos_15
-      rect:
-        serializedVersion: 2
-        x: 1945
-        y: 168
-        width: 159
-        height: 162
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dff81d5c16fc0194d91ae377c3110f99
-      internalID: 1088719677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: blocos_coloridos_16
       rect:
         serializedVersion: 2
-        x: 2269
-        y: 169
-        width: 161
-        height: 161
+        x: 1944
+        y: 648
+        width: 162
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -493,6 +241,552 @@ TextureImporter:
       bones: []
       spriteID: 16bc864b567e69549bac8f2c4c96a36f
       internalID: 198748633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_18
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 648
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ad71a119be552429175f6cf67c4835
+      internalID: 2108753371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_20
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59460b3d39fe3944bb43ee363efb74ff
+      internalID: -1524570162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_21
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf21dda7e613be4489c360b397a2e2a1
+      internalID: -593243976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_22
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbda52891d939874a8b6f8235d3e9050
+      internalID: -1215986183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_23
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c111552bd6742429564a278046eaca
+      internalID: 663941708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_25
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe641b5c7742aa438db09b927fe7bb7
+      internalID: -1368826364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_27
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b00c9730b3c2944b651596cdf239c4
+      internalID: 1614095646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_29
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b5b76fcfb3d8c4aa9a641d1e7f2420
+      internalID: -1401536394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_31
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54884ec337557546bf2c774023fa80b
+      internalID: -1476815228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_33
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 486
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06030742e9e05a645b7bc16ad89ad914
+      internalID: 2099722426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_38
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 324
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa259e8ab233343469a56c6ec4b39a24
+      internalID: -397298582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_40
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 324
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b438ed4fdd87f4f8a3293ba1d63db6
+      internalID: 1127735590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_42
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 324
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7964fecd6cbd42d49b46bf555f078b4e
+      internalID: -2076441467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_44
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 324
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c1fbc4002554a4f859af191df1f217
+      internalID: -1203675263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_46
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 324
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63384b175cf11d146a08fd87198c9211
+      internalID: -1326698156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_48
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 324
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3a5e795c4de554f8bc8794655798cd
+      internalID: 1947614534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_50
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14a7044963a669949b82ec29fc2e59b5
+      internalID: -1724606975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_51
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a094f12e2f4efb4ea792cad7b577102
+      internalID: -777411935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_52
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce07160aa8cc0c4b98410c6c5c7b12c
+      internalID: -383929249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_53
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b798598fa6bd82144be2dac123e19ce7
+      internalID: -1646169837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_55
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d803e037d2bf684894dede8cbed6913
+      internalID: -210593789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_57
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc5b30c6cbaf58418ef7ba5bc55a301
+      internalID: 1378166089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_59
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21dbcf12be3bdfc49a857c2e6c59e606
+      internalID: 1556545042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_61
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b89e31823ef8d64299cd4c1423a71a0
+      internalID: 1672025839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_63
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 162
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db09c186e5a61c4b8c144391fefa958
+      internalID: 125787313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blocos_coloridos_66
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d6a4de9e91cec49b4e9cdddd11319f
+      internalID: -907595475
       vertices: []
       indices: 
       edges: []
@@ -508,23 +802,84 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      blocos_coloridos_0: 739521661
+      blocos_coloridos_71: -48514261
       blocos_coloridos_4: -1203176999
-      blocos_coloridos_11: -2042513868
+      blocos_coloridos_28: 887520705
+      blocos_coloridos_64: -1231111155
+      blocos_coloridos_76: -495142852
+      blocos_coloridos_18: 2108753371
+      blocos_coloridos_47: 1119716947
       blocos_coloridos_5: 505676436
-      blocos_coloridos_7: 904429458
+      blocos_coloridos_42: -2076441467
+      blocos_coloridos_72: 916415276
       blocos_coloridos_14: -43152329
-      blocos_coloridos_15: 1088719677
+      blocos_coloridos_40: 1127735590
+      blocos_coloridos_46: -1326698156
+      blocos_coloridos_67: 2048037492
+      blocos_coloridos_35: -1849055490
+      blocos_coloridos_26: 1128016099
       blocos_coloridos_6: -939231049
-      blocos_coloridos_1: 1084404223
-      blocos_coloridos_12: 342034167
-      blocos_coloridos_8: -1171847306
+      blocos_coloridos_25: -1368826364
+      blocos_coloridos_30: -477046720
+      blocos_coloridos_44: -1203675263
+      blocos_coloridos_63: 125787313
+      blocos_coloridos_38: -397298582
+      blocos_coloridos_68: 1165543973
       blocos_coloridos_16: 198748633
+      blocos_coloridos_27: 1614095646
       blocos_coloridos_9: 1329174321
       blocos_coloridos_13: 2010573868
+      blocos_coloridos_37: 2128918502
+      blocos_coloridos_39: 1753817146
+      blocos_coloridos_60: -1594509582
+      blocos_coloridos_58: 227772549
+      blocos_coloridos_74: -799536495
+      blocos_coloridos_43: 1681442178
+      blocos_coloridos_69: 1856645934
+      blocos_coloridos_33: 2099722426
+      blocos_coloridos_65: -1523578454
+      blocos_coloridos_49: 1180433465
+      blocos_coloridos_61: 1672025839
+      blocos_coloridos_0: 739521661
+      blocos_coloridos_29: -1401536394
+      blocos_coloridos_34: -526313488
+      blocos_coloridos_31: -1476815228
+      blocos_coloridos_54: -578035732
+      blocos_coloridos_11: -2042513868
+      blocos_coloridos_57: 1378166089
+      blocos_coloridos_55: -210593789
+      blocos_coloridos_50: -1724606975
+      blocos_coloridos_75: 616002696
+      blocos_coloridos_7: 904429458
+      blocos_coloridos_20: -1524570162
+      blocos_coloridos_21: -593243976
+      blocos_coloridos_45: -1772144572
+      blocos_coloridos_77: 543667955
+      blocos_coloridos_15: 1088719677
+      blocos_coloridos_1: 1084404223
+      blocos_coloridos_12: 342034167
+      blocos_coloridos_17: -1552560107
+      blocos_coloridos_23: 663941708
+      blocos_coloridos_8: -1171847306
+      blocos_coloridos_59: 1556545042
+      blocos_coloridos_56: 1692025505
+      blocos_coloridos_70: 1825107555
+      blocos_coloridos_73: -1979207208
+      blocos_coloridos_22: -1215986183
+      blocos_coloridos_41: -536730474
+      blocos_coloridos_19: 331264517
+      blocos_coloridos_52: -383929249
+      blocos_coloridos_24: 2065795644
+      blocos_coloridos_53: -1646169837
+      blocos_coloridos_48: 1947614534
+      blocos_coloridos_32: 1733955623
       blocos_coloridos_10: -1444596191
       blocos_coloridos_2: 1762584723
+      blocos_coloridos_51: -777411935
       blocos_coloridos_3: 355619491
+      blocos_coloridos_36: -151012014
+      blocos_coloridos_62: 2082073348
+      blocos_coloridos_66: -907595475
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
