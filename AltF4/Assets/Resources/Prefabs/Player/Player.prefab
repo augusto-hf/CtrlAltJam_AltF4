@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea344684953f8ed4087dc0fe7131bd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorData: {fileID: 11400000, guid: 00c5f96cc1d98cf4da165bd4e4d9c7ea, type: 2}
 --- !u!1 &4627296027524343613
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +233,7 @@ GameObject:
   - component: {fileID: 4604940917045427784}
   - component: {fileID: 1632924091}
   - component: {fileID: 1352516601470933779}
+  - component: {fileID: 668577920}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -323,7 +325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   speed: {x: 0, y: 0}
-  accel: 0
 --- !u!114 &6336683652554037022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +536,20 @@ MonoBehaviour:
   downFeetPoint: {fileID: 4609767914332199521}
   behindFeetPoint: {fileID: 8432331026842773177}
   tonguePoint: {fileID: 5105274287945571479}
+--- !u!114 &668577920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683652554037023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee5e67a804b932449aaa40523ab8abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaDropMuiltiplier: 0.2
+  staminaTest: 0
 --- !u!1 &7320957796236712430
 GameObject:
   m_ObjectHideFlags: 0
