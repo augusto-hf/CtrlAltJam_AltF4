@@ -14,14 +14,24 @@ public class BlobManager : MonoBehaviour
     {
         blobColor = GetComponent<IColor>();
     }
+
     public void PickPower()
     {
         beingUsed = true;
         VisualAndHitbox.SetActive(false);
+        StopAllCoroutines();
     }
+
     public void RespawnPower()
     {
+        StartCoroutine(TimeToRespawn());
+    }
+
+    IEnumerator TimeToRespawn()
+    {
+        yield return new WaitForSeconds(0.4f);
         beingUsed = false;
         VisualAndHitbox.SetActive(true);
     }
+
 }
