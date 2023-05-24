@@ -11,6 +11,11 @@ public class PlayerParticles : MonoBehaviour
 
     private bool alreadyTouchedGround = false;
 
+    private void Start()
+    {
+        player = GetComponent<PlayerCore>();
+    }
+
     void Update()
     {
         particleOnPowerJump();
