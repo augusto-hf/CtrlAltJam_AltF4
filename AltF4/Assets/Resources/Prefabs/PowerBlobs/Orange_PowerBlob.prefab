@@ -55,5 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orange_PowerBlob
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7571025847142278602, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: colorData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f19670705265a345b06f941a0cd2d9f, type: 2}
+    m_RemovedComponents:
+    - {fileID: 1775692322622095309, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}

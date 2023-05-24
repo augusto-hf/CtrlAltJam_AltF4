@@ -191,8 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057928800272166170}
   - component: {fileID: 860348821051565063}
-  - component: {fileID: 1775692322622095309}
-  - component: {fileID: -5844858293765303366}
+  - component: {fileID: 7571025847142278602}
   m_Layer: 11
   m_Name: PowerBlob
   m_TagString: ColorPower
@@ -232,7 +231,7 @@ MonoBehaviour:
   nameColor: orange
   beingUsed: 0
   VisualAndHitbox: {fileID: 2507655081481780796}
---- !u!114 &1775692322622095309
+--- !u!114 &7571025847142278602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,23 +240,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6044962299976279467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fb9eebeb6555e749a916d9581b70f22, type: 3}
+  m_Script: {fileID: 11500000, guid: 788cce220844ef74699ff2121700f143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colorData: {fileID: 11400000, guid: 8b36d6625bdb2054697ab4285705916b, type: 2}
---- !u!114 &-5844858293765303366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6044962299976279467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4482665d958e6024ca6e126d686a4933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorData: {fileID: 11400000, guid: 2f19670705265a345b06f941a0cd2d9f, type: 2}
 --- !u!1 &8916058478006924244
 GameObject:
   m_ObjectHideFlags: 0
