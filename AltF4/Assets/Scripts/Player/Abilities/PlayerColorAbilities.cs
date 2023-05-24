@@ -46,27 +46,23 @@ public class PlayerColorAbilities : MonoBehaviour
             default:
                 break;
         }
-
-        
-
-
-    }
-
-    private void OrangeAbility()
-    {
-
     }
 
     #region Run
 
     private void Run()
     {
-        
-        StaminaController();
 
-        if (player.Controller.ColorButtonHold)
+        if (player.Controller.ColorButtonHold && Mathf.Abs(player.Controller.Axis.x) > 0 && stamina.CurrentStamina > PlayerStamina.MIN_STAMINA)
         {
+            stamina.DecreaseStamina(staminaDropMuiltiplier);
+
             player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
+            
+            if (stamina.CurrentStamina <= PlayerStamina.MIN_STAMINA)
+            {
+                player.ColorManager.ConsumeColor();
+            }
         }
         else
         {
@@ -74,20 +70,6 @@ public class PlayerColorAbilities : MonoBehaviour
         }
         
 
-    }
-
-    private void StaminaController()
-    {
-        if (stamina.CurrentStamina <= PlayerStamina.MIN_STAMINA) 
-        {
-            player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
-            return;
-        }
-
-        if (player.Controller.ColorButtonHold)
-        {
-            stamina.DecreaseStamina(staminaDropMuiltiplier);
-        }
     }
 
     #endregion
@@ -109,7 +91,6 @@ public class PlayerColorAbilities : MonoBehaviour
         else if (player.Check.OnGround() && isJumping && jumpCharge <= 0 & player.Movement.Velocity.y < 0)
         {
             isJumping = false;
-            player.ColorManager.ConsumeColor();
         }
         
     }
@@ -143,7 +124,7 @@ public class PlayerColorAbilities : MonoBehaviour
         switch(data.Type)
         {
             case ColorType.Blue :
-                
+                ResetBuffs();
                 jumpCharge = data.JumpCharge;
                 
                 break;
@@ -170,11 +151,13 @@ public class PlayerColorAbilities : MonoBehaviour
         switch(data.Type)
         {
             case ColorType.Blue :
+                ResetBuffs();
                 jumpCharge = data.JumpCharge;
                 
                 break;
             
             case ColorType.Orange:
+                jumpCharge = 0;
                 stamina.IncreaseStamina(data.StaminaAmount);
                 
                 break;
@@ -190,6 +173,7 @@ public class PlayerColorAbilities : MonoBehaviour
     public void ResetBuffs()
     {
         stamina.DecreaseStamina(PlayerStamina.MAX_STAMINA);
+        player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
         jumpCharge = 0;
     }
 

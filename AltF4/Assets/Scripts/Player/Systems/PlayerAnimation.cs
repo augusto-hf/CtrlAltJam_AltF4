@@ -19,7 +19,7 @@ public class PlayerAnimation : MonoBehaviour
 
         setJumpAndFall();
 
-        if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Orange)
+        if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Orange && Mathf.Abs(player.Controller.Axis.x) > 0)
             animator.SetBool("isRunning", player.Controller.ColorButtonHold);
         else
             animator.SetBool("isRunning", false);     
@@ -32,11 +32,11 @@ public class PlayerAnimation : MonoBehaviour
         {
             animator.SetBool("isJumping", player.Abilities.IsJumping);
         }
-        if(player.Check.IsFalling)
+        if(player.Check.IsFalling && !player.Abilities.IsJumping)
         {
             animator.SetBool("isJumping", false);
         }
-        if(!player.Check.OnGround() && !player.Check.IsFalling)
+        if(!player.Check.OnGround() && !player.Check.IsFalling && !player.Abilities.IsJumping)
         {
             animator.SetBool("isJumping", true);
         }
