@@ -151,5 +151,5 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   moveTestAAAAAAAAAAAAH: 0

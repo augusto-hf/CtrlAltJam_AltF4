@@ -22,7 +22,7 @@ public class PlayerColorAbilities : MonoBehaviour
     {
         if (player.Controller.ColorButton)
         {
-            Debug.Log(player.ColorManger.CurrentColor.ColorData.Type);
+            Debug.Log(player.ColorManager.CurrentColor.ColorData.Type);
         }
     }
 
