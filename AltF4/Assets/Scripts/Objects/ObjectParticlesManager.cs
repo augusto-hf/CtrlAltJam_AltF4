@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ObjectParticlesManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private ParticleSystem landingParticles, dragParticles;
+    [SerializeField] private Transform downPoint, downRightPoint, downLeftPoint;
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+
+
+
 }
