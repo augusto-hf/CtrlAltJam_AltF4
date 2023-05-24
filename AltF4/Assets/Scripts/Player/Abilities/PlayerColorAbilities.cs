@@ -91,6 +91,7 @@ public class PlayerColorAbilities : MonoBehaviour
         else if (player.Check.OnGround() && isJumping && jumpCharge <= 0 & player.Movement.Velocity.y < 0)
         {
             isJumping = false;
+            player.ColorManager.ConsumeColor();
         }
         
     }

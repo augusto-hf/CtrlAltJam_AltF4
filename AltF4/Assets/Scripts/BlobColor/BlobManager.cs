@@ -24,13 +24,13 @@ public class BlobManager : MonoBehaviour
 
     public void RespawnPower()
     {
+        beingUsed = false;
         StartCoroutine(TimeToRespawn());
     }
 
     IEnumerator TimeToRespawn()
     {
         yield return new WaitForSeconds(0.4f);
-        beingUsed = false;
         VisualAndHitbox.SetActive(true);
     }
 

@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4466641799175014683}
-  - component: {fileID: 6469713928165783162}
+  - component: {fileID: 6814493630188371184}
   m_Layer: 0
   m_Name: startingColorReference
   m_TagString: Untagged
@@ -63,7 +63,7 @@ Transform:
   m_Father: {fileID: 6336683652554037018}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6469713928165783162
+--- !u!114 &6814493630188371184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,10 +72,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4530602177030595066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea344684953f8ed4087dc0fe7131bd44, type: 3}
+  m_Script: {fileID: 11500000, guid: 788cce220844ef74699ff2121700f143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colorData: {fileID: 11400000, guid: 00c5f96cc1d98cf4da165bd4e4d9c7ea, type: 2}
+  colorData: {fileID: 11400000, guid: 00c5f96cc1d98cf4da165bd4e4d9c7ea, type: 2}
 --- !u!1 &4627296027524343613
 GameObject:
   m_ObjectHideFlags: 0
