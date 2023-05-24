@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class objectInteract : MonoBehaviour, IObjectInteractColor
+public class ObjectInteract : MonoBehaviour, IObjectInteractColor
 {
     [SerializeField] private bool canInteract;
     [SerializeField] private Transform groundDetectorPoint;
