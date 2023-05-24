@@ -32,10 +32,6 @@ public class PlayerAnimation : MonoBehaviour
         {
             animator.SetBool("isJumping", player.Controller.ColorButton);
         }
-
-        //else
-           //animator.SetBool("isJumping", false);
-
         if(player.Check.IsFalling)
         {
             animator.SetBool("isJumping", false);

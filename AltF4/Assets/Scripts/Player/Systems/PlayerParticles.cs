@@ -6,7 +6,7 @@ public class PlayerParticles : MonoBehaviour
 {
     private PlayerCore player;
     private Animator animator;
-    [SerializeField] private ParticleSystem jumpBlueParticles, landingParticle, walkingParticle;
+    [SerializeField] private ParticleSystem jumpBlueParticles, landingParticle, walkingParticle, runningParticle;
     [SerializeField] private Transform downFeetPoint, behindFeetPoint, tonguePoint;
 
     private bool alreadyTouchedGround = false;
@@ -21,27 +21,37 @@ public class PlayerParticles : MonoBehaviour
         particleOnPowerJump();
         particleOnLanding();
 
-        particleOnWalk();
-        particleOnRun();
+        particleOnWalkAndRun();
+
     }
     #region Movement Particles
-    void particleOnWalk()
+    void particleOnWalkAndRun()
     {
-        if (player.Check.OnGround() && player.rb.velocity.x > 0)
+        if (player.Check.OnGround() && Mathf.Abs(player.rb.velocity.x) > 0.5f && Mathf.Abs(player.Controller.Axis.x) > 0)
         {
-            if (player.Color.CurrentColor.Type == ColorType.Orange && player.Controller.ColorButton)
-                return;
+            if (player.Color.CurrentColor.Type != ColorType.Orange) 
+            {
+                playConstantParticle(runningParticle);
+            }
             else
-                playParticle(jumpBlueParticles, behindFeetPoint.position);
-        }
-    }
-    void particleOnRun()
-    {
-        if (player.Check.OnGround() && player.rb.velocity.x > 0)
+            {
+                if (player.Controller.ColorButton)
+                {
+                    stopConstantParticle(walkingParticle);
+                    playConstantParticle(runningParticle);
+                }
+                else
+                {
+                    stopConstantParticle(runningParticle);
+                }
+            }
+        }           
+        else
         {
-            if (player.Color.CurrentColor.Type == ColorType.Orange && player.Controller.ColorButton)
-                playParticle(jumpBlueParticles, behindFeetPoint.position);
+            stopConstantParticle(walkingParticle);
+            stopConstantParticle(runningParticle);
         }
+           
     }
     #endregion
 
@@ -50,7 +60,7 @@ public class PlayerParticles : MonoBehaviour
     {
         if (player.Color.CurrentColor.Type == ColorType.Blue && player.Check.OnGround() && player.Controller.ColorButton)
         {
-            playParticle(jumpBlueParticles, downFeetPoint.position);
+            playOneTimeParticle(jumpBlueParticles, downFeetPoint.position);
         }
     }
     void particleOnLanding()
@@ -58,7 +68,7 @@ public class PlayerParticles : MonoBehaviour
         if (player.Check.OnGround() && !alreadyTouchedGround)
         {
             alreadyTouchedGround = true;
-            playParticle(landingParticle, downFeetPoint.position);
+            playOneTimeParticle(landingParticle, downFeetPoint.position);
         }
         if (!player.Check.OnGround())
         {
@@ -67,8 +77,16 @@ public class PlayerParticles : MonoBehaviour
     }
 
     #endregion
-    public void playParticle(ParticleSystem particle, Vector3 location)
+    void playOneTimeParticle(ParticleSystem particle, Vector3 location)
     {
         Instantiate(particle, location, Quaternion.identity);
+    }
+    void playConstantParticle(ParticleSystem particle)
+    {
+        particle.enableEmission = true;
+    }
+    void stopConstantParticle(ParticleSystem particle)
+    {
+        particle.enableEmission = false;
     }
 }
