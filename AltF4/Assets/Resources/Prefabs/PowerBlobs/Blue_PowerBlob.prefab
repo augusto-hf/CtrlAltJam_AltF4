@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 860348821051565063, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: nameColor
+      value: blue
+      objectReference: {fileID: 0}
     - target: {fileID: 2057928800272166170, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -51,9 +55,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5187401207562044023, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187401207562044023, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9067148
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187401207562044023, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4198113
+      objectReference: {fileID: 0}
     - target: {fileID: 6044962299976279467, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_Name
       value: Blue_PowerBlob
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7571025847142278602, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: colorData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b36d6625bdb2054697ab4285705916b, type: 2}
+    m_RemovedComponents:
+    - {fileID: -5844858293765303366, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
