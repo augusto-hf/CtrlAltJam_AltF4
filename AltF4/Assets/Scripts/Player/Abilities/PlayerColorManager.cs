@@ -3,29 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerColorAction : MonoBehaviour
+public class PlayerColorManager : MonoBehaviour
 {
-    private PlayerCore player;
     [SerializeField] private GameObject StartingColorReference;
+
+    private PlayerCore player;
+    private PlayerColorAbilities abilities;
     private IColor currentColor;
     private BlobManager lastBlob;
 
     public IColor CurrentColor { get => currentColor; }
 
-
     private void Awake()
     {
-        GiveNoColor();
-    }
-
-    private void Start()
-    {
         player = GetComponent<PlayerCore>();
-    }
-
-    void Update()
-    {
-        currentColor?.Action(player);
+        abilities = GetComponent<PlayerColorAbilities>();
+        GiveNoColor();
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -42,9 +35,18 @@ public class PlayerColorAction : MonoBehaviour
 
             lastBlob = colorObject.gameObject.GetComponentInParent<BlobManager>();
             lastBlob.PickPower();
-            currentColor.ResetAction(player);
-            currentColor = lastBlob.blobColor;
 
+            
+            if (currentColor != null)
+            {
+                if (currentColor.ColorData.Type != lastBlob.blobColor.ColorData.Type)
+                {
+                    abilities.ResetBuffs();
+                }
+            }
+
+            currentColor = lastBlob.blobColor;
+            abilities.SetConsumeBuffs(currentColor.ColorData);
             player.PickColor(lastBlob.nameColor);
         }
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="Player/Data", fileName ="PlayerData")]
+[CreateAssetMenu(menuName ="Game Data/Player", fileName ="PlayerData")]
 public class PlayerData : ScriptableObject
 {
     [Header("Horizontal Moviment")]

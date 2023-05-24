@@ -11,7 +11,19 @@ public class PlayerStamina
 
     public PlayerStamina (int currentStamina)
     {
-        _currentStamina = currentStamina;
+        if (currentStamina > MAX_STAMINA)
+        {
+            _currentStamina = MAX_STAMINA;
+        }
+        else if (currentStamina < 0)
+        {
+            _currentStamina = MAX_STAMINA;
+        }
+        else
+        {
+            _currentStamina = currentStamina;
+        }
+        
     }
     public PlayerStamina ()
     {

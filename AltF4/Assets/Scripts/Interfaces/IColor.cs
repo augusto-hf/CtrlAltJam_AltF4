@@ -9,8 +9,6 @@ public enum ColorType
 
 public interface IColor
 {
-    public ColorType Type { get; }
-    public void Action(PlayerCore player);
-    public void ResetAction(PlayerCore player);
+    public ColorData ColorData { get; }
 
 }

@@ -8,10 +8,11 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove = false;
 
     [SerializeField] private Vector2 speed;
-    [SerializeField] private float accel;
     private PlayerCore player;
     private Rigidbody2D rb;
+    private PlayerStamina stamina;
     private float currentMaxSpeed;
+    private int jumpCharges;
     private bool isJumping;
     private bool isFacingRight;
 
@@ -23,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
         rb = GetComponent<Rigidbody2D>();
+        stamina = new PlayerStamina(PlayerStamina.MAX_STAMINA);
+        
         isFacingRight = this.transform.rotation.eulerAngles.y == 0;
 
 
@@ -32,17 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (player.Health.IsDead)
-        {
-            rb.velocity = Vector2.zero;
-            rb.isKinematic = true;
-            return;            
-        }
-        else
-        {
-            rb.isKinematic = false;
-        }
-
         Debug.DrawRay(this.transform.position, rb.velocity.normalized, Color.cyan);
         
         Checkers();
@@ -54,12 +46,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Checkers()
     {
+        if (player.Health.IsDead)
+        {
+            StopAllMovement();
+            return;            
+        }
+        else
+        {
+            RestoreAllMovement();
+        }
 
         if (player.Check.IsGrounded)
         {
-            HasBluePassive = false;
             isJumping = false;
-
         }
         
     }
@@ -70,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Flip();
         Walk();
-        
     }
 
     private void Walk()
@@ -83,14 +81,9 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-
         float targetVeloticy = player.Controller.Axis.x * currentMaxSpeed;
-
         float speedToReach = targetVeloticy - rb.velocity.x;
-            
         float accelRate = (Mathf.Abs(targetVeloticy) > 0.01f) ? player.Data.HorizontalAcceleration : player.Data.HorizontalDeceleration;
-
-        accel = accelRate;
 
         rb.velocity = new Vector2(rb.velocity.x + (Time.fixedDeltaTime  * speedToReach * accelRate), rb.velocity.y);
 
@@ -137,9 +130,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    #endregion
-
     #region Jump
+
+    public void Jump()
+    {
+        if (player.Controller.ColorButton && CanJump() && !player.Movement.HasBluePassive)
+        {
+            player.Movement.JumpForceApply();
+            isJumping = true;
+        }
+        else if (!player.Controller.ColorButton && player.Movement.Velocity.y > 0 && !player.Movement.HasBluePassive)
+        {
+            player.Movement.JumpCutForceApply();
+        }
+    }
 
     public void JumpForceApply()
     {
@@ -151,10 +155,26 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.AddForce(Vector2.down * rb.velocity.y * player.Data.JumpCutMultiplier, ForceMode2D.Impulse);
     }
+    private bool CanJump()
+    {
+        return player.Check.LastTimeGrounded > 0 && !isJumping;
+    }
 
-    public void SetBluePassive() => HasBluePassive = true;
-    
     #endregion
+
+    #endregion
+
+    public void StopAllMovement()
+    {
+        rb.velocity = Vector2.zero;
+        rb.isKinematic = true;
+    }
+
+    public void RestoreAllMovement()
+    {
+        rb.isKinematic = false;
+        canMove = true;
+    }
     
 
 }

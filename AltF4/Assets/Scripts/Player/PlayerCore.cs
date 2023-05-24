@@ -11,7 +11,7 @@ public class PlayerCore : MonoBehaviour
     public PlayerChecks Check { get; private set; }
     public PlayerMovement Movement { get; private set;}
     public PlayerControl Controller { get; private set; }
-    public PlayerColorAction Color { get; private set; }
+    public PlayerColorManager ColorManger { get; private set; }
     public PlayerHook Hook { get; private set; }
     public PlayerAnimation Animation { get; private set; }
     public PlayerHealth Health { get; private set; }
@@ -24,7 +24,7 @@ public class PlayerCore : MonoBehaviour
     {
         Check = GetComponent<PlayerChecks>();
         Movement = GetComponent<PlayerMovement>();
-        Color = GetComponent<PlayerColorAction>();
+        ColorManger = GetComponent<PlayerColorManager>();
         Hook = GetComponent<PlayerHook>();
         Animation = GetComponent<PlayerAnimation>();
         Health = GetComponent<PlayerHealth>();
@@ -49,7 +49,7 @@ public class PlayerCore : MonoBehaviour
     {
         if (Health.IsDead)
         {
-            Movement.canMove = true;
+            Movement.RestoreAllMovement();
             Health.Revive();
             return;
         }

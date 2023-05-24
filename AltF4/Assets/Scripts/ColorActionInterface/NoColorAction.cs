@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class NoColorAction : MonoBehaviour, IColor
 {
-    public ColorType Type { get => ColorType.NoColor; }
-    public void Action(PlayerCore player)
-    {
-        
-    }
-    public void ResetAction(PlayerCore player)
-    {
-        
-    }
+    [SerializeField] private ColorData _colorData;
+    public ColorData ColorData { get => _colorData; }
 }

@@ -20,8 +20,6 @@ public class BluePassive : MonoBehaviour
             var player = other.gameObject.GetComponent<PlayerCore>();
             var rb = other.gameObject.GetComponent<Rigidbody2D>();
 
-            player.Movement.SetBluePassive();
-
             Impulse(rb, player.Data.JumpForce + playerInpulseAddtional, direction);
 
         }
@@ -38,7 +36,6 @@ public class BluePassive : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             var player = other.gameObject.GetComponent<PlayerCore>();
-            player.Movement.SetBluePassive();
 
         }
         else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
