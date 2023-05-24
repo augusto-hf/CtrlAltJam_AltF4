@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7979577995482311986}
   - component: {fileID: 7979577995482311987}
   - component: {fileID: 7979577995482312141}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: upWindForce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,10 +134,6 @@ PrefabInstance:
     - target: {fileID: 1319453387410290957, guid: f7e69d55419d9c34c98eb415964bce84, type: 3}
       propertyPath: m_Name
       value: windParticles
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319453387410290959, guid: f7e69d55419d9c34c98eb415964bce84, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 1.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7e69d55419d9c34c98eb415964bce84, type: 3}
