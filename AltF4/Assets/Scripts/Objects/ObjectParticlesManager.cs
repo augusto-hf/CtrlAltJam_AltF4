@@ -6,12 +6,14 @@ public class ObjectParticlesManager : MonoBehaviour
 {
     [SerializeField] private ParticleSystem landingParticle, dragRightParticle, dragLeftParticle;
     [Header("Point Variables")]
-    [SerializeField] private Transform downPoint, downRightPoint, downLeftPoint;
+    [SerializeField] private Transform downPoint;
+    [SerializeField] private float downPointOffset;
+    private Vector2 downPointLeft, downPointRight;
     [Header ("Ground Detector Variables")]
     [SerializeField] private LayerMask solid;
 
     [SerializeField] private Vector2 size;
-    private bool alreadyTouchedGround = false;
+    private bool AlreadyTouchedGround = false;
     private Rigidbody2D rb;
 
     void Start()
@@ -26,23 +28,36 @@ public class ObjectParticlesManager : MonoBehaviour
     }
     void particleOnLanding()
     {
-        if (OnGround() && !alreadyTouchedGround)
+        if (LeftOnGround() || RightOnGround())
         {
-            alreadyTouchedGround = true;
-            playOneTimeParticle(landingParticle, downPoint.position);
+            if (!AlreadyTouchedGround)
+            {
+                AlreadyTouchedGround = true;
+                playOneTimeParticle(landingParticle, downPoint.position);
+            }         
         }
-        if (!OnGround())
+        else if (!LeftOnGround() && !RightOnGround())
         {
-            alreadyTouchedGround = false;
+            AlreadyTouchedGround = false;
         }
     }
 
     void particleOnDrag()
     {
-        if (OnGround() && Mathf.Abs(rb.velocity.x) > 0.5f)
+        if (Mathf.Abs(rb.velocity.x) > 0.5f)
         {
-            playConstantParticle(dragLeftParticle);
-            playConstantParticle(dragRightParticle);
+            if (LeftOnGround())
+            {
+                playConstantParticle(dragLeftParticle);
+            }
+            else
+                stopConstantParticle(dragLeftParticle);
+            if (RightOnGround())
+            {
+                playConstantParticle(dragRightParticle);
+            } 
+            else
+                stopConstantParticle(dragRightParticle);
         }
         else
         {
@@ -50,9 +65,16 @@ public class ObjectParticlesManager : MonoBehaviour
             stopConstantParticle(dragRightParticle);
         }
     }
-    private bool OnGround()
+    private bool LeftOnGround()
     {
-        var groundCheck = Physics2D.OverlapBox(downPoint.position, size, 0, solid);
+        downPointLeft = new Vector2(downPoint.position.x - downPointOffset, downPoint.position.y);
+        var groundCheck = Physics2D.OverlapBox(downPointLeft, size, 0, solid);
+        return groundCheck;
+    }
+    private bool RightOnGround()
+    {
+        downPointRight = new Vector2(downPoint.position.x + downPointOffset, downPoint.position.y);
+        var groundCheck = Physics2D.OverlapBox(downPointRight, size, 0, solid);
         return groundCheck;
     }
     #region Particles
@@ -74,8 +96,11 @@ public class ObjectParticlesManager : MonoBehaviour
     {
         if (downPoint == null) return;
 
-        Gizmos.color = OnGround() ? Color.green : Color.red;
-        Gizmos.DrawWireCube(downPoint.position, new Vector3(size.x, size.y, 0));
+        Gizmos.color = LeftOnGround() ? Color.green : Color.red;
+        Gizmos.DrawWireCube(downPointLeft, new Vector3(size.x, size.y, 0));
+
+        Gizmos.color = RightOnGround() ? Color.green : Color.red;
+        Gizmos.DrawWireCube(downPointRight, new Vector3(size.x, size.y, 0));
 
     }
 #endif
