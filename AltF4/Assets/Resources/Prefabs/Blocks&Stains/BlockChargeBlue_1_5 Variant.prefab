@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1528370990188100312, guid: ef53a163bd751834587afd01bc0649fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.757
+      objectReference: {fileID: 0}
     - target: {fileID: 3061759977166833385, guid: ef53a163bd751834587afd01bc0649fe, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -65,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061759977166833396, guid: ef53a163bd751834587afd01bc0649fe, type: 3}
       propertyPath: m_Name
-      value: BlockChargeBlue_1_5
+      value: BlockChargeBlue_1_5 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3061759977166833398, guid: ef53a163bd751834587afd01bc0649fe, type: 3}
       propertyPath: m_EdgeRadius

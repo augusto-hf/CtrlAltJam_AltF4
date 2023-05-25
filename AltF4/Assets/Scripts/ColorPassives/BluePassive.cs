@@ -31,6 +31,32 @@ public class BluePassive : MonoBehaviour, IColor
         }   
     }
 
+
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+            SetPlayerBlueColor(colorManager);
+
+        }   
+    }
+
+    private void OnTriggerStay(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+
+            if (colorManager.Abilities.JumpCharge <= 0)
+            {
+                SetPlayerBlueColor(colorManager);
+            }
+
+        }   
+    }
+
     private void SetPlayerBlueColor(PlayerColorManager manager)
     {
         if (manager.CurrentColor.ColorData.Type == colorData.Type)
