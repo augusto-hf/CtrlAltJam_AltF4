@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 6336683651438568576}
   - component: {fileID: 6336683651438568607}
   - component: {fileID: 1136625044}
+  - component: {fileID: 4059243585810663953}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -213,6 +214,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4059243585810663953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683651438568577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000a7772da4af5986efc7be99e147942469
+  m_ShapePath:
+  - {x: -0.333261, y: 0.0061564147, z: 0}
+  - {x: 0.34170318, y: -0.023908317, z: 0}
+  - {x: -0.32430363, y: -0.14138654, z: 0}
+  m_ShapePathHash: 1658449847
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -48420
 --- !u!1 &6336683652554037023
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee5e67a804b932449aaa40523ab8abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaDropMuiltiplier: 0.2
+  staminaDropMultiplier: 0
   staminaTest: 0
 --- !u!1 &7320957796236712430
 GameObject:
