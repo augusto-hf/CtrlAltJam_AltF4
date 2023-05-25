@@ -77,18 +77,19 @@ public class PlayerColorAbilities : MonoBehaviour
     #region Jump
     private void JumpControl()
     {
+
         if (player.Controller.ColorButtonDown && CanJump())
         {
             jumpCharge--;
             isJumping = true;
             JumpForceApply();
         }
-        else if (player.Controller.ColorButtonUp && player.Movement.Velocity.y > 0)
+        else if (player.Controller.ColorButtonUp && player.Movement.Velocity.y > 0 && isJumping)
         {
             JumpCutForceApply();
             player.ColorManager.ConsumeColor();
         }
-        else if (player.Check.OnGround() && isJumping && jumpCharge <= 0 & player.Movement.Velocity.y < 0)
+        else if (player.Check.IsFalling)
         {
             isJumping = false;
             player.ColorManager.ConsumeColor();
