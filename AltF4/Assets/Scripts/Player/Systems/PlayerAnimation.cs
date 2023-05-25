@@ -27,6 +27,7 @@ public class PlayerAnimation : MonoBehaviour
 
     }
 
+    //TODO: bug ao cair do vento 
     private void setJumpAndFall()
     {
         if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Blue)

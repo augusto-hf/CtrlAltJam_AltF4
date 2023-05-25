@@ -13,6 +13,8 @@ public class PlayerColorManager : MonoBehaviour
     private BlobManager lastBlob;
 
     public IColor CurrentColor { get => currentColor; }
+    public PlayerColorAbilities Abilities { get => abilities; }
+    public BlobManager LastBlob { get => lastBlob; }
 
     private void Awake()
     {
@@ -23,15 +25,14 @@ public class PlayerColorManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        TakeColor(other.gameObject);
+        TakeBlobColor(other.gameObject);
     }
     
-    public void TakeColor(GameObject colorObject)
+    public void TakeBlobColor(GameObject colorObject)
     {
         if (colorObject.CompareTag("ColorPower"))
         {
-            if (lastBlob != null)
-                lastBlob.RespawnPower();
+            RespawnLastBlob();
 
             lastBlob = colorObject.gameObject.GetComponentInParent<BlobManager>();
             lastBlob.PickPower();
@@ -41,7 +42,7 @@ public class PlayerColorManager : MonoBehaviour
             {
                 if (currentColor.ColorData.Type != lastBlob.blobColor.ColorData.Type)
                 {
-                    abilities.ResetBuffs();
+                    abilities.ResetAllBuffs();
                 }
             }
 
@@ -51,14 +52,27 @@ public class PlayerColorManager : MonoBehaviour
         }
     }
 
+    public void TakePassiveColor(IColor color)
+    {
+        ConsumeColor();
+        currentColor = color;
+        abilities.SetPassiveBuff(color.ColorData);
+    }
+
     public void ConsumeColor()
     {
-        if (lastBlob == null ) return;
+        RespawnLastBlob();
+        GiveNoColor();
+        abilities.SetConsumeBuffs(currentColor.ColorData);
+    }
+
+    private void RespawnLastBlob()
+    {
+        if (lastBlob == null) return;
 
         lastBlob.RespawnPower();
         lastBlob = null;
-        GiveNoColor();
-        abilities.SetConsumeBuffs(currentColor.ColorData);
+
     }
 
     public void GiveNoColor()

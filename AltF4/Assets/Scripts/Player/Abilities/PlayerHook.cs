@@ -61,7 +61,7 @@ public class PlayerHook : MonoBehaviour
 
             if (hittedObjectTag == interactableObject && !finishedGrappling)
             {
-                player.ColorManager.TakeColor(targetObject);
+                player.ColorManager.TakeBlobColor(targetObject);
                 StartCoroutine(returnGrapple());
             }
         }

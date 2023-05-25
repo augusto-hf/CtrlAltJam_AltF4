@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerColorAbilities : MonoBehaviour
 {
 
-    [SerializeField] private float staminaDropMuiltiplier;
+    [SerializeField] private float staminaDropMultiplier;
     [SerializeField] private float staminaTest;
     
     private PlayerCore player;
@@ -15,6 +15,9 @@ public class PlayerColorAbilities : MonoBehaviour
 
     private int jumpCharge;
     private bool isJumping;
+
+    private float staminaRefreshMultiplier;
+    private bool canStaminaRefresh;
 
     public float StaminaAmount { get => stamina.CurrentStamina; }
     public int JumpCharge { get => jumpCharge; }
@@ -52,23 +55,39 @@ public class PlayerColorAbilities : MonoBehaviour
 
     private void Run()
     {
+        if (!player.Controller.ColorButtonHold && stamina.CurrentStamina < PlayerStamina.MAX_STAMINA && canStaminaRefresh)
+        {
+            stamina.IncreaseStamina(staminaRefreshMultiplier);
+            return;
+        }
 
         if (player.Controller.ColorButtonHold && Mathf.Abs(player.Controller.Axis.x) > 0 && stamina.CurrentStamina > PlayerStamina.MIN_STAMINA)
         {
-            stamina.DecreaseStamina(staminaDropMuiltiplier);
+            if (canStaminaRefresh)
+            {
+                if (stamina.CurrentStamina - staminaDropMultiplier <= PlayerStamina.MIN_STAMINA)
+                {
+                    stamina.DecreaseStamina(0);
+                }
+            }
+            else
+            {
+                stamina.DecreaseStamina(staminaDropMultiplier);
+            }
 
             player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
-            
-            if (stamina.CurrentStamina <= PlayerStamina.MIN_STAMINA)
-            {
-                player.ColorManager.ConsumeColor();
-            }
+                
         }
         else
         {
             player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
         }
         
+        if (stamina.CurrentStamina <= PlayerStamina.MIN_STAMINA)
+        {
+            
+            player.ColorManager.ConsumeColor();
+        }
 
     }
 
@@ -129,7 +148,7 @@ public class PlayerColorAbilities : MonoBehaviour
         switch(data.Type)
         {
             case ColorType.Blue :
-                ResetBuffs();
+                ResetAllBuffs();
                 jumpCharge = data.JumpCharge;
                 
                 break;
@@ -142,7 +161,7 @@ public class PlayerColorAbilities : MonoBehaviour
             
             default:
                 
-                ResetBuffs();
+                ResetAllBuffs();
                 
                 break;
 
@@ -156,30 +175,47 @@ public class PlayerColorAbilities : MonoBehaviour
         switch(data.Type)
         {
             case ColorType.Blue :
-                ResetBuffs();
+                ResetAllBuffs();
                 jumpCharge = data.JumpCharge;
                 
                 break;
             
             case ColorType.Orange:
                 jumpCharge = 0;
-                stamina.IncreaseStamina(data.StaminaAmount);
-                
+                canStaminaRefresh = true;
+                staminaRefreshMultiplier = data.StaminaAmount;
                 break;
             
             default:
                 
-                ResetBuffs();
+                ResetAllBuffs();
                 
                 break;
         }
 
     }
-    public void ResetBuffs()
+    public void ResetAllBuffs()
+    {
+        ResetJumpBuffs();
+        ResetRunBuffs();
+    }
+
+    public void TurnOffOrangePassive()
+    {
+        canStaminaRefresh = false;
+        staminaRefreshMultiplier = 0;
+    }
+
+    public void ResetJumpBuffs()
+    {
+        jumpCharge = 0;
+    }
+    public void ResetRunBuffs()
     {
         stamina.DecreaseStamina(PlayerStamina.MAX_STAMINA);
         player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
-        jumpCharge = 0;
+        canStaminaRefresh = false;
+        staminaRefreshMultiplier = 0;
     }
 
     #endregion

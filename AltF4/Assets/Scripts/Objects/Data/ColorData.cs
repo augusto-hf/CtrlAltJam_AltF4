@@ -6,7 +6,7 @@ using UnityEngine;
 public class ColorData : ScriptableObject 
 {
     [SerializeField] private ColorType _colorType;    
-    [SerializeField] private int _staminaAmount;
+    [SerializeField] private float _staminaAmount;
     [SerializeField] private int _jumpCharge;
 
     public float StaminaAmount { get => Mathf.Clamp(_staminaAmount, PlayerStamina.MIN_STAMINA, PlayerStamina.MAX_STAMINA); }

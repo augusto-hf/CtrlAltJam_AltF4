@@ -2,60 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BluePassive : MonoBehaviour
+public class BluePassive : MonoBehaviour, IColor
 {
-    [SerializeField] private float defaultJumpFoce;
-    [SerializeField] private float playerInpulseAddtional;
-    [SerializeField] private Vector2 direction;
+    [SerializeField] private ColorData colorData;
+    public ColorData ColorData { get => colorData;}
 
-    private void Update()
-    {
-           
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            var player = other.gameObject.GetComponent<PlayerCore>();
-            var rb = other.gameObject.GetComponent<Rigidbody2D>();
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+            SetPlayerBlueColor(colorManager);
 
-            Impulse(rb, player.Data.JumpForce + playerInpulseAddtional, direction);
-
-        }
-        else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
-        {
-            if (!interactor.CanInteract) return;
-
-            Impulse(interactor.Rb, defaultJumpFoce, direction);
-        }
+        }   
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnCollisionStay(Collision other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            var player = other.gameObject.GetComponent<PlayerCore>();
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
 
-        }
-        else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
-        {
-            if (!interactor.CanInteract) return;
+            if (colorManager.Abilities.JumpCharge <= 0)
+            {
+                SetPlayerBlueColor(colorManager);
+            }
 
-            Impulse(interactor.Rb, defaultJumpFoce, direction);
-        }
+        }   
     }
 
-    public void Impulse(Rigidbody2D rb, float force, Vector2 direction)
+    private void SetPlayerBlueColor(PlayerColorManager manager)
     {
-        float currentForce = force;
-        Vector2 impulseDirection = Vector2.zero;
-
-        //rb.velocity = Vector2.zero;
-
-        impulseDirection = direction == Vector2.zero ? Vector2.up : direction.normalized;
-
-        rb.AddForce(impulseDirection * currentForce, ForceMode2D.Impulse);
+        if (manager.CurrentColor.ColorData.Type == colorData.Type)
+        {
+            manager.Abilities.SetPassiveBuff(ColorData);
+        }
+        else
+        {
+            manager.TakePassiveColor(this);
+        }
     }
-
 }

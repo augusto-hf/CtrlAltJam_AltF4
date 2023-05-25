@@ -2,81 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrangePassive : MonoBehaviour
+public class OrangePassive : MonoBehaviour, IColor
 {
-    [SerializeField] private float objectPassiveMaxSpeed;
-    [SerializeField] private float objectAccelerateRatio;
-    [SerializeField] private int defaulDirection;
+    [SerializeField] private ColorData colorData;
+    public ColorData ColorData { get => colorData;}
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            var player = other.gameObject.GetComponent<PlayerCore>();
-            ActivatePlayerPassive(player);
-        }
-        else if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
-        {
-            if (!interactor.CanInteract) return;
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
 
-            MovePassiveObjectForce(interactor.Rb, interactor.LastVelocityDirection);
+            SetPlayerOrangeColor(colorManager);
 
-        }
-    }
-    private void OnCollisionStay2D(Collision2D other) 
-    {
-        if (other.gameObject.TryGetComponent<IObjectInteractColor>(out IObjectInteractColor interactor))
-        {
-            if (!interactor.CanInteract) return;
-
-            if (interactor.playerOnTop) 
-            {
-                interactor.Rb.velocity = new Vector2 (interactor.Rb.velocity.x, 0);
-            }
-
-            MovePassiveObjectForce(interactor.Rb, interactor.LastVelocityDirection);
-        }
-        
+        }   
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    private void OnCollisionStay(Collision other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            var player = other.gameObject.GetComponent<PlayerCore>();
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
 
-            DisablePlayerPassive(player);
-        }
-    
-        
-    }
-
-
-    public void ActivatePlayerPassive(PlayerCore player)
-    {
-        player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
-    }
-
-    public void DisablePlayerPassive(PlayerCore player)
-    {
-        player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
-    }
-
-    private void MovePassiveObjectForce(Rigidbody2D rb, Vector2 direction)
-    {
-        float directionX = Mathf.Abs(direction.x) > 0 ? direction.x : Mathf.Sign(defaulDirection); 
-        float targetVelocity = directionX * objectPassiveMaxSpeed;
-        float speedToReach = targetVelocity - rb.velocity.x;
-
-        if (Mathf.Abs(rb.velocity.x) < targetVelocity )
-        {
-            rb.AddForce((Vector2.right * directionX) * speedToReach * objectAccelerateRatio);
-            if (Mathf.Abs(rb.velocity.x) >= targetVelocity)
+            if (colorManager.Abilities.StaminaAmount <= PlayerStamina.MAX_STAMINA )
             {
-                rb.velocity = new Vector2(targetVelocity, rb.velocity.y);
+                SetPlayerOrangeColor(colorManager);
             }
-        }
 
+        }   
+    }
+
+    private void OnCollisionExit2D(Collision2D other) 
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+
+            colorManager.Abilities.TurnOffOrangePassive();
+
+        }   
+    }
+
+    private void SetPlayerOrangeColor(PlayerColorManager manager)
+    {
+        if (manager.CurrentColor.ColorData.Type == colorData.Type)
+        {
+            manager.Abilities.SetPassiveBuff(ColorData);
+        }
+        else
+        {
+            manager.TakePassiveColor(this);
+        }
     }
 
 }

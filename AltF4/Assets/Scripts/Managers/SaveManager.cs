@@ -54,7 +54,7 @@ public class SaveManager : MonoBehaviour
             {
                 if(blobManager.nameColor == nameColor)
                 {
-                    playerColor.TakeColor(blob);
+                    playerColor.TakeBlobColor(blob);
                     return;
                 }
             }
