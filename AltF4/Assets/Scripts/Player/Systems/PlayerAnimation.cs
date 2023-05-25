@@ -27,7 +27,7 @@ public class PlayerAnimation : MonoBehaviour
 
     }
 
-    //TODO: bug ao cair do vento 
+    //TODO: bug ao cair do vento e ao pegar a o orbe laranja 
     private void setJumpAndFall()
     {
         if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Blue)
