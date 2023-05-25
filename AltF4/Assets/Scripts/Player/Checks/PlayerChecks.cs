@@ -7,10 +7,12 @@ using UnityEngine;
 
 public class PlayerChecks : MonoBehaviour
 {
+    [Header("Ground Detector Variables")]
     [SerializeField] private LayerMask solid;
     [SerializeField] private LayerMask ground;
     [SerializeField] private Transform groundDetectorPoint;
     [SerializeField] private Vector2 size;
+    [Header("Slope Variables (LoL)")]
     [SerializeField] private float maxAngleSlope;
     [SerializeField] private float slopeDetectorDistance;
     [SerializeField] private float slopeDetectorOffset;
