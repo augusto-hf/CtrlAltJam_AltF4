@@ -4,13 +4,12 @@ using UnityEngine;
 [System.Obsolete]
 public class ObjectParticlesManager : MonoBehaviour
 {
-    [Header("Particle Variables")]
     [SerializeField] private ParticleSystem landingParticle, dragRightParticle, dragLeftParticle;
+    [Header("Point Variables")]
     [SerializeField] private Transform downPoint, downRightPoint, downLeftPoint;
     [Header ("Ground Detector Variables")]
     [SerializeField] private LayerMask solid;
-    [SerializeField] private LayerMask ground;
-    [SerializeField] private Transform groundDetectorPoint;
+
     [SerializeField] private Vector2 size;
     private bool alreadyTouchedGround = false;
     private Rigidbody2D rb;
@@ -40,15 +39,10 @@ public class ObjectParticlesManager : MonoBehaviour
 
     void particleOnDrag()
     {
-        if (OnGround() && rb.velocity.x > 0.5f)
+        if (OnGround() && Mathf.Abs(rb.velocity.x) > 0.5f)
         {
-            stopConstantParticle(dragLeftParticle);
-            playConstantParticle(dragRightParticle);
-        }
-        else if (OnGround() && rb.velocity.x < -0.5f)
-        {
-            stopConstantParticle(dragRightParticle);
             playConstantParticle(dragLeftParticle);
+            playConstantParticle(dragRightParticle);
         }
         else
         {
@@ -58,9 +52,10 @@ public class ObjectParticlesManager : MonoBehaviour
     }
     private bool OnGround()
     {
-        var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, size, 0, solid);
+        var groundCheck = Physics2D.OverlapBox(downPoint.position, size, 0, solid);
         return groundCheck;
     }
+    #region Particles
     void playOneTimeParticle(ParticleSystem particle, Vector3 location)
     {
         Instantiate(particle, location, Quaternion.identity);
@@ -73,4 +68,15 @@ public class ObjectParticlesManager : MonoBehaviour
     {
         particle.enableEmission = false;
     }
+    #endregion
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        if (downPoint == null) return;
+
+        Gizmos.color = OnGround() ? Color.green : Color.red;
+        Gizmos.DrawWireCube(downPoint.position, new Vector3(size.x, size.y, 0));
+
+    }
+#endif
 }
