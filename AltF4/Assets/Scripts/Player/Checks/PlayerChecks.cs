@@ -7,11 +7,16 @@ using UnityEngine;
 
 public class PlayerChecks : MonoBehaviour
 {
-    [Header("Ground Detector Variables")]
     [SerializeField] private LayerMask solid;
-    [SerializeField] private LayerMask ground;
+    
+    [Header("Wall Detector Variables")]
+    [SerializeField] private Transform wallDetectorPoint;
+    [SerializeField] private Vector2 wallDetectorSize;
+
+    [Header("Ground Detector Variables")]
     [SerializeField] private Transform groundDetectorPoint;
-    [SerializeField] private Vector2 size;
+    [SerializeField] private Vector2 groundDetectorSize;
+
     [Header("Slope Variables (LoL)")]
     [SerializeField] private float maxAngleSlope;
     [SerializeField] private float slopeDetectorDistance;
@@ -40,11 +45,11 @@ public class PlayerChecks : MonoBehaviour
         IsGrounded = OnGround();
 
         CoyoteTime();
-        OnWall();
+        IsFacingWall = OnWall();
 
         IsFalling = OnFall();
     }
-
+    /*
     private void SlopeDetector()
     {
         int direction = player.Movement.IsFacingRight ? 1 : -1;
@@ -83,11 +88,16 @@ public class PlayerChecks : MonoBehaviour
         }
 
     }
-   
+    */
     public bool OnGround()
     {
-        var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, size, 0, solid);
+        var groundCheck = Physics2D.OverlapBox(groundDetectorPoint.position, groundDetectorSize, 0, solid);
         return groundCheck;
+    }
+    private bool OnWall()
+    {
+        var wallCheck = Physics2D.OverlapBox(wallDetectorPoint.position, wallDetectorSize, 0, solid);
+        return wallCheck;
     }
 
     private void CoyoteTime()
@@ -114,38 +124,17 @@ public class PlayerChecks : MonoBehaviour
         else
             return false;
     }
-    
+
     #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (groundDetectorPoint == null) return;
-
         Gizmos.color = OnGround() ? Color.green : Color.red;
-        Gizmos.DrawWireCube(groundDetectorPoint.position, new Vector3(size.x, size.y, 0));
+        Gizmos.DrawWireCube(groundDetectorPoint.position, new Vector3(groundDetectorSize.x, groundDetectorSize.y, 0));
 
+        if (wallDetectorPoint == null) return;
+        Gizmos.color = OnGround() ? Color.green : Color.red;
+        Gizmos.DrawWireCube(wallDetectorPoint.position, new Vector3(wallDetectorSize.x, wallDetectorSize.y, 0));
     }
     #endif
-    
-    public void OnWall()
-    {
-        int direction = player.Movement.IsFacingRight ? 1 : -1;
-        
-        Vector2 point = new Vector2(capsule.bounds.center.x + capsule.bounds.extents.x  * direction , capsule.bounds.center.y);
-        RaycastHit2D wallPoint = Physics2D.Raycast(point, this.transform.right, wallCheckDistance, ground);
-        
-        var hitColor = wallPoint ? Color.green : Color.red;
-
-        Debug.DrawRay(point, this.transform.right * wallCheckDistance, hitColor);
-
-        if (wallPoint)
-        {
-            IsFacingWall = Vector2.Angle(wallPoint.normal, Vector2.up) >= 90;
-        }
-        else
-        {
-            IsFacingWall = false;
-        }
-        
-    }
-
 }

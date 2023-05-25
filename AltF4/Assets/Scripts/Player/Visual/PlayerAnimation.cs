@@ -15,18 +15,26 @@ public class PlayerAnimation : MonoBehaviour
 
     void Update()
     {
+        setWalkAndRun();
+        setJumpAndFall();     
+    }
+    #region Horizontal Animation Setting
+    private void setWalkAndRun()
+    {
         animator.SetInteger("walk_Direction", (int)player.Controller.Axis.x);
-        animator.SetBool("tongue", player.Controller.TongueButton);
 
-        setJumpAndFall();
+        animator.SetBool("isFacingWall", player.Check.IsFacingWall);
+
+        animator.SetBool("tongue", player.Controller.TongueButton);
 
         if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Orange && Mathf.Abs(player.Controller.Axis.x) > 0)
             animator.SetBool("isRunning", player.Controller.ColorButtonHold);
         else
-            animator.SetBool("isRunning", false);     
-
+            animator.SetBool("isRunning", false);
     }
 
+    #endregion
+    #region Vertical Animation Setting
     //TODO: bug ao cair do vento 
     private void setJumpAndFall()
     {
@@ -45,6 +53,7 @@ public class PlayerAnimation : MonoBehaviour
 
         animator.SetBool("isFalling", player.Check.IsFalling);
     }
-
+    #endregion
+    
 
 }

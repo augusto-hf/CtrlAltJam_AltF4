@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove) return;
 
-        if (player.Check.IsFacingWall)
+        if (player.Check.IsFacingWall && !player.Check.IsGrounded)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
             return;
