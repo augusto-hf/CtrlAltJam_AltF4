@@ -17,7 +17,7 @@ public class BluePassive : MonoBehaviour, IColor
         }   
     }
 
-    private void OnCollisionStay(Collision other) 
+    private void OnCollisionStay2D(Collision2D other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -43,7 +43,7 @@ public class BluePassive : MonoBehaviour, IColor
         }   
     }
 
-    private void OnTriggerStay(Collider2D other) 
+    private void OnTriggerStay2D(Collider2D other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
