@@ -87,11 +87,14 @@ public class PlayerColorAbilities : MonoBehaviour
         else if (player.Controller.ColorButtonUp && player.Movement.Velocity.y > 0 && isJumping)
         {
             JumpCutForceApply();
-            player.ColorManager.ConsumeColor();
         }
         else if (player.Check.IsFalling)
         {
             isJumping = false;
+        }
+
+        if (player.Check.IsGrounded && !player.Check.IsFalling && jumpCharge <= 0 && !isJumping)
+        {
             player.ColorManager.ConsumeColor();
         }
         
