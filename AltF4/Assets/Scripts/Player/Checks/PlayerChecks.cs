@@ -133,7 +133,7 @@ public class PlayerChecks : MonoBehaviour
         Gizmos.DrawWireCube(groundDetectorPoint.position, new Vector3(groundDetectorSize.x, groundDetectorSize.y, 0));
 
         if (wallDetectorPoint == null) return;
-        Gizmos.color = OnGround() ? Color.green : Color.red;
+        Gizmos.color = OnWall() ? Color.green : Color.red;
         Gizmos.DrawWireCube(wallDetectorPoint.position, new Vector3(wallDetectorSize.x, wallDetectorSize.y, 0));
     }
     #endif
