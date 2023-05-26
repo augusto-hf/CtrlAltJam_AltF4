@@ -49,6 +49,9 @@ public class PlayerColorAbilities : MonoBehaviour
             default:
                 break;
         }
+
+        JumpUpdate();
+
     }
 
     #region Run
@@ -107,15 +110,7 @@ public class PlayerColorAbilities : MonoBehaviour
         {
             JumpCutForceApply();
         }
-        else if (player.Check.IsFalling)
-        {
-            isJumping = false;
-        }
-
-        if (player.Check.IsGrounded && !player.Check.IsFalling && jumpCharge <= 0 && !isJumping)
-        {
-            player.ColorManager.ConsumeColor();
-        }
+        
         
     }
 
@@ -135,7 +130,20 @@ public class PlayerColorAbilities : MonoBehaviour
     
     private bool CanJump()
     {
-        return player.Check.LastTimeGrounded > 0 && !isJumping && jumpCharge > 0;
+        return !isJumping && jumpCharge > 0;
+    }
+
+    private void JumpUpdate()
+    {
+        if (player.Check.IsFalling)
+        {
+            isJumping = false;
+        }
+
+        if (player.Check.IsGrounded && !player.Check.IsFalling && jumpCharge <= 0 && !isJumping && currentAbilityType == ColorType.Blue)
+        {
+            player.ColorManager.ConsumeColor();
+        }
     }
 
     #endregion
