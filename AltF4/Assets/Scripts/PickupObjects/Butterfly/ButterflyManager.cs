@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ButterflyManager : MonoBehaviour
 {
-    public CutsceneInfo cutscene;
-
     public bool used = false;
-    [SerializeField] private GameObject Visual;
-    [SerializeField] private CutsceneManager Cutscene;
+    [SerializeField] private CutsceneInfo cutscene;
+    [SerializeField] private GameObject VisualAndCollider;
+    [SerializeField] private CutsceneManager cutsceneManager;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
     {
-        
-        Visual.active = false;
+        if (used)
+            VisualAndCollider.active = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (used)
+            useButterfly();
+    }
+
+    private void useButterfly()
+    {
+        cutsceneManager.playCutscene(cutscene);
+        VisualAndCollider.active = false;
     }
 }

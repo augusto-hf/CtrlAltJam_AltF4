@@ -5,13 +5,20 @@ using UnityEngine;
 public class CutsceneManager : MonoBehaviour
 {
 
-    void Update()
+
+    public void playCutscene(CutsceneInfo cutsceneToPlay)
     {
-        
+        for (int i = 0;i > (cutsceneToPlay.NumberOfPanels - 1);i++)
+        {
+            if(cutsceneToPlay.PanelDescription[i] != null)
+                playCurrentPanel(cutsceneToPlay.VisualPanel[i], cutsceneToPlay.PanelDescription[i]);
+            else
+                playCurrentPanel(cutsceneToPlay.VisualPanel[i], " ");
+        }
+    }
+    private void playCurrentPanel(Sprite panel, string description)
+    {
+
     }
 
-    public void playCutscene()
-    {
-
-    }
 }
