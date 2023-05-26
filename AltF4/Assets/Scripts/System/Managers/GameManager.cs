@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetScene()
     {
-        SceneManager.LoadScene("Debug");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()

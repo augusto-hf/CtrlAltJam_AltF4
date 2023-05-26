@@ -31,6 +31,11 @@ public class AudioManager : MonoBehaviour
         volumeSounds = sounds;
         SetNewVolumeMusic();
     }
+
+    public float GetSoundsCurrent()
+    {
+        return volumeSounds;
+    }
     
     public void PlayAudioClip(string id)
     {

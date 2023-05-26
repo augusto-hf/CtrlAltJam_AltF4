@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Obsolete]
 public class PlayerAnimation : MonoBehaviour
 {
     private PlayerCore player;
     private Animator animator;
+
     void Awake()
     {
         player = GetComponent<PlayerCore>();

@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7979577995482312140, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
       propertyPath: m_Name
-      value: upWindForce (5)
+      value: wallWind
       objectReference: {fileID: 0}
     - target: {fileID: 7979577995482312140, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
       propertyPath: m_IsActive
@@ -105,7 +105,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9003403972519623431, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 1.03
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003403972519623431, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003403972519623431, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003403972519623431, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
