@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ButterflyManager : MonoBehaviour
 {
-    public string nameColor;
+    public CutsceneInfo cutscene;
 
-    public bool beingUsed = false;
+    public bool used = false;
     [SerializeField] private GameObject Visual;
     [SerializeField] private CutsceneManager Cutscene;
 
