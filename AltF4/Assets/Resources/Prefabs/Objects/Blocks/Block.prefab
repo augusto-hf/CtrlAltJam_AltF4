@@ -236,12 +236,11 @@ MonoBehaviour:
   dragRightParticle: {fileID: 1319453386733775328}
   dragLeftParticle: {fileID: 1319453385501161090}
   downPoint: {fileID: 213939169}
-  downRightPoint: {fileID: 5499981854783326438}
-  downLeftPoint: {fileID: 4478478309242513937}
+  downPointOffset: 0.35
   solid:
     serializedVersion: 2
     m_Bits: 64
-  size: {x: 1.47, y: 0.12}
+  size: {x: 0.4, y: 0.05}
 --- !u!1 &7166719997151511482
 GameObject:
   m_ObjectHideFlags: 0
