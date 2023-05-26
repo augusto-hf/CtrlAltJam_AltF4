@@ -43,9 +43,9 @@ public class OrangePassive : MonoBehaviour, IColor
         }   
     }
 
-    private void SetPlayerOrangeColor(PlayerColorManager manager)
+    private void SetPlayerOrangeColor(PlayerColorManager manager) // quando eu pego uma cor que n está liberada para usar recebo erro
     {
-        if (manager.CurrentColor.ColorData.Type == colorData.Type)
+        if (manager.CurrentColor.ColorData.Type == colorData.Type) 
         {
             manager.Abilities.SetPassiveBuff(ColorData);
         }
