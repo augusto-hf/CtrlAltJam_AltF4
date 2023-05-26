@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalAcceleration: 3.2
   _horizontalDeceleration: 12
-  _maxHorizontalSpeed: 5.5
+  _maxHorizontalSpeed: 5.3
   _maxRunSpeed: 16
   _jumpForce: 10
   _jumpCutMultiplier: 1.2

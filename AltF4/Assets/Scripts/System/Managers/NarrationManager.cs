@@ -15,12 +15,13 @@ public class NarrationManager : MonoBehaviour
 
     public void ReproduceNarration(string color)
     {
-        int keyValue = Check(color);
+        Debug.Log("Narração desativada");
+        /*int keyValue = Check(color);
 
         string text = LocalizationManager.localizationInstance.GetLocalizedValueForNarration(color, keyValue.ToString());
         
         audioNarration.clip = Resources.Load<AudioClip>("Audio/Narrations/"+ color + "/Edit/"+ keyValue.ToString());
-        StartCoroutine(ShowText(text));
+        StartCoroutine(ShowText(text));*/
     }
 
     public int Check(string color)

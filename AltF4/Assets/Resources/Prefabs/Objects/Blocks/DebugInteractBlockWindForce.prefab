@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213939169, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4478478309242513937, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5499981854783326438, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5893552215154826514, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_Size.y
       value: 5.3977556
@@ -18,6 +30,10 @@ PrefabInstance:
     - target: {fileID: 6776108345210785829, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_Mass
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776108345210785829, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785830, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_Name
