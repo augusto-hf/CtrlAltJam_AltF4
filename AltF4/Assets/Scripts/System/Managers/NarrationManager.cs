@@ -15,16 +15,23 @@ public class NarrationManager : MonoBehaviour
 
     public void ReproduceNarration(string color)
     {
+        int keyValue = Check(color);
+
+        string text = LocalizationManager.localizationInstance.GetLocalizedValueForNarration(color, keyValue.ToString());
+        
+        audioNarration.clip = Resources.Load<AudioClip>("Audio/Narrations/"+ color + "/Edit/"+ keyValue.ToString());
+        StartCoroutine(ShowText(text));
+    }
+
+    public int Check(string color)
+    {
         int size = LocalizationManager.localizationInstance.GetSizeDictionary(color);
 
         int keyValue = Random.Range(0, size);
 
-        if (!colorPicked.ContainsKey(color))
+        if(colorPicked[color].Length == size)
         {
-            colorPicked.Add(color, new int[keyValue]);
-        }
-        else if(colorPicked[color].Length == size)
-        {
+            Debug.Log("zerou");
             colorPicked[color] = new int[0];
         }
         else
@@ -34,19 +41,23 @@ public class NarrationManager : MonoBehaviour
             while(list.Contains(keyValue))
             {
                 keyValue = Random.Range(0, size);
+                Debug.Log("já tem");
             }
         }
 
-        string text = LocalizationManager.localizationInstance.GetLocalizedValueForNarration(color, keyValue.ToString());
-        
-        audioNarration.clip = Resources.Load<AudioClip>("Audio/Narrations/"+color+ "/Edit/"+ keyValue.ToString());
-        StartCoroutine(ShowText(text));
+        if (!colorPicked.ContainsKey(color))
+        {
+            Debug.Log("add");
+            colorPicked[color] = new int[keyValue];
+        }
+
+        return keyValue;
     }
 
     IEnumerator ShowText(string text)
     {
-        audioNarration.Play();
         legendText.text = "";
+        audioNarration.Play();
         
         textBoxObj.SetActive(true);
 

@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6776108345210785828, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0.47
+      objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785829, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_Mass
       value: 1
