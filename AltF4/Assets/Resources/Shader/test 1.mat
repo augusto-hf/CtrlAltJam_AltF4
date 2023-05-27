@@ -26,7 +26,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorMask: 15
+    - _ColorMask: 25
     - _HSLRangeMax: 1
     - _HSLRangeMin: 0
     - _Stencil: 0
@@ -36,5 +36,5 @@ Material:
     - _StencilWriteMask: 255
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
-    - _HSLAAdjust: {r: 0, g: 2, b: 0, a: 0}
+    - _HSLAAdjust: {r: 0, g: 8.7, b: 0, a: 0}
   m_BuildTextureStacks: []
