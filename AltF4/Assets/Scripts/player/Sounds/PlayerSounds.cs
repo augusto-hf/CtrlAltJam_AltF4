@@ -5,24 +5,19 @@ using UnityEngine;
 public class PlayerSounds : MonoBehaviour
 {
     [SerializeField] private AudioSource soundsPlayer;
-    [SerializeField] private PlayerAnimation anima;
 
     public float volumeSounds = 1;
-
-    private void Awake() 
-    {
-        anima = GetComponent<PlayerAnimation>();
-        //anima.playAnimation += PlaySounds;
-    }
 
     private void Start() 
     {
         volumeSounds = AudioManager.audioInstance.GetSoundsCurrent();
     }
 
-    public void PlaySounds(string name)
+    public void PlaySteps()
     {
-        AudioClip audioCurrent = Resources.Load<AudioClip>("Audio/Sounds/"+ name);
+        int keyValue = Random.Range(1, 9);
+
+        AudioClip audioCurrent = Resources.Load<AudioClip>("Audio/Sounds/Steps/step0"+ keyValue.ToString());
 
         soundsPlayer.volume = volumeSounds;
         soundsPlayer.clip = audioCurrent;
