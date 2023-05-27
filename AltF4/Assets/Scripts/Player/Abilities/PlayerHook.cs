@@ -38,6 +38,7 @@ public class PlayerHook : MonoBehaviour
     {
         if (player.Controller.TongueButton && !retractingGrapple)
         {
+            AudioManager.audioInstance.PlayAudioClip("Tongue/tongue2");
             StartHook();
         }
 

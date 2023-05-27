@@ -7,10 +7,17 @@ public class SetTextLocalized : MonoBehaviour
 {
     [SerializeField] private string key;
     private TextMeshProUGUI selfText;
+    private TMP_Text selfTextAnother;
 
     private void Awake() 
     {
         selfText = GetComponent<TextMeshProUGUI>();
+
+        if(selfText == null )
+        {
+            selfTextAnother = GetComponent<TMP_Text>();
+        }
+        
     }
 
     void Start()
@@ -22,7 +29,16 @@ public class SetTextLocalized : MonoBehaviour
     public IEnumerator NewTextLocalized()
     {
         yield return new WaitForSeconds(0.01f);
-        selfText.text = LocalizationManager.localizationInstance.GetLocalizedValue(key);
+        string newText = LocalizationManager.localizationInstance.GetLocalizedValue(key);
+
+        if(selfText == null )
+        {
+            selfTextAnother.text = newText;
+        }
+        else
+        {
+            selfText.text = newText;
+        }
     }
     
 }
