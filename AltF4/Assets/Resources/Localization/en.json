@@ -11,7 +11,13 @@
         "musics": "Musics:",
         "sounds": "Sounds:",
         "pause": "Pause",
-        "error": "Invalid information"
+        "error": "Invalid information",
+
+        "alone": "ALONE",
+        "guilty": "GUILTY",
+        "dislike": "DISLIKE",
+        "disappointment": "DISAPPOINTMENT",
+        "abandoned": "ABANDONED"
     },
     "narrationsTexts": {
         "blue": {

@@ -11,7 +11,14 @@
         "musics": "Música:",
         "sounds": "Sonidos:",
         "pause": "Romper",
-        "error": "Información inválida"
+        "error": "Información inválida",
+        
+        "alone": "SOLITARIO",
+        "guilty": "CULPABLE",
+        "dislike": "DESAGRADO",
+        "disappointment": "DECEPCIÓN",
+        "abandoned": "ABANDONADO"
+
     },
     "narrationsTexts": {
         "blue": {
