@@ -7,6 +7,8 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance; 
+
     public event Action onSaved;
 
     public event Action onLoad;
@@ -25,6 +27,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake() 
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         playerCore = GameObject.FindWithTag("Player").GetComponent<Transform>();    
     }
 

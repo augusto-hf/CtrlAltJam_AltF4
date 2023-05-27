@@ -38,6 +38,7 @@ public class BreakPlatform : MonoBehaviour
         rigid.bodyType = RigidbodyType2D.Dynamic;
         yield return new WaitForSeconds(timeActive);
 
+        platformTransform.rotation = this.transform.rotation;
         platformTransform.position = this.transform.position;
         rigid.bodyType = RigidbodyType2D.Kinematic;
         detect.playerTouch = false;

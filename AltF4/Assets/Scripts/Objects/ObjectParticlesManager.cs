@@ -16,6 +16,9 @@ public class ObjectParticlesManager : MonoBehaviour
     private bool AlreadyTouchedGround = false;
     private Rigidbody2D rb;
 
+    [SerializeField] private SoundsObjects stoneSounds;
+    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,6 +29,7 @@ public class ObjectParticlesManager : MonoBehaviour
         particleOnLanding();
         particleOnDrag();
     }
+
     void particleOnLanding()
     {
         if (LeftOnGround() || RightOnGround())
@@ -34,6 +38,11 @@ public class ObjectParticlesManager : MonoBehaviour
             {
                 AlreadyTouchedGround = true;
                 playOneTimeParticle(landingParticle, downPoint.position);
+
+                if(GameManager.Instance.gameISRunning)
+                {
+                    AudioManager.audioInstance.PlayAudioClip("Stone/fallStone");
+                }
             }         
         }
         else if (!LeftOnGround() && !RightOnGround())
@@ -46,6 +55,8 @@ public class ObjectParticlesManager : MonoBehaviour
     {
         if (Mathf.Abs(rb.velocity.x) > 0.5f)
         {
+            stoneSounds.PlaySoundWithText("Stone/slideStone2");
+
             if (LeftOnGround())
             {
                 playConstantParticle(dragLeftParticle);
@@ -61,6 +72,7 @@ public class ObjectParticlesManager : MonoBehaviour
         }
         else
         {
+            stoneSounds.StopSound();
             stopConstantParticle(dragLeftParticle);
             stopConstantParticle(dragRightParticle);
         }
