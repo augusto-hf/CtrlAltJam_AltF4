@@ -26,13 +26,14 @@ public class SaveManager : MonoBehaviour
 
     public event Action<bool, string> newColorPicks;
 
+    public event Action configUpdated;
+
     private void Awake() 
     {
         filePathSave = Application.persistentDataPath + FILE_SAVE; 
         filePathConfig = Application.persistentDataPath + FILE_CONFIG; 
 
         Debug.Log("Local de salvamento: " + filePathSave); 
-
     }
 
     private void Start() 
@@ -101,6 +102,7 @@ public class SaveManager : MonoBehaviour
         }
 
         UpdatedConfig();
+        configUpdated?.Invoke();
     }
 
     public void updatedNewConfig()
@@ -116,8 +118,9 @@ public class SaveManager : MonoBehaviour
     
     public void UpdatedConfig()
     {
-        configData.currentLanguage = LocalizationManager.localizationInstance.SetNewLanguage(configData.currentLanguage);
+        LocalizationManager.localizationInstance.SetNewLanguage(configData.currentLanguage);
         AudioManager.audioInstance.GetVolumesSaved(configData.volumeMusics, configData.volumeSounds);
+
     }
 
     public void SaveConfig() 

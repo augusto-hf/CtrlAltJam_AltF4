@@ -6,6 +6,7 @@ using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource menuMusic;
     [SerializeField] private GameObject menuPrincipal;
     [SerializeField] private GameObject rooms;
     [SerializeField] private TMP_Dropdown drop;
@@ -14,14 +15,15 @@ public class MenuManager : MonoBehaviour
 
     private void Awake() 
     {
-        SetDropdownOptions();
+        //SetDropdownOptions();
     }
 
     private void Start() 
     {
-        UpdatedSliderVolumeMusic();    
-        UpdatedSliderVolumeSound();
-        UpdatedDropDownOptions();    
+        SetDropdownOptions();
+        //UpdatedSliderVolumeMusic();    
+        //UpdatedSliderVolumeSound();
+        //UpdatedDropDownOptions();
     }
     
     public void ChangeMenu(bool active)
@@ -48,24 +50,22 @@ public class MenuManager : MonoBehaviour
 
     }
 
-    public void UpdatedSliderVolumeSound()
-    {
-        sliderSounds.value = AudioManager.audioInstance.volumeSounds;
-    }
-
-    public void UpdatedSliderVolumeMusic()
-    {
-        sliderMusic.value = AudioManager.audioInstance.volumeMusics;
-    }
-
+    //ATUALIZA COM NOVOS VALORES
     public void SetNewVolumeSound()
     {
+        Debug.Log("novo volume da som");
         AudioManager.audioInstance.volumeSounds = sliderSounds.value;
     }
     public void SetNewVolumeMusic()
     {
+        Debug.Log("novo volume da musica");
         AudioManager.audioInstance.volumeMusics = sliderMusic.value;
-        AudioManager.audioInstance.SetNewVolumeMusic();
+        menuMusic.volume = sliderMusic.value;
+    }
+
+    public void UpdatedVomlumeMusicSaved()
+    {
+        menuMusic.volume = AudioManager.audioInstance.volumeMusics;
     }
 
     public void NewSelectedOption()
@@ -73,8 +73,22 @@ public class MenuManager : MonoBehaviour
         LocalizationManager.localizationInstance.currentLanguage = drop.options[drop.value].text.ToLower();
     }
 
+    //ATUALIZA O VISUAL
+    public void UpdatedSliderVolumeSound()
+    {
+        Debug.Log("atualiza o slider do som");
+        sliderSounds.value = AudioManager.audioInstance.volumeSounds;
+    }
+
+    public void UpdatedSliderVolumeMusic()
+    {
+        Debug.Log("atualiza o slider da musica");
+        sliderMusic.value = AudioManager.audioInstance.volumeMusics;
+    }
+
     public void UpdatedDropDownOptions()
     {
+        Debug.Log("atualiza o dropDown do idioma");
         string text = LocalizationManager.localizationInstance.currentLanguage.ToUpper();
 
         for (int i = 0; i < drop.options.Count; i++)

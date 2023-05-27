@@ -29,6 +29,7 @@ public class EventManager : MonoBehaviour
         playerCore = GameObject.FindWithTag("Player").GetComponent<PlayerCore>();
         savePoint = GameObject.FindGameObjectsWithTag("SavePoint");
 
+        saveManager.configUpdated += menuManager.UpdatedVomlumeMusicSaved;
     }
 
     private void Start() 
@@ -53,6 +54,8 @@ public class EventManager : MonoBehaviour
         //loadGame
         gameManager.onLoad += saveManager.Load;
         gameManager.onLoad += playerCore.StopAndRunPlayer;
+
+
         gameManager.onSetPlayerPosition += saveManager.ApplyPositionInPlayer;   
         //setar nova posição do player aqui
 

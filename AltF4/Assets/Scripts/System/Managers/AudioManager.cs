@@ -20,21 +20,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void SetNewVolumeMusic()
-    {
-        audioMusic.volume = volumeMusics;
-    }
-
     public void GetVolumesSaved(float musics, float sounds)
     {
         volumeMusics = musics;
         volumeSounds = sounds;
-        SetNewVolumeMusic();
+
     }
 
     public float GetSoundsCurrent()
     {
         return volumeSounds;
+    }
+
+    public float GetMusicCurrent()
+    {
+        return volumeMusics;
     }
     
     public void PlayAudioClip(string id)
