@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AllIntensity: 1
-    - _BlueIntensity: 6.98
+    - _BlueIntensity: 1
     - _GreenIntensity: 1
     - _IntesifyAll: 0
     - _RedIntensity: 1

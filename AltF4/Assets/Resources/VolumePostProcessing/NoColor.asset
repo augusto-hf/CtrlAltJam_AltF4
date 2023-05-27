@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: -29
+    m_Value: -55
 --- !u!114 &-2600790945128174081
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -208,13 +208,49 @@ MonoBehaviour:
   hueVsSat:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 0
+      <length>k__BackingField: 4
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.52901024
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.52911025
+          value: 0.9558824
+          inSlope: -0.23432428
+          outSlope: -0.23432428
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.71662354
+          value: 0.9632353
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.71672356
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
