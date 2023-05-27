@@ -254,8 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundsPlayer: {fileID: 1871851519}
-  anima: {fileID: 0}
-  volumeSounds: -0.3
+  volumeSounds: 1
 --- !u!1 &6336683652554037023
 GameObject:
   m_ObjectHideFlags: 0
