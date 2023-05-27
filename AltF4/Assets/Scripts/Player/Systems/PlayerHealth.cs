@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Death()
     {
+        AudioManager.audioInstance.PlayAudioClip("Died/died");
         died?.Invoke();
         StartCoroutine(DeathCoroutine());
     }

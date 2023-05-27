@@ -281,3 +281,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anima: {fileID: 4804518149432977204}
   active: 1
+  text: {fileID: 0}
