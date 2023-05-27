@@ -119,8 +119,6 @@ GameObject:
   - component: {fileID: 8094396437533066155}
   - component: {fileID: 3658074094614331902}
   - component: {fileID: 2527482915010963011}
-  - component: {fileID: 9184696708273484511}
-  - component: {fileID: 7070277719667143902}
   m_Layer: 0
   m_Name: TattooVisual
   m_TagString: Untagged
@@ -184,8 +182,8 @@ SpriteRenderer:
   m_SortingLayerID: -510017849
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1150340764, guid: 1a4e27db59d376f4db663ff3cde31ecf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 2123381010, guid: d91a4e8b9184ab3408a4a0074d37872f, type: 3}
+  m_Color: {r: 0, g: 1, b: 0.9372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -215,46 +213,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9184696708273484511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5561559887297765105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_ComponentVersion: 1
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000a7772da4af5986efc7be99e147942469
-  m_ShapePath:
-  - {x: -0.333261, y: 0.0061564147, z: 0}
-  - {x: 0.34170318, y: -0.023908317, z: 0}
-  - {x: -0.32430363, y: -0.14138654, z: 0}
-  m_ShapePathHash: 1658449847
-  m_Mesh: {fileID: 0}
-  m_InstanceId: -10620
---- !u!114 &7070277719667143902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5561559887297765105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0db35843a6937774cbf23da5111d5755, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundsPlayer: {fileID: 1871851519}
-  volumeSounds: 1
 --- !u!1 &6336683651438568577
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +289,7 @@ SpriteRenderer:
   m_SortingLayerID: -510017849
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1150340764, guid: 1a4e27db59d376f4db663ff3cde31ecf, type: 3}
+  m_Sprite: {fileID: -1865050192, guid: 1e717164aa422324fb1fb9bc2abbe152, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -387,7 +345,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: 44780
+  m_InstanceId: 53368
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
