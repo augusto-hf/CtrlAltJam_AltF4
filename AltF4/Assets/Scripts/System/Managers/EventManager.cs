@@ -55,9 +55,10 @@ public class EventManager : MonoBehaviour
         gameManager.onLoad += saveManager.Load;
         gameManager.onLoad += playerCore.StopAndRunPlayer;
 
+        playerCore.Health.died += menuManager.CallFadeIn;
 
         gameManager.onSetPlayerPosition += saveManager.ApplyPositionInPlayer;   
-        //setar nova posição do player aqui
+        
 
         //menu
         gameManager.onGameStarted += menuControll.GetIfGameIsRunning;

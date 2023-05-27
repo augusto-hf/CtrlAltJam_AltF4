@@ -56,6 +56,9 @@ TagManager:
   - name: player
     uniqueID: 3784949447
     locked: 0
+  - name: tutorial
+    uniqueID: 790025361
+    locked: 0
   - name: UI
     uniqueID: 1764004935
     locked: 0

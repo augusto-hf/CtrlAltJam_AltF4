@@ -13,6 +13,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Slider sliderMusic;
     [SerializeField] private Slider sliderSounds;
 
+    [SerializeField] private FadeScript fadeScript;
+
     private void Awake() 
     {
         //SetDropdownOptions();
@@ -53,12 +55,10 @@ public class MenuManager : MonoBehaviour
     //ATUALIZA COM NOVOS VALORES
     public void SetNewVolumeSound()
     {
-        Debug.Log("novo volume da som");
         AudioManager.audioInstance.volumeSounds = sliderSounds.value;
     }
     public void SetNewVolumeMusic()
     {
-        Debug.Log("novo volume da musica");
         AudioManager.audioInstance.volumeMusics = sliderMusic.value;
         menuMusic.volume = sliderMusic.value;
     }
@@ -76,19 +76,16 @@ public class MenuManager : MonoBehaviour
     //ATUALIZA O VISUAL
     public void UpdatedSliderVolumeSound()
     {
-        Debug.Log("atualiza o slider do som");
         sliderSounds.value = AudioManager.audioInstance.volumeSounds;
     }
 
     public void UpdatedSliderVolumeMusic()
     {
-        Debug.Log("atualiza o slider da musica");
         sliderMusic.value = AudioManager.audioInstance.volumeMusics;
     }
 
     public void UpdatedDropDownOptions()
     {
-        Debug.Log("atualiza o dropDown do idioma");
         string text = LocalizationManager.localizationInstance.currentLanguage.ToUpper();
 
         for (int i = 0; i < drop.options.Count; i++)
@@ -101,5 +98,10 @@ public class MenuManager : MonoBehaviour
         }
         
         drop.RefreshShownValue();
+    }
+
+    public void CallFadeIn()
+    {
+        fadeScript.CallFade(true);
     }
 }

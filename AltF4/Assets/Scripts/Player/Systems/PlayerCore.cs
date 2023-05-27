@@ -48,6 +48,7 @@ public class PlayerCore : MonoBehaviour
         
     }
 
+
     public void StopAndRunPlayer()
     {
         if (Health.IsDead)

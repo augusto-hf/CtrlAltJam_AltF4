@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
 
     public bool IsDead { get => isDead; }
 
+    public event Action died;
+
     private void Awake()
     {
         capsule = GetComponent<CapsuleCollider2D>();
@@ -37,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void Death()
     {
+        died?.Invoke();
         StartCoroutine(DeathCoroutine());
     }
 
@@ -47,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
 
         sprite.color = invisibleColor;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
         
         
         saveManager.LoadGame();
