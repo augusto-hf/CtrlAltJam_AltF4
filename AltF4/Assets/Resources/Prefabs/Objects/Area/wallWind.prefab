@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2535276455197896346, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
+      propertyPath: MaxDistance
+      value: 9.309189
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535276455197896346, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
+      propertyPath: MinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535276455197896346, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fe5cdc70442bf1844b4cc1dd92ae5b90, type: 3}
+    - target: {fileID: 2535276455197896346, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5721858662089989604, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
       propertyPath: m_Size.x
       value: 9.023233
