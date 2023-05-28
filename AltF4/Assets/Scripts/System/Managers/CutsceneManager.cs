@@ -67,13 +67,11 @@ public class CutsceneManager : MonoBehaviour
     }
     private void autoSkipPanel()
     {
-       if (cutsceneVideoPlayer.isPlaying)
-        {
-            if (cutsceneVideoPlayer.time == cutsceneVideoPlayer.length)
-            {
-                currentPanel++;
-            }
-        }
+        if (cutsceneVideoPlayer.isPlaying)
+            return;
+
+        else
+            currentPanel++;
     }
     private void playNextPanel(VideoClip panel, string description)
     {
