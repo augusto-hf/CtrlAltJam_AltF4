@@ -10,15 +10,10 @@ public class ButterflyManager : MonoBehaviour
     [SerializeField] private GameObject Visual;
     [SerializeField] private CutsceneManager cutsceneManager;
 
-    private void Awake()
-    {
-        if (used)
-            useButterfly();
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("ENCOSTO EM MIM");
+
         if (!used)
         {
             playCutscene();
@@ -26,8 +21,9 @@ public class ButterflyManager : MonoBehaviour
         }
     }
 
-    private void useButterfly()
+    public void useButterfly()
     {
+        used = true;
         MusicManager.Instance.FadeOutVolume();
         Visual.active = false;
         GetComponent<Collider2D>().enabled = false;

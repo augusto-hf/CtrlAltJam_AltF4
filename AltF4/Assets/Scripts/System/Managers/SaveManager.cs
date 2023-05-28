@@ -28,12 +28,16 @@ public class SaveManager : MonoBehaviour
 
     public event Action configUpdated;
 
+    private GameObject[] butterlfyObj;
+
     private void Awake() 
     {
         filePathSave = Application.persistentDataPath + FILE_SAVE; 
         filePathConfig = Application.persistentDataPath + FILE_CONFIG; 
 
         Debug.Log("Local de salvamento: " + filePathSave); 
+
+        butterlfyObj = GameObject.FindGameObjectsWithTag("butterfly");
     }
 
     private void Start() 
@@ -61,7 +65,7 @@ public class SaveManager : MonoBehaviour
             }
 
         }
-        
+
         playerColor.GiveNoColor();
     }
     
@@ -199,7 +203,8 @@ public class SaveManager : MonoBehaviour
             gameData = LoadDefaultSave(FILE_DEFAULT_SAVE_GAME, gameData);
         }
 
-        LoadEmotionPlayer(gameData.currentEmotions);
+        UpdatedButterfly();
+        //LoadEmotionPlayer(gameData.currentEmotions);
     }
 
     public void NewGame() 
@@ -220,6 +225,22 @@ public class SaveManager : MonoBehaviour
         data = JsonConvert.DeserializeObject<T>(json); 
 
         return data;
+    }
+
+    private void UpdatedButterfly()
+    {
+        foreach (GameObject obj in butterlfyObj)
+        {
+            ButterflyManager managerButterfly = obj.GetComponent<ButterflyManager>();
+            
+            foreach(string emotion in gameData.emotions)
+            {
+                if(emotion == managerButterfly.colorIUnlock.ToString().ToLower())
+                {
+                    managerButterfly.used = true;
+                }
+            }
+        }
     }
 
 }

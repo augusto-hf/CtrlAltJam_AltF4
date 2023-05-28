@@ -10,6 +10,7 @@ TagManager:
   - GrappableObject
   - SavePoint
   - TextLocalized
+  - butterfly
   layers:
   - Default
   - TransparentFX
