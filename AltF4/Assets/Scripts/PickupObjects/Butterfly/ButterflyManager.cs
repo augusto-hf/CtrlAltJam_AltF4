@@ -28,7 +28,7 @@ public class ButterflyManager : MonoBehaviour
 
     private void useButterfly()
     {
-        MusicManager.Instance.TiggerMusicLayer(colorIUnlock);
+        MusicManager.Instance.FadeOutVolume();
         Visual.active = false;
         GetComponent<Collider2D>().enabled = false;
     }
