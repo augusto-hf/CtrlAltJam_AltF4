@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: -510017849
   m_SortingLayer: 3
   m_SortingOrder: -1
-  m_Sprite: {fileID: -1865050192, guid: 1e717164aa422324fb1fb9bc2abbe152, type: 3}
+  m_Sprite: {fileID: -992658675, guid: 41032269612439e4992f6281b49124dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: 69844
+  m_InstanceId: -44568
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 1352516601470933779}
   - component: {fileID: 668577920}
   - component: {fileID: 1871851519}
+  - component: {fileID: 6336683651693922131}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -689,6 +690,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6336683651693922131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683652554037023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0f10ffee9599d45b8d1543cbdebaab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2529864217549936242}
+  playerSprite: {fileID: 6336683651438568607}
+  noColorReference: {fileID: 4530602177030595066}
+  blue: {r: 0, g: 0.8937981, b: 1, a: 1}
+  orange: {r: 1, g: 0.5184128, b: 0, a: 1}
+  noColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7320957796236712430
 GameObject:
   m_ObjectHideFlags: 0
