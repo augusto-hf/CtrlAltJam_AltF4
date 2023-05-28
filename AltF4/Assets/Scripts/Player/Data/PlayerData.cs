@@ -9,7 +9,12 @@ public class PlayerData : ScriptableObject
     [SerializeField] private float _horizontalAcceleration;
     [SerializeField] private float _horizontalDeceleration;
     [SerializeField] private float _maxHorizontalSpeed;
+
+    [Space(2)]
+    [Header("Run")]
+    [SerializeField] private float _staminaDropMultiplier;
     [SerializeField] private float _maxRunSpeed;
+
 
 
     [Space(2)]
@@ -36,6 +41,8 @@ public class PlayerData : ScriptableObject
     public float FallMultiplier { get => _fallMultiplier; }
     public float MaxFallSpeed { get => _maxFallSpeed; }
     public float GravityScale { get => _gravityScale; }
+
     public float MaxRunSpeed { get => _maxRunSpeed; }
+    public float StaminaDropMultiplier { get => _staminaDropMultiplier; }
 
 }

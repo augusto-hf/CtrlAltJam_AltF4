@@ -5,10 +5,13 @@ using UnityEngine;
 public class BluePassive : MonoBehaviour, IColor
 {
     [SerializeField] private ColorData colorData;
+    [SerializeField] private ButterflyManager butterlfy;
     public ColorData ColorData { get => colorData;}
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
+        if (!butterlfy.used) return;
+
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
@@ -19,6 +22,8 @@ public class BluePassive : MonoBehaviour, IColor
 
     private void OnCollisionStay2D(Collision2D other) 
     {
+        if (!butterlfy.used) return;
+
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
@@ -35,6 +40,8 @@ public class BluePassive : MonoBehaviour, IColor
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
+        if (!butterlfy.used) return;
+        
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
@@ -45,6 +52,8 @@ public class BluePassive : MonoBehaviour, IColor
 
     private void OnTriggerStay2D(Collider2D other) 
     {
+        if (!butterlfy.used) return;
+
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerColorAbilities : MonoBehaviour
 {
-
-    [SerializeField] private float staminaDropMultiplier;
     [SerializeField] private float staminaTest;
     
     private PlayerCore player;
@@ -68,14 +66,14 @@ public class PlayerColorAbilities : MonoBehaviour
         {
             if (canStaminaRefresh)
             {
-                if (stamina.CurrentStamina - staminaDropMultiplier <= PlayerStamina.MIN_STAMINA)
+                if (stamina.CurrentStamina - player.Data.StaminaDropMultiplier <= PlayerStamina.MIN_STAMINA)
                 {
                     stamina.DecreaseStamina(0);
                 }
             }
             else
             {
-                stamina.DecreaseStamina(staminaDropMultiplier);
+                stamina.DecreaseStamina(player.Data.StaminaDropMultiplier);
             }
 
             player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
