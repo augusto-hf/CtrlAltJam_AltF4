@@ -240,7 +240,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: -44568
+  m_InstanceId: -422870
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,7 +707,7 @@ MonoBehaviour:
   blue: {r: 0, g: 0.8937981, b: 1, a: 1}
   orange: {r: 1, g: 0.5184128, b: 0, a: 1}
   noColor: {r: 1, g: 1, b: 1, a: 1}
-  transitionTime: 0.85
+  transitionTime: 0.65
 --- !u!1 &7320957796236712430
 GameObject:
   m_ObjectHideFlags: 0

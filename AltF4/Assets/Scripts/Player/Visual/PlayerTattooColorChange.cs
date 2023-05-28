@@ -36,14 +36,17 @@ public class PlayerTattooColorChange : MonoBehaviour
     {
         if (nextColorPower == ColorType.Blue)
         {
+            lastColor = currentColor;
             nextColor = blue;
         }
         else if (nextColorPower == ColorType.Orange)
         {
+            lastColor = currentColor;
             nextColor = orange;
         }
         else if (nextColorPower == ColorType.NoColor)
         {
+            lastColor = currentColor;
             nextColor = noColor;
         }
     }
