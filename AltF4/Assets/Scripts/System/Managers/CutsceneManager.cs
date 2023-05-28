@@ -22,7 +22,6 @@ public class CutsceneManager : MonoBehaviour
     {
         if (loadedCutscene == null)
         {
-            Debug.Log("Não tem cutscene carregada");
             return;
         }
             
@@ -49,10 +48,8 @@ public class CutsceneManager : MonoBehaviour
     #region VideoPlayer
     private void playCutscene()
     {
-            Debug.Log("tentando tocar Cutscene");
             if (currentPanel > lastPanel && currentPanel <= maxPanels - 1)
             {
-                Debug.Log("Tocando Cutscene");
                 playNextPanel(loadedCutscene.cutscenePanels[currentPanel].video, loadedCutscene.cutscenePanels[currentPanel].description);
             }
 
@@ -65,7 +62,6 @@ public class CutsceneManager : MonoBehaviour
     }
     private void playNextPanel(VideoClip panel, string description)
     {
-        Debug.Log("Tocando próximo painel");
         cutsceneVideoPlayer.Stop();
         cutsceneVideoPlayer.Prepare();
         cutsceneVideoPlayer.clip = panel;
@@ -81,7 +77,6 @@ public class CutsceneManager : MonoBehaviour
     #region Load & Unload
     public void loadCutscene(CutsceneInfo cutsceneToPlay)
     {
-        Debug.Log("Carreguei a cutscene");
         loadedCutscene = cutsceneToPlay;
         maxPanels = cutsceneToPlay.cutscenePanels.Length;
 
@@ -92,7 +87,6 @@ public class CutsceneManager : MonoBehaviour
 
     private void unloadCutscene()
     {
-        Debug.Log("Descarreguei a cutscene");
         loadedCutscene = null;
         panelPlayerObject.SetActive(false);
         currentPanel = maxPanels = 0;
