@@ -240,7 +240,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: -514436
+  m_InstanceId: 186724
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,9 +704,9 @@ MonoBehaviour:
   player: {fileID: 2529864217549936242}
   playerSprite: {fileID: 6336683651438568607}
   noColorReference: {fileID: 4530602177030595066}
-  blue: {r: 0, g: 0.8937981, b: 1, a: 1}
-  orange: {r: 1, g: 0.5184128, b: 0, a: 1}
-  noColor: {r: 1, g: 1, b: 1, a: 1}
+  blue: {r: 0.19215688, g: 0.7058824, b: 0.9725491, a: 1}
+  orange: {r: 0.9921569, g: 0.5568628, b: 0.21176472, a: 1}
+  noColor: {r: 0, g: 0, b: 0, a: 0}
   transitionTime: 0.65
 --- !u!1 &7320957796236712430
 GameObject:
