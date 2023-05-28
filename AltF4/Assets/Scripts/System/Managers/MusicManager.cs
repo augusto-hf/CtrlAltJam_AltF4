@@ -39,7 +39,7 @@ public class MusicManager : MonoBehaviour
     public void PlayMusicTheme(bool gameStart)
     {
         if (!gameStart) return;
-        
+
         _baseMusic.clip = _musicTheme.MusicBase;
         _blueMusicLayer.clip = _musicTheme.BlueLayer;
         _orangeMusicLayer.clip = _musicTheme.OrangeLayer;
@@ -54,13 +54,29 @@ public class MusicManager : MonoBehaviour
 
     }
 
-    public void PlayOrangeLayer()
+    private void PlayOrangeLayer()
     {
         _orangeMusicLayer.mute = false;
     }
 
-    public void PlayerBlueLayer()
+    private void PlayBlueLayer()
     {
         _blueMusicLayer.mute = false;
     }
+
+    public void TiggerMusicLayer(ColorType type)
+    {
+        switch(type)
+        {
+            case ColorType.Blue:
+                PlayBlueLayer();
+                break;
+            case ColorType.Orange:
+                PlayOrangeLayer();
+                break;
+            default:
+                return;
+        }
+    }
+
 }
