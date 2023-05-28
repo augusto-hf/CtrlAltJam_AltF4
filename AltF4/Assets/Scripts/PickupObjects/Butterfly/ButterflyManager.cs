@@ -23,7 +23,7 @@ public class ButterflyManager : MonoBehaviour
 
     private void useButterfly()
     {
-        cutsceneManager.startCutscene(cutscene);
+        cutsceneManager.loadCutscene(cutscene);
         VisualAndCollider.active = false;
     }
 }
