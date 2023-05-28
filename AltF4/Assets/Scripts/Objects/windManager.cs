@@ -19,14 +19,14 @@ public class windManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && iAmHorizontal)
+        if (collision.gameObject.CompareTag("Player") && iAmHorizontal && collision.GetComponent<PlayerCore>().ColorManager.CurrentColor.ColorData.Type == ColorType.Orange)
         {
             effector.forceMagnitude = horizontalRunnableForceMagnitude;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && iAmHorizontal)
+        if (collision.gameObject.CompareTag("Player") && iAmHorizontal && collision.GetComponent<PlayerCore>().ColorManager.CurrentColor.ColorData.Type == ColorType.Orange)
         {
             effector.forceMagnitude = idealForceMagnitude;
         }
