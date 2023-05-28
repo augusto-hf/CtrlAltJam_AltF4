@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CutsceneManager : MonoBehaviour
 {
 
-
-    public void playCutscene(CutsceneInfo cutsceneToPlay)
+    
+    public void startCutscene(CutsceneInfo cutsceneToPlay)
     {
-        for (int i = 0;i > (cutsceneToPlay.NumberOfPanels - 1);i++)
+        if (cutsceneToPlay.PanelDescription[0] != null)
         {
-            if(cutsceneToPlay.PanelDescription[i] != null)
-                playCurrentPanel(cutsceneToPlay.VisualPanel[i], cutsceneToPlay.PanelDescription[i]);
-            else
-                playCurrentPanel(cutsceneToPlay.VisualPanel[i], " ");
+            playNextCurrentPanel(cutsceneToPlay.VisualPanel[0], cutsceneToPlay.PanelDescription[0]);
         }
+        else
+        {
+            playNextCurrentPanel(cutsceneToPlay.VisualPanel[0], " ");
+        }            
     }
-    private void playCurrentPanel(Sprite panel, string description)
+    private void playNextCurrentPanel(Sprite panel, string description)
     {
 
     }

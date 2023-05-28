@@ -36,5 +36,5 @@ Material:
     - _StencilWriteMask: 255
     m_Colors:
     - _Color: {r: 0, g: 1, b: 0.6503191, a: 1}
-    - _HSLAAdjust: {r: 0, g: 0.05, b: 0, a: 0}
+    - _HSLAAdjust: {r: 1.6, g: 1.32, b: 0, a: 0}
   m_BuildTextureStacks: []
