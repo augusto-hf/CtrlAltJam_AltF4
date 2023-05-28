@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecafafc486042724799bd6072cae9d2d, type: 3}
-  m_Name: CutscenOrange
+  m_Name: CutscenOrange_info
   m_EditorClassIdentifier: 
-  ID: 0
-  Name: 
-  cutscenePanels: []
+  ID: 2
+  Name: orange
+  cutscenePanels:
+  - {fileID: 11400000, guid: fbd7ce911ae38e04481adf5fe1ec131f, type: 2}
