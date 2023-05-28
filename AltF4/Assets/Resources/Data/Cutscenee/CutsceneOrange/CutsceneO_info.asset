@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecafafc486042724799bd6072cae9d2d, type: 3}
-  m_Name: CutscenOrange_info
+  m_Name: CutsceneO_info
   m_EditorClassIdentifier: 
   ID: 2
   Name: orange
