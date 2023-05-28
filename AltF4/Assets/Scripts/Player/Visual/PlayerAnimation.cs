@@ -18,7 +18,8 @@ public class PlayerAnimation : MonoBehaviour
     void Update()
     {
         setWalkAndRun();
-        setJumpAndFall();     
+        setJumpAndFall();
+        setGround();
     }
     #region Horizontal Animation Setting
     private void setWalkAndRun()
@@ -44,18 +45,23 @@ public class PlayerAnimation : MonoBehaviour
         {
             animator.SetBool("isJumping", player.Abilities.IsJumping);
         }
-        if(player.Check.IsFalling && !player.Abilities.IsJumping)
+        if (player.Check.IsFalling && !player.Abilities.IsJumping)
         {
             animator.SetBool("isJumping", false);
         }
-        if(!player.Check.OnGround() && !player.Check.IsFalling && !player.Abilities.IsJumping)
+        if (!player.Check.OnGround() && !player.Check.IsFalling && !player.Abilities.IsJumping)
         {
             animator.SetBool("isJumping", true);
         }
 
         animator.SetBool("isFalling", player.Check.IsFalling);
     }
+
+    private void setGround()
+    {
+        animator.SetBool("isGrounded", player.Check.IsGrounded);
+    }
     #endregion
-    
+
 
 }

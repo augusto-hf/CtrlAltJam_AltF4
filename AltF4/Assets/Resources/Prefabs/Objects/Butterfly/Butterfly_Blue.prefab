@@ -56,6 +56,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2292794301043225491}
     - target: {fileID: 7620174071098404401, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
+      propertyPath: cutscene
+      value: 
+      objectReference: {fileID: 11400000, guid: 73a38ffb88b329340ae5e6a2b757e5eb, type: 2}
+    - target: {fileID: 7620174071098404401, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: colorIUnlock
       value: 1
       objectReference: {fileID: 0}
