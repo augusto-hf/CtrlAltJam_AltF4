@@ -31,6 +31,10 @@ public class MusicManager : MonoBehaviour
         GameManager.Instance.onGameStarted += PlayIntroMusic;
     }
 
+    private void Update()
+    {
+    }
+
     public void SetVolume(float amount)
     {
         _baseMusic.volume = amount;

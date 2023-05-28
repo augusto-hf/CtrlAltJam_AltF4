@@ -5,10 +5,13 @@ using UnityEngine;
 public class OrangePassive : MonoBehaviour, IColor
 {
     [SerializeField] private ColorData colorData;
+    [SerializeField] private ButterflyManager butterlfy;
     public ColorData ColorData { get => colorData;}
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
+        if (!butterlfy.used) return;
+
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
@@ -20,6 +23,8 @@ public class OrangePassive : MonoBehaviour, IColor
 
     private void OnCollisionStay(Collision other) 
     {
+        if (!butterlfy.used) return;
+
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
@@ -34,6 +39,8 @@ public class OrangePassive : MonoBehaviour, IColor
 
     private void OnCollisionExit2D(Collision2D other) 
     {
+        if (!butterlfy.used) return;
+        
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
