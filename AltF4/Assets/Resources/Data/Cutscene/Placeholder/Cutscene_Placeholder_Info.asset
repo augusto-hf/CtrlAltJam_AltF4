@@ -15,6 +15,5 @@ MonoBehaviour:
   ID: 0
   Name: Placeholder
   cutscenePanels:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8280cbbae8a99a54e9f2baca1ee53df5, type: 2}
+  - {fileID: 11400000, guid: 2281723edadfc2146821bad751a5911b, type: 2}
