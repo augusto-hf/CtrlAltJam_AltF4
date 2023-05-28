@@ -13,11 +13,11 @@
         "pause": "Romper",
         "error": "Información inválida",
         
-        "alone": "SOLITARIO",
-        "guilty": "CULPABLE",
-        "dislike": "DESAGRADO",
-        "disappointment": "DECEPCIÓN",
-        "abandoned": "ABANDONADO"
+        "alone": "solo",
+        "guilty": "culpable",
+        "dislike": "desagrado",
+        "disappointment": "decepción",
+        "abandoned": "abandonado"
 
     },
     "narrationsTexts": {

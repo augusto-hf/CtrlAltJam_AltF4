@@ -13,11 +13,11 @@
         "pause": "Pause",
         "error": "Invalid information",
 
-        "alone": "ALONE",
-        "guilty": "GUILTY",
-        "dislike": "DISLIKE",
-        "disappointment": "DISAPPOINTMENT",
-        "abandoned": "ABANDONED"
+        "alone": "alone",
+        "guilty": "guilty",
+        "dislike": "dislike",
+        "disappointment": "disappointment",
+        "abandoned": "abandoned"
     },
     "narrationsTexts": {
         "blue": {
