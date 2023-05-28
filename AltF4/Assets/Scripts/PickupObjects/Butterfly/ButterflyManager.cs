@@ -7,25 +7,33 @@ public class ButterflyManager : MonoBehaviour
     public bool used = false;
     public ColorType colorIUnlock;
     [SerializeField] private CutsceneInfo cutscene;
-    [SerializeField] private GameObject VisualAndCollider;
+    [SerializeField] private GameObject Visual;
     [SerializeField] private CutsceneManager cutsceneManager;
 
     private void Awake()
     {
         if (used)
-            VisualAndCollider.active = false;
+            useButterfly();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("ENCOSTO EM MIM");
         if (!used)
+        {
+            playCutscene();
             useButterfly();
+        }
     }
 
     private void useButterfly()
     {
+        MusicManager.Instance.TiggerMusicLayer(colorIUnlock);
+        Visual.active = false;
+        GetComponent<Collider2D>().enabled = false;
+    }
+    private void playCutscene()
+    {
         cutsceneManager.loadCutscene(cutscene);
-        VisualAndCollider.active = false;
     }
 }
