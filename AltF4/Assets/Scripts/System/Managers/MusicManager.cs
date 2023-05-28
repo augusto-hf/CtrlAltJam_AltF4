@@ -39,6 +39,7 @@ public class MusicManager : MonoBehaviour
     public void PlayMusicTheme(bool gameStart)
     {
         if (!gameStart) return;
+        
         _baseMusic.clip = _musicTheme.MusicBase;
         _blueMusicLayer.clip = _musicTheme.BlueLayer;
         _orangeMusicLayer.clip = _musicTheme.OrangeLayer;

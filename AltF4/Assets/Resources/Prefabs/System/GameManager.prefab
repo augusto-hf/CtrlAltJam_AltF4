@@ -178,6 +178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuMusic: {fileID: 8300000, guid: 7a705dcb501eebc40862b5a56e0c15d0, type: 3}
+  _musicTheme:
+    _base: {fileID: 8300000, guid: f08e1fa99c2c65349ac56e5f3f4b8469, type: 3}
+    _orange: {fileID: 8300000, guid: 1150801ef01d9ae49acf135745027f08, type: 3}
+    _blue: {fileID: 8300000, guid: 60fac1dd5c61df643a4b4d57d3a30496, type: 3}
   _baseMusic: {fileID: 0}
   _blueMusicLayer: {fileID: 0}
   _orangeMusicLayer: {fileID: 0}
