@@ -1,0 +1,1407 @@
+fileFormatVersion: 2
+guid: 6713df0478ee2ec4688e905fee4f23f4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 205
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: emission_com_olho_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1710
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf1fe0edb697d24e8a25285290b7e96
+      internalID: -210747043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_1
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1710
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be4b321583deb647a3ffd68f3d73101
+      internalID: 1986725163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_2
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1710
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8502b5410ab8dd448954e81f6c7b3381
+      internalID: -533523674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_3
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 1710
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dddb488bcf0d78446a20cd807202999e
+      internalID: 1301466844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3b610a59d3ce148a1638ca82101480
+      internalID: 1999026005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_13
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9830363d49a594c9d5e10a66e29860
+      internalID: -1842059430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_14
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f453a58f5feb3f84e9e6760aad56313f
+      internalID: -528724934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_15
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4899e88868ffa244bb0faeb5460ff75
+      internalID: 1594037536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_16
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f42ce355b7fcea4d9186ac59d6faf83
+      internalID: 612590632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_17
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e04b5b5ef876a4a9860bc4c03ffc3a
+      internalID: 495700339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_18
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6715dccd3c5b92e40b982d20b03929ea
+      internalID: 533795742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_19
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3f1e46d41f5bf4cbc5ce99fad9b39d
+      internalID: 958626014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_20
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63552724cebee5e47afcb76419b659b1
+      internalID: -967890888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_21
+      rect:
+        serializedVersion: 2
+        x: 3078
+        y: 1368
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0540e4847bc5a49864c21404f3352f
+      internalID: -1717983577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e2f4b7bfd62d347a14c1005e040085
+      internalID: -285741357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_25
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba1257b53ec0d548881d29b07aacb19
+      internalID: -795570992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_26
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ceccc704c71e7479e7b1b37e73b189
+      internalID: 472623303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_27
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c451cb7a78a9c664f80cfc4ef23247ca
+      internalID: 423356287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_28
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8885af78c26723e4c99d4b431752fe6d
+      internalID: -327860679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_29
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 976ebb250a5d9c6468824dee0dc5368a
+      internalID: -1072090677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_30
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f27be68859d5954180864b773baac1f
+      internalID: -844025862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_31
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e871d148c3b894c8383112a694f4fb
+      internalID: 1986947644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_32
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40deac26120b7a64aa67627c1eac25a4
+      internalID: 1884812958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_33
+      rect:
+        serializedVersion: 2
+        x: 3078
+        y: 1026
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed41b7ae3ef69d34da0d0cc2e419a93e
+      internalID: 2103644818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c6c7f0db6ba394e9e1442e7cd72b00
+      internalID: -170582322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_37
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d842fff9586b9643bb930b2ffa475c8
+      internalID: -141134434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_38
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e54ef768de5b34a9cc6b823b67fdb2
+      internalID: -1579762802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_39
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df858c5380e87834f876805e2662849f
+      internalID: 440531336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_40
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8b7b37e18e213428168aa681b7b2e6
+      internalID: 1964572384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_41
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1191131a9dad4740a30235f5cb8eef7
+      internalID: 505223811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_42
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0afb9f92335cd46adafbbcf7ea4c00
+      internalID: 1248351133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_43
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c725636e91faa4ca3b5790d790d120
+      internalID: -1924488667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_44
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba843aaacb61c147aed3fd94528a563
+      internalID: -1104283715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_45
+      rect:
+        serializedVersion: 2
+        x: 3078
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7db0485ac7c6c2449349ad9e68107f2
+      internalID: 797496019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_46
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13200f9f609ec9b4d83fdbd2dc54d6a7
+      internalID: -2006090809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_47
+      rect:
+        serializedVersion: 2
+        x: 3762
+        y: 684
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8593219c513e34ea0554933a3341ec
+      internalID: 1654186035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd8ab231edd7b845962816a8c228a25
+      internalID: 1527939428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_49
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c412867094fb24d9833f0aebf892cf
+      internalID: -1024146256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_50
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca18eff3c67ac6469c260429ed6bf9b
+      internalID: -1203285709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_51
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2cc9d5a48375c1409e34a2271306868
+      internalID: 304466917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_52
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd4c719abd82aa49b50ee5281d93cd8
+      internalID: -152927741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_53
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76fe2bce5fc223d4e98a5352126845bc
+      internalID: -1883928215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_54
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207ff36223d305b448eb5f9bcd92a70f
+      internalID: 730030528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_55
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcebb5e8fa142b4e8bef751b05f4575
+      internalID: -1125470264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_56
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1815c4c47d546b74796446cf3247e7b7
+      internalID: 1638368866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_57
+      rect:
+        serializedVersion: 2
+        x: 3078
+        y: 342
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3baa5bdcf65534748aef6a086c4e8e08
+      internalID: -382100810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2db92c7a9a48148897c0f0ccaeb044
+      internalID: 1354624378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_61
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35e9fcdd163d1d43920daa0753ed36c
+      internalID: -286603993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_62
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56e16534290bed44a91654e6ad09812
+      internalID: 1714301855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_63
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43d5f7b732e60c4a817b06aca0c2a15
+      internalID: 759376070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_64
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49720428e021c78429e2954ab767cdf1
+      internalID: 1413767979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_65
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a927216ee11354c90e697545def437
+      internalID: 1343135717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_66
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcc087262d6b5744b7e1e5da78b5226
+      internalID: 1369976877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_67
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8fc7a27afbce045ae1e8cacbd2e558
+      internalID: 1526662746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_68
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c579b7c26e117a64abcba2bdda56bb25
+      internalID: 285617589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emission_com_olho_69
+      rect:
+        serializedVersion: 2
+        x: 3078
+        y: 0
+        width: 342
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590e72e5af3aa134b9aaf93d785b7bbc
+      internalID: -805852701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      emission_com_olho_53: -1883928215
+      emission_com_olho_5: 1127130525
+      emission_com_olho_2: -533523674
+      emission_com_olho_18: 533795742
+      emission_com_olho_6: -1202752130
+      emission_com_olho_50: -1203285709
+      emission_com_olho_52: -152927741
+      emission_com_olho_21: -1717983577
+      emission_com_olho_23: 514988057
+      emission_com_olho_24: -285741357
+      emission_com_olho_41: 505223811
+      emission_com_olho_36: -170582322
+      emission_com_olho_38: -1579762802
+      emission_com_olho_61: -286603993
+      emission_com_olho_49: -1024146256
+      emission_com_olho_22: -494294036
+      emission_com_olho_16: 612590632
+      emission_com_olho_4: 1430646026
+      emission_com_olho_43: -1924488667
+      emission_com_olho_14: -528724934
+      emission_com_olho_1: 1986725163
+      emission_com_olho_15: 1594037536
+      emission_com_olho_17: 495700339
+      emission_com_olho_32: 1884812958
+      emission_com_olho_20: -967890888
+      emission_com_olho_68: 285617589
+      emission_com_olho_10: 683204121
+      emission_com_olho_63: 759376070
+      emission_com_olho_66: 1369976877
+      emission_com_olho_46: -2006090809
+      emission_com_olho_27: 423356287
+      emission_com_olho_34: -1389064365
+      emission_com_olho_11: -76134462
+      emission_com_olho_45: 797496019
+      emission_com_olho_42: 1248351133
+      emission_com_olho_59: 1751163759
+      emission_com_olho_26: 472623303
+      emission_com_olho_13: -1842059430
+      emission_com_olho_28: -327860679
+      emission_com_olho_69: -805852701
+      emission_com_olho_19: 958626014
+      emission_com_olho_33: 2103644818
+      emission_com_olho_35: 1810148413
+      emission_com_olho_40: 1964572384
+      emission_com_olho_51: 304466917
+      emission_com_olho_64: 1413767979
+      emission_com_olho_30: -844025862
+      emission_com_olho_62: 1714301855
+      emission_com_olho_44: -1104283715
+      emission_com_olho_58: 244665762
+      emission_com_olho_8: 1843633470
+      emission_com_olho_70: -2084369640
+      emission_com_olho_9: -810843317
+      emission_com_olho_39: 440531336
+      emission_com_olho_60: 1354624378
+      emission_com_olho_31: 1986947644
+      emission_com_olho_0: -210747043
+      emission_com_olho_47: 1654186035
+      emission_com_olho_55: -1125470264
+      emission_com_olho_54: 730030528
+      emission_com_olho_67: 1526662746
+      emission_com_olho_71: 2146705176
+      emission_com_olho_57: -382100810
+      emission_com_olho_65: 1343135717
+      emission_com_olho_48: 1527939428
+      emission_com_olho_56: 1638368866
+      emission_com_olho_7: 1336049999
+      emission_com_olho_25: -795570992
+      emission_com_olho_37: -141134434
+      emission_com_olho_29: -1072090677
+      emission_com_olho_3: 1301466844
+      emission_com_olho_12: 1999026005
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
