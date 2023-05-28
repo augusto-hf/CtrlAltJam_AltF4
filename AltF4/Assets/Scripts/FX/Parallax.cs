@@ -28,12 +28,12 @@ public class Parallax : MonoBehaviour
     void Update()
     {
         Vector2 newPos = startPosition + travel * parallaxFactor;
+        Vector2 newPosLimitted;
+
+        newPosLimitted.x = Mathf.Clamp(newPos.x, Xmin, Xmax);
+        newPosLimitted.y = Mathf.Clamp(newPos.y, Ymin, Ymax);
 
 
-        Mathf.Clamp(newPos.x, Xmin, Xmax);
-        Mathf.Clamp(newPos.y, Ymin, Ymax);
-
-
-        transform.position = new Vector3(newPos.x + XOffset, cam.transform.position.y + YOffset, startZ);
+        transform.position = new Vector3(newPosLimitted.x + XOffset, newPosLimitted.y + YOffset, startZ);
     }
 }
