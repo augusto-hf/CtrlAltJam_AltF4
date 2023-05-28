@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e717164aa422324fb1fb9bc2abbe152
+guid: f25d9de5c7f1eeb4cb67cd831f87ebc2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,31 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -141,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_spritesheet_0
+      name: idle_tatoos_emission_0
       rect:
         serializedVersion: 2
         x: 0
@@ -149,20 +125,20 @@ TextureImporter:
         width: 342
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f783369427f363348a5ade9a156bf960
-      internalID: -1865050192
+      spriteID: c5880c8085c70cd4db9c51deff5afe29
+      internalID: 2031232122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_spritesheet_1
+      name: idle_tatoos_emission_1
       rect:
         serializedVersion: 2
         x: 342
@@ -170,20 +146,20 @@ TextureImporter:
         width: 342
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e69755d8f6fb9241b4bca431b3b32e8
-      internalID: -442023915
+      spriteID: d99b4f22d3f7c4f4f82fe9886f8f83b8
+      internalID: 865786825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_spritesheet_2
+      name: idle_tatoos_emission_2
       rect:
         serializedVersion: 2
         x: 684
@@ -191,20 +167,20 @@ TextureImporter:
         width: 342
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a29ebd266d87c364fb8c11592e5f7cd0
-      internalID: -1197261187
+      spriteID: ca82d5e585176bd4a880bea454cf5bdd
+      internalID: -1976601917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_spritesheet_3
+      name: idle_tatoos_emission_3
       rect:
         serializedVersion: 2
         x: 1026
@@ -212,14 +188,14 @@ TextureImporter:
         width: 342
         height: 342
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b13eababb93d9c4bb9912d81ab849cc
-      internalID: -1974152785
+      spriteID: 6b9e7d8340fa37e43b3a6913519f9819
+      internalID: 1147088856
       vertices: []
       indices: 
       edges: []
@@ -233,14 +209,12 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: f25d9de5c7f1eeb4cb67cd831f87ebc2, type: 3}
-      name: _Emission
+    secondaryTextures: []
     nameFileIdTable:
-      idle_spritesheet_3: -1974152785
-      idle_spritesheet_2: -1197261187
-      idle_spritesheet_1: -442023915
-      idle_spritesheet_0: -1865050192
+      idle_tatoos_emission_2: -1976601917
+      idle_tatoos_emission_0: 2031232122
+      idle_tatoos_emission_1: 865786825
+      idle_tatoos_emission_3: 1147088856
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
