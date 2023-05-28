@@ -21,6 +21,34 @@ public class OrangePassive : MonoBehaviour, IColor
         }   
     }
 
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (!butterlfy.used) return;
+        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+            SetPlayerOrangeColor(colorManager);
+
+        }   
+    }
+
+    private void OnTriggerStay2D(Collider2D other) 
+    {
+        if (!butterlfy.used) return;
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+
+            if (colorManager.Abilities.StaminaAmount <= PlayerStamina.MAX_STAMINA )
+            {
+                SetPlayerOrangeColor(colorManager);
+            }
+
+        }   
+    }
+
     private void OnCollisionStay(Collision other) 
     {
         if (!butterlfy.used) return;
@@ -50,7 +78,7 @@ public class OrangePassive : MonoBehaviour, IColor
         }   
     }
 
-    private void SetPlayerOrangeColor(PlayerColorManager manager) // quando eu pego uma cor que n está liberada para usar recebo erro
+    private void SetPlayerOrangeColor(PlayerColorManager manager) 
     {
         if (manager.CurrentColor.ColorData.Type == colorData.Type) 
         {
