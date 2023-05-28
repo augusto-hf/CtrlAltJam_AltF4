@@ -6,12 +6,16 @@ using UnityEngine.Video;
 
 public class CutsceneManager : MonoBehaviour
 {
+    [SerializeField] private FadeScript fadeScript;
     [SerializeField] private GameObject panelPlayerObject;
     [SerializeField] private PlayerCore player;
     private VideoPlayer cutsceneVideoPlayer;
     private CutsceneInfo loadedCutscene;
     private bool alreadyPlayed = false;
     private int lastPanel, currentPanel = 0, maxPanels;
+
+    private bool endFade = false;
+
     void Start()
     {
         cutsceneVideoPlayer = panelPlayerObject.GetComponent<VideoPlayer>();
@@ -43,13 +47,18 @@ public class CutsceneManager : MonoBehaviour
 
     #region VideoPlayer
     private void playCutscene()
-    {       
-            if (currentPanel > lastPanel && currentPanel <= maxPanels - 1)
+    {   
+        if (currentPanel > lastPanel && currentPanel <= maxPanels - 1)
+        {
+            if(endFade)
             {
                 playNextPanel(loadedCutscene.cutscenePanels[currentPanel].video, loadedCutscene.cutscenePanels[currentPanel].description);
             }
-
-
+            else
+            {
+                StartCoroutine(EndFade());
+            }
+        }
         else if (currentPanel > maxPanels - 1)
                 endCutscene();
 
@@ -88,7 +97,9 @@ public class CutsceneManager : MonoBehaviour
 
         lastPanel = -1;
 
-        panelPlayerObject.SetActive(true);        
+        panelPlayerObject.SetActive(true);   
+        player.Movement.canMove = false;
+
     }
 
     private void unloadCutscene()
@@ -96,6 +107,15 @@ public class CutsceneManager : MonoBehaviour
         loadedCutscene = null;
         panelPlayerObject.SetActive(false);
         currentPanel = maxPanels = 0;
+        endFade = false;
+        player.Movement.canMove = true;
     }
     #endregion
+
+    IEnumerator EndFade()
+    {
+        fadeScript.CallFade(true);
+        yield return new WaitForSeconds(1f);
+        endFade = true;
+    }
 }
