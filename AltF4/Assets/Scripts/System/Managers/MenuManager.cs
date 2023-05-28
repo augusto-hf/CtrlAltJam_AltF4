@@ -6,7 +6,7 @@ using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource menuMusic;
+    [SerializeField] private MusicManager menuMusic;
     [SerializeField] private GameObject menuPrincipal;
     [SerializeField] private GameObject rooms;
     [SerializeField] private TMP_Dropdown drop;
@@ -60,12 +60,12 @@ public class MenuManager : MonoBehaviour
     public void SetNewVolumeMusic()
     {
         AudioManager.audioInstance.volumeMusics = sliderMusic.value;
-        menuMusic.volume = sliderMusic.value;
+        menuMusic.SetVolume(sliderMusic.value);
     }
 
     public void UpdatedVomlumeMusicSaved()
     {
-        menuMusic.volume = AudioManager.audioInstance.volumeMusics;
+        menuMusic.SetVolume(AudioManager.audioInstance.volumeMusics);
     }
 
     public void NewSelectedOption()

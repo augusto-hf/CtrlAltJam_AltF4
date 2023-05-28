@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2814681327026160498}
   - component: {fileID: 8429439325425054252}
   - component: {fileID: 2120500748374318616}
+  - component: {fileID: 7124802365734645659}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -99,11 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8c4565f17c4af488ff86610f654822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuMusic: {fileID: 0}
   menuPrincipal: {fileID: 0}
   rooms: {fileID: 0}
   drop: {fileID: 0}
   sliderMusic: {fileID: 0}
   sliderSounds: {fileID: 0}
+  fadeScript: {fileID: 0}
 --- !u!114 &6503141485143443907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +165,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   postProcessing: {fileID: 0}
+--- !u!114 &7124802365734645659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414608117657014545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7265747451c2e418ddb9d6cc09f0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _menuMusic: {fileID: 8300000, guid: 7a705dcb501eebc40862b5a56e0c15d0, type: 3}
+  _baseMusic: {fileID: 0}
+  _blueMusicLayer: {fileID: 0}
+  _orangeMusicLayer: {fileID: 0}
