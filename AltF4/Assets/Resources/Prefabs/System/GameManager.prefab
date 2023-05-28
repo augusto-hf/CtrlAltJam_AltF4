@@ -152,6 +152,7 @@ MonoBehaviour:
   target: {fileID: 0}
   volumeMusics: 1
   volumeSounds: 1
+  HasAudioMusic: 0
 --- !u!114 &2120500748374318616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,9 +180,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuMusic: {fileID: 8300000, guid: 7a705dcb501eebc40862b5a56e0c15d0, type: 3}
   _musicTheme:
+    _intro: {fileID: 8300000, guid: 44995c9465c6bd540b83ba92e824ede6, type: 3}
+    _introLoop: {fileID: 8300000, guid: ad0966c2fa63be94c88cd8525780416a, type: 3}
     _base: {fileID: 8300000, guid: f08e1fa99c2c65349ac56e5f3f4b8469, type: 3}
     _orange: {fileID: 8300000, guid: 1150801ef01d9ae49acf135745027f08, type: 3}
     _blue: {fileID: 8300000, guid: 60fac1dd5c61df643a4b4d57d3a30496, type: 3}
   _baseMusic: {fileID: 0}
   _blueMusicLayer: {fileID: 0}
   _orangeMusicLayer: {fileID: 0}
+  _transitionTime: 0.5

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager audioInstance; 
+    public static AudioManager audioInstance;
 
     [SerializeField] private AudioSource audioMusic;
     [SerializeField] private Transform target;
 
     public float volumeMusics = 1;
     public float volumeSounds = 1;
+
+    public bool HasAudioMusic;
 
     void Awake()
     {

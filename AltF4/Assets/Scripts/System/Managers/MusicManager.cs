@@ -6,12 +6,14 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
     [SerializeField] private AudioClip _menuMusic;
+    
     [SerializeField] private MusicTheme _musicTheme;
 
     [SerializeField] private AudioSource _baseMusic;
     [SerializeField] private AudioSource _blueMusicLayer;
     [SerializeField] private AudioSource _orangeMusicLayer;
 
+    [SerializeField] private float _transitionTime;
 
     void Awake()
     {
@@ -26,7 +28,7 @@ public class MusicManager : MonoBehaviour
     {
         _baseMusic.clip = _menuMusic;
         _baseMusic.PlayScheduled(AudioSettings.dspTime);
-        GameManager.Instance.onGameStarted += PlayMusicTheme;
+        GameManager.Instance.onGameStarted += PlayIntroMusic;
     }
 
     public void SetVolume(float amount)
@@ -36,9 +38,8 @@ public class MusicManager : MonoBehaviour
         _orangeMusicLayer.volume = amount;
     }
 
-    public void PlayMusicTheme(bool gameStart)
+    public void PlayMainMusicTheme()
     {
-        if (!gameStart) return;
 
         _baseMusic.clip = _musicTheme.MusicBase;
         _blueMusicLayer.clip = _musicTheme.BlueLayer;
@@ -53,6 +54,13 @@ public class MusicManager : MonoBehaviour
 
 
     }
+    public void PlayIntroMusic(bool gameStart)
+    {
+        if (!gameStart) return;
+
+        StartCoroutine(IntroToLoop());
+
+    }
 
     private void PlayOrangeLayer()
     {
@@ -64,7 +72,55 @@ public class MusicManager : MonoBehaviour
         _blueMusicLayer.mute = false;
     }
 
-    public void TiggerMusicLayer(ColorType type)
+    private IEnumerator IntroToLoop()
+    {
+        _baseMusic.clip = _musicTheme.Intro;
+        _baseMusic.PlayScheduled(AudioSettings.dspTime);
+        yield return new WaitForSeconds(_musicTheme.Intro.length);
+        _baseMusic.clip = _musicTheme.IntroLoop;
+        _baseMusic.PlayScheduled(AudioSettings.dspTime);
+    }
+
+    public void FadeInVolume()
+    {
+        if (AudioManager.audioInstance.HasAudioMusic)
+        {
+            StartCoroutine(FadeInMusic());
+        }
+    }
+
+    public void FadeOutVolume()
+    {
+        if (AudioManager.audioInstance.HasAudioMusic)
+        {
+            StartCoroutine(FadeOutMusic());            
+        }
+    }
+
+    private IEnumerator FadeInMusic()
+    {
+        float percentage = 0;
+
+        while(_baseMusic.volume < 0)
+        {
+            SetVolume(Mathf.Lerp(0, AudioManager.audioInstance.volumeMusics, percentage));
+            percentage += Time.deltaTime / _transitionTime;
+            yield return null;
+        } 
+    }
+    private IEnumerator FadeOutMusic()
+    {
+        float percentage = 0;
+
+        while(_baseMusic.volume > 0)
+        {
+            SetVolume(Mathf.Lerp(AudioManager.audioInstance.volumeMusics, 0, percentage));
+            percentage += Time.deltaTime / _transitionTime;
+            yield return null;
+        } 
+    }
+
+    public void TriggerMusicLayer(ColorType type)
     {
         switch(type)
         {

@@ -82,6 +82,10 @@ public class MenuManager : MonoBehaviour
     public void UpdatedSliderVolumeMusic()
     {
         sliderMusic.value = AudioManager.audioInstance.volumeMusics;
+        if (sliderMusic.value <= 0 && !GameManager.Instance.gameISRunning)
+        {
+            AudioManager.audioInstance.HasAudioMusic = false;
+        }
     }
 
     public void UpdatedDropDownOptions()
