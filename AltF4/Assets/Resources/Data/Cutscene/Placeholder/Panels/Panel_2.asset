@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Panel_2
   m_EditorClassIdentifier: 
   isASprite: 0
-  video: {fileID: 32900000, guid: 081c48f8d78597d4a8bbbf35f578bcd9, type: 3}
+  video: {fileID: 32900000, guid: 9449c65b274a7cb459abdd855c1119a3, type: 3}
   sprite: {fileID: 0}
   description: --==Placeholder Description 2==--
