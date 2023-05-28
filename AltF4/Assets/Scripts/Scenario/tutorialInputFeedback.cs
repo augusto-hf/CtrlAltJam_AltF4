@@ -12,32 +12,45 @@ public class tutorialInputFeedback : MonoBehaviour
     private bool playerIsNear = false;
     void Start()
     {
-        if (keySpriteRenderer == null)
-            keySpriteRenderer = GetComponent<SpriteRenderer>();
+        verifyNullOnStart();
     }
 
     void Update()
     {
-        if(!playerIsNear)
+        if(playerIsNear)
             pressVisualButton(Input.GetKey(inputName), Input.GetKey(alternativeInputName));
     }
 
     void pressVisualButton(bool input, bool alternativeinput)
     {
-        if(input || alternativeinput)
+        if (input || alternativeinput)
             keySpriteRenderer.color = pressedColor;
 
         else if (!input && !alternativeinput)
             keySpriteRenderer.color = Color.white;
     }
 
+    private void verifyNullOnStart()
+    {
+        if (keySpriteRenderer == null)
+            keySpriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (inputName == "")
+            inputName = "0";
+
+        if (alternativeInputName == "")
+            alternativeInputName = "0";
+
+    }
+
+    #region trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             playerIsNear = true;
             keySpriteRenderer.enabled = true;
-        }           
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -45,6 +58,7 @@ public class tutorialInputFeedback : MonoBehaviour
         {
             playerIsNear = false;
             keySpriteRenderer.enabled = false;
-        }  
+        }
     }
+    #endregion
 }
