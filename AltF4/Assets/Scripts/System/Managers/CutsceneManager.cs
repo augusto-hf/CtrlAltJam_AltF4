@@ -21,15 +21,11 @@ public class CutsceneManager : MonoBehaviour
     private void Update()
     {
         if (loadedCutscene == null)
-        {
             return;
-        }
-            
-        else
-        {
-            cutsceneInput();
-            playCutscene();
-        }
+
+        playCutscene();
+        cutsceneInput();
+        autoSkipPanel();
     }
     #region Input
     public void cutsceneInput()
@@ -47,7 +43,7 @@ public class CutsceneManager : MonoBehaviour
 
     #region VideoPlayer
     private void playCutscene()
-    {
+    {       
             if (currentPanel > lastPanel && currentPanel <= maxPanels - 1)
             {
                 playNextPanel(loadedCutscene.cutscenePanels[currentPanel].video, loadedCutscene.cutscenePanels[currentPanel].description);
@@ -59,6 +55,16 @@ public class CutsceneManager : MonoBehaviour
 
             else
                 return;
+    }
+    private void autoSkipPanel()
+    {
+       if (cutsceneVideoPlayer.isPlaying)
+        {
+            if (cutsceneVideoPlayer.time == cutsceneVideoPlayer.length)
+            {
+                currentPanel++;
+            }
+        }
     }
     private void playNextPanel(VideoClip panel, string description)
     {

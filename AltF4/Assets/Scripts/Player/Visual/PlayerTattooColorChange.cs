@@ -11,16 +11,28 @@ public class PlayerTattooColorChange : MonoBehaviour
     [SerializeField] private SpriteRenderer playerSprite;
     [SerializeField] private GameObject noColorReference;
     [SerializeField] private Color blue, orange, noColor;
-    [SerializeField] private float changeSpeed, timeElapsed, lerpDuration;
+    [SerializeField] private float transitionTime;
     void Start()
     {
         lastColorPower = noColorReference.gameObject.GetComponent<IColor>().ColorData.Type;
         lastColor = noColor;
         currentColor = noColor;
-
     }
 
     void Update()
+    {
+        nextColorPower = player.ColorManager.CurrentColor.ColorData.Type;
+
+        identifyColorChange();
+
+        if (currentColor != nextColor)
+        {
+            //playerSprite.material.color = currentColor = nextColor;
+            StartCoroutine(changeColor());           
+        }
+        
+    }
+    private void identifyColorChange()
     {
         if (nextColorPower == ColorType.Blue)
         {
@@ -34,19 +46,16 @@ public class PlayerTattooColorChange : MonoBehaviour
         {
             nextColor = noColor;
         }
-
-
-        if (currentColor != nextColor)
+    }
+    private IEnumerator changeColor()
+    {
+        float percentage = 0;
+        while (currentColor != nextColor)
         {
-
-                
-                playerSprite.material.color = currentColor = Color.Lerp(lastColor, nextColor, 1);
-            
+            playerSprite.material.color = currentColor = Color.Lerp(lastColor, nextColor, percentage);
+            percentage += Time.deltaTime / transitionTime;
+            yield return null;
         }
-        else
-        {
-            timeElapsed = 0;
-            lastColor = currentColor;
-        }
+        lastColor = currentColor;
     }
 }

@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3332784466324881970, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
+      propertyPath: iAmHorizontal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5721858662089989604, guid: ad7dff02d72796547af7d42195bcb33e, type: 3}
       propertyPath: m_Size.x
       value: 9.023233
