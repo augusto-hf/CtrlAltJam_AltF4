@@ -77,10 +77,12 @@ public class CutsceneManager : MonoBehaviour
     }
     private void playNextPanel(VideoClip panel, string description)
     {
+        cutsceneVideoPlayer.clip = null;
+        cutsceneVideoPlayer.clip = panel;
         cutsceneVideoPlayer.Stop();
         cutsceneVideoPlayer.Prepare();
-        cutsceneVideoPlayer.clip = panel;
-        
+        cutsceneVideoPlayer.Play();
+
         lastPanel = currentPanel;
     }
     private void endCutscene()
@@ -97,16 +99,21 @@ public class CutsceneManager : MonoBehaviour
 
         lastPanel = -1;
 
-        panelPlayerObject.SetActive(true);   
-        player.Movement.canMove = false;
+        panelPlayerObject.SetActive(true);
 
+
+        player.Movement.canMove = false;
     }
 
     private void unloadCutscene()
     {
         loadedCutscene = null;
-        panelPlayerObject.SetActive(false);
         currentPanel = maxPanels = 0;
+
+        lastPanel = -1;
+
+        panelPlayerObject.SetActive(false);
+        
         endFade = false;
         player.Movement.canMove = true;
     }
