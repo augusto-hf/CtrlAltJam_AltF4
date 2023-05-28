@@ -15,8 +15,7 @@ public class PostProcessingManager : MonoBehaviour
             VolumeProfile newVolumeProfile = Resources.Load<VolumeProfile>("volumePostProcessing/"+nameEmotion); 
 
             postProcessing.profile = newVolumeProfile;
-        }
-        
+        }        
     }
 
     public void LoadProfile(string nameEmotion) 

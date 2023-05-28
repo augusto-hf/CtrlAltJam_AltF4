@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5282336107576937132, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 248.41011
       objectReference: {fileID: 0}
     - target: {fileID: 5282336107576937132, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 39.22337
       objectReference: {fileID: 0}
     - target: {fileID: 5282336107576937132, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61,16 +61,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7937203948711356643, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7937203948711356643, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.6719017
       objectReference: {fileID: 0}
     - target: {fileID: 7937203948711356643, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7937203948711356643, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ffdec602eefa6e94295c9978131c3f74, type: 2}
     - target: {fileID: 9118231521232522399, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: m_Name
       value: Butterfly_Orange
