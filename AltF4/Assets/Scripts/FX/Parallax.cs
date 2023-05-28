@@ -6,8 +6,7 @@ public class Parallax : MonoBehaviour
 {
     [SerializeField] private Camera cam;
     [SerializeField] private Transform ImageToParallax;
-    [SerializeField] private float Offset;
-
+    [SerializeField] private float YOffset, XOffset, Xmin, Xmax, Ymin, Ymax;
     Vector2 startPosition;
     float startZ;
 
@@ -24,11 +23,17 @@ public class Parallax : MonoBehaviour
         startZ = transform.position.z;
     }
 
-    // Update is called once per frame
-    
+
+
     void Update()
     {
         Vector2 newPos = startPosition + travel * parallaxFactor;
-        transform.position = new Vector3(newPos.x, cam.transform.position.y + Offset, startZ);
+
+
+        Mathf.Clamp(newPos.x, Xmin, Xmax);
+        Mathf.Clamp(newPos.y, Ymin, Ymax);
+
+
+        transform.position = new Vector3(newPos.x + XOffset, cam.transform.position.y + YOffset, startZ);
     }
 }
