@@ -5,11 +5,12 @@ using UnityEngine;
 public class ButterflyManager : MonoBehaviour
 {
     public bool used = false;
+    public ColorType colorIUnlock;
     [SerializeField] private CutsceneInfo cutscene;
     [SerializeField] private GameObject VisualAndCollider;
     [SerializeField] private CutsceneManager cutsceneManager;
 
-    private void Start()
+    private void Awake()
     {
         if (used)
             VisualAndCollider.active = false;
@@ -17,7 +18,8 @@ public class ButterflyManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (used)
+        Debug.Log("ENCOSTO EM MIM");
+        if (!used)
             useButterfly();
     }
 

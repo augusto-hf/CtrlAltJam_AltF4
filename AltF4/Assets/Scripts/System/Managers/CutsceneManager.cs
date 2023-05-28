@@ -21,7 +21,11 @@ public class CutsceneManager : MonoBehaviour
     private void Update()
     {
         if (loadedCutscene == null)
+        {
+            Debug.Log("Não tem cutscene carregada");
             return;
+        }
+            
         else
         {
             cutsceneInput();
@@ -37,18 +41,23 @@ public class CutsceneManager : MonoBehaviour
         }
         if (player.Controller.TongueButton)
         {
-            currentPanel = lastPanel;
+            currentPanel = maxPanels;
         }
     }
     #endregion
 
-    #region Player
+    #region VideoPlayer
     private void playCutscene()
     {
+            Debug.Log("tentando tocar Cutscene");
             if (currentPanel > lastPanel && currentPanel <= maxPanels - 1)
+            {
+                Debug.Log("Tocando Cutscene");
                 playNextPanel(loadedCutscene.cutscenePanels[currentPanel].video, loadedCutscene.cutscenePanels[currentPanel].description);
+            }
 
-            else if (currentPanel < maxPanels - 1)
+
+        else if (currentPanel > maxPanels - 1)
                 endCutscene();
 
             else
@@ -56,7 +65,11 @@ public class CutsceneManager : MonoBehaviour
     }
     private void playNextPanel(VideoClip panel, string description)
     {
+        Debug.Log("Tocando próximo painel");
+        cutsceneVideoPlayer.Stop();
+        cutsceneVideoPlayer.Prepare();
         cutsceneVideoPlayer.clip = panel;
+        
         lastPanel = currentPanel;
     }
     private void endCutscene()
@@ -68,13 +81,18 @@ public class CutsceneManager : MonoBehaviour
     #region Load & Unload
     public void loadCutscene(CutsceneInfo cutsceneToPlay)
     {
+        Debug.Log("Carreguei a cutscene");
         loadedCutscene = cutsceneToPlay;
         maxPanels = cutsceneToPlay.cutscenePanels.Length;
+
+        lastPanel = -1;
+
         panelPlayerObject.SetActive(true);        
     }
 
     private void unloadCutscene()
     {
+        Debug.Log("Descarreguei a cutscene");
         loadedCutscene = null;
         panelPlayerObject.SetActive(false);
         currentPanel = maxPanels = 0;
