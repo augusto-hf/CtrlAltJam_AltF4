@@ -239,6 +239,7 @@ public class SaveManager : MonoBehaviour
                 if(emotion == managerButterfly.colorIUnlock.ToString().ToLower())
                 {
                     managerButterfly.used = true;
+                    MusicManager.Instance.TriggerMusicLayer(managerButterfly.colorIUnlock);
                 }
             }
         }
