@@ -18,6 +18,10 @@ public class ButterflyManager : MonoBehaviour
         {
             playCutscene();
             useButterfly();
+            
+            PlayerCore player = collision.GetComponent<PlayerCore>();
+
+            player.PickColor(colorIUnlock.ToString().ToLower());
         }
     }
 
