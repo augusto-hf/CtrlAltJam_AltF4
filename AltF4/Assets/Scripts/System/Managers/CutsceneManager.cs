@@ -7,7 +7,7 @@ using UnityEngine.Video;
 public class CutsceneManager : MonoBehaviour
 {
     [SerializeField] private FadeScript fadeScript;
-    [SerializeField] private GameObject panelPlayerObject;
+    [SerializeField] private GameObject panelPlayerObject, kvgbsdf;
     [SerializeField] private PlayerCore player;
     private VideoPlayer cutsceneVideoPlayer;
     private CutsceneInfo loadedCutscene;
@@ -98,6 +98,7 @@ public class CutsceneManager : MonoBehaviour
         lastPanel = -1;
 
         panelPlayerObject.SetActive(true);
+        kvgbsdf.SetActive(true);
 
 
         player.Movement.canMove = false;
@@ -111,7 +112,8 @@ public class CutsceneManager : MonoBehaviour
         lastPanel = -1;
 
         panelPlayerObject.SetActive(false);
-        
+        kvgbsdf.SetActive(false);
+
         endFade = false;
         player.Movement.canMove = true;
     }
