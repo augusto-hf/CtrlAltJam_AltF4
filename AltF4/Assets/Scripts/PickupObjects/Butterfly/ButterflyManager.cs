@@ -24,9 +24,9 @@ public class ButterflyManager : MonoBehaviour
     public void useButterfly()
     {
         used = true;
-        MusicManager.Instance.FadeOutVolume();
         Visual.active = false;
         GetComponent<Collider2D>().enabled = false;
+        MusicManager.Instance.TriggerMusicLayer(colorIUnlock);
     }
     private void playCutscene()
     {

@@ -53,11 +53,24 @@ public class MusicManager : MonoBehaviour
         _blueMusicLayer.PlayScheduled(AudioSettings.dspTime);
         _orangeMusicLayer.PlayScheduled(AudioSettings.dspTime);
 
-        _blueMusicLayer.mute = true;
-        _orangeMusicLayer.mute = true;
+        _blueMusicLayer.volume = 0;
+        _orangeMusicLayer.volume = 0;
 
 
     }
+
+    public void SetVolumeLayer(ColorType type, float amount)
+    {
+        if (type == ColorType.Blue)
+        {
+            _blueMusicLayer.volume = amount;
+        }
+        else if (type == ColorType.Orange)
+        {
+            _orangeMusicLayer.volume = amount;
+        }
+    }
+
     public void PlayIntroMusic(bool gameStart)
     {
         if (!gameStart) return;
@@ -66,77 +79,56 @@ public class MusicManager : MonoBehaviour
 
     }
 
-    private void PlayOrangeLayer()
-    {
-        _orangeMusicLayer.mute = false;
-    }
-
-    private void PlayBlueLayer()
-    {
-        _blueMusicLayer.mute = false;
-    }
-
     private IEnumerator IntroToLoop()
     {
         _baseMusic.clip = _musicTheme.Intro;
         _baseMusic.PlayScheduled(AudioSettings.dspTime);
         yield return new WaitForSeconds(_musicTheme.Intro.length);
-        _baseMusic.clip = _musicTheme.IntroLoop;
-        _baseMusic.PlayScheduled(AudioSettings.dspTime);
+        PlayMainMusicTheme();
     }
 
-    public void FadeInVolume()
+    public void FadeMusicLayer(ColorType type)
     {
         if (AudioManager.audioInstance.HasAudioMusic)
         {
-            StartCoroutine(FadeInMusic());
+            StartCoroutine(FadeInLayer(type));
         }
     }
 
-    public void FadeOutVolume()
+
+    private IEnumerator FadeInLayer(ColorType type)
     {
-        if (AudioManager.audioInstance.HasAudioMusic)
+        float percentage = 0;
+        AudioSource currentLayer;
+
+        
+
+        if (type == ColorType.Blue)
         {
-            StartCoroutine(FadeOutMusic());            
+            currentLayer = _blueMusicLayer;
         }
-    }
-
-    private IEnumerator FadeInMusic()
-    {
-        float percentage = 0;
-
-        while(_baseMusic.volume < 0)
+        else if (type == ColorType.Orange)
         {
-            SetVolume(Mathf.Lerp(0, AudioManager.audioInstance.volumeMusics, percentage));
+            currentLayer = _orangeMusicLayer;
+        }
+        else
+        {
+            currentLayer = _baseMusic;
+        }
+
+        while(currentLayer.volume < _baseMusic.volume)
+        {
+            currentLayer.volume = Mathf.Lerp(0, AudioManager.audioInstance.volumeMusics, percentage);
             percentage += Time.deltaTime / _transitionTime;
             yield return null;
-        } 
-    }
-    private IEnumerator FadeOutMusic()
-    {
-        float percentage = 0;
-
-        while(_baseMusic.volume > 0)
-        {
-            SetVolume(Mathf.Lerp(AudioManager.audioInstance.volumeMusics, 0, percentage));
-            percentage += Time.deltaTime / _transitionTime;
-            yield return null;
-        } 
+        }
+        
     }
 
     public void TriggerMusicLayer(ColorType type)
     {
-        switch(type)
-        {
-            case ColorType.Blue:
-                PlayBlueLayer();
-                break;
-            case ColorType.Orange:
-                PlayOrangeLayer();
-                break;
-            default:
-                return;
-        }
+        
+        FadeMusicLayer(type);
     }
 
 }

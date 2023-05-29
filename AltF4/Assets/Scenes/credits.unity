@@ -572,9 +572,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game designer e programador Unity.\nGame designer e editora de v\xEDdeo.\nGame
-    writer e narrador.\nProgramador Unity.\nProgramador Unity.\nDesigner e artista
-    2D.\nDesigner e artista 2D."
+  m_text: 'Game designer e programador.
+
+    Produtora e social media.
+
+    Game
+    writer e narrador.
+
+    Lead programmer.
+
+    Programador  e compositor.
+
+    Diretora
+    de arte, artista 2d e animadora.
+
+    Designer, artista 2D e designer de interface.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2587456a79ec7ef43a8baccc81459227, type: 2}
   m_sharedMaterial: {fileID: -3657844731805360208, guid: 2587456a79ec7ef43a8baccc81459227, type: 2}

@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     public float volumeMusics = 1;
     public float volumeSounds = 1;
 
-    public bool HasAudioMusic { get => volumeMusics > 0 && !GameManager.Instance.gameISRunning; }
+    public bool HasAudioMusic { get; private set; }
 
     void Awake()
     {
@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
     {
         volumeMusics = musics;
         volumeSounds = sounds;
+        HasAudioMusic = volumeMusics > 0;
     }
 
     public float GetSoundsCurrent()
