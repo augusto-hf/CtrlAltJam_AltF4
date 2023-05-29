@@ -9,6 +9,7 @@ public class destroyerVolume : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
+            Debug.Log("Destrou volume");
         }
     }
 }
