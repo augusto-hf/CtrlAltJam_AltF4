@@ -235,7 +235,6 @@ public class SaveManager : MonoBehaviour
             
             foreach(string emotion in gameData.emotions)
             {
-                
                 if(emotion == managerButterfly.colorIUnlock.ToString().ToLower())
                 {
                     managerButterfly.used = true;
