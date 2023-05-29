@@ -29,7 +29,7 @@ public class CutsceneManager : MonoBehaviour
 
         playCutscene();
         cutsceneInput();
-        autoSkipPanel();
+        //autoSkipPanel();
     }
     #region Input
     public void cutsceneInput()
@@ -67,7 +67,7 @@ public class CutsceneManager : MonoBehaviour
     }
     private void autoSkipPanel()
     {
-        if (cutsceneVideoPlayer.isPlaying)
+        if (cutsceneVideoPlayer.isPlaying && endFade)
             return;
 
         else
