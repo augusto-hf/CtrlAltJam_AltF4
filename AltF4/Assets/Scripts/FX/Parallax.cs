@@ -7,6 +7,8 @@ public class Parallax : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private Transform ImageToParallax;
     [SerializeField] private float YOffset, XOffset, Xmin, Xmax, Ymin, Ymax;
+    [SerializeField] private Vector2 parallaxFactor;
+    [SerializeField] private bool followCam;
     Vector2 startPosition;
     float startZ;
 
@@ -16,7 +18,7 @@ public class Parallax : MonoBehaviour
 
     float clippingPlane => cam.transform.position.z + (distanceFromSubject > 0? 50 : -10);
 
-    float parallaxFactor => Mathf.Abs(distanceFromSubject/clippingPlane);
+    //float parallaxFactor => Mathf.Abs(distanceFromSubject/clippingPlane);
     void Start()
     {
         startPosition = transform.position;
@@ -27,13 +29,22 @@ public class Parallax : MonoBehaviour
 
     void Update()
     {
-        Vector2 newPos = startPosition + travel * parallaxFactor;
-        Vector2 newPosLimitted;
+        if (!followCam) 
+        {
 
-        newPosLimitted.x = Mathf.Clamp(newPos.x, Xmin, Xmax);
-        newPosLimitted.y = Mathf.Clamp(newPos.y, Ymin, Ymax);
+            Vector2 newPos = startPosition + travel * parallaxFactor;
+            Vector2 newPosLimitted;
+
+            newPosLimitted.x = Mathf.Clamp(newPos.x, Xmin, Xmax);
+            newPosLimitted.y = Mathf.Clamp(newPos.y, Ymin, Ymax);
 
 
-        transform.position = new Vector3(newPosLimitted.x + XOffset, newPosLimitted.y + YOffset, startZ);
+            transform.position = new Vector3(newPosLimitted.x + XOffset, newPosLimitted.y + YOffset, startZ);
+        }
+        else
+        {
+            transform.position = new Vector3(cam.gameObject.transform.position.x, cam.gameObject.transform.position.y);
+        }
+       
     }
 }
