@@ -12,7 +12,6 @@ public class ButterflyManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("ENCOSTO EM MIM");
 
         if (!used)
         {
