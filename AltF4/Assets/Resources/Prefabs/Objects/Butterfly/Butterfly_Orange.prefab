@@ -60,6 +60,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7543eacf19047d04c972a85b7678842f, type: 2}
     - target: {fileID: 7620174071098404401, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
+      propertyPath: nameEmotion
+      value: lowOrange
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620174071098404401, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: colorIUnlock
       value: 2
       objectReference: {fileID: 0}

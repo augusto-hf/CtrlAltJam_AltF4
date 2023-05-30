@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ButterflyManager : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class ButterflyManager : MonoBehaviour
     [SerializeField] private CutsceneInfo cutscene;
     [SerializeField] private GameObject Visual;
     [SerializeField] private CutsceneManager cutsceneManager;
+    [SerializeField] private PostProcessingManager postprocessingManager;
+    [SerializeField] private GameObject nameEmotion;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        nameEmotion.gameObject.SetActive(true);
         if (!used)
         {
             playCutscene();
