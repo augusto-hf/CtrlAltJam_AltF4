@@ -20,7 +20,7 @@ public class NarrationManager : MonoBehaviour
 
         string text = LocalizationManager.localizationInstance.GetLocalizedValueForNarration(color, keyValue.ToString());
         
-        audioNarration.clip = Resources.Load<AudioClip>("Audio/Narrations/"+ color + "/Edit/"+ keyValue.ToString());
+        audioNarration.clip = Resources.Load<AudioClip>("Audio/Narrations/"+ color + "/"+ keyValue.ToString());
         StartCoroutine(ShowText(text));
     }
 
