@@ -1,12 +1,9 @@
-using System.IO;
-using System;
-using Newtonsoft.Json;
-using System.Linq;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
 using UnityEngine.UI;
+using Utils;
 
 public class SaveManager : MonoBehaviour
 {
@@ -45,68 +42,10 @@ public class SaveManager : MonoBehaviour
         LoadConfig();
         UpdatedButtonContinue();  
     }
-
-    public void LoadEmotionPlayer(string nameColor)
-    {
-        GameObject[] allBlobs = GameObject.FindGameObjectsWithTag("ColorPower");
-        PlayerColorManager playerColor = GameObject.FindWithTag("Player").GetComponent<PlayerColorManager>();
-
-        foreach (GameObject blob in allBlobs) 
-        {
-            BlobManager blobManager = blob.GetComponent<BlobManager>();
-            
-            if(blobManager != null )
-            {
-                if(blobManager.nameColor == nameColor)
-                {
-                    playerColor.TakeBlobColor(blob);
-                    return;
-                }
-            }
-
-        }
-
-        playerColor.GiveNoColor();
-    }
     
     public void UpdatedButtonContinue()
     {
-        buttonContinue.interactable = CheckIfExistSave();
-    }
-
-    public bool CheckIfExistSave()
-    {
-        if (File.Exists(filePathSave)) 
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public void ResetConfig()
-    {
-        if (File.Exists(filePathConfig)) 
-        {
-            File.Delete(filePathConfig); 
-        }
-
-        configData = LoadDefaultSave(FILE_DEFAULT_SAVE_CONFIG, configData);
-    }
-
-    public void LoadConfig()
-    {
-        if (File.Exists(filePathConfig)) 
-        {
-            string json = File.ReadAllText(filePathConfig);
-            configData = JsonConvert.DeserializeObject<ConfigData>(json); 
-        }
-        else
-        { 
-            configData = LoadDefaultSave(FILE_DEFAULT_SAVE_CONFIG, configData);
-        }
-
-        UpdatedConfig();
-        configUpdated?.Invoke();
+        buttonContinue.interactable = Utils.Data.CheckIfExistSave(filePathSave);
     }
 
     public void updatedNewConfig()
@@ -127,20 +66,9 @@ public class SaveManager : MonoBehaviour
 
     }
 
-    public void SaveConfig() 
-    {
-        string json = JsonUtility.ToJson(configData, true); 
-        File.WriteAllText(filePathConfig, json); 
-    }
-
-    public void ApplyPositionInPlayer(Transform positionPlayer)
-    {
-        positionPlayer.position = gameData.positionPlayer;
-    }
-
     public void SaveNewEmotion(string nameEmotion)
     {
-        bool IsFind = CheckIfEmotionExist(nameEmotion);
+        bool IsFind = Utils.Data.FindKeyInArrayData(nameEmotion, gameData);
 
         if (!IsFind)
         {
@@ -154,16 +82,10 @@ public class SaveManager : MonoBehaviour
         Save();
     }
 
-    public bool CheckIfEmotionExist(string nameEmotion)
+
+    public void ApplyPositionInPlayer(Transform positionPlayer)
     {
-        string findEmotion = gameData.emotions.Find(x => x == nameEmotion);
-
-        if (findEmotion != null)
-        {
-            return true;
-        }
-
-        return false;
+        positionPlayer.position = gameData.positionPlayer;
     }
 
     public void SavePositionPlayer(Transform positionPlayer)
@@ -173,60 +95,42 @@ public class SaveManager : MonoBehaviour
         Save();
     }
 
+    public void SaveConfig() 
+    {
+        Utils.Data.Save<ConfigData>(filePathConfig, ref configData);
+    }
+
     public void Save() 
     {
         StartCoroutine(ShowIco());
 
-        string json = JsonUtility.ToJson(gameData, true); 
-        File.WriteAllText(filePathSave, json); 
+        Utils.Data.Save<GameData>(filePathSave, ref gameData);
     }
 
-    IEnumerator ShowIco()
+    public void LoadConfig()
     {
-        if(!IcoSaved.activeSelf)
-        {
-            IcoSaved.SetActive(true);
-            yield return new WaitForSeconds(3f);
-            IcoSaved.SetActive(false);
-        }
+        Utils.Data.LoadSave<ConfigData>(filePathConfig, ref configData, FILE_DEFAULT_SAVE_CONFIG);
+        UpdatedConfig();
+        configUpdated?.Invoke();
     }
 
     public void Load() 
     {
-        if (CheckIfExistSave()) 
-        {
-            string json = File.ReadAllText(filePathSave);
-            gameData = JsonConvert.DeserializeObject<GameData>(json); 
-        }
-        else
-        { 
-            gameData = LoadDefaultSave(FILE_DEFAULT_SAVE_GAME, gameData);
-        }
-
+        Utils.Data.LoadSave<GameData>(filePathSave, ref gameData, FILE_DEFAULT_SAVE_GAME);
         UpdatedButterfly();
-        //LoadEmotionPlayer(gameData.currentEmotions);
+    }
+
+    public void ResetConfig()
+    {
+        Utils.Data.ResetFileSaved<ConfigData>(FILE_DEFAULT_SAVE_CONFIG, ref configData, filePathConfig);
     }
 
     public void NewGame() 
     {
-        if (CheckIfExistSave()) 
-        {
-            File.Delete(filePathSave); 
-            buttonContinue.interactable = false;
-        }
-
-        gameData = LoadDefaultSave(FILE_DEFAULT_SAVE_GAME, gameData);
+        Utils.Data.ResetFileSaved<GameData>(FILE_DEFAULT_SAVE_GAME, ref gameData, filePathSave);
+        buttonContinue.interactable = false;
     }
     
-    private T LoadDefaultSave<T>(string path, T data)
-    {
-        TextAsset jsonTextAsset = Resources.Load<TextAsset>(path); 
-        string json = jsonTextAsset.text; 
-        data = JsonConvert.DeserializeObject<T>(json); 
-
-        return data;
-    }
-
     private void UpdatedButterfly()
     {
         foreach (GameObject obj in butterlfyObj)
@@ -241,6 +145,16 @@ public class SaveManager : MonoBehaviour
                     MusicManager.Instance.TriggerMusicLayer(managerButterfly.colorIUnlock);
                 }
             }
+        }
+    }
+
+    IEnumerator ShowIco()
+    {
+        if(!IcoSaved.activeSelf)
+        {
+            IcoSaved.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            IcoSaved.SetActive(false);
         }
     }
 
