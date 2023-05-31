@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerHook : MonoBehaviour
 {
     private PlayerCore player;
@@ -41,20 +42,23 @@ public class PlayerHook : MonoBehaviour
             //AudioManager.audioInstance.PlayAudioClip("Tongue/tongue2");
             StartHook();
         }
+    }
 
+    private void FixedUpdate()
+    {
         if (retractingGrapple)
         {
             line.SetPosition(0, startingPoint.position);
             isHookedObjectInFront();
-            
+
             float distanceToObject = Vector2.Distance(transform.position, line.GetPosition(1));
 
-            if (!player.Controller.TongueButton|| distanceToObject > hookMaxDistance)
+            if (!player.Controller.TongueButton || distanceToObject > hookMaxDistance)
             {
                 finishedGrappling = true;
-                StartCoroutine(returnGrapple());               
+                StartCoroutine(returnGrapple());
             }
-            
+
             if (hittedObjectTag == dragableObject && !finishedGrappling)
             {
                 dragGrappableObject();
