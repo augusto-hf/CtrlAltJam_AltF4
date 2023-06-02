@@ -45,14 +45,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: background
     uniqueID: 2754443175
     locked: 0
   - name: Map
     uniqueID: 4018559407
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: player
     uniqueID: 3784949447

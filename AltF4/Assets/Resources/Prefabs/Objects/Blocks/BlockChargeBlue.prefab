@@ -108,6 +108,18 @@ PrefabInstance:
       propertyPath: canInteract
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6776108345210785850, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776108345210785850, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776108345210785850, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6776108345210785851, guid: 7ab07282a14773141a068642a0efeb71, type: 3}
       propertyPath: m_RootOrder
       value: 0
