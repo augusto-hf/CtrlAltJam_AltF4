@@ -20,7 +20,7 @@ public class BluePassive : MonoBehaviour, IColor
         }   
     }
 
-    private void OnCollisionStay2D(Collision2D other) 
+    /*private void OnCollisionStay2D(Collision2D other) 
     {
         if (!butterlfy.used) return;
 
@@ -34,7 +34,7 @@ public class BluePassive : MonoBehaviour, IColor
             }
 
         }   
-    }
+    }*/
 
 
 
