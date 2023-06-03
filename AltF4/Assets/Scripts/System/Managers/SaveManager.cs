@@ -90,7 +90,8 @@ public class SaveManager : MonoBehaviour
 
     public void SavePositionPlayer(Transform positionPlayer)
     {
-        gameData.positionPlayer = positionPlayer.position;
+        Vector3 newPosition = positionPlayer.position;
+        gameData.positionPlayer = new  Vector2(newPosition.x, newPosition.y + 0.5f, newPosition.z);
 
         Save();
     }
