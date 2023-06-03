@@ -242,13 +242,13 @@ AnimatorStateMachine:
     m_Position: {x: -190, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3136115102274983724}
-    m_Position: {x: -190, y: 350, z: 0}
+    m_Position: {x: -180, y: 350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3367628746895423623}
-    m_Position: {x: 20, y: 350, z: 0}
+    m_Position: {x: 30, y: 350, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5449750265671645704}
-    m_Position: {x: 20, y: 400, z: 0}
+    m_Position: {x: 30, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 555159355823539916}
     m_Position: {x: -190, y: 140, z: 0}
@@ -398,6 +398,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: walk_Direction
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: isGrounded
+    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: tongue
     m_EventTreshold: 0
@@ -537,9 +540,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0.9919356
   m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
