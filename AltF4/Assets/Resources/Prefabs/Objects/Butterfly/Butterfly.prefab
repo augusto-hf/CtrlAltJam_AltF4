@@ -450,7 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
   priority: 10
-  blendDistance: 0
+  blendDistance: 3.5
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 2aebf97361242f84884495f9f1638c3e, type: 2}
 --- !u!135 &4348477058775715077
@@ -543,3 +543,5 @@ MonoBehaviour:
   cutscene: {fileID: 11400000, guid: a62c09c9648689144a45cb5330c87381, type: 2}
   Visual: {fileID: 6424904881308833106}
   cutsceneManager: {fileID: 0}
+  postprocessingManager: {fileID: 0}
+  nameEmotion: {fileID: 0}
