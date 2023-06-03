@@ -9,18 +9,7 @@ public class OnCameraCheck : MonoBehaviour
 
     [SerializeField] private Transform pointToBeSeen;
     [SerializeField] private Camera cam;
-    [Header("Use if it activate animation:")]
-    [SerializeField] private bool changeAnimationBool;
-    [SerializeField] private Animator animator;
-    [SerializeField] private string animatorBoolName;
-    void Update()
-    {
-        if(changeAnimationBool)
-            {
-                animator.SetBool(animatorBoolName, onCameraView());                 
-            }
 
-    }
     private bool onCameraView()
     {
         Vector3 viewPos = cam.WorldToViewportPoint(pointToBeSeen.position);
