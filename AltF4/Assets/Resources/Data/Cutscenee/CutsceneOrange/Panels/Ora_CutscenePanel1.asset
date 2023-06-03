@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ora_CutscenePanel1
   m_EditorClassIdentifier: 
   isASprite: 0
-  video: {fileID: 32900000, guid: 55c7b8b73115c6147bc7bca0f3936ce4, type: 3}
+  video: {fileID: 32900000, guid: 11540e7ca74292f4cba8504c0f9eea4c, type: 3}
   sprite: {fileID: 0}
   description: 

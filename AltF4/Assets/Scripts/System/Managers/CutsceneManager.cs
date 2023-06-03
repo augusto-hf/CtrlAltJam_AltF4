@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using System;
 
 public class CutsceneManager : MonoBehaviour
 {
     [SerializeField] private FadeScript fadeScript;
-    [SerializeField] private GameObject panelPlayerObject, kvgbsdf;
+    [SerializeField] private GameObject panelPlayerObject, skipButton;
     //[SerializeField] private RawImage rawImage;
     [SerializeField] private PlayerCore player;
     private VideoPlayer cutsceneVideoPlayer;
     private CutsceneInfo loadedCutscene;
     private bool alreadyPlayed = false;
     private int lastPanel, currentPanel = 0, maxPanels;
+
+    public event Action onLoadCutscene;
+    public event Action onFinishedCutscene;
 
     private bool endFade = false;
 
@@ -55,16 +59,12 @@ public class CutsceneManager : MonoBehaviour
             {
                 playNextPanel(loadedCutscene.cutscenePanels[currentPanel].video, loadedCutscene.cutscenePanels[currentPanel].description);
             }
-            else
-            {
-                StartCoroutine(EndFade());
-            }
         }
         else if (currentPanel > maxPanels - 1)
-                endCutscene();
+            endCutscene();
 
-            else
-                return;
+        else
+            return;
     }
     private void autoSkipPanel()
     {
@@ -93,16 +93,16 @@ public class CutsceneManager : MonoBehaviour
     #region Load & Unload
     public void loadCutscene(CutsceneInfo cutsceneToPlay)
     {
+        StartCoroutine(EndFade());
         loadedCutscene = cutsceneToPlay;
         maxPanels = cutsceneToPlay.cutscenePanels.Length;
 
         lastPanel = -1;
 
-        panelPlayerObject.SetActive(true);
-        //kvgbsdf.SetActive(true);
-
-
         player.Movement.canMove = false;
+
+        skipButton.SetActive(true);
+        //panelPlayerObject.SetActive(true);
     }
 
     private void unloadCutscene()
@@ -112,17 +112,22 @@ public class CutsceneManager : MonoBehaviour
 
         lastPanel = -1;
         panelPlayerObject.SetActive(false);
-        kvgbsdf.SetActive(false);
+        skipButton.SetActive(false);
 
         endFade = false;
         player.Movement.canMove = true;
+        onFinishedCutscene?.Invoke();
     }
     #endregion
 
     IEnumerator EndFade()
     {
+        //fade está ruim
         fadeScript.CallFade(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
+        onLoadCutscene?.Invoke();
+        panelPlayerObject.SetActive(true);
+        fadeScript.CallFade(false);
         endFade = true;
     }
 }

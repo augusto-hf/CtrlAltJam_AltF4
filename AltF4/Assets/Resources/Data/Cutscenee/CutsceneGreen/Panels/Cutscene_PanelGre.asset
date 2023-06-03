@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cutscene_PanelGre
   m_EditorClassIdentifier: 
   isASprite: 0
-  video: {fileID: 32900000, guid: 958ef41226e352a44b4d8aee43569faa, type: 3}
+  video: {fileID: 32900000, guid: fa55c694f8363da42804651018edf0c6, type: 3}
   sprite: {fileID: 0}
   description: 

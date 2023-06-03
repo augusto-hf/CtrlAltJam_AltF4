@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Blu_CutscenePanel_1
   m_EditorClassIdentifier: 
   isASprite: 0
-  video: {fileID: 32900000, guid: 139edc1578e80e24f8dcf580ebece3ad, type: 3}
+  video: {fileID: 32900000, guid: a2f8c2857477cc04daa197699886c713, type: 3}
   sprite: {fileID: 0}
   description: 

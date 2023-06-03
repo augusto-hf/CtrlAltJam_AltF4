@@ -48,7 +48,7 @@ public class PlayerColorManager : MonoBehaviour
 
             currentColor = lastBlob.blobColor;
             abilities.SetConsumeBuffs(currentColor.ColorData);
-            player.PickColor(lastBlob.nameColor);
+            //player.PickColor(lastBlob.nameColor);
         }
     }
 

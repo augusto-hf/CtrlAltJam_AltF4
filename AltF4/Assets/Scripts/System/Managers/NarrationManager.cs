@@ -13,15 +13,17 @@ public class NarrationManager : MonoBehaviour
 
     private Dictionary<string, int[]> colorPicked = new Dictionary<string, int[]>();
 
-    public void ReproduceNarration(string color)
-    {
-        Debug.Log("Narração desativada");
-        int keyValue = 0;
+    [SerializeField] private string currentSpeak;
 
-        string text = LocalizationManager.localizationInstance.GetLocalizedValueForNarration(color, keyValue.ToString());
-        
+    public void LoadNarration(string color)
+    {
+        int keyValue = 0;
+        currentSpeak = LocalizationManager.localizationInstance.GetLocalizedValueForNarration(color, keyValue.ToString());
         audioNarration.clip = Resources.Load<AudioClip>("Audio/Narrations/"+ color + "/"+ keyValue.ToString());
-        StartCoroutine(ShowText(text));
+    }
+    public void ReproduceNarration()
+    {
+        StartCoroutine(ShowText(currentSpeak));
     }
 
     public int Check(string color)
@@ -57,7 +59,6 @@ public class NarrationManager : MonoBehaviour
 
     IEnumerator ShowText(string text)
     {
-        legendText.text = "";
         audioNarration.Play();
         
         textBoxObj.SetActive(true);
@@ -69,6 +70,12 @@ public class NarrationManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(audioNarration.clip.length);
+        FinishedNarration();
+    }
+
+    public void FinishedNarration()
+    {
+        legendText.text = "";
         textBoxObj.SetActive(false);
     }
 }

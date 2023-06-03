@@ -12,6 +12,8 @@ public class EventManager : MonoBehaviour
     private MenuManager menuManager;
     private NarrationManager narrationManager;
 
+    private CutsceneManager cutsceneManager;
+
     private PostProcessingManager postProcessingManager;
 
     private GameObject[] savePoint;
@@ -22,6 +24,8 @@ public class EventManager : MonoBehaviour
         saveManager = GetComponent<SaveManager>();
         menuManager = GetComponent<MenuManager>();
         narrationManager = GetComponent<NarrationManager>();
+        cutsceneManager = GetComponent<CutsceneManager>();
+
         postProcessingManager = GetComponent<PostProcessingManager>();
         
         menuControll = Camera.main.GetComponent<CameraMove>();
@@ -43,7 +47,10 @@ public class EventManager : MonoBehaviour
         playerCore.onPickColor += saveManager.SaveNewEmotion;
         
         //narration
-        playerCore.onPickColor += narrationManager.ReproduceNarration;
+        playerCore.onPickColor += narrationManager.LoadNarration;
+        
+        cutsceneManager.onLoadCutscene += narrationManager.ReproduceNarration;
+        cutsceneManager.onFinishedCutscene += narrationManager.FinishedNarration;
 
         foreach (GameObject point in savePoint)
         {

@@ -16,6 +16,7 @@ public class ButterflyManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         nameEmotion.gameObject.SetActive(true);
+
         if (!used)
         {
             playCutscene();
@@ -34,6 +35,7 @@ public class ButterflyManager : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         MusicManager.Instance.TriggerMusicLayer(colorIUnlock);
     }
+
     private void playCutscene()
     {
         cutsceneManager.loadCutscene(cutscene);
