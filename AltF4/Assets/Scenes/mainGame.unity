@@ -127561,6 +127561,10 @@ PrefabInstance:
       propertyPath: audioNarration
       value: 
       objectReference: {fileID: 1248419555}
+    - target: {fileID: 6503141485143443907, guid: 3527fc27d3ba0114a964e2607723221d, type: 3}
+      propertyPath: currentLanguage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7124802365734645659, guid: 3527fc27d3ba0114a964e2607723221d, type: 3}
       propertyPath: _baseMusic
       value: 
