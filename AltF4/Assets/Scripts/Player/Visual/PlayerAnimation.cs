@@ -41,6 +41,13 @@ public class PlayerAnimation : MonoBehaviour
     //TODO: bug ao cair do vento 
     private void setJumpAndFall()
     {
+        bool isJumpAnim = animator.GetBool("isJumping");
+
+        if (isJumpAnim && player.Check.OnGround())
+        {
+            animator.SetBool("isJumping", false);
+        }
+
         if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Blue)
         {
             animator.SetBool("isJumping", player.Abilities.IsJumping);
