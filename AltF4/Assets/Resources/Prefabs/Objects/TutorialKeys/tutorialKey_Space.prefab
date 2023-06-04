@@ -67,5 +67,9 @@ PrefabInstance:
       propertyPath: inputName
       value: space
       objectReference: {fileID: 0}
+    - target: {fileID: 4968113405052880101, guid: 8ca299cf1f7ff0c479999247cf180914, type: 3}
+      propertyPath: alternativeInputName
+      value: joystick button 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca299cf1f7ff0c479999247cf180914, type: 3}
