@@ -182,7 +182,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -510017849
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: -1
   m_Sprite: {fileID: -992658675, guid: 41032269612439e4992f6281b49124dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -240,7 +240,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: -687260
+  m_InstanceId: -140560
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3136
   minimumDistanceToDrag: 0.2
-  dragForce: 2
+  dragForce: 5
   startingPoint: {fileID: 5105274287945571479}
   dragableObject: GrappableObject
   interactableObject: ColorPower
@@ -613,7 +613,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.83640635
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
   playerSprite: {fileID: 6336683651438568607}
   noColorReference: {fileID: 4530602177030595066}
   blue: {r: 0.19215688, g: 0.7058824, b: 0.9725491, a: 1}
-  orange: {r: 0.9921569, g: 0.5568628, b: 0.21176472, a: 1}
+  orange: {r: 1, g: 0.24313726, b: 0, a: 1}
   noColor: {r: 0, g: 0, b: 0, a: 0}
   transitionTime: 0.65
 --- !u!1 &7320957796236712430
