@@ -51,9 +51,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7441564528422833709, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a5bad1a3b3256040bdc1fcf0e1462dd, type: 2}
     - target: {fileID: 7620174071098404401, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: nameEmotion
-      value: highGreen
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9118231521232522399, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: m_Name
