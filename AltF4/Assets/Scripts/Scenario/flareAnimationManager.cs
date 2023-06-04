@@ -19,7 +19,7 @@ public class flareAnimationManager : MonoBehaviour
 
     private void Update()
     {
-        //testasdasd
+        //desgraça
         if (OnCameraCheck.pointIsOnCamera)
         {
             animator.Play("lightSmoothlyMovesIntoPlace");
