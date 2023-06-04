@@ -15,6 +15,7 @@ public class BluePassive : MonoBehaviour, IColor
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+
             SetPlayerBlueColor(colorManager);
 
         }   
@@ -70,6 +71,7 @@ public class BluePassive : MonoBehaviour, IColor
     {
         if (manager.CurrentColor.ColorData.Type == colorData.Type)
         {
+            manager.RespawnLastBlob();
             manager.Abilities.SetPassiveBuff(ColorData);
         }
         else

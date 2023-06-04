@@ -66,7 +66,7 @@ public class PlayerColorManager : MonoBehaviour
         abilities.SetConsumeBuffs(currentColor.ColorData);
     }
 
-    private void RespawnLastBlob()
+    public void RespawnLastBlob()
     {
         if (lastBlob == null) return;
 

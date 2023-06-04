@@ -133,14 +133,14 @@ public class PlayerColorAbilities : MonoBehaviour
 
     private void JumpUpdate()
     {
+        if (jumpCharge <= 0 && currentAbilityType == ColorType.Blue)
+        {
+            player.ColorManager.ConsumeColor();
+        }
+        
         if (player.Check.IsFalling)
         {
             isJumping = false;
-        }
-
-        if (player.Check.IsGrounded && !player.Check.IsFalling && jumpCharge <= 0 && !isJumping && currentAbilityType == ColorType.Blue)
-        {
-            player.ColorManager.ConsumeColor();
         }
     }
 

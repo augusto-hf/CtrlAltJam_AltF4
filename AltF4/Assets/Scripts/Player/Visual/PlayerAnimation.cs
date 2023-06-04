@@ -42,23 +42,22 @@ public class PlayerAnimation : MonoBehaviour
     private void setJumpAndFall()
     {
         bool isJumpAnim = animator.GetBool("isJumping");
-
-        if (isJumpAnim && player.Check.OnGround())
+        
+        if (player.Abilities.IsJumping)
         {
-            animator.SetBool("isJumping", false);
-        }
-
-        if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Blue)
-        {
-            animator.SetBool("isJumping", player.Abilities.IsJumping);
+            animator.SetBool("isJumping", true);
         }
         if (player.Check.IsFalling && !player.Abilities.IsJumping)
         {
             animator.SetBool("isJumping", false);
         }
-        if (!player.Check.OnGround() && !player.Check.IsFalling && !player.Abilities.IsJumping)
+        if (!player.Check.OnGround() && player.rb.velocity.y > 0.15f && !player.Abilities.IsJumping)
         {
             animator.SetBool("isJumping", true);
+        }
+        if (isJumpAnim && player.Check.OnGround())
+        {
+            animator.SetBool("isJumping", false);
         }
 
         animator.SetBool("isFalling", player.Check.IsFalling);
