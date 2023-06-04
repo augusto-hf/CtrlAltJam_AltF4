@@ -21,23 +21,23 @@
         "abandoned": "abandonado"
 
     },
-    "narrationsTexts": {
-        "blue": {
-            "0": "Los camaleones no viven en grupo. No nos toleramos.",
-            "1": "¿Cuándo dejé de percibir los colores?",
-            "2": "¿Mis colores todavía están vivos?"
-        },
-        "orange": {
-            "0": "Era demasiado temprano para que yo entendiera lo que estaba sucediendo.",
-            "1": "¡Los colores hacen todo más feliz!",
-            "2": "¡Uno más, otro más! ¡Quiero volver a colorear todo!",
-            "3": "¡Puedo sentir la vibración de los colores!"
-        },
-        "green": {
-            "0": "Todo parece injusto al final. Pero necesito seguir mi instinto.",
-            "1": "¡Ver tantos colores me emociona mucho más!",
-            "2": "El mundo puede volver a ser colorido.",
-            "3": "Para colorear, solo necesitas sentirlo."
-        }
+  "narrationsTexts": {
+    "blue": {
+      "0": "Antes, el mundo era colorido... ¿Cuándo dejé de notar los colores?",
+      "1": "¿Cuándo dejé de percibir los colores?",
+      "2": "¿Mis colores todavía están vivos?"
+    },
+    "orange": {
+      "0": "La naturaleza fue muy cruel con alguien que aún no había aprendido a caminar solo.",
+      "1": "¡Los colores hacen todo más feliz!",
+      "2": "¡Uno más, otro más! ¡Quiero volver a colorear todo!",
+      "3": "¡Puedo sentir la vibración de los colores!"
+    },
+    "nocolor": {
+      "0": "Todo parece injusto al final. Pero necesito seguir mi instinto.",
+      "1": "¡Ver tantos colores me emociona mucho más!",
+      "2": "El mundo puede volver a ser colorido.",
+      "3": "Para colorear, solo necesitas sentirlo."
     }
+  }
 }
