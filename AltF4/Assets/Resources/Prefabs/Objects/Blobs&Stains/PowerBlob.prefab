@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5187401207562044023}
   - component: {fileID: 6960809470752768436}
   - component: {fileID: 2240106707472523195}
+  - component: {fileID: 4467087667333457041}
   m_Layer: 11
   m_Name: VisualAndHitbox
   m_TagString: ColorPower
@@ -181,6 +182,26 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!95 &4467087667333457041
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2507655081481780796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5b9032cab3245fd48b91b85a4170fc35, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6044962299976279467
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 788cce220844ef74699ff2121700f143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorData: {fileID: 0}
 --- !u!1 &8916058478006924244
 GameObject:
   m_ObjectHideFlags: 0
