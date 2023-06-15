@@ -240,7 +240,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: 35050
+  m_InstanceId: 48826
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: -215635321352401057}
   - component: {fileID: 8816518472539381874}
   - component: {fileID: 5683729516090076869}
+  - component: {fileID: 7917618343494509341}
   - component: {fileID: 4604940917045427784}
   - component: {fileID: 1632924091}
   - component: {fileID: 1352516601470933779}
@@ -537,6 +538,26 @@ MonoBehaviour:
   dragableObject: GrappableObject
   interactableObject: ColorPower
   terrain: Ground
+--- !u!114 &7917618343494509341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683652554037023}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835c39295306d194081f383e5cef94c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tongueSpeed: 120
+  tongueMaxDistance: 7
+  grapplableMask:
+    serializedVersion: 2
+    m_Bits: 0
+  minimumDistanceToPull: 0.2
+  pullForce: 5
+  tongueOriginPoint: {fileID: 0}
 --- !u!114 &4604940917045427784
 MonoBehaviour:
   m_ObjectHideFlags: 0

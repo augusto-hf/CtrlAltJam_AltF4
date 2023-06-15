@@ -12,11 +12,11 @@ public class PlayerCore : MonoBehaviour
     public PlayerMovement Movement { get; private set;}
     public PlayerControl Controller { get; private set; }
     public PlayerColorManager ColorManager { get; private set; }
-    public PlayerHook Hook { get; private set; }
+    public PlayerHook Tongue { get; private set; }
     public PlayerAnimation Animation { get; private set; }
     public PlayerHealth Health { get; private set; }
     public PlayerColorAbilities Abilities { get; private set;}
-    
+    public Transform tf { get; private set; }
     public Rigidbody2D rb { get; private set; }
 
     public event Action<string> onPickColor;
@@ -26,11 +26,11 @@ public class PlayerCore : MonoBehaviour
         Check = GetComponent<PlayerChecks>();
         Movement = GetComponent<PlayerMovement>();
         ColorManager = GetComponent<PlayerColorManager>();
-        Hook = GetComponent<PlayerHook>();
+        Tongue = GetComponent<PlayerHook>();
         Animation = GetComponent<PlayerAnimation>();
         Health = GetComponent<PlayerHealth>();
         Abilities = GetComponent<PlayerColorAbilities>();
-        
+        tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
     }
 

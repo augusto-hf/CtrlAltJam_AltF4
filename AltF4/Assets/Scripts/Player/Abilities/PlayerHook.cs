@@ -49,7 +49,6 @@ public class PlayerHook : MonoBehaviour
         if (retractingGrapple)
         {
             line.SetPosition(0, startingPoint.position);
-            isHookedObjectInFront();
 
             float distanceToObject = Vector2.Distance(transform.position, line.GetPosition(1));
 
@@ -100,7 +99,7 @@ public class PlayerHook : MonoBehaviour
     }
 
     private bool isHookedObjectInFront() {
-        Vector2 direction = (transform.position - line.GetPosition(1));
+        Vector2 direction = (line.GetPosition(1) - transform.position);
         if (direction.x >= 0)
             return true;
         else
