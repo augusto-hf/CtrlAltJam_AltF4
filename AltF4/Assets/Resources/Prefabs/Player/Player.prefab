@@ -240,7 +240,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: 39828
+  m_InstanceId: -35456
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,13 +552,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835c39295306d194081f383e5cef94c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tongueSpeed: 120
-  tongueMaxDistance: 7
+  tongueSpeed: 50
+  tongueMaxDistance: 3.5
   grapplableMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1088
   minimumDistanceToPull: 0.2
-  pullForce: 5
+  pullForce: 250
   pullableTag: GrappableObject
   tongueOriginPoint: {fileID: 5105274287945571479}
 --- !u!114 &4604940917045427784
@@ -638,7 +638,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.83640635
-  MaxDistance: 500
+  MaxDistance: 7.106659
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -858,7 +858,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3243503508013587574, guid: 0f0ba6a5cd99ae34fbe161b6123fdabe, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5025444418020515559, guid: 0f0ba6a5cd99ae34fbe161b6123fdabe, type: 3}
       propertyPath: m_RootOrder
@@ -910,7 +910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7888626598440719754, guid: 0f0ba6a5cd99ae34fbe161b6123fdabe, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f0ba6a5cd99ae34fbe161b6123fdabe, type: 3}

@@ -62,13 +62,6 @@ public class PlayerTongueAbility : MonoBehaviour
 
         StartCoroutine(tongueMovement(tongueTarget));
     }
-    private void EndTongue()
-    {
-
-        
-
-        //StartCoroutine(tongueReturning(tongueOriginPoint.position));
-    }
 
     private bool isHookedObjectInFront()
     {
@@ -89,7 +82,7 @@ public class PlayerTongueAbility : MonoBehaviour
         float time = 10;
         for (float t = 0; t < time; t += tongueSpeed * Time.deltaTime)
         {
-            Vector2 tongueEndPoint = Vector2.Lerp(transform.position, target, t / time);
+            Vector2 tongueEndPoint = Vector2.Lerp(tongueOriginPoint.position, target, t / time);
 
             line.SetPosition(0, tongueOriginPoint.position);
             line.SetPosition(1, tongueEndPoint);
@@ -108,7 +101,7 @@ public class PlayerTongueAbility : MonoBehaviour
 
         for (float t = 0; t < time; t += tongueSpeed * Time.deltaTime)
         {
-            Vector2 tongueEndPoint = Vector2.Lerp(transform.position, tongueOriginPoint.position, t / time);
+            Vector2 tongueEndPoint = Vector2.Lerp(target, tongueOriginPoint.position, t / time);
 
             line.SetPosition(0, tongueOriginPoint.position);
             line.SetPosition(1, tongueEndPoint);
@@ -120,22 +113,4 @@ public class PlayerTongueAbility : MonoBehaviour
 
 
     }
-
-    IEnumerator tongueReturning(Vector2 target)
-    {
-
-        float time = 10;
-        for (float t = 0; t < time; t += tongueSpeed * Time.deltaTime)
-        {
-            Vector2 tongueEndPoint = Vector2.Lerp(transform.position, target, t / time);
-
-            line.SetPosition(0, tongueOriginPoint.position);
-            line.SetPosition(1, tongueEndPoint);
-
-            yield return null;
-        }
-
-        isTongueOut = false;
-    }
-
 }
