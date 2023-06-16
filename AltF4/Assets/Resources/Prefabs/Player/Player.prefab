@@ -240,7 +240,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: 48826
+  m_InstanceId: 43948
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336683652554037023}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45dc462dfae9a664bac0868488dad6d5, type: 3}
   m_Name: 
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336683652554037023}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 835c39295306d194081f383e5cef94c9, type: 3}
   m_Name: 
@@ -554,10 +554,11 @@ MonoBehaviour:
   tongueMaxDistance: 7
   grapplableMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   minimumDistanceToPull: 0.2
   pullForce: 5
-  tongueOriginPoint: {fileID: 0}
+  pullableTag: GrappableObject
+  tongueOriginPoint: {fileID: 5105274287945571479}
 --- !u!114 &4604940917045427784
 MonoBehaviour:
   m_ObjectHideFlags: 0

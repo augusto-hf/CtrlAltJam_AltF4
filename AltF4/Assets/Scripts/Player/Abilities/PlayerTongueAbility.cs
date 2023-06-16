@@ -13,7 +13,8 @@ public class PlayerTongueAbility : MonoBehaviour
     [SerializeField] private LayerMask grapplableMask;
 
     [Header("Drag Object Values")]
-    [SerializeField] private float minimumDistanceToPull = 0.2f, pullForce = 5;
+    [SerializeField] private float minimumDistanceToPull = 0.2f, pullForce = 25;
+    [SerializeField] private string pullableTag = "GrappableObject";
 
     [Header("Tongue Origin")]
     [SerializeField] private Transform tongueOriginPoint;
@@ -43,22 +44,12 @@ public class PlayerTongueAbility : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isTongueOut)
-        {
-            if (isTongueGoing)
-            {
-
-            }
-            else
-            {
-
-
-            }
-        }
 
     }
     private void StartTongue()
     {
+        isTongueOut = true;
+
         Vector2 direction = new Vector2(player.Controller.LastAxis.x, 0);
         RaycastHit2D hit = Physics2D.Raycast(player.tf.position, direction, tongueMaxDistance, grapplableMask);
         tongueTarget = hit.point;
@@ -72,6 +63,13 @@ public class PlayerTongueAbility : MonoBehaviour
     private void EndTongue()
     {
 
+        if (isTheTargetAObject)
+        {
+            Vector2 direction = (transform.position - targetObject.transform.position);
+            targetObject.GetComponent<Rigidbody2D>().AddForce(direction * pullForce);
+        }
+
+        StartCoroutine(tongueReturning(tongueOriginPoint.position));
     }
 
     private bool isHookedObjectInFront()
@@ -101,11 +99,12 @@ public class PlayerTongueAbility : MonoBehaviour
         }
 
         isTongueGoing = false;
+        EndTongue();
+
     }
 
-    IEnumerator tongueReturning()
+    IEnumerator tongueReturning(Vector2 target)
     {
-        Vector2 target = tongueOriginPoint.position;
 
         float time = 10;
         for (float t = 0; t < time; t += tongueSpeed * Time.deltaTime)
@@ -117,6 +116,8 @@ public class PlayerTongueAbility : MonoBehaviour
 
             yield return null;
         }
+
+        isTongueOut = false;
     }
 
 }
