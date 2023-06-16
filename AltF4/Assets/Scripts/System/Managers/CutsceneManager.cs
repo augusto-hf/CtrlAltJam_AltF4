@@ -43,7 +43,7 @@ public class CutsceneManager : MonoBehaviour
         {
             currentPanel++;
         }
-        if (player.Controller.TongueButton)
+        if (player.Controller.TongueButtonDown)
         {
             currentPanel = maxPanels;
         }

@@ -28,7 +28,7 @@ public class PlayerAnimation : MonoBehaviour
 
         animator.SetBool("isFacingWall", player.Check.IsFacingWall);
 
-        animator.SetBool("tongue", player.Controller.TongueButton);
+        animator.SetBool("tongue", player.Controller.TongueButtonHold);
 
         if (player.ColorManager.CurrentColor.ColorData.Type == ColorType.Orange && Mathf.Abs(player.Controller.Axis.x) > 0)
             animator.SetBool("isRunning", player.Controller.ColorButtonHold);

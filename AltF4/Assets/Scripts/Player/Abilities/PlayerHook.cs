@@ -37,7 +37,7 @@ public class PlayerHook : MonoBehaviour
     }
     void Update()
     {
-        if (player.Controller.TongueButton && !retractingGrapple)
+        if (player.Controller.TongueButtonDown && !retractingGrapple)
         {
             //AudioManager.audioInstance.PlayAudioClip("Tongue/tongue2");
             StartHook();
@@ -52,7 +52,7 @@ public class PlayerHook : MonoBehaviour
 
             float distanceToObject = Vector2.Distance(transform.position, line.GetPosition(1));
 
-            if (!player.Controller.TongueButton || distanceToObject > hookMaxDistance)
+            if (!player.Controller.TongueButtonDown || distanceToObject > hookMaxDistance)
             {
                 finishedGrappling = true;
                 StartCoroutine(returnGrapple());

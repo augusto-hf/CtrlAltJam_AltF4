@@ -10,7 +10,9 @@ public class PlayerControl : MonoBehaviour
     public bool ColorButtonHold { get; private set; }
     public bool ColorButtonDown { get; private set; }
     public bool ColorButtonUp{ get; private set; }
-    public bool TongueButton { get; private set; }
+    public bool TongueButtonHold { get; private set; }
+    public bool TongueButtonDown { get; private set; }
+    public bool TongueButtonUp { get; private set; }
 
     // Update is called once per frame
     void Update()
@@ -19,7 +21,9 @@ public class PlayerControl : MonoBehaviour
         ColorButtonDown = Input.GetButtonDown("ColorActionButton");
         ColorButtonUp = Input.GetButtonUp("ColorActionButton");
         
-        TongueButton = Input.GetButton("Tongue");
+        TongueButtonHold = Input.GetButton("Tongue");
+        TongueButtonDown = Input.GetButtonDown("Tongue");
+        TongueButtonUp = Input.GetButtonUp("Tongue");
 
         if (Input.GetAxis("Horizontal") != 0)
             LastHorizontalAxis = Input.GetAxisRaw("Horizontal");

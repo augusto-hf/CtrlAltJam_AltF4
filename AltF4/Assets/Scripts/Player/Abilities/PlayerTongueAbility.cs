@@ -36,7 +36,7 @@ public class PlayerTongueAbility : MonoBehaviour
 
     void Update()
     {
-        if (player.Controller.TongueButton && !isTongueOut)
+        if (player.Controller.TongueButtonDown && !isTongueOut)
         {
             StartTongue();
         }
@@ -48,26 +48,26 @@ public class PlayerTongueAbility : MonoBehaviour
     }
     private void StartTongue()
     {
-        Vector2 direction = new Vector2(player.Controller.LastAxis.x, 0);
-        RaycastHit2D hit = Physics2D.Raycast(player.tf.position, direction, tongueMaxDistance, grapplableMask);
-        tongueTarget = hit.point;
+        line.enabled = true;
+        Vector2 playerTransform = player.tf.position;
+        Vector2 direction = tongueOriginPoint.right;
+        RaycastHit2D hit = Physics2D.Raycast(playerTransform, direction, tongueMaxDistance, grapplableMask);
         
         isTheTargetAObject = hit.collider != null;
 
-        targetObject = isTheTargetAObject? hit.collider.gameObject : null;
+        tongueTarget = isTheTargetAObject ? hit.point: playerTransform + direction * tongueMaxDistance;
 
-        StartCoroutine(tongueGoing(tongueTarget));
+        targetObject = isTheTargetAObject ? hit.collider.gameObject : null;
+
+
+        StartCoroutine(tongueMovement(tongueTarget));
     }
     private void EndTongue()
     {
 
-        if (isTheTargetAObject)
-        {
-            Vector2 directionToPull = (transform.position - targetObject.transform.position);
-            targetObject.GetComponent<Rigidbody2D>().AddForce(directionToPull * pullForce);
-        }
+        
 
-        StartCoroutine(tongueReturning(tongueOriginPoint.position));
+        //StartCoroutine(tongueReturning(tongueOriginPoint.position));
     }
 
     private bool isHookedObjectInFront()
@@ -79,7 +79,7 @@ public class PlayerTongueAbility : MonoBehaviour
             return false;
     }
 
-    IEnumerator tongueGoing(Vector2 target)
+    IEnumerator tongueMovement(Vector2 target)
     {
         isTongueGoing = true;
         isTongueOut = true;
@@ -98,7 +98,26 @@ public class PlayerTongueAbility : MonoBehaviour
         }
 
         isTongueGoing = false;
-        EndTongue();
+
+        if (isTheTargetAObject)
+        {
+            Vector2 directionToPull = (transform.position - targetObject.transform.position);
+            Debug.Log(targetObject);
+            targetObject.GetComponent<Rigidbody2D>().AddForce(directionToPull * pullForce);
+        }
+
+        for (float t = 0; t < time; t += tongueSpeed * Time.deltaTime)
+        {
+            Vector2 tongueEndPoint = Vector2.Lerp(transform.position, tongueOriginPoint.position, t / time);
+
+            line.SetPosition(0, tongueOriginPoint.position);
+            line.SetPosition(1, tongueEndPoint);
+
+            yield return null;
+        }
+        isTongueOut = false;
+        line.enabled = false;
+
 
     }
 
