@@ -12,6 +12,7 @@ public class PlayerColorAbilities : MonoBehaviour
     private PlayerStamina stamina;
 
     private int jumpCharge;
+    private float jumpBufferTimer;
     private bool isJumping;
 
     private float staminaRefreshMultiplier;
@@ -24,17 +25,19 @@ public class PlayerColorAbilities : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<PlayerCore>();
-        stamina = new PlayerStamina(); 
+        stamina = new PlayerStamina();
     }
 
     private void Update()
     {
         staminaTest = stamina.CurrentStamina;
 
+        JumpInputBuffer();
+
         switch(currentAbilityType)
         {
-            case ColorType.Blue :
-                JumpControl();
+            case ColorType.Blue:
+                JumpPerform();
                 break;
             
             case ColorType.Orange:
@@ -95,18 +98,15 @@ public class PlayerColorAbilities : MonoBehaviour
     #endregion
 
     #region Jump
-    private void JumpControl()
+    private void JumpPerform()
     {
 
-        if (player.Controller.ColorButtonDown && CanJump())
+        if (jumpBufferTimer > 0 && CanJump())
         {
             jumpCharge--;
+            jumpBufferTimer = 0;
             isJumping = true;
             JumpForceApply();
-        }
-        else if (player.Controller.ColorButtonUp && player.Movement.Velocity.y > 0 && isJumping)
-        {
-            JumpCutForceApply();
         }
         
         
@@ -133,6 +133,11 @@ public class PlayerColorAbilities : MonoBehaviour
 
     private void JumpUpdate()
     {
+        if (player.Controller.ColorButtonUp && player.Movement.Velocity.y > 0 && isJumping)
+        {
+            JumpCutForceApply();            
+        }
+
         if (jumpCharge <= 0 && currentAbilityType == ColorType.Blue)
         {
             player.ColorManager.ConsumeColor();
@@ -141,6 +146,23 @@ public class PlayerColorAbilities : MonoBehaviour
         if (player.Check.IsFalling)
         {
             isJumping = false;
+        }
+    }
+
+    private void JumpInputBuffer()
+    {
+        if (player.Controller.ColorButtonDown)
+        {
+            jumpBufferTimer = player.Data.JumpBufferTime;
+        }
+
+        if (jumpBufferTimer > 0)
+        {
+            jumpBufferTimer -= Time.deltaTime;
+            if (jumpBufferTimer <= 0)
+            {
+                jumpBufferTimer = 0;
+            }
         }
     }
 
@@ -160,9 +182,7 @@ public class PlayerColorAbilities : MonoBehaviour
                 break;
             
             case ColorType.Orange:
-                
                 stamina.IncreaseStamina(data.StaminaAmount);
-                
                 break;
             
             default:
