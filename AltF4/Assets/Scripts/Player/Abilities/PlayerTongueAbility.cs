@@ -48,8 +48,6 @@ public class PlayerTongueAbility : MonoBehaviour
     }
     private void StartTongue()
     {
-        isTongueOut = true;
-
         Vector2 direction = new Vector2(player.Controller.LastAxis.x, 0);
         RaycastHit2D hit = Physics2D.Raycast(player.tf.position, direction, tongueMaxDistance, grapplableMask);
         tongueTarget = hit.point;
@@ -65,8 +63,8 @@ public class PlayerTongueAbility : MonoBehaviour
 
         if (isTheTargetAObject)
         {
-            Vector2 direction = (transform.position - targetObject.transform.position);
-            targetObject.GetComponent<Rigidbody2D>().AddForce(direction * pullForce);
+            Vector2 directionToPull = (transform.position - targetObject.transform.position);
+            targetObject.GetComponent<Rigidbody2D>().AddForce(directionToPull * pullForce);
         }
 
         StartCoroutine(tongueReturning(tongueOriginPoint.position));
@@ -84,6 +82,7 @@ public class PlayerTongueAbility : MonoBehaviour
     IEnumerator tongueGoing(Vector2 target)
     {
         isTongueGoing = true;
+        isTongueOut = true;
         line.SetPosition(0, tongueOriginPoint.position);
 
 
