@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BluePassive : MonoBehaviour, IColor
 {
+    [SerializeField] private float defaultAbsorveTime;
     [SerializeField] private ColorData colorData;
     [SerializeField] private ButterflyManager butterlfy;
+
     public ColorData ColorData { get => colorData;}
 
     private void OnCollisionEnter2D(Collision2D other) 
@@ -16,28 +18,13 @@ public class BluePassive : MonoBehaviour, IColor
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
 
-            SetPlayerBlueColor(colorManager);
-
-        }   
-    }
-
-    /*private void OnCollisionStay2D(Collision2D other) 
-    {
-        if (!butterlfy.used) return;
-
-        if (other.gameObject.CompareTag("Player"))
-        {
-            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
-
             if (colorManager.Abilities.JumpCharge <= 0)
             {
-                SetPlayerBlueColor(colorManager);
+                StartCoroutine(TimeToAbsorve(defaultAbsorveTime, colorManager));
             }
 
         }   
-    }*/
-
-
+    }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -46,26 +33,44 @@ public class BluePassive : MonoBehaviour, IColor
         if (other.gameObject.CompareTag("Player"))
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
-            SetPlayerBlueColor(colorManager);
-
-        }   
-    }
-
-    private void OnTriggerStay2D(Collider2D other) 
-    {
-        if (!butterlfy.used) return;
-
-        if (other.gameObject.CompareTag("Player"))
-        {
-            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
-
+            
             if (colorManager.Abilities.JumpCharge <= 0)
             {
-                SetPlayerBlueColor(colorManager);
+                StartCoroutine(TimeToAbsorve(defaultAbsorveTime, colorManager));
             }
 
         }   
     }
+
+
+    private void OnCollisionExit2D(Collision2D other) 
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+
+            StopAllCoroutines();
+            
+            colorManager.ColorParticles.ResetAbsorbColor();
+            colorManager.ColorParticles.StopAbsorbColor();
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) 
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
+
+            StopAllCoroutines();
+            
+            colorManager.ColorParticles.ResetAbsorbColor();
+            colorManager.ColorParticles.StopAbsorbColor();
+
+        }
+    }
+
 
     private void SetPlayerBlueColor(PlayerColorManager manager)
     {
@@ -79,4 +84,17 @@ public class BluePassive : MonoBehaviour, IColor
             manager.TakePassiveColor(this);
         }
     }
+
+    private IEnumerator TimeToAbsorve(float time, PlayerColorManager manager)
+    {
+        manager.ColorParticles.PlayAbsorbColor(colorData);
+        
+        yield return new WaitForSeconds(time);
+        
+        manager.ColorParticles.StopAbsorbColor();
+        manager.ColorParticles.PlayExplosionColor();
+
+        SetPlayerBlueColor(manager);
+    }
+
 }

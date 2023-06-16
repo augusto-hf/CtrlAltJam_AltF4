@@ -6,6 +6,7 @@ using System;
 public class PlayerColorManager : MonoBehaviour
 {
     [SerializeField] private GameObject StartingColorReference;
+    [SerializeField] private PlayerColorParticlesVFX colorParticles;
 
     private PlayerCore player;
     private PlayerColorAbilities abilities;
@@ -15,6 +16,7 @@ public class PlayerColorManager : MonoBehaviour
     public IColor CurrentColor { get => currentColor; }
     public PlayerColorAbilities Abilities { get => abilities; }
     public BlobManager LastBlob { get => lastBlob; }
+    public PlayerColorParticlesVFX ColorParticles { get => colorParticles;}
 
     private void Awake()
     {

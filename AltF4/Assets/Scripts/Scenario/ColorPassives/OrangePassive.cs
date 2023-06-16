@@ -57,7 +57,7 @@ public class OrangePassive : MonoBehaviour, IColor
         {
             var colorManager = other.gameObject.GetComponent<PlayerColorManager>();
 
-            if (colorManager.Abilities.StaminaAmount <= PlayerStamina.MAX_STAMINA )
+            if (colorManager.Abilities.StaminaAmount <= PlayerStamina.MAX_STAMINA)
             {
                 SetPlayerOrangeColor(colorManager);
             }
