@@ -12,6 +12,7 @@ public class ButterflyManager : MonoBehaviour
     [SerializeField] private CutsceneManager cutsceneManager;
     [SerializeField] private PostProcessingManager postprocessingManager;
     [SerializeField] private GameObject nameEmotion;
+    [SerializeField] private GameObject explosion;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,6 +31,7 @@ public class ButterflyManager : MonoBehaviour
 
     public void useButterfly()
     {
+        Instantiate(explosion, this.transform.position, Quaternion.identity);
         used = true;
         Visual.active = false;
         GetComponent<Collider2D>().enabled = false;

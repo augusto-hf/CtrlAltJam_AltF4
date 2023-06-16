@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: nameColor
       value: blue
       objectReference: {fileID: 0}
+    - target: {fileID: 860348821051565063, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
+      propertyPath: explosionColor
+      value: 
+      objectReference: {fileID: 945295500451908286, guid: eb60ec15d4f4ff2438d7c97691bdba17, type: 3}
     - target: {fileID: 2057928800272166170, guid: 458254a9f7867da4cb3d225838d5228f, type: 3}
       propertyPath: m_RootOrder
       value: 0

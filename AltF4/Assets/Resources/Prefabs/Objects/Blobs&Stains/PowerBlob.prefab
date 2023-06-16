@@ -252,6 +252,7 @@ MonoBehaviour:
   nameColor: orange
   beingUsed: 0
   VisualAndHitbox: {fileID: 2507655081481780796}
+  explosionColor: {fileID: 0}
 --- !u!114 &7571025847142278602
 MonoBehaviour:
   m_ObjectHideFlags: 0

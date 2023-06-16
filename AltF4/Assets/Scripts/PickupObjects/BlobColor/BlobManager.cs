@@ -8,6 +8,7 @@ public class BlobManager : MonoBehaviour
     
     public bool beingUsed = false;
     [SerializeField] private GameObject VisualAndHitbox;
+    [SerializeField] private GameObject explosionColor;
     public IColor blobColor;
 
     private void Awake()
@@ -17,6 +18,7 @@ public class BlobManager : MonoBehaviour
 
     public void PickPower()
     {
+        Instantiate(explosionColor, this.transform.position, Quaternion.identity);
         beingUsed = true;
         VisualAndHitbox.SetActive(false);
         StopAllCoroutines();

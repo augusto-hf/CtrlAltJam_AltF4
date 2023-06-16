@@ -19,6 +19,7 @@ MonoBehaviour:
   _maxRunSpeed: 16
   _jumpForce: 10
   _jumpCutMultiplier: 1.2
+  _jumpBufferTime: 0.3
   _coyoteTime: 0.3
   _fallMultiplier: 2.5
   _maxFallSpeed: 10

@@ -60,8 +60,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7543eacf19047d04c972a85b7678842f, type: 2}
     - target: {fileID: 7620174071098404401, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 2666058284975318142, guid: bac91a54d8ef3e440812ee3b366fc5fb, type: 3}
+    - target: {fileID: 7620174071098404401, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: nameEmotion
-      value: lowOrange
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7620174071098404401, guid: eeb091e62b6202146a24ba4b4d68c966, type: 3}
       propertyPath: colorIUnlock
