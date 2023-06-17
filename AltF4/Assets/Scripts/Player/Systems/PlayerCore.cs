@@ -68,11 +68,11 @@ public class PlayerCore : MonoBehaviour
 
         if (Movement.canMove)
         {
-            Movement.StopAllMovement();
+            Movement.RestoreAllMovement();
         }
         else
         {
-            Movement.RestoreAllMovement();   
+            Movement.StopAllMovement();   
         }
     }
 
