@@ -6,7 +6,7 @@ public class SolidSprite : MonoBehaviour
 {
     private SpriteRenderer sprite;
 
-    void Start()
+    private void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
         ColorSprite(Color.white);

@@ -10,6 +10,7 @@ public class PlayerColorAbilities : MonoBehaviour
     private ColorType currentAbilityType;
     private BlobManager lastBlob;
     private PlayerStamina stamina;
+    private GhostEffect ghost;
 
     private int jumpCharge;
     private float jumpBufferTimer;
@@ -26,6 +27,7 @@ public class PlayerColorAbilities : MonoBehaviour
     {
         player = GetComponent<PlayerCore>();
         stamina = new PlayerStamina();
+        ghost = GetComponentInChildren<GhostEffect>();
     }
 
     private void Update()
@@ -79,6 +81,8 @@ public class PlayerColorAbilities : MonoBehaviour
                 stamina.DecreaseStamina(player.Data.StaminaDropMultiplier);
             }
 
+            ghost.ShowGhostEffect();
+
             player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
                 
         }
@@ -103,6 +107,7 @@ public class PlayerColorAbilities : MonoBehaviour
 
         if (jumpBufferTimer > 0 && CanJump())
         {
+            Debug.Log("jump");
             jumpCharge--;
             jumpBufferTimer = 0;
             isJumping = true;
@@ -133,6 +138,11 @@ public class PlayerColorAbilities : MonoBehaviour
 
     private void JumpUpdate()
     {
+        if (isJumping)
+        {
+            ghost.ShowGhostEffect();
+        }
+
         if (player.Controller.ColorButtonUp && player.Movement.Velocity.y > 0 && isJumping)
         {
             JumpCutForceApply();            

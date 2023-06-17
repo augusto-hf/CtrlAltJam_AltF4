@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 1136625044}
   - component: {fileID: 4059243585810663953}
   - component: {fileID: 46150787033601485}
+  - component: {fileID: 8472595192030526182}
   m_Layer: 0
   m_Name: MainVisual
   m_TagString: Untagged
@@ -255,6 +256,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundsPlayer: {fileID: 1871851519}
   volumeSounds: 1
+--- !u!114 &8472595192030526182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6336683651438568577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8c6f5a59a20e242a7cd66689813fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solidColor: {fileID: 8115078175228265446, guid: e7688e91a1cf5f149bd784e321a06414, type: 3}
+  speed: 9.5
+  blueColor: {r: 0.0047169924, g: 0.9896122, b: 1, a: 0}
+  orangeColor: {r: 0.990566, g: 0.55891037, b: 0, a: 0}
 --- !u!1 &6336683652554037023
 GameObject:
   m_ObjectHideFlags: 0

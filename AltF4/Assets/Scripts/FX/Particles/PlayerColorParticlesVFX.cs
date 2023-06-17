@@ -34,9 +34,9 @@ public class PlayerColorParticlesVFX : MonoBehaviour
         
     }
 
-    public void PlayAbsorbColor(ColorData data)
+    public void PlayAbsorbColor(ColorType type)
     {
-        AdjustColor(data.Type);
+        AdjustColor(type);
         absorveParticlesBack.Play();
         absorveParticlesFront.Play();
         

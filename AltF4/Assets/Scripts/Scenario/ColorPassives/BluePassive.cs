@@ -87,7 +87,7 @@ public class BluePassive : MonoBehaviour, IColor
 
     private IEnumerator TimeToAbsorve(float time, PlayerColorManager manager)
     {
-        manager.ColorParticles.PlayAbsorbColor(colorData);
+        manager.ColorParticles.PlayAbsorbColor(colorData.Type);
         
         yield return new WaitForSeconds(time);
         
