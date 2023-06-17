@@ -50,7 +50,10 @@ public class EventManager : MonoBehaviour
         playerCore.onPickColor += narrationManager.LoadNarration;
         
         cutsceneManager.onLoadCutscene += narrationManager.ReproduceNarration;
+        cutsceneManager.onLoadCutscene += playerCore.SwitchCanMovePlayer;
         cutsceneManager.onFinishedCutscene += narrationManager.FinishedNarration;
+        cutsceneManager.onFinishedCutscene += playerCore.SwitchCanMovePlayer;
+
 
         foreach (GameObject point in savePoint)
         {

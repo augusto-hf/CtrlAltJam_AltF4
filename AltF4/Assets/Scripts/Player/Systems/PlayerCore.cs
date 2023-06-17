@@ -32,6 +32,7 @@ public class PlayerCore : MonoBehaviour
         Abilities = GetComponent<PlayerColorAbilities>();
         tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     private void Start()
@@ -60,6 +61,21 @@ public class PlayerCore : MonoBehaviour
         
         Movement.canMove = !Movement.canMove;
     }
+
+    public void SwitchCanMovePlayer()
+    {
+        Movement.canMove = !Movement.canMove;
+
+        if (Movement.canMove)
+        {
+            Movement.StopAllMovement();
+        }
+        else
+        {
+            Movement.RestoreAllMovement();   
+        }
+    }
+
     public Transform ReturnTranform()
     {
         return GetComponent<Transform>();
