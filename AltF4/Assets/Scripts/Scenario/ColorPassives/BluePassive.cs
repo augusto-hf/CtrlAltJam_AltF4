@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BluePassive : MonoBehaviour, IColor
 {
-    [SerializeField] private float defaultAbsorveTime;
+    [SerializeField] private float defaultAbsorveTime = 0.47f;
     [SerializeField] private ColorData colorData;
     [SerializeField] private ButterflyManager butterlfy;
 

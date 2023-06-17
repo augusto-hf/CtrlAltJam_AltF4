@@ -77,6 +77,20 @@ public class PlayerColorParticlesVFX : MonoBehaviour
                 absorveParticlesFront.GetComponent<ParticleSystemRenderer>().trailMaterial = blueTrailMaterial;
 
             break;
+
+            case ColorType.Orange:
+                
+                explosionEffect = orangeExplosionEffect;
+
+                absorveParticlesBack.startColor = orangeColor;
+                absorveParticlesBack.GetComponent<ParticleSystemRenderer>().material = orangeMaterial;
+                absorveParticlesBack.GetComponent<ParticleSystemRenderer>().trailMaterial = orangeTrailMaterial;
+                
+                absorveParticlesFront.startColor = orangeColor;
+                absorveParticlesFront.GetComponent<ParticleSystemRenderer>().material = orangeMaterial;
+                absorveParticlesFront.GetComponent<ParticleSystemRenderer>().trailMaterial = orangeTrailMaterial;
+
+            break;
         }
 
     }

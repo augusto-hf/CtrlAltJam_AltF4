@@ -28,13 +28,15 @@ public class PlayerColorAbilities : MonoBehaviour
         player = GetComponent<PlayerCore>();
         stamina = new PlayerStamina();
         ghost = GetComponentInChildren<GhostEffect>();
+        
     }
 
     private void Update()
     {
         staminaTest = stamina.CurrentStamina;
-
+        JumpUpdate();
         JumpInputBuffer();
+        
 
         switch(currentAbilityType)
         {
@@ -52,8 +54,6 @@ public class PlayerColorAbilities : MonoBehaviour
             default:
                 break;
         }
-
-        JumpUpdate();
 
     }
 
@@ -81,7 +81,7 @@ public class PlayerColorAbilities : MonoBehaviour
                 stamina.DecreaseStamina(player.Data.StaminaDropMultiplier);
             }
 
-            ghost.ShowGhostEffect();
+            ghost.ShowGhostEffect(currentAbilityType);
 
             player.Movement.SetMaxSpeed(player.Data.MaxRunSpeed);
                 
@@ -107,11 +107,11 @@ public class PlayerColorAbilities : MonoBehaviour
 
         if (jumpBufferTimer > 0 && CanJump())
         {
-            Debug.Log("jump");
             jumpCharge--;
             jumpBufferTimer = 0;
             isJumping = true;
             JumpForceApply();
+            player.ColorManager.ConsumeColor();
         }
         
         
@@ -119,15 +119,12 @@ public class PlayerColorAbilities : MonoBehaviour
 
     public void JumpForceApply()
     {
-        isJumping = true;
-
         player.rb.velocity = new Vector2(player.rb.velocity.x, 0);
         player.rb.AddForce(Vector2.up * player.Data.JumpForce, ForceMode2D.Impulse);
     }
 
     public void JumpCutForceApply()
     {
-        isJumping = false;
         player.rb.AddForce(Vector2.down * player.rb.velocity.y * player.Data.JumpCutMultiplier, ForceMode2D.Impulse);
     }
     
@@ -138,25 +135,21 @@ public class PlayerColorAbilities : MonoBehaviour
 
     private void JumpUpdate()
     {
+
         if (isJumping)
         {
-            ghost.ShowGhostEffect();
+            ghost.ShowGhostEffect(currentAbilityType);
         }
 
         if (player.Controller.ColorButtonUp && player.Movement.Velocity.y > 0 && isJumping)
         {
             JumpCutForceApply();            
         }
-
-        if (jumpCharge <= 0 && currentAbilityType == ColorType.Blue)
-        {
-            player.ColorManager.ConsumeColor();
-        }
-        
-        if (player.Check.IsFalling)
-        {
+        else if (player.Check.IsFalling && isJumping)
+        {   
             isJumping = false;
         }
+        
     }
 
     private void JumpInputBuffer()
@@ -182,13 +175,13 @@ public class PlayerColorAbilities : MonoBehaviour
     public void SetConsumeBuffs(ColorData data)
     {
         currentAbilityType = data.Type;
+        ghost.SwitchColor(currentAbilityType);
 
         switch(data.Type)
         {
             case ColorType.Blue :
                 ResetAllBuffs();
                 jumpCharge = data.JumpCharge;
-                
                 break;
             
             case ColorType.Orange:
@@ -196,24 +189,21 @@ public class PlayerColorAbilities : MonoBehaviour
                 break;
             
             default:
-                
                 ResetAllBuffs();
-                
                 break;
-
 
         }
     }
     public void SetPassiveBuff(ColorData data)
     {
         currentAbilityType = data.Type;
+        ghost.SwitchColor(currentAbilityType);
 
         switch(data.Type)
         {
             case ColorType.Blue :
                 ResetAllBuffs();
                 jumpCharge = data.JumpCharge;
-                
                 break;
             
             case ColorType.Orange:
@@ -223,9 +213,7 @@ public class PlayerColorAbilities : MonoBehaviour
                 break;
             
             default:
-                
                 ResetAllBuffs();
-                
                 break;
         }
 
