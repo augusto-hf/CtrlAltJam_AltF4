@@ -241,7 +241,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: -35456
+  m_InstanceId: -3710
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 6336683652554037022}
   - component: {fileID: -215635321352401057}
   - component: {fileID: 8816518472539381874}
-  - component: {fileID: 5683729516090076869}
   - component: {fileID: 7917618343494509341}
   - component: {fileID: 4604940917045427784}
   - component: {fileID: 1632924091}
@@ -469,7 +468,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -478,7 +477,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.110571
+        value: 0.1105734
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -499,8 +498,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 0, b: 0, a: 1}
+      key0: {r: 0.38679248, g: 0, b: 0, a: 1}
+      key1: {r: 0.4528302, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -534,29 +533,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &5683729516090076869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336683652554037023}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45dc462dfae9a664bac0868488dad6d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hookSpeed: 120
-  hookMaxDistance: 7
-  grapplableMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  minimumDistanceToDrag: 0.2
-  dragForce: 5
-  startingPoint: {fileID: 5105274287945571479}
-  dragableObject: GrappableObject
-  interactableObject: ColorPower
-  terrain: Ground
 --- !u!114 &7917618343494509341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,11 +545,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835c39295306d194081f383e5cef94c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tongueSpeed: 50
+  tongueSpeed: 60
   tongueMaxDistance: 3.5
+  baseWidth: 0.05
+  minWidth: 0.025
+  maxWidth: 0.1
   grapplableMask:
     serializedVersion: 2
     m_Bits: 1088
+  isTongueOut: 0
   minimumDistanceToPull: 0.2
   pullForce: 250
   pullableTag: GrappableObject
@@ -773,7 +753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7320957796236712430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.364, y: 0.046, z: -0.6475981}
+  m_LocalPosition: {x: 0.371, y: -0.002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -875,7 +855,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3243503508013587574, guid: 0f0ba6a5cd99ae34fbe161b6123fdabe, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5025444418020515559, guid: 0f0ba6a5cd99ae34fbe161b6123fdabe, type: 3}
       propertyPath: m_RootOrder
@@ -927,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7888626598440719754, guid: 0f0ba6a5cd99ae34fbe161b6123fdabe, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f0ba6a5cd99ae34fbe161b6123fdabe, type: 3}

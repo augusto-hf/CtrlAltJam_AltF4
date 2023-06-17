@@ -8,9 +8,10 @@ public class PlayerTongueAbility : MonoBehaviour
     private PlayerCore player;
     private LineRenderer line;
 
-    [Header("Hook Variables")]
-    [SerializeField] private float tongueSpeed = 120, tongueMaxDistance = 7;
+    [Header("Tongue Variables")]
+    [SerializeField] private float tongueSpeed = 120, tongueMaxDistance = 7, baseWidth, minWidth, maxWidth;
     [SerializeField] private LayerMask grapplableMask;
+    public bool isTongueOut = false;
 
     [Header("Drag Object Values")]
     [SerializeField] private float minimumDistanceToPull = 0.2f, pullForce = 25;
@@ -23,7 +24,7 @@ public class PlayerTongueAbility : MonoBehaviour
     private Vector2 tongueTarget;
     private GameObject targetObject;
 
-    private bool isTongueOut = false, isTongueGoing = false, isTooFarFromObject = false, isTheTargetAObject;
+    private bool isTongueGoing = false, isTooFarFromObject = false, isTheTargetAObject;
 
     public bool IsHookedObjectInFront { get => isHookedObjectInFront(); }
 
@@ -44,7 +45,12 @@ public class PlayerTongueAbility : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if (isTongueOut)
+        {
+            float newTongueWidth = baseWidth / Vector2.Distance(line.GetPosition(0), line.GetPosition(1));
+            newTongueWidth = Mathf.Clamp(newTongueWidth, minWidth, maxWidth);
+            line.startWidth = line.endWidth = newTongueWidth;
+        }
     }
     private void StartTongue()
     {
@@ -78,7 +84,6 @@ public class PlayerTongueAbility : MonoBehaviour
         isTongueOut = true;
         line.SetPosition(0, tongueOriginPoint.position);
 
-
         float time = 10;
         for (float t = 0; t < time; t += tongueSpeed * Time.deltaTime)
         {
@@ -110,7 +115,5 @@ public class PlayerTongueAbility : MonoBehaviour
         }
         isTongueOut = false;
         line.enabled = false;
-
-
     }
 }

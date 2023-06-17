@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if ((isFacingRight && player.Controller.Axis.x < 0 || !isFacingRight && player.Controller.Axis.x > 0))
         {
-            if (!player.Controller.TongueButtonHold)
+            if (!player.Tongue.isTongueOut)
             {
                 isFacingRight = !isFacingRight;
                 this.transform.Rotate(0, 180, 0);

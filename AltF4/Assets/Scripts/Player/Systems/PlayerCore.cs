@@ -12,7 +12,7 @@ public class PlayerCore : MonoBehaviour
     public PlayerMovement Movement { get; private set;}
     public PlayerControl Controller { get; private set; }
     public PlayerColorManager ColorManager { get; private set; }
-    public PlayerHook Tongue { get; private set; }
+    public PlayerTongueAbility Tongue { get; private set; }
     public PlayerAnimation Animation { get; private set; }
     public PlayerHealth Health { get; private set; }
     public PlayerColorAbilities Abilities { get; private set;}
@@ -26,7 +26,7 @@ public class PlayerCore : MonoBehaviour
         Check = GetComponent<PlayerChecks>();
         Movement = GetComponent<PlayerMovement>();
         ColorManager = GetComponent<PlayerColorManager>();
-        Tongue = GetComponent<PlayerHook>();
+        Tongue = GetComponent<PlayerTongueAbility>();
         Animation = GetComponent<PlayerAnimation>();
         Health = GetComponent<PlayerHealth>();
         Abilities = GetComponent<PlayerColorAbilities>();
