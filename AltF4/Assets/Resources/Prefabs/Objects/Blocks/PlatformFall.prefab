@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   playerTouch: 0
 --- !u!251 &2880856470511845204
 PlatformEffector2D:
