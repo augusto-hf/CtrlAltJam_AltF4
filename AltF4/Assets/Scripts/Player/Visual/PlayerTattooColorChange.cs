@@ -72,7 +72,6 @@ public class PlayerTattooColorChange : MonoBehaviour
     }
     private void changeRelativeColor()
     {
-        Debug.Log(currentColor);
         playerSprite.material.color = currentColor = Color.Lerp(lastColor, nextColor, (player.Abilities.StaminaAmount / PlayerStamina.MAX_STAMINA) * Time.deltaTime);
     }
 }

@@ -9,6 +9,7 @@ public class Parallax : MonoBehaviour
     [SerializeField] private float YOffset, XOffset, Xmin, Xmax, Ymin, Ymax;
     [SerializeField] private Vector2 parallaxFactor;
     [SerializeField] private bool followCam;
+    Renderer renderer;
     Vector2 startPosition;
     float startZ;
 
@@ -18,16 +19,19 @@ public class Parallax : MonoBehaviour
 
     float clippingPlane => cam.transform.position.z + (distanceFromSubject > 0? 50 : -10);
 
+
     //float parallaxFactor => Mathf.Abs(distanceFromSubject/clippingPlane);
     void Start()
     {
+        renderer = GetComponent<Renderer>();
+
         startPosition = transform.position;
         startZ = transform.position.z;
     }
 
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (!followCam) 
         {
@@ -43,7 +47,7 @@ public class Parallax : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(cam.gameObject.transform.position.x, cam.gameObject.transform.position.y);
+            transform.position = new Vector3(cam.gameObject.transform.position.x , cam.gameObject.transform.position.y);
         }
        
     }
