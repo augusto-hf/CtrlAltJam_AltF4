@@ -9,11 +9,10 @@ public class CutsceneManager : MonoBehaviour
 {
     [SerializeField] private FadeScript fadeScript;
     [SerializeField] private GameObject panelPlayerObject, skipButton;
-    //[SerializeField] private RawImage rawImage;
     [SerializeField] private PlayerCore player;
     private VideoPlayer cutsceneVideoPlayer;
     private CutsceneInfo loadedCutscene;
-    private bool alreadyPlayed = false;
+    private bool panelHasEnded = false;
     private int lastPanel, currentPanel = 0, maxPanels;
 
     public event Action onLoadCutscene;
@@ -24,6 +23,8 @@ public class CutsceneManager : MonoBehaviour
     void Start()
     {
         cutsceneVideoPlayer = panelPlayerObject.GetComponent<VideoPlayer>();
+        cutsceneVideoPlayer.loopPointReached += EndOfVideoEvent;
+
         if (loadedCutscene == null)
             panelPlayerObject.SetActive(false);
     }
@@ -33,10 +34,14 @@ public class CutsceneManager : MonoBehaviour
             return;
 
         playCutscene();
-        cutsceneInput();
-        //autoSkipPanel();
+
+
+        autoSkipPanel();
+
+        if (cutsceneVideoPlayer.isPlaying)
+            cutsceneInput();
     }
-    #region Input
+    #region Skip
     public void cutsceneInput()
     {
         if (player.Controller.ColorButtonDown)
@@ -48,32 +53,39 @@ public class CutsceneManager : MonoBehaviour
             currentPanel = maxPanels;
         }
     }
+    private void autoSkipPanel()
+    {
+        if (panelHasEnded == true && endFade)
+            currentPanel++;
+
+        else
+            return;
+    }
+
+    private void EndOfVideoEvent(VideoPlayer source)
+    {
+        panelHasEnded = true;
+    }
+
     #endregion
 
     #region VideoPlayer
     private void playCutscene()
-    {   
-        if (currentPanel > lastPanel && currentPanel <= maxPanels - 1)
+    {   if (currentPanel > lastPanel)
         {
-            if(endFade)
+            panelHasEnded = false;
+            if (currentPanel <= maxPanels - 1 && endFade)
             {
+                
                 playNextPanel(loadedCutscene.cutscenePanels[currentPanel].video, loadedCutscene.cutscenePanels[currentPanel].description);
             }
+            else if (currentPanel > maxPanels - 1)
+                endCutscene();
         }
-        else if (currentPanel > maxPanels - 1)
-            endCutscene();
-
         else
             return;
     }
-    private void autoSkipPanel()
-    {
-        if (cutsceneVideoPlayer.isPlaying && endFade)
-            return;
-
-        else
-            currentPanel++;
-    }
+   
     private void playNextPanel(VideoClip panel, string description)
     {
         cutsceneVideoPlayer.clip = null;
@@ -86,6 +98,7 @@ public class CutsceneManager : MonoBehaviour
     }
     private void endCutscene()
     {
+        panelHasEnded = false;
         unloadCutscene();
     }
     #endregion
@@ -102,15 +115,14 @@ public class CutsceneManager : MonoBehaviour
         player.Movement.cutsceneActive = true;
 
         skipButton.SetActive(true);
-        //panelPlayerObject.SetActive(true);
+        
     }
 
     private void unloadCutscene()
     {
         loadedCutscene = null;
-        currentPanel = maxPanels = 0;
+        currentPanel = lastPanel = maxPanels = 0;
 
-        lastPanel = -1;
         panelPlayerObject.SetActive(false);
         skipButton.SetActive(false);
 
