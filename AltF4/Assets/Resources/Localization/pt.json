@@ -21,12 +21,12 @@
         "abandoned": "abandonado"
     },
     "narrationsTexts": {
-        "blue": {
+        "Blue": {
             "0": "Antes o mundo era colorido... Quando eu parei de perceber as cores?",
             "1": "Quando eu parei de perceber as cores?",
             "2": "Minhas cores ainda estão vivas?"
         },
-      "orange": {
+      "Orange": {
         "0": "A natureza foi muito cruel com alguém que ainda não tinha aprendido a andar sozinho",
         "1": "As cores deixam tudo mais feliz!",
         "2": "Mais uma, mais outra! Quero colorir tudo novamente!",

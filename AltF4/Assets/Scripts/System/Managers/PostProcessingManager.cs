@@ -12,7 +12,7 @@ public class PostProcessingManager : MonoBehaviour
     {
         if(!ifExist)
         {
-            VolumeProfile newVolumeProfile = Resources.Load<VolumeProfile>("volumePostProcessing/low"+nameEmotion); 
+            VolumeProfile newVolumeProfile = Resources.Load<VolumeProfile>("PostProcessingProfiles/high"+nameEmotion); 
 
             postProcessing.profile = newVolumeProfile;
         }        
@@ -20,14 +20,15 @@ public class PostProcessingManager : MonoBehaviour
 
     public void LoadProfile(string nameEmotion) 
     {
-        string value = "low" + nameEmotion;
+        string value = "high" + nameEmotion;
 
         if(nameEmotion == "")
         {
             value = "NoColor";
         }
-
-        VolumeProfile newVolumeProfile = Resources.Load<VolumeProfile>("volumePostProcessing/"+value); 
+        
+        VolumeProfile newVolumeProfile = Resources.Load<VolumeProfile>("PostProcessingProfiles/"+value); 
+        
         postProcessing.profile = newVolumeProfile;
     }
 }

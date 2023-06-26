@@ -25,7 +25,7 @@ public class ButterflyManager : MonoBehaviour
             
             PlayerCore player = collision.GetComponent<PlayerCore>();
 
-            player.PickColor(colorIUnlock.ToString().ToLower());
+            player.PickColor(colorIUnlock.ToString());
         }
     }
 

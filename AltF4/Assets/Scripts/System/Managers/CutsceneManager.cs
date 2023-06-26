@@ -99,7 +99,7 @@ public class CutsceneManager : MonoBehaviour
 
         lastPanel = -1;
 
-        player.Movement.canMove = false;
+        player.Movement.cutsceneActive = true;
 
         skipButton.SetActive(true);
         //panelPlayerObject.SetActive(true);
@@ -115,7 +115,7 @@ public class CutsceneManager : MonoBehaviour
         skipButton.SetActive(false);
 
         endFade = false;
-        player.Movement.canMove = true;
+        player.Movement.cutsceneActive = false;
         onFinishedCutscene?.Invoke();
     }
     #endregion

@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     
     public bool canMove = false;
-
+    public bool cutsceneActive = false;
     [SerializeField] private Vector2 speed;
     private PlayerCore player;
     private Rigidbody2D rb;
@@ -51,7 +51,14 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            RestoreAllMovement();
+            if(!cutsceneActive)
+            {
+                RestoreAllMovement();
+            }
+            else
+            {
+                StopAllMovement();
+            }
         }
         
     }

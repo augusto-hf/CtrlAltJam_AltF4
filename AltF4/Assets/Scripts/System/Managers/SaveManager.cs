@@ -140,7 +140,7 @@ public class SaveManager : MonoBehaviour
             
             foreach(string emotion in gameData.emotions)
             {
-                if(emotion == managerButterfly.colorIUnlock.ToString().ToLower())
+                if(emotion == managerButterfly.colorIUnlock.ToString())
                 {
                     managerButterfly.used = true;
                     MusicManager.Instance.TriggerMusicLayer(managerButterfly.colorIUnlock);
