@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: OrangePassive
   m_EditorClassIdentifier: 
   _colorType: 2
-  _staminaAmount: 0.4
+  _staminaAmount: 1.2
   _jumpCharge: 0

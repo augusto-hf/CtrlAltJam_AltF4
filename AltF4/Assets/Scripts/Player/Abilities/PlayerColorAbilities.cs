@@ -31,7 +31,7 @@ public class PlayerColorAbilities : MonoBehaviour
         
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         staminaTest = stamina.CurrentStamina;
         JumpUpdate();
