@@ -241,7 +241,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: 134352
+  m_InstanceId: -3670
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0aecf0d855bd4dbdf73e6bad33460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 0
+  canMove: 1
+  cutsceneActive: 0
   speed: {x: 0, y: 0}
 --- !u!114 &6336683652554037022
 MonoBehaviour:
@@ -548,8 +549,8 @@ MonoBehaviour:
   tongueSpeed: 60
   tongueMaxDistance: 3.5
   baseWidth: 0.05
-  minWidth: 0.025
-  maxWidth: 0.1
+  minWidth: 0.075
+  maxWidth: 0.25
   grapplableMask:
     serializedVersion: 2
     m_Bits: 1088
@@ -753,7 +754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7320957796236712430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.371, y: -0.002, z: 0}
+  m_LocalPosition: {x: 0.371, y: 0.027, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
