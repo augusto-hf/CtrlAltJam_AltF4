@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerColorAbilities : MonoBehaviour
 {
-    [SerializeField] private float staminaTest;
+    [SerializeField] private float staminaCurrent;
     
     private PlayerCore player;
     private ColorType currentAbilityType;
@@ -33,7 +33,7 @@ public class PlayerColorAbilities : MonoBehaviour
 
     private void FixedUpdate()
     {
-        staminaTest = stamina.CurrentStamina;
+        staminaCurrent = stamina.CurrentStamina;
         JumpUpdate();
         JumpInputBuffer();
         
