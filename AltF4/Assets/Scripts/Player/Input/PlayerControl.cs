@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerControl : MonoBehaviour
 {
     float LastHorizontalAxis, LastVerticalAxis;
-    public Vector2 Axis { get => GetAxis(); }
+    public Vector2 Axis { get; private set; }
     public Vector2 LastAxis { get => GetLastAxis(); } 
     public bool ColorButtonHold { get; private set; }
     public bool ColorButtonDown { get; private set; }
@@ -13,17 +14,39 @@ public class PlayerControl : MonoBehaviour
     public bool TongueButtonHold { get; private set; }
     public bool TongueButtonDown { get; private set; }
     public bool TongueButtonUp { get; private set; }
+    public PlayerInputActions playerInputs;
+    private InputAction move, lick, colorpower;
 
+    #region Enable/Disable
+
+    private void Awake()
+    {
+        
+    }
+    private void OnEnable()
+    {
+        move = playerInputs.Player.Move;
+        lick = playerInputs.Player.Lick;
+        colorpower = playerInputs.Player.ColorPower;
+    }
+
+    private void OnDisable()
+    {
+        move.Disable();
+        lick.Disable();
+        colorpower.Disable();
+    }
+    #endregion
     // Update is called once per frame
     void Update()
     {
-        ColorButtonHold = Input.GetButton("ColorActionButton");
-        ColorButtonDown = Input.GetButtonDown("ColorActionButton");
-        ColorButtonUp = Input.GetButtonUp("ColorActionButton");
+        /*ColorButtonHold = colorpower.IsPressed();
+        ColorButtonDown = colorpower.WasPressedThisFrame();
+        ColorButtonUp = colorpower.WasReleasedThisFrame();
         
-        TongueButtonHold = Input.GetButton("Tongue");
-        TongueButtonDown = Input.GetButtonDown("Tongue");
-        TongueButtonUp = Input.GetButtonUp("Tongue");
+        TongueButtonHold = lick.IsPressed();
+        TongueButtonDown = lick.WasPressedThisFrame();
+        TongueButtonUp = lick.WasReleasedThisFrame();*/
 
         if (Input.GetAxis("Horizontal") != 0)
             LastHorizontalAxis = Input.GetAxisRaw("Horizontal");
@@ -33,10 +56,20 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-    private Vector2 GetAxis()
+
+    public void OnMove(InputAction.CallbackContext value)
     {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Axis = value.ReadValue<Vector2>();
     }
+    public void OnLick(InputAction.CallbackContext value)
+    {
+        TongueButtonDown = value.ReadValue<bool>();
+    }
+    public void OnColorPower(InputAction.CallbackContext value)
+    {
+        ColorButtonHold = value.ReadValue<bool>();
+    }
+
 
     private Vector2 GetLastAxis()
     {
