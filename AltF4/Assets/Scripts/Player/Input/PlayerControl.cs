@@ -21,13 +21,16 @@ public class PlayerControl : MonoBehaviour
 
     private void Awake()
     {
-        
+        playerInputs = new PlayerInputActions();
     }
     private void OnEnable()
     {
         move = playerInputs.Player.Move;
         lick = playerInputs.Player.Lick;
         colorpower = playerInputs.Player.ColorPower;
+        move.Enable();
+        lick.Enable();
+        colorpower.Enable();
     }
 
     private void OnDisable()
@@ -40,13 +43,13 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*ColorButtonHold = colorpower.IsPressed();
+        ColorButtonHold = colorpower.IsPressed();
         ColorButtonDown = colorpower.WasPressedThisFrame();
         ColorButtonUp = colorpower.WasReleasedThisFrame();
         
         TongueButtonHold = lick.IsPressed();
         TongueButtonDown = lick.WasPressedThisFrame();
-        TongueButtonUp = lick.WasReleasedThisFrame();*/
+        TongueButtonUp = lick.WasReleasedThisFrame();
 
         if (Input.GetAxis("Horizontal") != 0)
             LastHorizontalAxis = Input.GetAxisRaw("Horizontal");

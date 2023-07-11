@@ -201,6 +201,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""8371b832-95f9-4877-843f-e44c39a6d347"",
+                    ""path"": ""<HID::USB gamepad           >/button3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ColorPower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""382a602a-5699-46d5-9c39-ac78c2f9d281"",
                     ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
@@ -228,6 +239,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
+                    ""action"": ""Lick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9125a194-82aa-4373-8eac-56fdfaed3e3f"",
+                    ""path"": ""<HID::USB gamepad           >/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
                     ""action"": ""Lick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
