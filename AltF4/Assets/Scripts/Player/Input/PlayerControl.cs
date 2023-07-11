@@ -15,42 +15,32 @@ public class PlayerControl : MonoBehaviour
     public bool TongueButtonDown { get; private set; }
     public bool TongueButtonUp { get; private set; }
     public PlayerInputActions playerInputs;
-    private InputAction move, lick, colorpower;
+
 
     #region Enable/Disable
 
     private void Awake()
     {
         playerInputs = new PlayerInputActions();
+        playerInputs.Player.Enable();
+        playerInputs.Player.Move.performed += OnMove;
+        playerInputs.Player.Lick.performed += OnLick;
+
     }
     private void OnEnable()
     {
-        move = playerInputs.Player.Move;
-        lick = playerInputs.Player.Lick;
-        colorpower = playerInputs.Player.ColorPower;
-        move.Enable();
-        lick.Enable();
-        colorpower.Enable();
+        
+
     }
 
     private void OnDisable()
     {
-        move.Disable();
-        lick.Disable();
-        colorpower.Disable();
+        playerInputs.Player.Enable();
     }
     #endregion
     // Update is called once per frame
     void Update()
     {
-        ColorButtonHold = colorpower.IsPressed();
-        ColorButtonDown = colorpower.WasPressedThisFrame();
-        ColorButtonUp = colorpower.WasReleasedThisFrame();
-        
-        TongueButtonHold = lick.IsPressed();
-        TongueButtonDown = lick.WasPressedThisFrame();
-        TongueButtonUp = lick.WasReleasedThisFrame();
-
         if (Input.GetAxis("Horizontal") != 0)
             LastHorizontalAxis = Input.GetAxisRaw("Horizontal");
 
@@ -68,9 +58,19 @@ public class PlayerControl : MonoBehaviour
     {
         TongueButtonDown = value.ReadValue<bool>();
     }
-    public void OnColorPower(InputAction.CallbackContext value)
+    public void OnColorPower(InputAction.CallbackContext context)
     {
-        ColorButtonHold = value.ReadValue<bool>();
+        if (context.performed)
+        {
+
+        }
+        else if (context.canceled)
+        {
+
+        }
+
+
+        ColorButtonHold = context.ReadValue<bool>();
     }
 
 
