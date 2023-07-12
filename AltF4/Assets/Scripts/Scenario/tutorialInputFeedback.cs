@@ -7,11 +7,16 @@ public class tutorialInputFeedback : MonoBehaviour
     [SerializeField] private SpriteRenderer keySpriteRenderer;
     [SerializeField] private PlayerControl control;
     [SerializeField] private Color idleColor, pressedColor;
-    [SerializeField] private bool isTongue, isColorPower, isMoveNegative, isMovePositive;
+    [SerializeField] private bool isTongue, isColorPower;
     private bool playerIsNear = false, inputToVerify;
+
     void Start()
     {
         verifyNullOnStart();
+    }
+
+    void Update()
+    {
         if (isTongue)
         {
             inputToVerify = control.TongueButtonHold;
@@ -20,12 +25,7 @@ public class tutorialInputFeedback : MonoBehaviour
         {
             inputToVerify = control.ColorButtonHold;
         }
-    }
-
-    void Update()
-    {
-        if(playerIsNear)
-            pressVisualButton(inputToVerify);
+        pressVisualButton(inputToVerify);
     }
 
     void pressVisualButton(bool input)

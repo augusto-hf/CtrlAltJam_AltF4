@@ -47,12 +47,15 @@ public class PlayerControl : MonoBehaviour
         ColorButtonDown = colorPowerInput.WasPerformedThisFrame();
         ColorButtonHold = colorPowerInput.IsPressed();
         ColorButtonUp = colorPowerInput.WasReleasedThisFrame();
+        
 
         TongueButtonDown = tongueInput.WasPerformedThisFrame();
         TongueButtonHold = tongueInput.IsPressed();
         TongueButtonUp = tongueInput.WasReleasedThisFrame();
 
 
+
+        Debug.Log(colorPowerInput.phase);
 
         if (Axis.x != 0)
             LastHorizontalAxis = Axis.x;
