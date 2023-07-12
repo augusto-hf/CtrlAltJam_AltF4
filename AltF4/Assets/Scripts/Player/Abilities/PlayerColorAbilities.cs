@@ -33,24 +33,28 @@ public class PlayerColorAbilities : MonoBehaviour
 
     private void FixedUpdate()
     {
-        staminaCurrent = stamina.CurrentStamina;
+        staminaCurrent = stamina.CurrentStamina;   
+    }
+
+    private void Update()
+    {
         JumpUpdate();
         JumpInputBuffer();
-        
 
-        switch(currentAbilityType)
+
+        switch (currentAbilityType)
         {
             case ColorType.Blue:
                 JumpPerform();
                 break;
-            
+
             case ColorType.Orange:
                 Run();
                 break;
 
             case ColorType.NoColor:
                 break;
-            
+
             default:
                 break;
         }
