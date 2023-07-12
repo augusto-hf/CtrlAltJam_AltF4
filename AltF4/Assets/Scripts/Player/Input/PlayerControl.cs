@@ -14,65 +14,49 @@ public class PlayerControl : MonoBehaviour
     public bool TongueButtonHold { get; private set; }
     public bool TongueButtonDown { get; private set; }
     public bool TongueButtonUp { get; private set; }
-    public PlayerInputActions playerInputs;
-
+    private PlayerInputActions PlayerInputs;
+    private InputAction moveInput, colorPowerInput, tongueInput;
 
     #region Enable/Disable
 
     private void Awake()
     {
-        playerInputs = new PlayerInputActions();
-        playerInputs.Player.Enable();
-        playerInputs.Player.Move.performed += OnMove;
-        playerInputs.Player.Lick.performed += OnLick;
+        // para entender mais de como todo o codigo funciona, de uma olhada na introdução ao novo input system, na parte sobre migração
+        PlayerInputs = new PlayerInputActions();
+        moveInput = PlayerInputs.Player.Move;
+        colorPowerInput = PlayerInputs.Player.ColorPower;
+        tongueInput = PlayerInputs.Player.Lick;
 
     }
     private void OnEnable()
     {
-        
-
+        PlayerInputs.Enable();
     }
-
     private void OnDisable()
     {
-        playerInputs.Player.Enable();
+        PlayerInputs.Disable();
     }
     #endregion
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Horizontal") != 0)
-            LastHorizontalAxis = Input.GetAxisRaw("Horizontal");
+        ColorButtonDown = colorPowerInput.WasPerformedThisFrame();
+        ColorButtonHold = colorPowerInput.IsPressed();
+        ColorButtonUp = colorPowerInput.WasReleasedThisFrame();
 
-        if (Input.GetAxis("Vertical") != 0)
-            LastVerticalAxis = Input.GetAxisRaw("Vertical");
+        TongueButtonDown = tongueInput.WasPerformedThisFrame();
+        TongueButtonHold = tongueInput.IsPressed();
+        TongueButtonUp = tongueInput.WasReleasedThisFrame();
+
+        Axis = PlayerInputs.Player.Move.ReadValue<Vector2>();
+
+        if (Axis.x != 0)
+            LastHorizontalAxis = Axis.x;
+
+        if (Axis.y != 0)
+            LastVerticalAxis = Axis.y;
 
     }
-
-
-    public void OnMove(InputAction.CallbackContext value)
-    {
-        Axis = value.ReadValue<Vector2>();
-    }
-    public void OnLick(InputAction.CallbackContext value)
-    {
-        TongueButtonDown = value.ReadValue<bool>();
-    }
-    public void OnColorPower(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-
-        }
-        else if (context.canceled)
-        {
-
-        }
-
-
-        ColorButtonHold = context.ReadValue<bool>();
-    }
-
 
     private Vector2 GetLastAxis()
     {
