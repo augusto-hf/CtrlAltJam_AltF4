@@ -116,10 +116,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keySpriteRenderer: {fileID: -1742336714293990547}
-  player: {fileID: 0}
-  pressedColor: {r: 0.45490196, g: 0.45490196, b: 0.45490196, a: 1}
-  inputName: 
-  alternativeInputName: 
+  control: {fileID: 0}
+  idleColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+  pressedColor: {r: 1, g: 1, b: 1, a: 1}
+  isTongue: 0
+  isColorPower: 0
+  isMoveNegative: 0
+  isMovePositive: 0
 --- !u!114 &8205406756384392025
 MonoBehaviour:
   m_ObjectHideFlags: 0

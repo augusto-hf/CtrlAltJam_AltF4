@@ -205,7 +205,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""path"": ""<HID::USB gamepad           >/button3"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Joystick"",
                     ""action"": ""ColorPower"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

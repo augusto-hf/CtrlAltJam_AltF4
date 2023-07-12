@@ -23,10 +23,13 @@ public class PlayerControl : MonoBehaviour
     {
         // para entender mais de como todo o codigo funciona, de uma olhada na introdução ao novo input system, na parte sobre migração
         PlayerInputs = new PlayerInputActions();
-        moveInput = PlayerInputs.Player.Move;
+
+        //moveInput = PlayerInputs.Player.Move; fica dando (1,0)
+
         colorPowerInput = PlayerInputs.Player.ColorPower;
         tongueInput = PlayerInputs.Player.Lick;
 
+        
     }
     private void OnEnable()
     {
@@ -40,6 +43,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         ColorButtonDown = colorPowerInput.WasPerformedThisFrame();
         ColorButtonHold = colorPowerInput.IsPressed();
         ColorButtonUp = colorPowerInput.WasReleasedThisFrame();
@@ -48,7 +52,7 @@ public class PlayerControl : MonoBehaviour
         TongueButtonHold = tongueInput.IsPressed();
         TongueButtonUp = tongueInput.WasReleasedThisFrame();
 
-        Axis = PlayerInputs.Player.Move.ReadValue<Vector2>();
+
 
         if (Axis.x != 0)
             LastHorizontalAxis = Axis.x;
@@ -57,6 +61,12 @@ public class PlayerControl : MonoBehaviour
             LastVerticalAxis = Axis.y;
 
     }
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        Axis = context.ReadValue<Vector2>();
+        //Debug.Log(Axis);
+    }
+
 
     private Vector2 GetLastAxis()
     {

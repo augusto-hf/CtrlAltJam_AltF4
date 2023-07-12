@@ -24,7 +24,10 @@ public class PlayerAnimation : MonoBehaviour
     #region Horizontal Animation Setting
     private void setWalkAndRun()
     {
-        animator.SetInteger("walk_Direction", (int)player.Controller.Axis.x);
+        int axisConverted;
+        axisConverted = Mathf.RoundToInt(player.Controller.Axis.x);
+
+        animator.SetInteger("walk_Direction", axisConverted);
 
         animator.SetBool("isFacingWall", player.Check.IsFacingWall);
 
