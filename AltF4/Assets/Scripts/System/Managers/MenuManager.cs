@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour
     private void Start() 
     {
         SetDropdownOptions();
-        //UpdatedSliderVolumeMusic();    
+        //UpdatedSliderVolumeMusic();
         //UpdatedSliderVolumeSound();
         //UpdatedDropDownOptions();
     }
