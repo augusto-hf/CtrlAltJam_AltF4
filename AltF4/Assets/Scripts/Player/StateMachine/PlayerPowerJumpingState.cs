@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerPowerJumpingState : PlayerBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState(PlayerStateManager state)
     {
-        
+
+    }
+    public override void UpdateState(PlayerStateManager state)
+    {
+
+    }
+    public override void OnCollisionEnter(PlayerStateManager state)
+    {
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

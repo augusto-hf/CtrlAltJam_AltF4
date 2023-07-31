@@ -12,16 +12,15 @@ public class PlayerStateManager : MonoBehaviour
     PlayerPowerJumpingState powerJumpingState = new PlayerPowerJumpingState();
     PlayerPowerRunningState runningState = new PlayerPowerRunningState();
 
-
-    // Start is called before the first frame updateasdgasdgasdfghasdfhsdfhsdfhdfgjd
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+
+
     }
 }

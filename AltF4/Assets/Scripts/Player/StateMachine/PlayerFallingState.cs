@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerFallingState : PlayerBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState(PlayerStateManager state)
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    }
+    public override void UpdateState(PlayerStateManager state)
     {
-        
+
+    }
+    public override void OnCollisionEnter(PlayerStateManager state)
+    {
+
     }
 }
