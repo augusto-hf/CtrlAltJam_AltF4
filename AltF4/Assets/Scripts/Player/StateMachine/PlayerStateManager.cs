@@ -13,7 +13,7 @@ public class PlayerStateManager : MonoBehaviour
     PlayerPowerRunningState runningState = new PlayerPowerRunningState();
 
 
-    // Start is called before the first frame update
+    // Start is called before the first frame updateasdgasdgasdfghasdfhsdfhsdfhdfgjd
     void Start()
     {
         
