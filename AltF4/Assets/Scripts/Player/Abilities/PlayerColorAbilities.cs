@@ -15,6 +15,7 @@ public class PlayerColorAbilities : MonoBehaviour
     private int jumpCharge;
     private float jumpBufferTimer;
     private bool isJumping;
+    private bool isRunning;
 
     private float staminaRefreshMultiplier;
     private bool canStaminaRefresh;
@@ -22,6 +23,7 @@ public class PlayerColorAbilities : MonoBehaviour
     public float StaminaAmount { get => stamina.CurrentStamina; }
     public int JumpCharge { get => jumpCharge; }
     public bool IsJumping { get => isJumping; }
+
 
     private void Awake()
     {
@@ -34,6 +36,11 @@ public class PlayerColorAbilities : MonoBehaviour
     private void FixedUpdate()
     {
         staminaCurrent = stamina.CurrentStamina;   
+
+        if(isRunning)
+        {
+            stamina.DecreaseStamina(player.Data.StaminaDropMultiplier);
+        }
     }
 
     private void Update()
@@ -82,7 +89,8 @@ public class PlayerColorAbilities : MonoBehaviour
             }
             else
             {
-                stamina.DecreaseStamina(player.Data.StaminaDropMultiplier);
+                isRunning = true;
+                //stamina.DecreaseStamina(player.Data.StaminaDropMultiplier);
             }
 
             ghost.ShowGhostEffect(currentAbilityType);
@@ -93,12 +101,14 @@ public class PlayerColorAbilities : MonoBehaviour
         else
         {
             player.Movement.SetMaxSpeed(player.Data.MaxHorizontalSpeed);
+            isRunning = false;
         }
         
         if (stamina.CurrentStamina <= PlayerStamina.MIN_STAMINA)
         {
             
             player.ColorManager.ConsumeColor();
+            isRunning = false;
         }
 
     }
