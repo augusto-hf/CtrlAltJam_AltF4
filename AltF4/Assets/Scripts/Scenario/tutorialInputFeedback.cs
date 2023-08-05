@@ -5,26 +5,41 @@ using UnityEngine;
 public class tutorialInputFeedback : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer keySpriteRenderer;
+    [SerializeField] private Sprite keyImage_Released, keyImage_Pressed, keyImageAlt_Released, keyImageAlt_Pressed;
     [SerializeField] private PlayerControl control;
     [SerializeField] private Color idleColor, pressedColor;
-    [SerializeField] private bool isTongue, isColorPower;
+    [SerializeField] private string command;
     private bool playerIsNear = false, inputToVerify;
 
     void Start()
-    {
+    {     
         verifyNullOnStart();
+
+        switch (command)
+        {
+            case "tongue":
+                inputToVerify = control.TongueButtonHold;
+                break;
+            case "color":
+                inputToVerify = control.ColorButtonHold;
+                break;
+            case "left":
+                //inputToVerify = control.;
+                break;
+            case "right":
+                inputToVerify = control.TongueButtonHold;
+                break;
+            default:
+                inputToVerify = control.TongueButtonHold;
+                break;
+        }
+
     }
 
     void Update()
     {
-        if (isTongue)
-        {
-            inputToVerify = control.TongueButtonHold;
-        }
-        else if (isColorPower)
-        {
-            inputToVerify = control.ColorButtonHold;
-        }
+        
+
         pressVisualButton(inputToVerify);
     }
 
@@ -41,6 +56,10 @@ public class tutorialInputFeedback : MonoBehaviour
     {
         if (keySpriteRenderer == null)
             keySpriteRenderer = GetComponent<SpriteRenderer>();
+        if (keyImageAlt_Released == null || keyImageAlt_Released == null)
+        {
+
+        }
     }
 
     #region trigger

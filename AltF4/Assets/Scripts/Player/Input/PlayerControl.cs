@@ -53,12 +53,6 @@ public class PlayerControl : MonoBehaviour
         TongueButtonHold = tongueInput.IsPressed();
         TongueButtonUp = tongueInput.WasReleasedThisFrame();
 
-        if (Axis.x != 0)
-            LastHorizontalAxis = Axis.x;
-
-        if (Axis.y != 0)
-            LastVerticalAxis = Axis.y;
-
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -69,6 +63,8 @@ public class PlayerControl : MonoBehaviour
 
     private Vector2 GetLastAxis()
     {
-        return new Vector2(LastHorizontalAxis, LastVerticalAxis).normalized;
+        
+        return Vector2.zero;
     }
+
 }
