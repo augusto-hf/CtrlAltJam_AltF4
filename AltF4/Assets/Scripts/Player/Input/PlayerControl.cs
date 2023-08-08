@@ -5,17 +5,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerControl : MonoBehaviour
 {
-    float LastHorizontalAxis, LastVerticalAxis;
     public Vector2 Axis { get; private set; }
-    public Vector2 LastAxis { get => GetLastAxis(); } 
+    public float LastHorizontalAxis { get => GetLastHorizontalAxis(); } 
     public bool ColorButtonHold { get; private set; }
     public bool ColorButtonDown { get; private set; }
     public bool ColorButtonUp{ get; private set; }
     public bool TongueButtonHold { get; private set; }
     public bool TongueButtonDown { get; private set; }
     public bool TongueButtonUp { get; private set; }
+    public bool LeftButtonHold { get; private set; }
+    public bool RightButtonHold { get; private set; }
+
     private PlayerInputActions PlayerInputs;
     private InputAction moveInput, colorPowerInput, tongueInput;
+    private float LocalLastHorizontalAxis = 1;
 
     #region Enable/Disable
 
@@ -61,10 +64,29 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-    private Vector2 GetLastAxis()
+    private float GetLastHorizontalAxis()
     {
-        
-        return Vector2.zero;
+        if (Axis.x > 0)
+        {//Direita
+            LocalLastHorizontalAxis = 1;
+            LeftButtonHold = false;
+            RightButtonHold = true;
+        }
+
+        else if (Axis.x < 0)
+        {//Esquerda
+            LocalLastHorizontalAxis = -1;
+            LeftButtonHold = true;
+            RightButtonHold = false;
+        }
+
+        else
+        {
+            LeftButtonHold = false;
+            RightButtonHold = false;
+        }
+
+        return LocalLastHorizontalAxis;
     }
 
 }
