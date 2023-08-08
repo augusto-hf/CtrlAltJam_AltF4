@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: -1742336714293990547, guid: 8ca299cf1f7ff0c479999247cf180914, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3f38350fe23ed134392aef1ff6524820, type: 3}
+      objectReference: {fileID: 21300000, guid: cb3fb1f1cdcdf2146aa5713b254f050a, type: 3}
     - target: {fileID: 865630489662749160, guid: 8ca299cf1f7ff0c479999247cf180914, type: 3}
       propertyPath: m_Name
       value: tutorialKey_Space
