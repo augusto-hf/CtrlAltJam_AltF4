@@ -24,10 +24,10 @@ public class tutorialInputFeedback : MonoBehaviour
                 inputToVerify = control.ColorButtonHold;
                 break;
             case "left":
-                //inputToVerify = control.;
+                inputToVerify = control.LeftButtonHold;
                 break;
             case "right":
-                inputToVerify = control.TongueButtonHold;
+                inputToVerify = control.RightButtonHold;
                 break;
             default:
                 inputToVerify = control.TongueButtonHold;
