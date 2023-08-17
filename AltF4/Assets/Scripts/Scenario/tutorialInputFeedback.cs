@@ -38,8 +38,6 @@ public class tutorialInputFeedback : MonoBehaviour
 
     void Update()
     {
-        
-
         pressVisualButton(inputToVerify);
     }
 

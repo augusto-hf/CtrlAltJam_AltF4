@@ -11,6 +11,7 @@ TagManager:
   - SavePoint
   - TextLocalized
   - butterfly
+  - Ground
   layers:
   - Default
   - TransparentFX
