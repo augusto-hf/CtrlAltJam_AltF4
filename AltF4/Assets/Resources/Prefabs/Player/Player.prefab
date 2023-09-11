@@ -241,7 +241,7 @@ MonoBehaviour:
   - {x: -0.32430363, y: -0.14138654, z: 0}
   m_ShapePathHash: 1658449847
   m_Mesh: {fileID: 0}
-  m_InstanceId: -3670
+  m_InstanceId: -3416
 --- !u!114 &46150787033601485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a0aecf0d855bd4dbdf73e6bad33460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 1
+  canMove: 0
   cutsceneActive: 0
   speed: {x: 0, y: 0}
 --- !u!114 &6336683652554037022
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee5e67a804b932449aaa40523ab8abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaTest: 0
+  staminaCurrent: 0
 --- !u!82 &1871851519
 AudioSource:
   m_ObjectHideFlags: 0

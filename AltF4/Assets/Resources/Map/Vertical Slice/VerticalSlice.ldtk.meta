@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: 8290d2f88e67d284b91f808b3d2a5b29
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: aaa16bfc62c086f4fb45da87b6acf9b1, type: 3}
+  _reimportOnDependencyChange: 1
+  _jsonFile: {fileID: -164016180542632921, guid: 8290d2f88e67d284b91f808b3d2a5b29, type: 3}
+  _pixelsPerUnit: 16
+  _atlas: {instanceID: 0}
+  _customLevelPrefab: {instanceID: 0}
+  _deparentInRuntime: 0
+  _intGridValueColorsVisible: 0
+  _useCompositeCollider: 1
+  _createBackgroundColor: 1
+  _createLevelBoundsTrigger: 0
+  _intGridValues:
+  - _key: Thorns_1
+    _asset: {fileID: 11400000, guid: 399da3de11bfe744da9b86056442f5a0, type: 2}
+  - _key: Wall_Run_1
+    _asset: {fileID: 11400000, guid: 5cebc4579b92af2498ff181d8c562ba1, type: 2}
+  - _key: Climbing_Wall_1
+    _asset: {fileID: 11400000, guid: 8ead26a0a45d9d8439470eae04cd0f88, type: 2}
+  - _key: Climbing_Wall_2
+    _asset: {fileID: 11400000, guid: eeb0907df52228c40b80d21e864a1445, type: 2}
+  - _key: Climbing_Wall_3
+    _asset: {fileID: 11400000, guid: d55a560d109b40a4586781e6a39e0ce7, type: 2}
+  - _key: Climbing_Wall_4
+    _asset: {fileID: 11400000, guid: 4e52166f995ba6d4e8b4dfdebfa4b8c7, type: 2}
+  - _key: Climbing_Wall_5
+    _asset: {fileID: 11400000, guid: b3a58c03d604adc47a674ff36d49ee1e, type: 2}
+  - _key: Platform_1
+    _asset: {fileID: 11400000, guid: ff35c4de8a2b3fb4597f7a22305cb74c, type: 2}
+  - _key: Ground_1
+    _asset: {fileID: 11400000, guid: 406ab70a42e4d774eab2f0e869194ca7, type: 2}
+  - _key: Ground_2
+    _asset: {fileID: 11400000, guid: df7f265bd89180e48b1806aac91b9325, type: 2}
+  - _key: Ground_3
+    _asset: {fileID: 11400000, guid: 02269cc4256c14d43b9b8fad8558bad4, type: 2}
+  _entities:
+  - _key: Player
+    _asset: {fileID: 6336683652554037023, guid: ab9eb5418e2ca454d934206bdc732773, type: 3}
+  - _key: Butterfly_jump
+    _asset: {instanceID: 0}
+  - _key: Butterfly_run
+    _asset: {instanceID: 0}
+  - _key: Butterfly_lick
+    _asset: {instanceID: 0}
+  - _key: Butterfly_climp
+    _asset: {instanceID: 0}
+  - _key: Butterfly_ball
+    _asset: {instanceID: 0}
+  - _key: Butterfly_dive
+    _asset: {instanceID: 0}
+  - _key: Stone
+    _asset: {instanceID: 0}
+  - _key: Stone_Climp
+    _asset: {instanceID: 0}
+  - _key: Stalactite_Platform_P
+    _asset: {instanceID: 0}
+  - _key: Stalactite_Platform_M
+    _asset: {instanceID: 0}
+  - _key: Stalactite_Platform_G
+    _asset: {instanceID: 0}
+  - _key: Falling_Stalactite
+    _asset: {instanceID: 0}
+  - _key: Pillar_Move
+    _asset: {instanceID: 0}
+  - _key: Collectible
+    _asset: {instanceID: 0}
+  - _key: Blob_Jump
+    _asset: {instanceID: 0}
+  - _key: Hook
+    _asset: {instanceID: 0}
+  - _key: Hole
+    _asset: {instanceID: 0}
+  - _key: Geyser
+    _asset: {instanceID: 0}
+  - _key: Bush_Vertical_P
+    _asset: {instanceID: 0}
+  - _key: Bush_Vertical_M
+    _asset: {instanceID: 0}
+  - _key: Bush_Horizontal_M
+    _asset: {instanceID: 0}
+  - _key: Bush_M
+    _asset: {instanceID: 0}
+  - _key: Bush_Vertical_Movement_M
+    _asset: {instanceID: 0}
+  - _key: Bush_Movement
+    _asset: {instanceID: 0}
+  - _key: SavePoint
+    _asset: {instanceID: 0}
+  - _key: Tutorial_change_Color
+    _asset: {instanceID: 0}
+  - _key: Tutorial_jump
+    _asset: {instanceID: 0}
+  - _key: Tutorial_jump_down
+    _asset: {instanceID: 0}
+  - _key: Tutorial_lick
+    _asset: {instanceID: 0}
+  - _key: Tutorial_climb
+    _asset: {instanceID: 0}
+  - _key: Tutorial_ball
+    _asset: {instanceID: 0}
+  - _key: Tutorial_dive
+    _asset: {instanceID: 0}
+  - _key: Tutorial_run
+    _asset: {instanceID: 0}
+  - _key: FollowButterfly
+    _asset: {instanceID: 0}
+  - _key: Interaction2
+    _asset: {instanceID: 0}
+  - _key: Little_Rock
+    _asset: {instanceID: 0}
+  - _key: Interaction3
+    _asset: {instanceID: 0}
+  - _key: EndGame
+    _asset: {instanceID: 0}
+  _enumGenerate: 0
+  _enumPath: 
+  _enumNamespace: 
